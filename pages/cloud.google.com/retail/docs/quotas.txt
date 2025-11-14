@@ -1,0 +1,309 @@
+Quotas and limits  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Vertex AI search for commerce
+All resources
+Pricing
+Quotas and limits
+FAQ
+Overview
+Conversational features
+Search for commerce console
+Release notes
+Data use terms & conditions
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Resources
+Send feedback
+Quotas and limits
+This page provides information about quotas and limits for
+Vertex AI Search for commerce.
+Important:
+These quotas only apply to recommendations within
+Vertex AI Search for commerce.
+Default quotas
+By default, your project has the following quotas for Vertex AI Search for commerce.
+To increase or otherwise edit these quotas, see
+Edit your quotas
+.
+Quota
+Value
+User event writes per minute
+60,000
+User event imports per minute
+100
+User event writes per user per minute
+240
+User event reads per minute
+300
+Product writes per minute
+12,000
+Product imports per minute
+100
+Product reads per minute
+300
+Predictions per minute
+60,000
+Predictions per minute for a specific user
+60,000
+Searches per minute
+300
+Completion read per minute
+1200
+Total user events
+40,000,000,000
+Total products (search not enabled)
+40,000,000
+Total products (search enabled)
+4,000,000
+Total tags
+(sum of per-product tag counts, not unique tags)
+100,000,000
+Pending Cloud Storage import long running operations
+300
+Pending BigQuery import long running operations
+100
+Pending Merchant Center import long running operations
+10
+Concurrent active models
+10
+Total models (active and paused)
+20
+Total placements
+100
+Total Controls
+100
+Check your quotas
+To check the current quotas for Vertex AI Search for commerce resources in your
+project, go to the
+Quotas
+page in the Google Cloud console and select
+Vertex AI Search for Retail API
+in the
+Services
+dropdown list.
+You can see recent quota usage by going to the
+API Dashboard
+, selecting
+Vertex AI Search for Retail API, and opening the
+Quotas
+tab.
+Edit your quotas
+As your use of Google Cloud expands over time, you might want to increase
+your quotas accordingly. Or you might need to limit certain quotas. If you
+expect a notable upcoming increase in usage, make your request to increase
+your quotas a few days in advance to ensure that your quotas are adequately
+sized.
+Note:
+To request additional quotas, your user account must have the
+serviceusage.quotas.update
+permission. This permission is included by default
+for the following
+predefined roles
+: Owner,
+Editor, and Quota Administrator.
+In the
+Quotas
+page,
+select
+Vertex AI Search for Retail API
+in the
+Services
+dropdown list.
+Select the quotas you want to change.
+Click
+EDIT QUOTAS
+.
+Fill out your name, email, and phone number and click
+Next
+.
+Fill in your quota request and click
+Submit request
+.
+You will receive a response from the Vertex AI Search for commerce team within
+48 hours of your request.
+Limits
+The following limits are enforced:
+You can start up to five model operations per minute. Limited model operations
+include creation, deletion, pause, and resume.
+Your site can have up to 250,000 user event writes per visitor ID or user ID
+per week.
+Your site can have up to 10,000 product writes per product ID per week and one
+product write per product ID per second. Too frequent updates on the same
+product are unexpected, and the additional updates might be rejected with
+a
+RESOURCE_EXHAUSTED
+error.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

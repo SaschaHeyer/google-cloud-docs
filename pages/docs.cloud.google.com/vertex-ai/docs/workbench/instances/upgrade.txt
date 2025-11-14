@@ -1,0 +1,1123 @@
+Upgrade the environment of a Vertex AI Workbench instance  |  Google Cloud Documentation
+Skip to main content
+Technology areas
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+/
+Console
+English
+Deutsch
+Español – América Latina
+Français
+Português – Brasil
+中文 – 简体
+日本語
+한국어
+Sign in
+Vertex AI Workbench
+Start free
+Guides
+Reference
+Samples
+Support
+Resources
+Technology areas
+More
+Guides
+Reference
+Samples
+Support
+Resources
+Cross-product tools
+More
+Console
+Discover
+Overview
+Introduction to Vertex AI
+MLOps on Vertex AI
+Interfaces for Vertex AI
+Vertex AI beginner's guides
+Train an AutoML model
+Train a custom model
+Get inferences from a custom model
+Train a model using Vertex AI and the Python SDK
+Introduction
+Prerequisites
+Create a notebook
+Create a dataset
+Create a training script
+Train a model
+Make an inference
+Integrated ML frameworks
+PyTorch
+TensorFlow
+Vertex AI for BigQuery users
+Glossary
+Get started
+Set up a project and a development environment
+Install the Vertex AI SDK for Python
+Choose a training method
+Try a tutorial
+Tutorials overview
+AutoML tutorials
+Hello image data
+Overview
+Set up your project and environment
+Create a dataset and import images
+Train an AutoML image classification model
+Evaluate and analyze model performance
+Deploy a model to an endpoint and make an inference
+Clean up your project
+Hello tabular data
+Overview
+Set up your project and environment
+Create a dataset and train an AutoML classification model
+Deploy a model and request an inference
+Clean up your project
+Custom training tutorials
+Train a custom tabular model
+Train a TensorFlow Keras image classification model
+Overview
+Set up your project and environment
+Train a custom image classification model
+Serve predictions from a custom image classification model
+Clean up your project
+Fine-tune an image classification model with custom data
+Custom training notebook tutorials
+Use Generative AI and LLMs
+About Generative AI
+Use Vertex AI development tools
+Development tools overview
+Use the Vertex AI SDK
+Overview
+Introduction to the Vertex AI SDK for Python
+Vertex AI SDK for Python classes
+Vertex AI SDK classes overview
+Data classes
+Training classes
+Model classes
+Prediction classes
+Tracking classes
+Use Vertex AI in notebooks
+Choose a notebook solution
+Colab Enterprise
+Quickstart:Create a notebook by using the console
+Connect to a runtime
+Manage runtimes and runtime templates
+Create a runtime template
+Create a runtime
+Vertex AI Workbench
+Introduction
+Notebook tutorials
+Get started
+Create an instance by using the Console
+Schedule a notebook run
+Set up an instance
+Create an instance
+Create a specific version of an instance
+Create an instance with user credential access
+Create an instance with Confidential Computing
+Add a conda environment
+Idle shutdown
+Create an instance using a custom container
+Create a Dataproc-enabled instance
+Create an instance with third party credentials
+Manage features through metadata
+Use reservations
+Connect to data
+Query data in BigQuery from within JupyterLab
+Access Cloud Storage buckets and files in JupyterLab
+Explore and visualize data
+Explore and visualize data in BigQuery
+Maintain
+Manage your conda environment
+Back up and restore
+Save a notebook to GitHub
+Use a snapshot
+Use Cloud Storage
+Shut down an instance
+Upgrade the environment of an instance
+Access JupyterLab by using SSH
+Migrate data to a new instance
+Change machine type and configure GPUs
+Provision resources using Terraform
+Monitor
+Monitor health status
+Control access
+Access control
+Manage access to an instance
+Manage access to an instance's JupyterLab interface
+Use customer-managed encryption keys
+Use an instance within a service perimeter
+Troubleshoot Vertex AI Workbench
+Vertex AI Workbench release notes
+Managed notebooks
+Introduction to managed notebooks
+Get started
+Create a managed notebooks instance by using the Cloud console
+Schedule a managed notebooks run
+Set up a managed notebooks instance
+Create an instance with a custom container
+Run a managed notebooks instance on a Dataproc cluster
+Use Dataproc Serverless Spark with managed notebooks
+Idle shutdown
+Managed notebooks versions
+Connect to data
+Query data in BigQuery from within JupyterLab
+Access Cloud Storage buckets and files in JupyterLab
+Explore and visualize data
+Overview
+Explore and visualize data in BigQuery
+Develop a model
+Model development in a managed notebooks instance
+Deploy
+Run notebook files with the executor
+Run notebook executions with parameters
+Maintain
+Migrate to a Vertex AI Workbench instance
+Save a notebook to GitHub
+Change machine type and configure GPUs of a managed notebooks instance
+Upgrade the environment of a managed notebooks instance
+Migrate data to a new managed notebooks instance
+Monitor
+Audit logging
+Control access
+Access control
+Manage access to an instance
+Manage access to an instance's JupyterLab interface
+Use customer-managed encryption keys
+Set up a network
+Use a managed notebooks instance within a service perimeter
+Troubleshoot managed notebooks
+User-managed notebooks
+Introduction to user-managed notebooks
+Get started
+Create a user-managed notebooks instance by using the Cloud console
+Set up a user-managed notebooks instance
+Create a specific version of an instance
+Install dependencies
+Choose a virtual machine image
+Create an instance with a custom container
+Explore data
+Data science with R on Google Cloud: Exploratory data analysis tutorial
+Monitor
+Monitor health status
+Audit logging
+Control access
+Access control
+Manage access to an instance
+Manage access to an instance's JupyterLab interface
+Customer-managed encryption keys
+Use a user-managed notebooks instance within a service perimeter
+Use a shielded virtual machine with user-managed notebooks
+Tutorial: Create a notebooks instance in a VPC network
+Maintain
+Migrate to a Vertex AI Workbench instance
+Save a notebook to GitHub
+Back up your data by using a snapshot
+Shut down a user-managed notebooks instance
+Change machine type and configure GPUs of a user-managed notebooks instance
+Upgrade the environment of a user-managed notebooks instance
+Migrate data to a new user-managed notebooks instance
+Register a legacy instance with Notebooks API
+Access JupyterLab by using SSH
+Troubleshoot user-managed notebooks
+Terraform support for Vertex AI
+Managed Training on reserved clusters
+Managed Training overview
+Get started with Managed Training
+Predictive AI model development
+Overview
+AutoML model development
+AutoML training overview
+Image data
+Classification
+Prepare data
+Create dataset
+Train model
+Evaluate model
+Get predictions
+Interpret results
+Object detection
+Prepare data
+Create dataset
+Train model
+Evaluate model
+Get predictions
+Interpret results
+Encode image data using Base64
+Export an AutoML Edge model
+Tabular data
+Overview
+Introduction to tabular data
+Tabular Workflows
+Overview
+Feature engineering
+End-to-End AutoML
+Overview
+Train a model
+Get online inferences
+Get batch inferences
+TabNet
+Overview
+Train a model
+Get online inferences
+Get batch inferences
+Wide & Deep
+Overview
+Train a model
+Get online inferences
+Get batch inferences
+Forecasting
+Overview
+Train a model
+Get online inferences
+Get batch inferences
+Pricing
+Service accounts
+Manage quotas
+Perform classification and regression with AutoML
+Overview
+Quickstart: AutoML Classification (Cloud Console)
+Prepare training data
+Create a dataset
+Train a model
+Evaluate model
+View model architecture
+Get online inferences
+Get batch inferences
+Export model
+Perform forecasting with AutoML
+Overview
+Prepare training data
+Create a dataset
+Train a model
+Evaluate model
+Get inferences
+Hierarchical forecasting
+Perform forecasting with ARIMA+
+Perform forecasting with Prophet
+Perform entity reconciliation
+Feature attributions for classification and regression
+Feature attributions for forecasting
+Data types and transformations for tabular AutoML data
+Training parameters for forecasting
+Data splits for tabular data
+Best practices for creating tabular training data
+Forecast with Timeseries Insights
+Train an AutoML Edge model
+Using the Console
+Using the API
+AutoML Text
+Migrate from AutoML text to Gemini
+Gemini for AutoML text users
+Vertex AI Training
+Overview of custom training in Vertex AI
+Load and prepare data
+Data preparation overview
+Use Cloud Storage as a mounted file system
+Mount an NFS share for custom training
+Use managed datasets
+Prepare training application
+Understand the custom training service
+Prepare training code
+Use prebuilt containers
+Create a Python training application for a prebuilt container
+Prebuilt containers for custom training
+Use custom containers
+Custom containers for training
+Create a custom container
+Containerize and run training code locally
+Use Deep Learning VM Images and Containers
+Train on a persistent resource
+Overview
+Create persistent resource
+Run training jobs on a persistent resource
+Get persistent resource information
+Reboot a persistent resource
+Delete a persistent resource
+Configure training job
+Choose a custom training method
+Configure container settings for training
+Configure compute resources for training
+Use reservations with training
+Use Spot VMs with training
+Submit training job
+Create custom jobs
+Hyperparameter tuning
+Hyperparameter tuning overview
+Use hyperparameter tuning
+Create training pipelines
+Schedule jobs based on resource availability
+Use distributed training
+Training with Cloud TPU VMs
+Use private IP for custom training
+Use Private Service Connect interface for training (recommended)
+Perform Neural Architecture Search
+Overview
+Set up environment
+Beginner tutorials
+Best practices and workflow
+Proxy task design
+Optimize training speed for PyTorch
+Use prebuilt training containers and search spaces
+Monitor and debug
+Monitor and debug training using an interactive shell
+Profile model training performance
+Optimize using Vertex AI Vizier
+Overview of Vertex AI Vizier
+Create Vertex AI Vizier studies
+Vertex AI Vizier notebook tutorials
+Get inferences
+Tutorial: Build a pipeline for continuous training
+Create custom organization policy constraints
+Ray on Vertex AI
+Ray on Vertex AI overview
+Set up for Ray on Vertex AI
+Create a Ray cluster on Vertex AI
+Monitor Ray clusters on Vertex AI
+Scale a Ray cluster on Vertex AI
+Develop a Ray application on Vertex AI
+Run Spark on Ray cluster on Vertex AI
+Use Ray on Vertex AI with BigQuery
+Deploy a model and get inferences
+Delete a Ray cluster
+Ray on Vertex AI notebook tutorials
+Generative AI model development
+Overview
+Create and manage datasets
+Overview
+Data splits for AutoML models
+Create an annotation set
+Delete an annotation set
+Add labels (console)
+Export metadata and annotations from a dataset
+Manage dataset versions
+Use Data Catalog to search for model and dataset resources
+Get inferences
+Overview
+Configure models for inference
+Export model artifacts for inference
+Prebuilt containers for inference
+Custom container requirements for inference
+Use a custom container for inference
+Use arbitrary custom routes
+Use the optimized TensorFlow runtime
+Serve inferences with NVIDIA Triton
+Custom inference routines
+Get online inferences
+Create an endpoint
+Choose an endpoint type
+Create a public endpoint
+Use dedicated public endpoints (recommended)
+Use dedicated private endpoints based on Private Service Connect (recommended)
+Use private services access endpoints
+Deploy a model to an endpoint
+Overview of model deployment
+Compute resources for inference
+Deploy a model by using the Google Cloud console
+Deploy a model by using the gcloud CLI or Vertex AI API
+Use autoscaling for inference
+Use a rolling deployment to replace a deployed model
+Undeploy a model and delete the endpoint
+Use Cloud TPUs for online inference
+Use reservations with online inference
+Use Flex-start VMs with inference
+Use Spot VMs with inference
+Get an online inference
+View online inference metrics
+View endpoint metrics
+View DCGM metrics
+Share resources across deployments
+Use online inference logging
+Get batch inferences
+Get batch inferences from a custom model
+Use reservations with batch inference
+Get batch prediction from a self-deployed Model Garden model
+Serve generative AI models
+Deploy generative AI models
+Serve Gemma open models using Cloud TPUs with Saxml
+Serve Llama 3 open models using multi-host Cloud TPUs with Saxml
+Serve a DeepSeek-V3 model using multi-host GPU deployment
+Custom organization policies
+Vertex AI inference notebook tutorials
+Perform vector similarity searches
+Vector Search overview
+Try it
+Get started
+Vector Search quickstart
+Before you begin
+Notebook tutorials
+About hybrid search
+Create and manage index
+Input data format and structure
+Create and manage your index
+Storage-optimized indexes
+Index configuration parameters
+Update and rebuild index
+Filter vector matches
+Import index data from BigQuery
+Embeddings with metadata
+Deploy and query an index
+Private Service Connect (recommended)
+Set up Vector Search with Private Service Connect
+Query
+JSON Web Token authentication
+Public endpoint
+Deploy
+Query
+Private services access
+Set up a VPC network peering connection
+Deploy
+Query
+JSON Web Token authentication
+Monitor a deployed index
+Use custom organization policies
+Get support
+Machine learning operations (MLOps)
+Manage features
+Feature management in Vertex AI
+Vertex AI Feature Store
+About Vertex AI Feature Store
+Set up features
+Prepare data source
+Create a feature group
+Create a feature
+Set up online serving
+Online serving types
+Create an online store instance
+Create a feature view instance
+Control access
+Control access to resources
+Sync online store
+Start a data sync
+List sync operations
+Update features in a feature view
+Serve features
+Serve features from online store
+Serve historical feature values
+Monitor
+Monitor features
+Manage feature resources
+List feature groups
+List features
+Update a feature group
+Update a feature
+Delete a feature group
+Delete a feature
+Manage online store resources
+List online stores
+List feature views
+Update an online store
+Update a feature view
+Delete an online store
+Delete a feature view
+Feature metadata
+Update labels
+Search for resources
+Search for resources
+Search for resource metadata in Data Catalog
+Manage embeddings
+Search using embeddings
+Notebook tutorials
+Vertex AI Feature Store tutorial notebooks
+Vertex AI Feature Store (Legacy)
+About Vertex AI Feature Store (Legacy)
+Data model and resources
+Source data requirements
+Setup
+Best practices
+Use Vertex AI Feature Store (Legacy)
+Manage featurestores
+Manage entity types
+Manage and find features
+Batch import
+Streaming import
+Online serving
+Fetch training data
+Export feature values
+Delete feature values
+Monitoring
+Control access to resources
+Manage models
+Introduction to Vertex AI Model Registry
+Versioning in Model Registry
+Import models to Model Registry
+Copy models in Model Registry
+Delete a model
+Integrate with BigQuery ML
+Use model aliases
+Use model labels
+Use Data Catalog to search for model and dataset resources
+Evaluate models
+Model evaluation in Vertex AI
+Perform model evaluation in Vertex AI
+Model evaluation for fairness
+Introduction to model evaluation for fairness
+Data bias metrics for Vertex AI
+Model bias metrics for Vertex AI
+Model evaluation notebook tutorials
+Orchestrate ML workflows using pipelines
+Introduction
+Interfaces
+Configure your project
+Build a pipeline
+Run a pipeline
+Use pipeline templates
+Create, upload, and use a pipeline template
+Use a prebuilt template from the Template Gallery
+Configure your pipeline
+Configure execution caching
+Configure failure policy
+Configure retries for a pipeline task
+Specify machine types for a pipeline step
+Request Google Cloud machine resources with Vertex AI Pipelines
+Configure Private Service Connect interface (recommended)
+Configure secrets with Secret Manager
+Configure a pipeline run on a persistent resource
+Schedule and trigger pipeline runs
+Schedule a pipeline run with scheduler API
+Trigger a pipeline run with Pub/Sub
+Cancel or delete pipeline runs
+Cancel pipeline runs
+Delete pipeline runs
+Rerun a pipeline
+Monitor pipeline execution
+View pipeline metrics
+View pipeline job logs
+Route logs to a Cloud Pub/Sub sink
+Configure email notifications
+Visualize results
+Visualize and analyze pipeline results
+Track the lineage of pipeline artifacts
+Output HTML and Markdown
+Resource labeling by Vertex AI Pipelines
+Understand pipeline run costs
+Migrate from Kubeflow Pipelines to Vertex AI Pipelines
+Use custom constraints
+Google Cloud Pipeline Components
+Quickstart
+Introduction to Google Cloud Pipeline Components
+Google Cloud Pipeline Component list
+Use Google Cloud Pipeline Components
+Build your own pipeline components
+Vertex AI Pipelines tutorials
+Tutorial notebooks
+Track and analyze your ML metadata
+Introduction to Vertex ML Metadata
+Data model and resources
+Configure your project's metadata store
+Use Vertex ML Metadata
+Track Vertex ML Metadata
+Analyze Vertex ML Metadata
+Manage Vertex ML Metadata
+System schemas
+Create and use custom schemas
+Use custom constraints with metadata stores
+Vertex ML Metadata notebook tutorials
+Understand model behavior
+Introduction to Explainable AI
+Configure example-based explanations for custom training
+Configure feature-based explanations for custom training
+Configure explanations
+Configure visualization settings
+Improve explanations
+Configure feature-based explanations for AutoML image classification
+Configure visualization settings
+Improve explanations
+Use TensorFlow for explanations
+Get explanations
+Limitations of Explainable AI
+Explainable AI notebook tutorials
+Monitor model quality
+Introduction to Model Monitoring
+Model Monitoring v2
+Set up model monitoring
+Run monitoring jobs
+Manage model monitors
+Model Monitoring v1
+Provide schemas to Model Monitoring
+Monitor feature skew and drift
+Monitor feature attribution skew and drift
+Model Monitoring for batch predictions
+Track Experiments
+Introduction to Vertex AI Experiments
+Set up for Vertex AI Experiments
+Create an experiment
+Create and manage experiment runs
+Log data
+Autolog data to an experiment run
+Manually log data to an experiment run
+Log models to an experiment run
+Track executions and artifacts
+Add pipeline run to experiment
+Run training job with experiment tracking
+Compare and analyze runs
+Use Vertex AI TensorBoard
+Introduction to Vertex AI TensorBoard
+Set up Vertex AI TensorBoard
+Configure training script
+Use Vertex AI TensorBoard with custom training
+Use Vertex AI TensorBoard with Vertex AI Pipelines
+Manually log TensorBoard data
+Upload existing logs
+View Vertex AI TensorBoard
+Notebook tutorials
+Get started with Vertex AI Experiments
+Compare pipeline runs
+Model training
+Compare models
+Autologging
+Custom training autologging
+Track parameters and metrics for custom training
+Delete outdated Vertex AI TensorBoard experiments
+Vertex AI TensorBoard custom training with custom container
+Vertex AI TensorBoard custom training with prebuilt container
+Vertex AI TensorBoard hyperparameter tuning with HParams dashboard
+Profile model training performance using Cloud Profiler
+Profile model training performance using Cloud Profiler in custom training with prebuilt container
+Vertex AI TensorBoard integration with Vertex AI Pipelines
+Administer
+Access control
+Access control with IAM
+IAM permissions
+Set up a project for a team
+Control access to Vertex AI endpoints
+Use a custom service account
+Use customer-managed encryption keys
+Access Transparency
+Monitor Vertex AI resources
+Cloud Monitoring metrics
+Audit logging information
+Networking
+Networking access overview
+Accessing the Vertex AI API
+Accessing Vertex AI services through private services access
+Accessing Vertex AI services through PSC endpoints
+Accessing Vertex AI services through PSC interfaces
+Set up VPC Network Peering
+Set up connectivity to other networks
+Set up a Private Service Connect interface
+Tutorial: Access training pipelines privately from on-premises
+Tutorial: Access a Vector Search index privately from on-premises
+Tutorial: Access the Generative AI API from on-premises
+Tutorial: Access batch predictions privately from on-premises
+Tutorial: Create a Vertex AI Workbench instance in a VPC network
+Security
+VPC Service Controls
+Allow public endpoint access to protected resources from outside a perimeter
+Allow multicloud access to protected resources from outside a perimeter
+Allow access to protected resources from inside a perimeter
+Name resources
+Samples and tutorials
+Notebook tutorials
+Code samples
+All Vertex AI code samples
+Code samples for all products
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Home
+Documentation
+AI and ML
+Vertex AI Workbench
+Guides
+Send feedback
+Stay organized with collections
+Save and categorize content based on your preferences.
+Upgrade the environment of an instance
+Vertex AI Workbench instances are
+Deep Learning VM Images
+instances with JupyterLab notebook environments enabled and ready for use.
+This page describes how to upgrade the environment of
+a Vertex AI Workbench instance.
+Reasons to upgrade
+You might want to upgrade the environment of
+your Vertex AI Workbench instance
+for any of the following reasons:
+To use new capabilities that are only available in a newer version
+of your environment.
+To benefit from framework updates, package updates, and bug fixes
+that have been implemented in a newer version of your environment.
+Upgrade methods
+There are two ways to upgrade a Vertex AI Workbench instance:
+Automatic upgrade
+: Enable auto upgrade when you create
+a Vertex AI Workbench instance. During a recurring
+time period that you specify, Vertex AI Workbench checks whether
+your instance can be upgraded, and if so,
+Vertex AI Workbench upgrades your instance.
+Manual upgrade
+: If
+an existing Vertex AI Workbench instance
+meets the
+requirements
+for upgrading, you can upgrade the instance manually.
+Requirements and limitations
+Backward compatibility with your Vertex AI Workbench isn't
+guaranteed.
+Make a copy of
+your data
+before upgrading a Vertex AI Workbench instance.
+To determine whether you can upgrade
+a specific Vertex AI Workbench instance,
+see the following requirements and limitations:
+The Notebooks API must be
+enabled in the instance's
+Google Cloud project
+.
+For more information, see
+List enabled services
+and
+Enable an API
+.
+If your Vertex AI Workbench instance is container-based,
+Vertex AI Workbench upgrades the OS. The image version depends on
+the specific image pulled by your Dockerfile.
+To help make sure the upgrade uses the most recent version
+of the image, consider using the
+latest
+tag in
+your Dockerfile.
+If upgrading your instance is not an option for you,
+consider
+migrating your data to
+a new Vertex AI Workbench instance
+.
+How the upgrade works
+Vertex AI Workbench instances that can be upgraded
+are dual-disk, with one boot disk and one data disk.
+The upgrade process upgrades the boot disk
+to a new image while preserving your data on the data disk.
+Which components are upgraded or preserved?
+The following table shows which components of
+your Vertex AI Workbench
+instance are upgraded and which are preserved.
+Component
+Upgrade result
+Machine learning frameworks
+Upgraded
+Machine learning data
+Preserved
+Preinstalled dependencies
+Upgraded
+User-installed libraries
+By default, must be reinstalled
+        (see
+User-installed libraries
+)
+Local files in the
+/home/jupyter
+directory
+Preserved
+Local files in any other
+/home/
+directory
+Not preserved
+Preinstalled operating system packages
+Upgraded
+User-installed operating system packages
+Not preserved
+GPU drivers
+Upgraded
+Notebooks
+Preserved
+User configurations
+Preserved
+User-installed libraries
+By default, Vertex AI Workbench instances store
+pip and Conda libraries in the boot disk, which is replaced during an upgrade.
+When you install pip libraries, you can include the
+--user
+flag to
+install them in the
+/home/jupyter/
+directory,
+where they are preserved during an upgrade.
+By default, if you install pip or Conda libraries in a kernel created from a
+custom container, the libraries only persist while the kernel is running.
+Each time the kernel is restarted, those libraries will need to be
+reinstalled. To install persistent libraries in a custom container,
+include the library installations in your Dockerfile. When installing
+pip libraries in a kernel created from a custom container, you can include
+the
+--user
+flag so that the libraries will persist until instance restart.
+Environment versions
+Your Vertex AI Workbench instance has an environment
+version number that you
+can verify:
+In the Google Cloud console, go to the
+Instances
+page.
+Go to Instances
+In the list of instances, find the version number of your
+instance's environment in the
+Version
+column.
+Vertex AI Workbench updates environments regularly (
+see the
+Deep Learning VM release
+notes
+), but with each
+released version, not all of the environments are updated.
+Vertex AI Workbench only upgrades an instance if there is a newer
+environment version for the VM image that your instance is based on.
+For information about how to use a specific version to create
+a Vertex AI Workbench instance, see
+Create a specific version of
+a Vertex AI Workbench instance
+.
+Before you begin
+Before you upgrade, complete the following steps.
+Check the
+release notes
+to learn about
+updates to newer versions.
+Make a copy of
+your data
+as a backup.
+Automatic upgrade
+Vertex AI Workbench can automatically upgrade instances that are
+running. If your instance is stopped, it doesn't automatically upgrade your
+instance, even if you enabled auto upgrade when you created it.
+When you enable automatic environment upgrades, you specify
+a recurring time period in which Vertex AI Workbench checks
+whether the instance can be upgraded, and if it can be, upgrades the instance.
+The time period you specify is stored as a
+notebook-upgrade-schedule
+metadata entry, in
+unix-cron
+format
+, Greenwich Mean Time (GMT).
+To check whether an instance can be upgraded,
+Vertex AI Workbench uses the API method
+checkUpgradability
+.
+This method checks for a newer version of the image on the instance's
+boot disk.
+If the instance can be upgraded, Vertex AI Workbench uses an
+internal upgrade method to upgrade the instance.
+Create a Vertex AI Workbench instance with auto upgrade enabled
+To create a Vertex AI Workbench instance with auto upgrade
+enabled, select the
+Enable environment auto-upgrade
+checkbox and set a
+schedule when you create the instance.
+You can specify auto-upgrade by using the Google Cloud console.
+In the Google Cloud console, go to the
+Instances
+page.
+Go to Instances
+Click
+add_box
+Create new
+.
+In the
+New instance
+dialog, click
+Advanced options
+.
+In the
+Create instance
+dialog,
+in the
+Details
+section,
+provide the following information for your new instance:
+Name
+: Provide a name for your new instance.
+Region
+and
+Zone
+: Select a region and zone for
+the new instance. For best network performance,
+select the region that is geographically closest to you.
+See the available
+Vertex AI Workbench locations
+.
+In the
+System health
+section, select
+Environment auto-upgrade
+.
+Choose whether to upgrade your notebook
+Weekly
+or
+Monthly
+.
+In the
+Weekday
+field, select the option that you want.
+In the
+Hour
+field, choose an hour of the day.
+Complete the rest of the instance creation dialog,
+and then click
+Create
+.
+Edit the auto upgrade schedule
+To edit the auto upgrade schedule after you have created your
+Vertex AI Workbench instance, complete the following steps:
+In the Google Cloud console, go to the
+Instances
+page.
+Go to Instances
+Click the instance name that needs the schedule change.
+On the
+Instance details
+page,
+in the
+Environment auto-upgrade
+section, edit the schedule.
+Click
+Submit
+to save your changes.
+Manual upgrade
+You can manually upgrade Vertex AI Workbench instances
+that meet the
+requirements
+.
+Check for a newer version of your instance's environment
+To check whether a newer version of your instance's environment is available,
+access your instance from the Google Cloud console.
+In the Google Cloud console, go to the
+Instances
+page.
+Go to Instances
+Click the instance name that
+you want to check for availability of a newer environment version.
+On the
+Instance details
+page, next to
+VM details
+, click
+View in Compute Engine
+.
+If a newer version of the environment is available, a "This instance needs
+to be upgraded" message appears.
+Upgrade your instance's environment to a newer version
+You can manually upgrade a Vertex AI Workbench instance in
+the Google Cloud console.
+Note:
+Upgrades can affect user operations that are running.
+In the Google Cloud console, go to the
+Instances
+page.
+Go to Instances
+If your instance isn't running,
+start the
+instance
+.
+Vertex AI Workbench can only upgrade instances when
+they're running.
+Click the instance name that you want to upgrade.
+On the
+Instance details
+page, click
+Upgrade
+.
+Make sure you have
+made a copy of the data on your
+instance
+before
+continuing.
+After your data is backed up, click
+Upgrade
+.
+Vertex AI Workbench upgrades and starts your instance.
+Roll back an upgrade
+To roll back an upgrade, complete the following steps:
+In the Google Cloud console, go to the
+Instances
+page.
+Go to Instances
+Click the instance name that you would like to roll back.
+On the
+Instance details
+page, under
+Upgrade history
+,
+click
+Rollback
+.
+Vertex AI Workbench rolls your instance back to the previous version.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-28 UTC.
+Products and pricing
+See all products
+Google Cloud pricing
+Google Cloud Marketplace
+Contact sales
+Support
+Google Cloud Community
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Code samples
+Cloud Architecture Center
+Training and Certification
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español – América Latina
+Français
+Português – Brasil
+中文 – 简体
+日本語
+한국어

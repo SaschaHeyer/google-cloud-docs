@@ -1,0 +1,860 @@
+Export your analytics metrics into BigQuery  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Export your analytics metrics into BigQuery
+This page describes how to export Vertex AI Search for commerce analytics metrics into
+BigQuery. Exporting analytics metrics lets you retain the
+metrics and write SQL for your own analysis.
+Vertex AI Search for commerce analytics metrics are generated automatically for you.
+For more information about measuring the business impact of
+Vertex AI Search for commerce with analytics metrics, see
+View analytics
+.
+Exporting metrics data to BigQuery has the following limitations:
+The data that is exported to BigQuery tables in your
+Vertex AI Search for commerce project are
+authorized views
+, not
+materialized views
+.
+You cannot change or update the data in these tables. If you need to change
+or update your data, export or copy the view to another destination.
+You can't export metrics for user events that are older than 180 days or
+metrics that were generated more than 180 days ago. Any metrics generated
+before the 180-day window are not retrievable.
+Before you begin
+Before you can export your metrics into BigQuery, you must
+have completed the procedures in
+Before you begin
+. This
+includes importing your user events and, optionally, your catalog
+information.
+For more information about importing, see:
+Import catalog information
+Record real-time user events
+Import historical user events
+Create a dataset in BigQuery
+You need to create a dataset in BigQuery to hold your analytics
+metrics data.
+You must create the datasets in the same project where you implemented
+Vertex AI Search for commerce.
+If you haven't used BigQuery in your
+project before, enable the BigQuery API and make sure that
+you have the IAM role that lets you create datasets and tables.
+See
+Before you begin
+and
+Access control with IAM
+in the BigQuery documentation.
+Create a dataset in BigQuery in the
+US (multiple regions in
+the United States)
+multi-region. For example, name it
+retail_data
+. If
+you create your dataset in a different region, exporting your data into
+BigQuery fails.
+CMEK
+for the dataset is not
+supported; enabling it causes the export to fail.
+For information about creating a dataset, see
+Creating datasets
+in the
+BigQuery documentation.
+This dataset will be used to hold the data table(s) that you export. The
+following procedures describe how to export.
+Export your analytics metrics to a BigQuery table
+Use the
+exportAnalyticsMetrics
+method to export your retail catalog into a
+BigQuery table.
+Before using any of the request data,
+  make the following replacements:
+PROJECT_ID
+: The ID of the
+    Vertex AI Search for commerce API project where you created the BigQuery
+    dataset.
+DATASET_ID
+: The name of the
+    dataset that you created in
+Create a dataset in BigQuery
+. For example, use
+retail_data
+or
+retail_metrics_data
+.
+TABLE_ID_PREFIX
+: A prefix
+    for the table ID. This prefix can't be an empty string. A suffix of
+retail_analytics_metrics
+is added to complete the table name. For
+    example, if the prefix is
+test
+, the table is named
+test_retail_analytics_metrics
+.
+Request JSON body:
+{
+  "catalog": "projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog",
+  "outputConfig":
+  {
+    "bigqueryDestination":
+    {
+      "datasetId": "
+DATASET_ID
+",
+        "tableIdPrefix": "
+TABLE_ID_PREFIX
+",
+        "tableType": "view"
+    }
+  }
+}
+To send your request, expand one of these options:
+curl (Linux, macOS, or Cloud Shell)
+Note:
+The following command assumes that you have logged in to
+          the
+gcloud
+CLI with your user account by running
+gcloud init
+or
+gcloud auth login
+, or by using
+Cloud Shell
+,
+            which automatically logs you into the
+gcloud
+CLI
+            .
+          You can check the currently active account by running
+gcloud auth list
+.
+Save the request body in a file named
+request.json
+.
+      Run the following command in the terminal to create or overwrite
+      this file in the current directory:
+cat > request.json << 'EOF'
+{
+  "catalog": "projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog",
+  "outputConfig":
+  {
+    "bigqueryDestination":
+    {
+      "datasetId": "
+DATASET_ID
+",
+        "tableIdPrefix": "
+TABLE_ID_PREFIX
+",
+        "tableType": "view"
+    }
+  }
+}
+EOF
+Then execute the following command to send your REST request:
+curl -X POST \
+-H "Authorization: Bearer $(gcloud auth print-access-token)" \
+-H "Content-Type: application/json; charset=utf-8" \
+-d @request.json \
+"https://retail.googleapis.com/v2/projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog:exportAnalyticsMetrics"
+PowerShell (Windows)
+Note:
+The following command assumes that you have logged in to
+          the
+gcloud
+CLI with your user account by running
+gcloud init
+or
+gcloud auth login
+.
+          You can check the currently active account by running
+gcloud auth list
+.
+Save the request body in a file named
+request.json
+.
+      Run the following command in the terminal to create or overwrite
+      this file in the current directory:
+@'
+{
+  "catalog": "projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog",
+  "outputConfig":
+  {
+    "bigqueryDestination":
+    {
+      "datasetId": "
+DATASET_ID
+",
+        "tableIdPrefix": "
+TABLE_ID_PREFIX
+",
+        "tableType": "view"
+    }
+  }
+}
+'@  | Out-File -FilePath request.json -Encoding utf8
+Then execute the following command to send your REST request:
+$cred = gcloud auth print-access-token
+$headers = @{ "Authorization" = "Bearer $cred" }
+Invoke-WebRequest `
+-Method POST `
+-Headers $headers `
+-ContentType: "application/json; charset=utf-8" `
+-InFile request.json `
+-Uri "https://retail.googleapis.com/v2/projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog:exportAnalyticsMetrics" | Select-Object -Expand Content
+You should receive a JSON response similar to the following:
+{
+  "name": "projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/operations/12310973052792775280",
+  "done": true,
+  "response": {
+    "@type": "type.googleapis.com/google.cloud.retail.v2.ExportAnalyticsMetricsResponse",
+    "outputResult": {
+      "bigqueryResult": [
+        {
+          "datasetId": "
+DATASET_ID
+",
+          "tableId": "
+TABLE_ID_PREFIX
+_retail_analytics_metrics"
+        }
+      ]
+    }
+  }
+}
+Metrics definitions
+The exported metrics are the
+count metrics
+. There can be slight drift for some
+count metrics because bot filtering might exclude some events from metrics
+computation. Bot filtering can help deliver more accurate performance
+measurements. This does not affect A/B testing, which depends on the dimension
+external_experiment_ids
+, whereas bot filtering is applied to all traffic.
+Metrics dimensions
+Count metrics are the raw counts directly aggregated from relevant user events
+with the same dimensions. To interpret metrics, you need to know which
+dimensions the metrics are based upon. For the purpose of analytics metrics,
+search and browse events are referred to as
+impression events
+, and
+detail_page_view
+,
+add_to_cart
+and
+purchase
+events are referred to as
+conversion events
+. The following table defines metric dimensions.
+Metric Dimension
+Description
+date
+The date of the relevant event(s) that generated the metrics.
+For impression metrics, this is the date of the impression events.
+For session and visitor metrics, this is the date of the first impression event of the session/visitor.
+external_experiment_ids
+The experiment IDs of the relevant event(s) that generated the metrics.
+For impression metrics, this the experiment ID of the impression event.
+For session and visitor metrics, this is the concatenation of the unique external experiment ids of all impression events that appears within the session/visitor. For example, if there are two search events within a session/visitor, the first search event has external_experiment_ids 'test_arm_1,test_arm_2', and the second search event has external_experiment_ids 'test_arm_1,test_arm_3', then external_experiment_ids of the session/visitor is 'test_arm_1,test_arm_2,test_arm_3'
+device_type
+The device type of the relevant event(s) that generated the metrics, for example, if the event is generated from a mobile or desktop device.
+For impression metrics, this is the device type of the impression event.
+For session and visitor metrics, this is empty if the session/visitor has more than one distinct device type, or the one if there is only one device type for the whole session/visitor.
+serving_config
+The serving configuration of the relevant event(s) that generated the metrics.
+For impression metrics, this is the serving config of the impression event.
+For session and visitor metrics, this is empty if the session/visitor has more than one distinct serving configs, or the one if there is only one serving config for the whole session/visitor.
+traffic_destination
+The source of the relevant event(s) that generated the metrics.
+For impression metrics, this is either "Google" if the impression is served by Google or "Non-Google" if the impression is served by your own solution.
+For session and visitor metrics, this is "Mixed" if the session/visitor has both impression events served both by Google and your own solution. This is "Google" if the impression events are purely served by Google or "Non-Google" if the impression events are purely served by your solution for the whole session/visitor.
+entity
+This is used by retailers that serve multiple brand sites or regions with one product catalog. Entity usually represents the brands or locations.
+For impression metrics, this is the entity of the impression event.
+For session and visitor metrics, this is the top five counted entities of the impression events for the session/visitor.
+Impression metrics
+Impression metrics are computed according to prerequisites. Conversion events
+(
+detail_page_view
+,
+add_to_cart
+, and
+purchase
+events), can be attributed
+back to an impression event only if they match the following criteria.
+Impression event and conversion event have the same visitor.
+The product ID of the conversion event must appear in the impression event's
+results.
+Conversion event is within the required time window after the occurrence of
+the impression event. Different conversion time windows apply for different
+types of conversion events.
+Conversion path
+Conversion time window
+Impression -> Detail Page View
+60 seconds
+Impression -> Add To Cart
+24 hours
+Impression -> Purchase
+48 hours
+Search impression metrics
+Metric Name
+Description
+search_event
+Search event count
+detail_page_view_from_search
+Detail page view event count from search
+add_to_cart_unit_from_search
+Add to cart unit count from search
+purchase_unit_from_search
+Purchase unit count from search
+revenue_from_search
+Revenue from search
+search_event_without_result
+Search event count which yields no results
+search_request_personalization_enabled
+Count of search requests with personalization enabled
+search_request_personalization_result_served
+Count of search requests that are served with personalized results
+Browse impression metrics
+Metric Name
+Description
+browse_event
+Browse event count
+detail_page_view_from_browse
+Detail page view event count from browse
+add_to_cart_unit_from_browse
+Add to cart unit count from browse
+purchase_unit_from_browse
+Purchase unit count from browse
+revenue_from_browse
+Revenue from browse
+browse_event_without_result
+Browse event count which yields no results
+browse_request_personalization_enabled
+Count of browse requests with personalization enabled
+browse_request_personalization_result_served
+Count of browse requests that are served with personalized results
+Session metrics
+A session is defined as a continuous period of interaction between a user and
+the system. Any user event marks the start of a session, and the end of a
+session is marked when no other event occurs for the next 30 minutes. The
+session is extended another 30 minutes whenever a user event occurs within a
+started session. After a session ends, a new session begins when the user
+engages with the system again.
+The dimensions that characterize the session metrics are jointly defined by all
+user events within the session. Refer to
+metrics
+dimensions
+as how dimensions values are set for the
+session.
+Metric Name
+Description
+session
+Session count
+Search session metrics
+A search session is a session contains at least one search event. Note that a
+search session can also be a browse session as defined by
+browse session
+metrics
+.
+Metric Name
+Description
+search_session
+Session count involving a search
+search_event_in_search_session
+Search event count within search sessions
+browse_event_in_search_session
+Browse event count within search sessions
+detail_page_view_in_search_session
+Detail page view count within search sessions
+add_to_cart_in_search_session
+Add to cart event count within search sessions
+add_to_cart_unit_in_search_session
+Add to cart unit count within search sessions
+purchase_order_in_search_session
+Purchase order count within search sessions
+purchase_unit_in_search_session
+Purchase unit count within search sessions
+revenue_in_search_session
+Revenue within search sessions
+bounce_count_in_search_session
+Session count of the visitor who navigate away from the site after viewing only one page within search sessions
+Browse session metrics
+A browse session is a session contains at least one browse event. Note that a
+browse session can also be a search session as defined by
+search session
+metrics
+.
+Metric Name
+Description
+browse_session
+Session count involving browse
+search_event_in_browse_session
+Search event count within browse sessions
+browse_event_in_browse_session
+Browse event count within browse sessions
+detail_page_view_in_browse_session
+Detail page view count within browse sessions
+add_to_cart_in_browse_session
+Add to cart event count within browse sessions
+add_to_cart_unit_in_browse_session
+Add to cart unit count within browse sessions
+purchase_order_in_browse_session
+Purchase order count within browse sessions
+purchase_unit_in_browse_session
+Purchase unit count within browse sessions
+revenue_in_browse_session
+Revenue within browse sessions
+bounce_count_in_browse_session
+Session count of the visitor who navigate away from the site after viewing only one page within browse sessions
+Visitor metrics
+A visitor is uniquely identified by the visitor ID. Visitor metrics aggregate
+all the user event information for the visitor.
+The dimensions that characterize the visitor metrics are jointly defined by all
+user events for the visitor. Refer to
+metrics dimensions
+as how dimensions values are set for the visitor.
+Metric Name
+Description
+visitor
+Visitor count
+Search visitor metrics
+A search visitor is a visitor performing at least one search event. Note that a
+search visitor can also be a browse visitor as defined by
+browse visitor
+metrics
+.
+Metric Name
+Description
+search_visitor
+Visitor count who performs at least one search
+search_event_from_search_visitor
+Search event count from search visitors
+browse_event_from_search_visitor
+Browse event count from search visitors
+detail_page_view_from_search_visitor
+Detail page view count from search visitors
+add_to_cart_from_search_visitor
+Add to cart event count from search visitors
+add_to_cart_unit_from_search_visitor
+Add to cart unit count from search visitors
+purchase_order_from_search_visitor
+Purchase order count from search visitors
+purchase_unit_from_search_visitor
+Purchase count unit from search visitors
+revenue_from_search_visitor
+Revenue from search visitors
+Browse visitor metrics
+A browse visitor is a visitor performing at least one browse event. Note that a
+browse visitor can also be a search visitor as defined by
+search visitor
+metrics
+.
+Metric Name
+Description
+browse_visitor
+Visitor count who performs at least one browse
+search_event_from_browse_visitor
+Search event count from browse visitors
+browse_event_from_browse_visitor
+Browse event count from browse visitors
+detail_page_view_from_browse_visitor
+Detail page view count from browse visitors
+add_to_cart_from_browse_visitor
+Add to cart event count from browse visitors
+add_to_cart_unit_from_browse_visitor
+Add to cart unit count from browse visitors
+purchase_order_from_browse_visitor
+Purchase order count from browse visitors
+purchase_unit_from_browse_visitor
+Purchase unit count from browse visitors
+revenue_from_browse_visitor
+Revenue from browse visitors
+Example usage
+If you copy or export your metrics data to another destination, you can use SQL
+to get high-level or specific information about the exported metrics. Some
+common ways to explore your exported metrics using SQL are provided in the
+following sections.
+Compute click-through rate (CTR)
+Compute CTR for search per date per device type per traffic destination.
+SELECT
+`
+date
+`
+,
+device_type
+,
+traffic_destination
+,
+SUM
+(
+detail_page_view_from_search
+)
+/
+SUM
+(
+search_event
+)
+as
+search_CTR
+FROM
+copied_table
+GROUP
+BY
+`
+date
+`
+,
+device_type
+,
+traffic_destination
+Get browse-driven detail page view count
+Get detail page view events that come from browse events for Google traffic with
+external_experiment_ids
+containing
+test_arm
+, and display all dimension
+information.
+external_experiment_ids
+is repeated
+string
+.
+SELECT
+`
+date
+`
+,
+external_experiment_ids
+,
+device_type
+,
+serving_config
+,
+traffic_destination
+,
+entity
+,
+detail_page_view_from_browse
+FROM
+copied_table
+WHERE
+traffic_destination
+=
+'Google'
+AND
+'test_arm'
+in
+UNNEST
+(
+external_experiment_ids
+)
+Get most-used serving configs
+Get the most-used serving configs between '2023-10-01' and '2023-11-01' for
+Google traffic. Each search event should have an associated serving config.
+SELECT
+serving_config
+,
+SUM
+(
+search_event
+)
+as
+total_search_count
+FROM
+copied_table
+WHERE
+`
+date
+`
+between
+'2023-10-01'
+and
+'2023-11-01'
+AND
+traffic_destination
+=
+'Google'
+GROUP
+BY
+serving_config
+ORDER
+BY
+total_search_count
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

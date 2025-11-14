@@ -1,0 +1,432 @@
+Troubleshoot tutorial issues  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Technology areas
+Guides
+Troubleshoot tutorial issues
+If you run into problems configuring your tutorial, this page lists issues that you might encounter and provides suggestions for how to fix each issue.
+The cloudshell_open folder is missing
+If you can't see the cloudshell_open folder in your home directory by running
+ls ~
+, the folder and its files are lost.
+This issue occurs when you use Cloud Shell in Ephemeral mode and lose your Internet connection or refresh the page.
+To resolve this issue,  rerun the tutorial from the beginning. To avoid the loss of your files in the future, consider switching to Default mode.
+Unable to detect a project ID in the current environment
+The following error occurs when you attempt to run a code sample:
+ERROR Unable to detect a Project Id in the current environment.
+This issue occurs when your Google Cloud project isn't set.
+To resolve this issue, set the project by running the following command:
+gcloud
+config
+set
+project
+<YOUR-PROJECT-ID>
+key.json errors when running code samples
+One of the following errors occurs when you run code samples:
+File /home/user/key.json is not a valid json file
+no JSON input found
+The file at /home/user/key.json does not exist, or it is not a file
+Could not find file '/home/user/key.json'
+Error reading credential file from location /home/user/key.json: Value cannot be null
+This issue occurs when the key.json file, which is used to authenticate a service account, is empty or missing. You can check if that's the case by running the following command:
+cat
+~/key.json
+This prints either the file's contents or the
+No such file or directory
+message. An empty file means that the error occurred during key creation. A missing file means that the error occurred before that.
+To resolve this issue, follow the "Prepare your work environment" tutorial step.
+Vertex AI Search for commerce has not been used in project before or it is disabled
+This following error occurs when you attempt to run a tutorial:
+PERMISSION_DENIED
+:
+Vertex
+AI
+Search
+for
+commerce
+API
+has
+not
+been
+used
+in
+project
+<
+YOUR
+-
+PROJECT
+-
+ID
+>
+before
+or
+it
+is
+disabled
+To resolve this issue, enable the Vertex AI Search for commerce on the
+API/Services Details
+page of the Google Cloud console, or run the following command:
+gcloud
+services
+enable
+\
+retail.googleapis.com
+\
+--project
+=
+<YOUR-PROJECT-ID>
+Service account does not have permission to access project instance
+The following error occurs when you assign roles to the service account:
+User
+[
+USER@YOUR-PROJECT-ID.
+]
+does
+not
+have
+permission
+to
+access
+projects
+instance
+[
+YOUR-PROJECT-ID:setIamPolicy
+]
+(
+or
+it
+may
+not
+exist
+)
+:
+Policy
+update
+access
+denied
+.
+To resolve this issue, check that you have the right account active by running the
+gcloud auth list
+command in the Terminal. Ensure that the active account is the service account. Go to the
+IAM
+page in the Google Cloud console to check that the service account is an owner of your Google Cloud project.
+Invalid authentication using end user credentials
+The following error occurs when you run code samples:
+PERMISSION_DENIED
+:
+Your
+application
+has
+been
+authenticated
+using
+end
+user
+credentials
+from
+the
+Google
+Cloud
+SDK
+or
+Google
+Cloud
+Shell
+which
+are
+not
+supported
+by
+the
+retail
+.
+googleapis
+.
+com
+.
+This issue occurs when end user credentials are used instead of a service account. This issue can also occur when a service account isn't active or the required environment variables aren't set. You might see this error after restarting Cloud Shell or opening a new Terminal window.
+To resolve this issue:
+Follow the "Prepare your work environment" tutorial steps and make sure you have a service account active by running
+gcloud auth list
+.
+Set the environment variables:
+For all languages, run the command:
+export
+GOOGLE_APPLICATION_CREDENTIALS
+=
+~/key.json
+Additionally for .NET,  run the command:
+export
+GOOGLE_PROJECT_ID
+=
+<YOUR-PROJECT-ID>
+Permissions error when service account doesn't have needed roles
+The following error occurs when you run code samples:
+google.api_core.exceptions.PermissionDenied: 403 Permission 'retail.<YOUR-REQUEST>' denied on resource '//retail.googleapis.com/projects/<YOUR-PROJECT-ID>/locations/<YOUR-LOCATION>' (or it may not exist). [reason: "IAM_PERMISSION_DENIED"
+This issue occurs when your service account doesn't have the required roles: retail.admin and editor.
+To resolve this issue, set up your work environment by following the "Prepare your work environment" tutorial steps.
+The search operation returned no matching results
+This issue occurs when no products in the catalog match your search query or the product catalog is empty.
+To resolve this issue, check to see if you have products in your catalog on the
+Catalog
+page of the Google Cloud console. If you do not, import catalog data by following the "Import catalog data" tutorial step.
+There are still problems
+Try resetting
+Cloud Shell
+and run tutorials from the beginning.
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

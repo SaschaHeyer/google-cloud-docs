@@ -1,0 +1,751 @@
+Export your data into BigQuery  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Export your data into BigQuery
+This page describes how to upload retail product and user event data into
+BigQuery. After your data is in BigQuery, you'll
+be able to use it to perform sales forecasting with Vertex AI and
+to view the data in prebuilt Looker dashboards.
+If your commerce data is already in product and user event tables in
+BigQuery, in Vertex AI Search for commerce format, you can skip this
+page and go directly to
+Get dashboards that show key performance
+indicators
+and
+Generate sales forecasts from retail
+data
+. For more information about the
+format, see
+Product
+schema
+and
+About user events
+.
+Before you begin
+Before you can export your commerce data into BigQuery, you must
+have completed the procedures in
+Initial setup
+.
+This includes:
+Importing catalog information
+.
+Recording real-time user events
+.
+Importing historical user events
+.
+Create a dataset in BigQuery
+You need to create one or two datasets in BigQuery to hold your
+product and user event data.
+You can use one dataset to hold both types of data
+or you can create two datasets, one for each type of data.
+You must create the datasets in the same project where you implemented
+Vertex AI Search for commerce.
+If you haven't used BigQuery in your
+project before, enable the BigQuery API and make sure that you
+have the IAM role that lets you create datasets and tables.
+See
+Before you begin
+and
+Access control with IAM
+in the BigQuery documentation.
+Create a dataset in BigQuery in the
+US multi-region
+. For example, name it
+retail_data
+.
+Note:
+Vertex AI Search for commerce user event data cannot be exported to non-US regions. Keep in mind that Vertex AI Search for commerce does not use PII. If you choose an EU-based region for the dataset location, your Core BigQuery Customer Data resides in the EU. Core BigQuery Customer Data is defined in the BigQuery
+Service Specific Terms
+.
+Optional: To place your user event data in a separate dataset from your
+product data, create a second dataset. For example, name it
+retail_user_event_data
+.
+For more information about creating BigQuery datasets see the
+BigQuery documentation
+.
+This dataset will be used to hold the data tables that you export. The
+following procedures describe how to export.
+Export your Vertex AI Search for commerce catalog to a BigQuery table
+Use the
+export
+method to export your retail catalog into a
+BigQuery table.
+Before using any of the request data,
+  make the following replacements:
+PROJECT_ID
+: The ID of the
+    Vertex AI Search for commerce API project where you created the BigQuery
+    dataset.
+BRANCH_ID
+: The ID of the catalog
+    branch. Use
+default_branch
+to get data from the default branch.
+    For more information, see
+Catalog branches
+.
+DATASET_ID
+: The name of the
+    dataset that you created in
+Create a dataset in BigQuery
+. For example, use
+retail_data
+or
+retail_product_data
+. The dataset must be in the same project.
+    Do not add the project ID to the
+datasetId
+field here.
+TABLE_ID_PREFIX
+: A prefix
+    for the table ID. This prefix can't be an empty string. A suffix of
+_retail_products_BRANCH_ID
+is added to complete the table name. For
+    example, if the prefix is
+test
+, the table is named
+_test_retail_products_BRANCH_ID
+.
+Request JSON body:
+{
+  "outputConfig":
+  {
+    "bigqueryDestination":
+    {
+      "datasetId": "
+DATASET_ID
+",
+        "tableIdPrefix": "
+TABLE_ID_PREFIX
+",
+        "tableType": "view"
+    }
+  }
+}
+To send your request, expand one of these options:
+curl (Linux, macOS, or Cloud Shell)
+Note:
+The following command assumes that you have logged in to
+          the
+gcloud
+CLI with your user account by running
+gcloud init
+or
+gcloud auth login
+, or by using
+Cloud Shell
+,
+            which automatically logs you into the
+gcloud
+CLI
+            .
+          You can check the currently active account by running
+gcloud auth list
+.
+Save the request body in a file named
+request.json
+.
+      Run the following command in the terminal to create or overwrite
+      this file in the current directory:
+cat > request.json << 'EOF'
+{
+  "outputConfig":
+  {
+    "bigqueryDestination":
+    {
+      "datasetId": "
+DATASET_ID
+",
+        "tableIdPrefix": "
+TABLE_ID_PREFIX
+",
+        "tableType": "view"
+    }
+  }
+}
+EOF
+Then execute the following command to send your REST request:
+curl -X POST \
+-H "Authorization: Bearer $(gcloud auth print-access-token)" \
+-H "Content-Type: application/json; charset=utf-8" \
+-d @request.json \
+"https://retail.googleapis.com/v2alpha/projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog/branches/
+BRANCH_ID
+/products:export"
+PowerShell (Windows)
+Note:
+The following command assumes that you have logged in to
+          the
+gcloud
+CLI with your user account by running
+gcloud init
+or
+gcloud auth login
+.
+          You can check the currently active account by running
+gcloud auth list
+.
+Save the request body in a file named
+request.json
+.
+      Run the following command in the terminal to create or overwrite
+      this file in the current directory:
+@'
+{
+  "outputConfig":
+  {
+    "bigqueryDestination":
+    {
+      "datasetId": "
+DATASET_ID
+",
+        "tableIdPrefix": "
+TABLE_ID_PREFIX
+",
+        "tableType": "view"
+    }
+  }
+}
+'@  | Out-File -FilePath request.json -Encoding utf8
+Then execute the following command to send your REST request:
+$cred = gcloud auth print-access-token
+$headers = @{ "Authorization" = "Bearer $cred" }
+Invoke-WebRequest `
+-Method POST `
+-Headers $headers `
+-ContentType: "application/json; charset=utf-8" `
+-InFile request.json `
+-Uri "https://retail.googleapis.com/v2alpha/projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog/branches/
+BRANCH_ID
+/products:export" | Select-Object -Expand Content
+You should receive a JSON response similar to the following:
+{
+  "name": "projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/branches/
+BRANCH_ID
+/operations/17986570020347019923",
+  "done": true,
+  "response": {
+    "@type": "type.googleapis.com/google.cloud.retail.v2alpha.ExportProductsResponse",
+    "outputResult": {
+      "bigqueryResult": [
+        {
+          "datasetId": "
+DATASET_ID
+",
+          "tableId": "
+TABLE_ID_PREFIX
+_retail_products_
+BRANCH_ID
+"
+        }
+      ]
+    }
+  }
+}
+Export your user events to a BigQuery table
+Use the
+userEvents.export
+method to export your retail user events into a
+BigQuery table:
+Before using any of the request data,
+  make the following replacements:
+PROJECT_ID
+: The ID of the
+    Vertex AI Search for commerce API project where you created the BigQuery
+    dataset.
+DATASET_ID
+: The name of the
+    dataset that you created in
+Create a dataset
+    in BigQuery
+. For example, use
+retail_data
+or
+retail_product_data
+.
+TABLE_ID_PREFIX
+: A prefix
+    for the table ID. This prefix can't be an empty string. A suffix of
+retail_products
+is added to complete the table name. For
+    example, if the prefix is
+test
+, the table is
+    named
+test_retail_products
+.
+Request JSON body:
+{
+  "outputConfig":
+  {
+    "bigqueryDestination":
+    {
+      "datasetId": "
+DATASET_ID
+",
+        "tableIdPrefix": "
+TABLE_ID_PREFIX
+",
+        "tableType": "view"
+    }
+  }
+}
+To send your request, expand one of these options:
+curl (Linux, macOS, or Cloud Shell)
+Note:
+The following command assumes that you have logged in to
+          the
+gcloud
+CLI with your user account by running
+gcloud init
+or
+gcloud auth login
+, or by using
+Cloud Shell
+,
+            which automatically logs you into the
+gcloud
+CLI
+            .
+          You can check the currently active account by running
+gcloud auth list
+.
+Save the request body in a file named
+request.json
+.
+      Run the following command in the terminal to create or overwrite
+      this file in the current directory:
+cat > request.json << 'EOF'
+{
+  "outputConfig":
+  {
+    "bigqueryDestination":
+    {
+      "datasetId": "
+DATASET_ID
+",
+        "tableIdPrefix": "
+TABLE_ID_PREFIX
+",
+        "tableType": "view"
+    }
+  }
+}
+EOF
+Then execute the following command to send your REST request:
+curl -X POST \
+-H "Authorization: Bearer $(gcloud auth print-access-token)" \
+-H "Content-Type: application/json; charset=utf-8" \
+-d @request.json \
+"https://retail.googleapis.com/v2alpha/projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog/userEvents:export"
+PowerShell (Windows)
+Note:
+The following command assumes that you have logged in to
+          the
+gcloud
+CLI with your user account by running
+gcloud init
+or
+gcloud auth login
+.
+          You can check the currently active account by running
+gcloud auth list
+.
+Save the request body in a file named
+request.json
+.
+      Run the following command in the terminal to create or overwrite
+      this file in the current directory:
+@'
+{
+  "outputConfig":
+  {
+    "bigqueryDestination":
+    {
+      "datasetId": "
+DATASET_ID
+",
+        "tableIdPrefix": "
+TABLE_ID_PREFIX
+",
+        "tableType": "view"
+    }
+  }
+}
+'@  | Out-File -FilePath request.json -Encoding utf8
+Then execute the following command to send your REST request:
+$cred = gcloud auth print-access-token
+$headers = @{ "Authorization" = "Bearer $cred" }
+Invoke-WebRequest `
+-Method POST `
+-Headers $headers `
+-ContentType: "application/json; charset=utf-8" `
+-InFile request.json `
+-Uri "https://retail.googleapis.com/v2alpha/projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog/userEvents:export" | Select-Object -Expand Content
+You should receive a JSON response similar to the following:
+{
+  "name": "projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/operations/17203443067109586170",
+  "done": true,
+  "response": {
+    "@type": "type.googleapis.com/google.cloud.retail.v2alpha.ExportUserEventsResponse",
+    "outputResult": {
+      "bigqueryResult": [
+        {
+          "datasetId": "
+DATASET_ID
+",
+          "tableId": "
+TABLE_ID_PREFIX
+_retail_user_events"
+        }
+      ]
+    }
+  }
+}
+About the exported data
+Here are things to know about the commerce data that you export to
+BigQuery tables:
+The data that is exported to BigQuery tables in your
+project are
+authorized views
+, not
+materialized views
+.
+You cannot change or update the data in these tables.
+Products are refreshed hourly.
+User events are refreshed near-real time.
+About the exported user event data
+Here are things to know about the product information that is included with the
+exported user event data.
+Product price information
+The way product price information is returned by the
+userEvents.export
+method
+depends on the following:
+You included price information in your user event data at the time of
+ingestion.
+When you call the
+userEvents.export
+method, the price returned with a user event is the price of the product at
+the time of the event.
+You did not include price information with your user event data, but
+you included price information in your product data at the time of
+ingestion.
+When you call the
+userEvents.export
+method, the price returned with a user event is not necessarily the price
+of the product at the time of the event. It is the price found in your
+product data at the time of ingestion.
+You did not include price information with your user event data and
+there is no price information available in your product data.
+When you
+call the
+userEvents.export
+method, no price is returned with user events.
+Other product information
+All product information (except price) is joined to user event information at
+the time you call the
+userEvents.export
+method. Product values can change from
+the time of the user event to the time you call
+userEvents.export
+. For this
+reason, the non-price product values returned in the user event table could be
+different from the product values at the time of the user event.
+Optional: Confirm that the new tables are in BigQuery
+After you have exported your product data and user-event data to
+BigQuery, make
+sure that new tables are present.
+In BigQuery, navigate to the dataset or datasets that you
+created in
+Create dataset in BigQuery
+.
+Open the dataset(s) and make sure you see the two tables that you exported.
+For example, look for tables with names ending in
+_retail_products_BRANCH_ID
+and
+retail_user_events
+.
+For more information about working with BigQuery tables, see
+Query and view data
+.
+Review the
+Data governance
+page for more information about how Vertex AI Search for commerce handles customer data.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

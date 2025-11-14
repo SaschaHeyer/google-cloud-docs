@@ -1,0 +1,1228 @@
+Quickstart: Schedule a managed notebooks run  |  Vertex AI Workbench  |  Google Cloud Documentation
+Skip to main content
+Technology areas
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+/
+Console
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Sign in
+Vertex AI Workbench
+Start free
+Guides
+Reference
+Samples
+Support
+Resources
+Technology areas
+More
+Guides
+Reference
+Samples
+Support
+Resources
+Cross-product tools
+More
+Console
+Discover
+Overview
+Introduction to Vertex AI
+MLOps on Vertex AI
+Interfaces for Vertex AI
+Vertex AI beginner's guides
+Train an AutoML model
+Train a custom model
+Get inferences from a custom model
+Train a model using Vertex AI and the Python SDK
+Introduction
+Prerequisites
+Create a notebook
+Create a dataset
+Create a training script
+Train a model
+Make an inference
+Integrated ML frameworks
+PyTorch
+TensorFlow
+Vertex AI for BigQuery users
+Glossary
+Get started
+Set up a project and a development environment
+Install the Vertex AI SDK for Python
+Choose a training method
+Try a tutorial
+Tutorials overview
+AutoML tutorials
+Hello image data
+Overview
+Set up your project and environment
+Create a dataset and import images
+Train an AutoML image classification model
+Evaluate and analyze model performance
+Deploy a model to an endpoint and make an inference
+Clean up your project
+Hello tabular data
+Overview
+Set up your project and environment
+Create a dataset and train an AutoML classification model
+Deploy a model and request an inference
+Clean up your project
+Custom training tutorials
+Train a custom tabular model
+Train a TensorFlow Keras image classification model
+Overview
+Set up your project and environment
+Train a custom image classification model
+Serve predictions from a custom image classification model
+Clean up your project
+Fine-tune an image classification model with custom data
+Custom training notebook tutorials
+Use Generative AI and LLMs
+About Generative AI
+Use Vertex AI development tools
+Development tools overview
+Use the Vertex AI SDK
+Overview
+Introduction to the Vertex AI SDK for Python
+Vertex AI SDK for Python classes
+Vertex AI SDK classes overview
+Data classes
+Training classes
+Model classes
+Prediction classes
+Tracking classes
+Use Vertex AI in notebooks
+Choose a notebook solution
+Colab Enterprise
+Quickstart:Create a notebook by using the console
+Connect to a runtime
+Manage runtimes and runtime templates
+Create a runtime template
+Create a runtime
+Vertex AI Workbench
+Introduction
+Notebook tutorials
+Get started
+Create an instance by using the Console
+Schedule a notebook run
+Set up an instance
+Create an instance
+Create a specific version of an instance
+Create an instance with user credential access
+Create an instance with Confidential Computing
+Add a conda environment
+Idle shutdown
+Create an instance using a custom container
+Create a Dataproc-enabled instance
+Create an instance with third party credentials
+Manage features through metadata
+Use reservations
+Connect to data
+Query data in BigQuery from within JupyterLab
+Access Cloud Storage buckets and files in JupyterLab
+Explore and visualize data
+Explore and visualize data in BigQuery
+Maintain
+Manage your conda environment
+Back up and restore
+Save a notebook to GitHub
+Use a snapshot
+Use Cloud Storage
+Shut down an instance
+Upgrade the environment of an instance
+Access JupyterLab by using SSH
+Migrate data to a new instance
+Change machine type and configure GPUs
+Provision resources using Terraform
+Monitor
+Monitor health status
+Control access
+Access control
+Manage access to an instance
+Manage access to an instance's JupyterLab interface
+Use customer-managed encryption keys
+Use an instance within a service perimeter
+Troubleshoot Vertex AI Workbench
+Vertex AI Workbench release notes
+Managed notebooks
+Introduction to managed notebooks
+Get started
+Create a managed notebooks instance by using the Cloud console
+Schedule a managed notebooks run
+Set up a managed notebooks instance
+Create an instance with a custom container
+Run a managed notebooks instance on a Dataproc cluster
+Use Dataproc Serverless Spark with managed notebooks
+Idle shutdown
+Managed notebooks versions
+Connect to data
+Query data in BigQuery from within JupyterLab
+Access Cloud Storage buckets and files in JupyterLab
+Explore and visualize data
+Overview
+Explore and visualize data in BigQuery
+Develop a model
+Model development in a managed notebooks instance
+Deploy
+Run notebook files with the executor
+Run notebook executions with parameters
+Maintain
+Migrate to a Vertex AI Workbench instance
+Save a notebook to GitHub
+Change machine type and configure GPUs of a managed notebooks instance
+Upgrade the environment of a managed notebooks instance
+Migrate data to a new managed notebooks instance
+Monitor
+Audit logging
+Control access
+Access control
+Manage access to an instance
+Manage access to an instance's JupyterLab interface
+Use customer-managed encryption keys
+Set up a network
+Use a managed notebooks instance within a service perimeter
+Troubleshoot managed notebooks
+User-managed notebooks
+Introduction to user-managed notebooks
+Get started
+Create a user-managed notebooks instance by using the Cloud console
+Set up a user-managed notebooks instance
+Create a specific version of an instance
+Install dependencies
+Choose a virtual machine image
+Create an instance with a custom container
+Explore data
+Data science with R on Google Cloud: Exploratory data analysis tutorial
+Monitor
+Monitor health status
+Audit logging
+Control access
+Access control
+Manage access to an instance
+Manage access to an instance's JupyterLab interface
+Customer-managed encryption keys
+Use a user-managed notebooks instance within a service perimeter
+Use a shielded virtual machine with user-managed notebooks
+Tutorial: Create a notebooks instance in a VPC network
+Maintain
+Migrate to a Vertex AI Workbench instance
+Save a notebook to GitHub
+Back up your data by using a snapshot
+Shut down a user-managed notebooks instance
+Change machine type and configure GPUs of a user-managed notebooks instance
+Upgrade the environment of a user-managed notebooks instance
+Migrate data to a new user-managed notebooks instance
+Register a legacy instance with Notebooks API
+Access JupyterLab by using SSH
+Troubleshoot user-managed notebooks
+Terraform support for Vertex AI
+Managed Training on reserved clusters
+Managed Training overview
+Get started with Managed Training
+Predictive AI model development
+Overview
+AutoML model development
+AutoML training overview
+Image data
+Classification
+Prepare data
+Create dataset
+Train model
+Evaluate model
+Get predictions
+Interpret results
+Object detection
+Prepare data
+Create dataset
+Train model
+Evaluate model
+Get predictions
+Interpret results
+Encode image data using Base64
+Export an AutoML Edge model
+Tabular data
+Overview
+Introduction to tabular data
+Tabular Workflows
+Overview
+Feature engineering
+End-to-End AutoML
+Overview
+Train a model
+Get online inferences
+Get batch inferences
+TabNet
+Overview
+Train a model
+Get online inferences
+Get batch inferences
+Wide & Deep
+Overview
+Train a model
+Get online inferences
+Get batch inferences
+Forecasting
+Overview
+Train a model
+Get online inferences
+Get batch inferences
+Pricing
+Service accounts
+Manage quotas
+Perform classification and regression with AutoML
+Overview
+Quickstart: AutoML Classification (Cloud Console)
+Prepare training data
+Create a dataset
+Train a model
+Evaluate model
+View model architecture
+Get online inferences
+Get batch inferences
+Export model
+Perform forecasting with AutoML
+Overview
+Prepare training data
+Create a dataset
+Train a model
+Evaluate model
+Get inferences
+Hierarchical forecasting
+Perform forecasting with ARIMA+
+Perform forecasting with Prophet
+Perform entity reconciliation
+Feature attributions for classification and regression
+Feature attributions for forecasting
+Data types and transformations for tabular AutoML data
+Training parameters for forecasting
+Data splits for tabular data
+Best practices for creating tabular training data
+Forecast with Timeseries Insights
+Train an AutoML Edge model
+Using the Console
+Using the API
+AutoML Text
+Migrate from AutoML text to Gemini
+Gemini for AutoML text users
+Vertex AI Training
+Overview of custom training in Vertex AI
+Load and prepare data
+Data preparation overview
+Use Cloud Storage as a mounted file system
+Mount an NFS share for custom training
+Use managed datasets
+Prepare training application
+Understand the custom training service
+Prepare training code
+Use prebuilt containers
+Create a Python training application for a prebuilt container
+Prebuilt containers for custom training
+Use custom containers
+Custom containers for training
+Create a custom container
+Containerize and run training code locally
+Use Deep Learning VM Images and Containers
+Train on a persistent resource
+Overview
+Create persistent resource
+Run training jobs on a persistent resource
+Get persistent resource information
+Reboot a persistent resource
+Delete a persistent resource
+Configure training job
+Choose a custom training method
+Configure container settings for training
+Configure compute resources for training
+Use reservations with training
+Use Spot VMs with training
+Submit training job
+Create custom jobs
+Hyperparameter tuning
+Hyperparameter tuning overview
+Use hyperparameter tuning
+Create training pipelines
+Schedule jobs based on resource availability
+Use distributed training
+Training with Cloud TPU VMs
+Use private IP for custom training
+Use Private Service Connect interface for training (recommended)
+Perform Neural Architecture Search
+Overview
+Set up environment
+Beginner tutorials
+Best practices and workflow
+Proxy task design
+Optimize training speed for PyTorch
+Use prebuilt training containers and search spaces
+Monitor and debug
+Monitor and debug training using an interactive shell
+Profile model training performance
+Optimize using Vertex AI Vizier
+Overview of Vertex AI Vizier
+Create Vertex AI Vizier studies
+Vertex AI Vizier notebook tutorials
+Get inferences
+Tutorial: Build a pipeline for continuous training
+Create custom organization policy constraints
+Ray on Vertex AI
+Ray on Vertex AI overview
+Set up for Ray on Vertex AI
+Create a Ray cluster on Vertex AI
+Monitor Ray clusters on Vertex AI
+Scale a Ray cluster on Vertex AI
+Develop a Ray application on Vertex AI
+Run Spark on Ray cluster on Vertex AI
+Use Ray on Vertex AI with BigQuery
+Deploy a model and get inferences
+Delete a Ray cluster
+Ray on Vertex AI notebook tutorials
+Generative AI model development
+Overview
+Create and manage datasets
+Overview
+Data splits for AutoML models
+Create an annotation set
+Delete an annotation set
+Add labels (console)
+Export metadata and annotations from a dataset
+Manage dataset versions
+Use Data Catalog to search for model and dataset resources
+Get inferences
+Overview
+Configure models for inference
+Export model artifacts for inference
+Prebuilt containers for inference
+Custom container requirements for inference
+Use a custom container for inference
+Use arbitrary custom routes
+Use the optimized TensorFlow runtime
+Serve inferences with NVIDIA Triton
+Custom inference routines
+Get online inferences
+Create an endpoint
+Choose an endpoint type
+Create a public endpoint
+Use dedicated public endpoints (recommended)
+Use dedicated private endpoints based on Private Service Connect (recommended)
+Use private services access endpoints
+Deploy a model to an endpoint
+Overview of model deployment
+Compute resources for inference
+Deploy a model by using the Google Cloud console
+Deploy a model by using the gcloud CLI or Vertex AI API
+Use autoscaling for inference
+Use a rolling deployment to replace a deployed model
+Undeploy a model and delete the endpoint
+Use Cloud TPUs for online inference
+Use reservations with online inference
+Use Flex-start VMs with inference
+Use Spot VMs with inference
+Get an online inference
+View online inference metrics
+View endpoint metrics
+View DCGM metrics
+Share resources across deployments
+Use online inference logging
+Get batch inferences
+Get batch inferences from a custom model
+Use reservations with batch inference
+Get batch prediction from a self-deployed Model Garden model
+Serve generative AI models
+Deploy generative AI models
+Serve Gemma open models using Cloud TPUs with Saxml
+Serve Llama 3 open models using multi-host Cloud TPUs with Saxml
+Serve a DeepSeek-V3 model using multi-host GPU deployment
+Custom organization policies
+Vertex AI inference notebook tutorials
+Perform vector similarity searches
+Vector Search overview
+Try it
+Get started
+Vector Search quickstart
+Before you begin
+Notebook tutorials
+About hybrid search
+Create and manage index
+Input data format and structure
+Create and manage your index
+Storage-optimized indexes
+Index configuration parameters
+Update and rebuild index
+Filter vector matches
+Import index data from BigQuery
+Embeddings with metadata
+Deploy and query an index
+Private Service Connect (recommended)
+Set up Vector Search with Private Service Connect
+Query
+JSON Web Token authentication
+Public endpoint
+Deploy
+Query
+Private services access
+Set up a VPC network peering connection
+Deploy
+Query
+JSON Web Token authentication
+Monitor a deployed index
+Use custom organization policies
+Get support
+Machine learning operations (MLOps)
+Manage features
+Feature management in Vertex AI
+Vertex AI Feature Store
+About Vertex AI Feature Store
+Set up features
+Prepare data source
+Create a feature group
+Create a feature
+Set up online serving
+Online serving types
+Create an online store instance
+Create a feature view instance
+Control access
+Control access to resources
+Sync online store
+Start a data sync
+List sync operations
+Update features in a feature view
+Serve features
+Serve features from online store
+Serve historical feature values
+Monitor
+Monitor features
+Manage feature resources
+List feature groups
+List features
+Update a feature group
+Update a feature
+Delete a feature group
+Delete a feature
+Manage online store resources
+List online stores
+List feature views
+Update an online store
+Update a feature view
+Delete an online store
+Delete a feature view
+Feature metadata
+Update labels
+Search for resources
+Search for resources
+Search for resource metadata in Data Catalog
+Manage embeddings
+Search using embeddings
+Notebook tutorials
+Vertex AI Feature Store tutorial notebooks
+Vertex AI Feature Store (Legacy)
+About Vertex AI Feature Store (Legacy)
+Data model and resources
+Source data requirements
+Setup
+Best practices
+Use Vertex AI Feature Store (Legacy)
+Manage featurestores
+Manage entity types
+Manage and find features
+Batch import
+Streaming import
+Online serving
+Fetch training data
+Export feature values
+Delete feature values
+Monitoring
+Control access to resources
+Manage models
+Introduction to Vertex AI Model Registry
+Versioning in Model Registry
+Import models to Model Registry
+Copy models in Model Registry
+Delete a model
+Integrate with BigQuery ML
+Use model aliases
+Use model labels
+Use Data Catalog to search for model and dataset resources
+Evaluate models
+Model evaluation in Vertex AI
+Perform model evaluation in Vertex AI
+Model evaluation for fairness
+Introduction to model evaluation for fairness
+Data bias metrics for Vertex AI
+Model bias metrics for Vertex AI
+Model evaluation notebook tutorials
+Orchestrate ML workflows using pipelines
+Introduction
+Interfaces
+Configure your project
+Build a pipeline
+Run a pipeline
+Use pipeline templates
+Create, upload, and use a pipeline template
+Use a prebuilt template from the Template Gallery
+Configure your pipeline
+Configure execution caching
+Configure failure policy
+Configure retries for a pipeline task
+Specify machine types for a pipeline step
+Request Google Cloud machine resources with Vertex AI Pipelines
+Configure Private Service Connect interface (recommended)
+Configure secrets with Secret Manager
+Configure a pipeline run on a persistent resource
+Schedule and trigger pipeline runs
+Schedule a pipeline run with scheduler API
+Trigger a pipeline run with Pub/Sub
+Cancel or delete pipeline runs
+Cancel pipeline runs
+Delete pipeline runs
+Rerun a pipeline
+Monitor pipeline execution
+View pipeline metrics
+View pipeline job logs
+Route logs to a Cloud Pub/Sub sink
+Configure email notifications
+Visualize results
+Visualize and analyze pipeline results
+Track the lineage of pipeline artifacts
+Output HTML and Markdown
+Resource labeling by Vertex AI Pipelines
+Understand pipeline run costs
+Migrate from Kubeflow Pipelines to Vertex AI Pipelines
+Use custom constraints
+Google Cloud Pipeline Components
+Quickstart
+Introduction to Google Cloud Pipeline Components
+Google Cloud Pipeline Component list
+Use Google Cloud Pipeline Components
+Build your own pipeline components
+Vertex AI Pipelines tutorials
+Tutorial notebooks
+Track and analyze your ML metadata
+Introduction to Vertex ML Metadata
+Data model and resources
+Configure your project's metadata store
+Use Vertex ML Metadata
+Track Vertex ML Metadata
+Analyze Vertex ML Metadata
+Manage Vertex ML Metadata
+System schemas
+Create and use custom schemas
+Use custom constraints with metadata stores
+Vertex ML Metadata notebook tutorials
+Understand model behavior
+Introduction to Explainable AI
+Configure example-based explanations for custom training
+Configure feature-based explanations for custom training
+Configure explanations
+Configure visualization settings
+Improve explanations
+Configure feature-based explanations for AutoML image classification
+Configure visualization settings
+Improve explanations
+Use TensorFlow for explanations
+Get explanations
+Limitations of Explainable AI
+Explainable AI notebook tutorials
+Monitor model quality
+Introduction to Model Monitoring
+Model Monitoring v2
+Set up model monitoring
+Run monitoring jobs
+Manage model monitors
+Model Monitoring v1
+Provide schemas to Model Monitoring
+Monitor feature skew and drift
+Monitor feature attribution skew and drift
+Model Monitoring for batch predictions
+Track Experiments
+Introduction to Vertex AI Experiments
+Set up for Vertex AI Experiments
+Create an experiment
+Create and manage experiment runs
+Log data
+Autolog data to an experiment run
+Manually log data to an experiment run
+Log models to an experiment run
+Track executions and artifacts
+Add pipeline run to experiment
+Run training job with experiment tracking
+Compare and analyze runs
+Use Vertex AI TensorBoard
+Introduction to Vertex AI TensorBoard
+Set up Vertex AI TensorBoard
+Configure training script
+Use Vertex AI TensorBoard with custom training
+Use Vertex AI TensorBoard with Vertex AI Pipelines
+Manually log TensorBoard data
+Upload existing logs
+View Vertex AI TensorBoard
+Notebook tutorials
+Get started with Vertex AI Experiments
+Compare pipeline runs
+Model training
+Compare models
+Autologging
+Custom training autologging
+Track parameters and metrics for custom training
+Delete outdated Vertex AI TensorBoard experiments
+Vertex AI TensorBoard custom training with custom container
+Vertex AI TensorBoard custom training with prebuilt container
+Vertex AI TensorBoard hyperparameter tuning with HParams dashboard
+Profile model training performance using Cloud Profiler
+Profile model training performance using Cloud Profiler in custom training with prebuilt container
+Vertex AI TensorBoard integration with Vertex AI Pipelines
+Administer
+Access control
+Access control with IAM
+IAM permissions
+Set up a project for a team
+Control access to Vertex AI endpoints
+Use a custom service account
+Use customer-managed encryption keys
+Access Transparency
+Monitor Vertex AI resources
+Cloud Monitoring metrics
+Audit logging information
+Networking
+Networking access overview
+Accessing the Vertex AI API
+Accessing Vertex AI services through private services access
+Accessing Vertex AI services through PSC endpoints
+Accessing Vertex AI services through PSC interfaces
+Set up VPC Network Peering
+Set up connectivity to other networks
+Set up a Private Service Connect interface
+Tutorial: Access training pipelines privately from on-premises
+Tutorial: Access a Vector Search index privately from on-premises
+Tutorial: Access the Generative AI API from on-premises
+Tutorial: Access batch predictions privately from on-premises
+Tutorial: Create a Vertex AI Workbench instance in a VPC network
+Security
+VPC Service Controls
+Allow public endpoint access to protected resources from outside a perimeter
+Allow multicloud access to protected resources from outside a perimeter
+Allow access to protected resources from inside a perimeter
+Name resources
+Samples and tutorials
+Notebook tutorials
+Code samples
+All Vertex AI code samples
+Code samples for all products
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Home
+Documentation
+AI and ML
+Vertex AI Workbench
+Guides
+Send feedback
+Stay organized with collections
+Save and categorize content based on your preferences.
+Schedule a managed notebooks run
+Vertex AI Workbench managed notebooks is
+deprecated
+. On
+    April 14, 2025, support for
+    managed notebooks ended and the ability to create managed notebooks instances
+    was removed. Existing instances will continue to function until
+    March 30, 2026, but patches, updates, and upgrades
+    won't be available. To continue using Vertex AI Workbench, we recommend that you
+migrate
+    your managed notebooks instances to Vertex AI Workbench instances
+.
+This page shows you how to use
+the Vertex AI Workbench managed notebooks executor
+to run a Python notebook file on an hourly schedule.
+Before you begin
+Sign in to your Google Cloud account. If you're new to
+        Google Cloud,
+create an account
+to evaluate how our products perform in
+        real-world scenarios. New customers also get $300 in free credits to
+        run, test, and deploy workloads.
+In the Google Cloud console, on the project selector page,
+          select or create a Google Cloud project.
+Roles required to select or create a project
+Select a project
+: Selecting a project doesn't require a specific
+      IAM role—you can select any project that you've been
+      granted a role on.
+Create a project
+: To create a project, you need the Project Creator
+      (
+roles/resourcemanager.projectCreator
+), which contains the
+resourcemanager.projects.create
+permission.
+Learn how to grant
+      roles
+.
+Note
+: If you don't plan to keep the
+    resources that you create in this procedure, create a project instead of
+    selecting an existing project. After you finish these steps, you can
+    delete the project, removing all resources associated with the project.
+Go to project selector
+Verify that billing is enabled for your Google Cloud project
+.
+Enable the Notebooks and Vertex AI APIs.
+Roles required to enable APIs
+To enable APIs, you need the Service Usage Admin IAM
+          role (
+roles/serviceusage.serviceUsageAdmin
+), which
+          contains the
+serviceusage.services.enable
+permission.
+Learn how to grant
+          roles
+.
+Enable the APIs
+In the Google Cloud console, on the project selector page,
+          select or create a Google Cloud project.
+Roles required to select or create a project
+Select a project
+: Selecting a project doesn't require a specific
+      IAM role—you can select any project that you've been
+      granted a role on.
+Create a project
+: To create a project, you need the Project Creator
+      (
+roles/resourcemanager.projectCreator
+), which contains the
+resourcemanager.projects.create
+permission.
+Learn how to grant
+      roles
+.
+Note
+: If you don't plan to keep the
+    resources that you create in this procedure, create a project instead of
+    selecting an existing project. After you finish these steps, you can
+    delete the project, removing all resources associated with the project.
+Go to project selector
+Verify that billing is enabled for your Google Cloud project
+.
+Enable the Notebooks and Vertex AI APIs.
+Roles required to enable APIs
+To enable APIs, you need the Service Usage Admin IAM
+          role (
+roles/serviceusage.serviceUsageAdmin
+), which
+          contains the
+serviceusage.services.enable
+permission.
+Learn how to grant
+          roles
+.
+Enable the APIs
+Required roles
+To ensure that your instance's service account has the necessary
+      permissions to interact with the Vertex AI Workbench executor,
+    
+      ask your administrator to grant your instance's service account the
+    following IAM roles on the project:
+Important:
+You must grant these roles
+      to your instance's service account,
+not
+to your user account. Failure to grant the roles to the correct principal might result in permission errors.
+Notebooks Viewer (
+roles/notebooks.viewer
+)
+Vertex AI User (
+roles/aiplatform.user
+)
+Storage Admin (
+roles/storage.admin
+)
+For more information about granting roles, see
+Manage access to projects, folders, and organizations
+.
+Your administrator might also be able to give your instance's service account
+        the required permissions through
+custom
+        roles
+or other
+predefined
+        roles
+.
+Create a managed notebooks instance and example notebook file
+Create a managed notebooks
+instance
+.
+Open JupyterLab
+.
+Open a new notebook file
+.
+In the first cell of the notebook file, enter the following:
+# Import datetime
+import
+datetime
+# Get the time and print it
+datetime
+.
+datetime
+.
+now
+()
+print
+(
+datetime
+.
+datetime
+.
+now
+())
+To make sure your notebook file is saved, select
+File
+>
+Save Notebook
+.
+Schedule a run
+In the Google Cloud console, go to the
+Managed notebooks
+page.
+Go to Managed notebooks
+Next to the managed notebooks instance
+that you want to use,
+click
+Open JupyterLab
+.
+Your managed notebooks instance opens JupyterLab.
+In the
+folder
+File Browser
+,
+double-click the example notebook file to open it.
+Click the
+Execute
+button.
+In the
+Submit notebooks to Executor
+dialog, in the
+Type
+field,
+select
+Schedule-based recurring executions
+.
+By default, the executor runs your notebook file
+every hour at the
+00
+minute of the hour.
+In
+Advanced options
+,
+select the
+Region
+where you want to run your notebook.
+In the
+Cloud Storage bucket
+field, enter a name for your bucket,
+and then click
+Create and select
+.
+The executor stores your notebook output
+in the Cloud Storage bucket.
+Click
+Submit
+.
+Your notebook file runs automatically
+on the schedule that you set.
+Note:
+If your managed notebooks instance is shut down, the
+executor still runs your notebook file on schedule.
+When you finish the tasks that are described in this document, you can avoid
+   continued billing by deleting the resources that you created. For more information, see
+Clean up
+.
+View, share, and import an executed notebook file
+By using your managed notebooks instance's JupyterLab interface,
+you can view your notebook output, share the results with others,
+and import the executed notebook file into JupyterLab.
+Note:
+To use the Google Cloud console to view and share execution results,
+on the
+Executions
+page,
+click
+Executions
+.
+View the execution results
+In JupyterLab's navigation menu, click the
+Notebook Executor
+button.
+Click the
+Executions
+tab.
+Under the execution that you want to view, click
+View result
+.
+Executor opens your result in a new browser tab.
+Share the execution results
+In your managed notebooks instance's
+JupyterLab user interface,
+in the navigation menu, click the
+Notebook Executor
+button.
+Click the
+Executions
+tab.
+Next to the execution that you want to share,
+click the
+more_vert
+options menu,
+and select
+Share execution result
+.
+Follow the directions in the dialog
+to grant users access to the execution result.
+Import the executed notebook into JupyterLab
+In your managed notebooks instance's
+JupyterLab user interface,
+in the navigation menu, click the
+Notebook Executor
+button.
+Click the
+Executions
+tab.
+Next to the execution that you want to import,
+click the
+more_vert
+options menu,
+and select
+Import executed notebook
+.
+If the
+Select Kernel
+dialog appears,
+select the kernel that you want to open the notebook.
+The executor opens the executed notebook file
+in JupyterLab, and stores this notebook file in
+the JupyterLab File Browser in a folder named
+imported_notebook_jobs
+.
+View or delete a schedule
+You can view and delete schedules by using either the Google Cloud console or
+your managed notebooks instance's JupyterLab user interface.
+View a schedule
+View a schedule to see the frequency settings of the schedule
+or to view the five most recent results of the notebook file execution.
+Console
+In the Google Cloud console, go to the
+Schedules
+page.
+Go to Schedules
+Select the
+Region
+where you want to see schedules.
+For the
+Schedule details
+page that you want to open,
+ click its schedule name.
+On the
+Schedule details
+page, you can view the schedule's last
+ five executions.
+Next to an execution name, click
+View result
+to open
+ the executed notebook file.
+Executor opens your result in a new browser tab.
+JupyterLab
+In your managed notebooks instance's
+ JupyterLab user interface,
+ in the navigation menu, click the
+Notebook Executor
+button.
+Click the
+Schedules
+tab.
+Under the execution that you want to view, click
+View latest
+ execution result
+.
+Executor opens your result in a new browser tab.
+Delete a schedule
+Deleting a schedule doesn't delete the executions that were
+generated from that schedule.
+Console
+In the Google Cloud console, go to the
+Schedules
+page.
+Go to Schedules
+Select the
+Region
+that contains the schedule
+ that you want to delete.
+Select the schedule that you want to delete.
+Click
+delete
+Delete
+.
+JupyterLab
+In your managed notebooks instance's
+ JupyterLab user interface,
+ in the navigation menu, click the
+Notebook Executor
+button.
+Click the
+Schedules
+tab.
+At the end of the schedule name, click the
+open_in_new
+Open in
+ new icon. The
+Schedule details
+page for that schedule opens in the
+ Google Cloud console.
+Click
+delete
+Delete
+.
+Clean up
+To avoid incurring charges to your Google Cloud account for
+          the resources used on this page, follow these steps.
+Delete the instance
+In the Google Cloud console, go to the
+Managed notebooks
+page.
+Go to Managed notebooks
+Select the
+Region
+that contains your instance.
+Select the managed notebooks instance that you want
+to delete.
+Click
+delete
+Delete
+.
+Delete the project
+If you used resources outside of
+your managed notebooks instance,
+such as the Cloud Storage bucket required
+for creating a schedule,
+you might want to delete your project to avoid incurring additional charges.
+Caution
+: Deleting a project has the following effects:
+Everything in the project is deleted.
+If you used an existing project for
+      the tasks in this document, when you delete it, you also delete any other work you've
+      done in the project.
+Custom project IDs are lost.
+When you created this project, you might have created a custom project ID that you want to use in
+      the future. To preserve the URLs that use the project ID, such as an
+appspot.com
+URL, delete selected resources inside the project instead of deleting the whole project.
+If you plan to explore multiple architectures, tutorials, or quickstarts, reusing projects
+    can help you avoid exceeding project quota limits.
+In the Google Cloud console, go to the
+Manage resources
+page.
+Go to Manage resources
+In the project list, select the project that you
+    want to delete, and then click
+Delete
+.
+In the dialog, type the project ID, and then click
+Shut down
+to delete the project.
+What's next
+Vertex AI Workbench managed notebooks instances are deprecated. To
+schedule a notebook run in a Vertex AI Workbench instance, see
+Schedule a notebook run
+.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-28 UTC.
+Products and pricing
+See all products
+Google Cloud pricing
+Google Cloud Marketplace
+Contact sales
+Support
+Google Cloud Community
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Code samples
+Cloud Architecture Center
+Training and Certification
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

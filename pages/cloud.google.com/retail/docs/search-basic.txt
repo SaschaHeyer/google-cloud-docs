@@ -1,0 +1,1104 @@
+Get search results  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Get search results
+This page describes basic querying with search, including text
+query searches, browse searches, pagination, optimization, and
+personalized results.
+Never cache personalized results from an end user, and never return personalized
+results to a different end user.
+Relevance in Vertex AI Search for retail
+Relevance is different from matching. Matching is finding candidate products in the index that correspond to
+the user's search query. Relevance, on the other hand, is a degree of matching. It involves
+ranking those products in a way that best satisfies the user's intent and needs.
+Vertex AI Search for retail uses techniques to improve matching and
+relevance for a better overall search experience for users that meets retailers' need.
+Non-default search
+Vertex AI Search for commerce defaults to relevance in search. However, search is tuned to also surface marginally relevant items higher up in the search results to provide retailers more targeted search results to increase the conversion potential of user events.
+These added search features optimize the default relevance algorithm, providing non-default features tuned to each retailer's utilization profile, including:
+Options to sort results such as by price, top-rated, or best-selling items. Non-default search is customized to return specific search results with the correct product
+variants
+. For example, to show the cheapest or most expensive variant when sorting by price.
+Auto-application of a tighter relevance filter for non-default user events.
+Enabling adjustable strength boost/bury  controls to fine-tune search results.
+Note:
+Expected behavior is fewer products appearing in non-default search scenarios, because less relevant items are filtered out. Given the limited scope of non-default searches, occasional lower-than-expected product counts in search results don't negatively impact revenue growth.
+Text search and browse search
+Search provides both text query search and browse
+search capabilities.
+In the text query search use case, a shopper might enter a text-based query on
+your site. Search returns a search response containing products
+that fit within the parameters of controls you have set up, sorted by relevance
+and revenue maximization.
+In the browse use case, a shopper might go to your site menu and
+navigate to a specific product category. Search automatically
+chooses the most revenue-maximizing sort order by learning from user behavior
+and trends. Browse results can be further refined by the controls you have set
+up.
+Both text search and browse search requests use the
+servingConfigs.search
+method.
+Note:
+The wildcard (*) is not supported and its usage may lead to inconsistent results.
+Text query searches
+When a user enters a text query to search on your site, search
+sorts potential search results based on relevance, popularity, buyability, and
+personalization.
+Search considers a
+servingConfigs.search
+request as a
+text-based search request if it has a non-empty
+query
+field.
+When uploading user event, send text query search events generated by
+search as
+search
+user events. If the event has a non-empty
+userEvent.searchQuery
+field and an empty
+userEvent.pageCategories
+field,
+search considers it a text-based search event.
+Browse searches
+Browse uses site navigation to produce search results
+of equal relevance sorted by best-selling items. Search leverages AI to optimize how browse results are sorted by considering popularity, buyability, and personalization.
+Important:
+For browse searches to work, the
+SearchRequest.pageCategories
+field cannot be empty. It must always be populated for optimal browse results.
+To get the correct browse search results, consider the following:
+The
+pageCategories
+and
+filter
+values in your search requests must exactly match the
+pageCategories
+and
+filter
+values in your uploaded user events. If the parameters in the requests do not match parameters in the events, the click-based reranking model learned from the events won't perform very well for this specific query and will negatively
+impact result quality.
+Vertex AI Search for commerce categorizes a
+search
+user event as a browse-based event
+if it has an empty
+userEvent.searchQuery
+field and a non-empty
+userEvent.pageCategories
+field. This is why you need to make sure you send browse events generated by Vertex AI Search for commerce as
+search
+user events when uploading them.
+A browse filter must be valid and indicate for each browse query which products belong to the product category the user is browsing in. To achieve this setup, the category ID needs to be defined in both the
+filter
+and the
+page_category
+fields. Take, for example, if you want the search results to be targeted to Home & Garden. First off, having only one
+filter
+value of
+"in-stock"
+does not refine the search enough to provide optimal browse results. To provide search results restricted to Home & Garden, you not only need to set
+"Home \& Garden"
+in the page category, but also in the filter with
+categories: ANY("Home & Garden")
+. If you neglect to define the category in the filter part, browse results could likely be too broad and include many non-Home & Garden items.
+Serving requests and events with an empty query field and filled
+page_categories
+fields are considered browse requests and user events. The
+page_categories
+field specifies the browse page itself. When the
+servingConfigs.search
+method sends a request, search
+considers it a browse search request if the
+query
+field is empty.
+When that is the case, the results are based on the
+filter
+and
+pageCategories
+fields and, if available, more optimization and personalization.
+You can set the category in both as in this example:
+JSON
+page_ca
+te
+gory
+:
+"Home & Garden"
+f
+il
+ter
+:
+"(availability: ANY("
+IN_STOCK
+")) AND (categories: ANY("
+Home
+&
+Garde
+n
+"))"
+Otherwise, because browse works with empty string queries, the products in a given category won't automatically be displayed in the results for a given page category. In other words, if the end user browses without specifying anything using a text query, the search return may not yield effectively targeted results, even if the user navigates to a category page.
+Use search requests
+Use search requests to get results for both text searches and browse searches.
+To make a search request, use the
+servingConfigs.search
+method.
+All search requests require
+placement
+, which identifies the full resource name
+of the serving config that will be used. The serving config determines which
+settings and associated controls affect the search results.
+Text query search requests require a non-empty
+query
+field.
+Browse search requests require a non-empty
+pageCategories
+field.
+Java
+import
+com.google.cloud.retail.v2.
+SearchRequest
+;
+import
+com.google.cloud.retail.v2.
+SearchResponse
+;
+import
+com.google.cloud.retail.v2.
+SearchServiceClient
+;
+public
+static
+void
+searchProducts
+(
+String
+query
+)
+throws
+IOException
+,
+InterruptedException
+{
+SearchRequest
+searchRequest
+=
+SearchRequest
+.
+newBuilder
+()
+.
+setPlacement
+(
+DEFAULT_SEARCH_PLACEMENT_NAME
+)
+.
+setBranch
+(
+DEFAULT_BRANCH_NAME
+)
+.
+setVisitorId
+(
+VISITOR_ID
+)
+.
+setQuery
+(
+query
+)
+.
+build
+();
+try
+(
+SearchServiceClient
+searchClient
+=
+SearchServiceClient
+.
+create
+())
+{
+SearchResponse
+response
+=
+searchClient
+.
+search
+(
+searchRequest
+).
+getPage
+().
+getResponse
+();
+System
+.
+out
+.
+println
+(
+"Search response: "
++
+searchResponse
+);
+}
+}
+By default, a reasonable number of results ordered by relevance is returned.
+To get product attributes returned with the search response, make sure to
+provide attribute values when you import your catalog data.
+Product
+has predefined system attributes such as brand, color,
+and size that you can provide values for. You can also include custom attributes
+that you define with
+Product.attributes
+.
+Querying tutorial
+This tutorial shows you how to send a text-based search query to the
+Vertex AI Search for commerce service and analyze the response.
+To follow step-by-step guidance for this task directly in the
+  Cloud Shell Editor, click
+Guide me
+:
+Guide me
+Pagination
+Use pagination to decrease lookup time and the size of responses being sent.
+Pagination tutorial
+This tutorial shows how to control pagination in a text-based search request.
+When a shopper looks for products in a shop, they can improve their navigation
+through the search results. For example, they can limit the number of items in
+the search response by using the page size feature or jump to their preferred
+page by using the offset feature.
+To follow step-by-step guidance for this task directly in the
+  Cloud Shell Editor, click
+Guide me
+:
+Guide me
+Paginate
+To jump from one page to another, use either
+page_token
+or
+offset
+, according
+to your use case.
+To jump to the next page, you could use
+page_token
+. For example, suppose you
+send the following
+SearchRequest
+.
+JSON
+{
+placement:
+'projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/placements/default_search'
+visitor_id:
+'
+VISITOR_ID
+'
+query:
+'shoes'
+page_size:
+5
+}
+From
+SearchResponse
+, you can get the resulting products with top 5
+relevance, along with a
+next_page_token
+.
+JSON
+{
+results:
+[
+products
+{
+...
+}
+,
+products
+{
+...
+}
+,
+products
+{
+...
+}
+,
+products
+{
+...
+}
+,
+products
+{
+...
+}
+]
+next_page_token:
+"wY4ETNkBDOlVjZ0YWLzUmM40SMhVjMtADMwATL5UGN5MGZlVDJaIQ5LaYsQUw9fC6lIwgE1EgC"
+total_size:
+100
+search_token:
+"NtQKDAiXt4_3BRDCg_jnARABGiQ1ZWRjOTRlOC0wMDAwLTI1YTEtODJlMy1mNGY1ZTgwZDUxOGM"
+}
+To get the result products with the next 5 relevance (6th to 10th), you would
+set
+page_token
+using the same
+placement
+,
+visitor_id
+, and
+query
+as
+next_page_token
+from the previous
+SearchResponse
+.
+Java
+import
+com.google.cloud.retail.v2.
+SearchRequest
+;
+import
+com.google.cloud.retail.v2.
+SearchResponse
+;
+import
+com.google.cloud.retail.v2.
+SearchServiceClient
+;
+public
+static
+void
+searchProducts_withNextPageToken
+(
+String
+query
+,
+int
+pageSize
+)
+throws
+IOException
+,
+InterruptedException
+{
+try
+(
+SearchServiceClient
+searchClient
+=
+SearchServiceClient
+.
+create
+())
+{
+SearchRequest
+firstRequest
+=
+SearchRequest
+.
+newBuilder
+()
+.
+setPlacement
+(
+DEFAULT_SEARCH_PLACEMENT_NAME
+)
+.
+setBranch
+(
+DEFAULT_BRANCH_NAME
+)
+.
+setVisitorId
+(
+VISITOR_ID
+)
+.
+setQuery
+(
+query
+)
+.
+setPageSize
+(
+pageSize
+)
+.
+build
+();
+SearchResponse
+firstResponse
+=
+searchClient
+.
+search
+(
+firstRequest
+).
+getPage
+()
+.
+getResponse
+();
+System
+.
+out
+.
+println
+(
+"First search response: "
++
+firstResponse
+);
+SearchRequest
+secondRequest
+=
+SearchRequest
+.
+newBuilder
+()
+.
+setPlacement
+(
+DEFAULT_SEARCH_PLACEMENT_NAME
+)
+.
+setBranch
+(
+DEFAULT_BRANCH_NAME
+)
+.
+setVisitorId
+(
+VISITOR_ID
+)
+.
+setQuery
+(
+query
+)
+.
+setPageSize
+(
+pageSize
+)
+.
+setPageToken
+(
+firstResponse
+.
+getNextPageToken
+())
+.
+build
+();
+SearchResponse
+secondResponse
+=
+searchClient
+.
+search
+(
+secondRequest
+).
+getPage
+()
+.
+getResponse
+();
+System
+.
+out
+.
+println
+(
+"Second search response: "
++
+secondResponse
+);
+}
+}
+In this example,
+SearchRequest
+looks like this:
+JSON
+{
+placement:
+'projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/placements/default_search'
+visitor_id:
+'
+VISITOR_ID
+'
+query:
+'shoes'
+page_size:
+5
+page_token:
+"wY4ETNkBDOlVjZ0YWLzUmM40SMhVjMtADMwATL5UGN5MGZlVDJaIQ5LaYsQUw9fC6lIwgE1EgC"
+}
+In some other cases, instead of navigating from page to page or getting results
+with top relevance, you could directly jump to a particular position with
+offset
+.
+Java
+import
+com.google.cloud.retail.v2.
+SearchRequest
+;
+import
+com.google.cloud.retail.v2.
+SearchResponse
+;
+import
+com.google.cloud.retail.v2.
+SearchServiceClient
+;
+public
+static
+void
+searchProducts_withOffset
+(
+String
+query
+,
+int
+pageSize
+,
+int
+offset
+)
+throws
+IOException
+,
+InterruptedException
+{
+SearchRequest
+searchRequest
+=
+SearchRequest
+.
+newBuilder
+()
+.
+setPlacement
+(
+DEFAULT_SEARCH_PLACEMENT_NAME
+)
+.
+setBranch
+(
+DEFAULT_BRANCH_NAME
+)
+.
+setVisitorId
+(
+VISITOR_ID
+)
+.
+setQuery
+(
+query
+)
+.
+setPageSize
+(
+pageSize
+)
+.
+setOffset
+(
+offset
+)
+.
+build
+();
+try
+(
+SearchServiceClient
+searchClient
+=
+SearchServiceClient
+.
+create
+())
+{
+SearchResponse
+response
+=
+searchClient
+.
+search
+(
+searchRequest
+).
+getPage
+().
+getResponse
+();
+System
+.
+out
+.
+println
+(
+"Search response: "
++
+searchResponse
+);
+}
+}
+For example, if you want the tenth page of the results when the page size is 5,
+then you could set the
+offset
+to be 45, which is calculated by (10 - 1) * 5.
+JSON
+{
+placement:
+'projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/placements/default_search'
+visitor_id:
+'
+VISITOR_ID
+'
+query:
+'shoes'
+page_size:
+5
+offset:
+45
+}
+Search performance tiers
+Search offers several search performance tiers that increasingly
+improve your results. For example, for text query search use cases, results
+might be based solely on relevance. As you unlock more advanced performance
+tiers, search can return results that are based on relevance,
+popularity, revenue optimization, and personalization.
+Search automatically unlocks higher performance tiers when you
+upload catalog and user event data that meets the minimum requirements of each
+tier.
+For more information about using this
+page to view data quality and search performance tiers, see
+Unlock search
+performance tiers
+. The
+Data quality
+page on
+the Search for commerce console provides an assessment of which
+requirements you have met for each tier.
+Evaluate text search and browse results
+Before you update your website code to request text search or browse search
+results, you can preview the results to confirm that your serving config is
+working as you expect.
+For more information about serving configs, see
+About serving configs
+.
+You can preview serving config results either from the
+Evaluate
+page, or by
+going to a serving config's
+Details
+page in the console and clicking its
+Evaluate
+tab. The following steps show you how to preview from the
+Evaluate
+page.
+To preview the results returned by your serving configuration:
+Text search
+Go to the
+Evaluate
+page in the Search for commerce console.
+Go to the Evaluate page
+Click the
+Search
+tab.
+Note:
+The
+Search
+tab is available only if you have
+search turned on. For instructions to turn it on, go to
+Before you begin
+.
+Select the serving config that you want to preview.
+Select the catalog branch that contains the catalog you want to preview.
+Optional: Enter a visitor ID to preview search results for that user.
+Optional: Enter a user ID to preview search results for that user.
+Optional: Enter a search time to preview search results that would appear
+at the specified time.
+For example, if you have promoted certain products for a special sale, you
+can see results as they would appear on that day.
+Optional: Select facets to display alongside the search results and click
+OK
+to apply them.
+The facets you select are used to generate a list of facet filters that
+appear under
+Add facets
+after you perform the initial search. These
+facet filters can include facets other than those you select in this step,
+such as dynamic facets.
+Enter a text-based search query to preview search results for that query.
+Click
+Search preview
+or press enter in any input field to see the
+results.
+Search results are displayed with their available thumbnail images.
+If your search triggers a redirect control, a notice appears that displays
+the redirect URI.
+Optional: Click the
+Grid
+icon or the
+List
+icon to switch how your
+search results are displayed in preview.
+Optional: If you selected facets to appear alongside your results, select
+one or more facet values from the facets list to filter results by those
+values. The results are automatically updated upon selection.
+When you select multiple values of the same facet, they are applied as an
+OR operator would be, and values across different facets are applied as
+an AND operator would be. For example, after selecting the facets
+color
+and values "blue" and "gold", and the
+material
+values "cotton" and
+"polyester". Your search results results must have either "blue" or "gold"
+as an attribute, and must also have either "cotton" or "polyester" as an
+attribute.
+Browse
+Go to the
+Evaluate
+page in the Search for commerce console.
+Go to the Evaluate page
+Click the
+Browse
+tab.
+Note:
+The
+Browse
+tab is available only if you have
+search turned on. For instructions to turn it on, go to
+Before you begin
+.
+Select the serving configuration that you want to preview.
+Select the catalog branch that contains the catalog you want to preview.
+Optional: Enter a visitor ID to preview results for that user.
+Optional: Enter a user ID to preview results for that user.
+To preview how results would look with a specific filter added,
+enter a filter string. Use the filter expression syntax specified in the
+Filter
+documentation.
+Optional: Enter a browse time to preview results that would appear
+at the specified time.
+For example, if you have promoted certain products for a peak sale event, you
+can see results as they would appear on that day.
+Enter the page category that you are testing browse results for.
+Optional: Select facets to display alongside the results and click
+OK
+to apply them.
+The facets you select are used to generate a list of facet filters that
+appear under
+Add facets
+after you perform the initial search. These
+facet filters can include facets other than those you select in this step,
+such as dynamic facets.
+Click
+Browse preview
+or press enter in any input field to see the
+results.
+Results are displayed with their available thumbnail images.
+Optional: Click the
+Grid
+icon or the
+List
+icon to switch how your
+results are displayed in preview.
+Optional: If you selected facets to appear alongside your results, select
+one or more facet values from the facets list to filter results by those
+values. The results are automatically updated upon selection.
+When you select multiple values of the same facet, they are applied as an
+OR operator would be, and values across different facets are applied as
+an AND operator would be. For example, after selecting the facets
+color
+and
+material
+, you might then filter your search results by selecting the
+color values "blue" and "gold", and the material values "cotton" and
+"polyester". Your results must have either "blue" or "gold" as an
+attribute, and must also have either "cotton" or "polyester" as an
+attribute.
+To see the
+Details
+page for the serving config you're previewing, click
+View serving config
+under the
+Select serving config
+field.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

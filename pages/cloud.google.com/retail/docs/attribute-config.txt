@@ -1,0 +1,715 @@
+About product attributes  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español – América Latina
+Français
+Português – Brasil
+中文 – 简体
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+About product attributes
+Vertex AI Search for commerce can use product attributes for indexing,
+dynamic faceting, searchability, filtering, and model quality. This page
+discusses setting product attribute configurations and how they are treated
+depending on the method and configuration you use.
+Attribute types
+Product attributes can have different default settings and allowed options
+depending on their type.
+System attributes
+: Predefined system attributes are existing
+Product
+fields that provide more information about the product. These include
+product attributes like brand, availability, color, and size. For all
+available system attributes for products, see the
+Product
+reference documentation
+.
+Custom attributes
+: Custom attributes are extra attributes that you define
+using the
+Product.attributes
+field. For example, this could include store
+names, vendors, or style. For examples and limits for custom attributes, see
+the
+Product.attributes
+reference documentation
+.
+Note:
+The top 20 selected custom attributes change monthly, and the (current) selected attributes are displayed in the
+Attribute controls
+tab on the
+Controls
+page in the Search for commerce console.
+Some examples of top 20 custom attributes are:
+Product line this product belongs to
+Volume of in-store sales for this product
+Occasion for clothing
+Deals and coupons applicable to this product
+Site-wide product popularity
+Inventory-level attributes
+: System or custom attributes that provide
+store-level information about the product. You might use inventory-level
+attributes for products whose properties vary significantly between stores and
+regions, such as grocery items, or for products that have store-specific
+promotions.
+inventories.price
+and
+inventories.originalPrice
+are numeric system
+attributes predefined by Vertex AI Search for commerce. You can create custom
+inventory-level attributes, which can be textual or numeric. Inventory-level
+attributes are indexable by default. Setting searchable and dynamic faceting
+is not supported for inventory-level attributes.
+Note:
+Providing values for predefined system attributes in
+Product
+such as brand, color, and size is highly encouraged. You can also include custom
+attributes that you define with
+Product.attributes
+.
+Available configuration settings
+Attribute configuration settings impact search and recommendations behavior
+across your site.
+Search uses the following attribute settings:
+Indexable
+: Search can filter and facet using this attribute.
+Dynamic faceting
+: Search can automatically use this
+    attribute as a dynamic facet based on past user behavior such as facet clicks
+    and views. To enable dynamic faceting for an attribute,
+Indexable
+must be set to true for that attribute.
+Searchable
+: This attribute is searchable by search
+    queries, which increases recall for that attribute. This control is applicable
+    only for text attributes.
+Retrievable
+: If set to true, search returns this
+    attribute in responses to search queries. If all attributes have
+    Retrievable set to false, the search results contain only the product name
+    or (for variants) the product name and color information. The REST field RetrievableFields is deprecated for products. Use the retrievable site-wide control instead.
+Recommendations uses the following attribute settings:
+Filterable
+(Public Preview): This attribute can be used in recommendations
+    filter expressions. This control is applicable only for text attributes.
+Indexable
+If an attribute is set to indexable, search can filter and facet
+using the attribute.
+System attributes
+: Indexability is always enabled for predefined system
+attributes. This setting can't be disabled for system attributes.
+Custom attributes
+: Enabled by default. You can disable indexability for
+any custom attribute. If you plan to make a custom attributes indexable, it
+must follow the regular expression pattern
+[a-zA-Z0-9][a-zA-Z0-9_]*
+. For example,
+key0LikeThis
+or
+KEY_1_LIKE_THIS
+.
+Inventory-level attributes
+: Always enabled for system inventory-level
+attributes; this setting can't be changed. Enabled by default for
+custom inventory-level attributes; this setting can be turned off.
+Dependencies
+: N/A
+Your index configuration changes go into effect immediately after you import catalog data. Otherwise it can take up to 12 hours or more for your changes to take effect. You can test if your changes have been applied
+on the
+Evaluate
+page.
+Dynamic faceting
+When dynamic faceting is enabled for an attribute, search can
+use the attribute as a dynamic facet. Dynamic facets can be automatically added
+to a search based on past user behavior such as facet clicks and views.
+System attributes
+: Enabled by default if indexability is set to true. You
+can disable dynamic faceting for any system attribute.
+Custom attributes
+: Enabled by default if indexability is set to true. You
+can disable dynamic faceting for any custom attribute.
+Inventory-level attributes
+: Not supported.
+Dependencies
+: To enable dynamic faceting for an attribute, you must first
+enable indexability for that attribute.
+Setting dynamic faceting for an attribute is always global. The dynamic faceting
+configuration you apply to that attribute is used by products across the catalog
+that use that attribute.
+Dynamic faceting configuration changes take up to two days. You can test if your
+changes have been applied on the
+Evaluate
+page.
+For numerical custom attributes, buckets need to be specified in the request.
+Numerical values are not bucketed automatically.
+Searchable
+If an attribute is set to searchable, recall for that attribute in
+search queries is improved.
+Only textual attributes values can have searchability enabled. It is not
+applicable to numerical attributes.
+System attributes
+: Predefined textual system attributes for
+Product
+have
+their searchability settings configured by Vertex AI Search for commerce. These
+setting cannot be changed.
+Custom attributes
+: Disabled by default. You can enable this
+configuration for any textual custom attribute.
+Inventory-level attributes
+: Not supported.
+Dependencies
+: N/A
+Exact-searchable
+: Targeted search returns for search queries that match any given product in your catalog. This option works well for serial numbers. See more information about the
+exact-searchable option
+.
+Although products with a searchable attribute are more likely to appear in
+search results for that attribute, they are not guaranteed to appear.
+Recommendations filtering
+Preview:
+This feature is in public preview.
+If an attribute has recommendations filtering turned on, it can be used in
+recommendations filter expressions to filter products in
+predictions.
+System attributes
+: Off by default. You can turn on this setting for any
+predefined system textual attributes for
+Product
+, except for
+FulfillmentInfo
+and
+title
+. Not supported for numeric attributes.
+Custom attributes
+: Off by default. You can turn on this setting for any
+custom textual attributes for
+Product
+. Not supported for numeric attributes.
+Inventory-level attributes
+: Supported only for the
+availability
+value
+IN_STOCK
+.
+Dependencies
+: N/A
+Exact-searchable option
+You can give a certain value for specific string queries to the
+exact-searchable
+option, a catalog attribute field. If a query matches any product in your catalog where the value for that field is the string given in the query, it returns exactly that product in the search query. This option works well for serial numbers, where customers expect a targeted search experience.
+Usually for custom attributes, the
+ExactSearchableOption
+field is useful for product attributes with an exact value (like
+ModelId
+or
+ManufacturerId
+). Attributes like
+product_id
+are primary index fields—exact-searchable by default. The
+item_id
+field is always on for exact match and can't be disabled.
+To avoid returning unrelated items in searches, never set the searchable option to a generic value such as
+battery
+.
+To avoid under-serving search queries, don't set special fields like
+tag
+— which could have as one of its string values "iphone" — to exact-searchable. Doing so could cause those queries to limit results for all iphones in the product catalog.
+For more information, see
+About product attributes
+.
+Attribute behavior
+When structuring your product catalog using primary and variant product designations, know how product attributes are handled for filtering. Their behavior depends on whether you're using search or recommendations and on how you configure your catalog taxonomy.
+To ensure predictable and accurate filtering behavior, maintain consistency and completeness in your filterable attribute definitions across primary and variant products. This approach aids in precise filtering, which improves product discovery and search relevance.
+Primary-variant behavior in search versus recommendations
+While only primary items are returned in search and recommendation results, Vertex AI Search for commerce optimizes search and recommendation quality.
+For search models, variant attributes are used for the primary product in the search index. Search results display diverse options for the primary product based on its variants' attributes.
+For recommendation models, product details and attributes are not inherited from primary to variant. For optimal recommendation quality, it's crucial that primary and variant products have complete and accurate details for key attributes such as
+product.categories
+,
+product.title
+,
+product.attributes
+, and
+product.prices
+.
+Handle attributes during indexing and filtering
+If the same attribute is defined in
+Primary
+and
+Variant
+, the attribute in the variant is part of filtering. For example, say an attribute is defined for a primary product and its variants (color or size). Variant attribute values are mainly for filtering, during which the system checks if any of the primary's variants match the attribute value. Take product availability: A primary product can be marked
+out-of-stock
+, but if at least one of its variants is
+in-stock
+, the primary is available for search results if an
+in-stock
+filter is applied.
+For the following reasons, set the same filterable attributes in
+Primary
+and
+Variant
+:
+Variant attributes take precedence for filtering. If an attribute is defined on a primary product and its variants, the attribute from the variant is used in filtering. For example, if a primary product has a placeholder color, but its variants have actual colors, the variant's color should be populated and is used for filtering.
+For inventory-related attributes like availability, if a primary product has variants, the primary product's availability should be set to
+OUT_OF_STOCK
+, while the true availability (such as
+IN_STOCK
+) should be set at the variant level. This way, the primary product is considered in stock as long as at least one variant is in stock. If so, filters such as
+availability: ANY("IN_STOCK")
+correctly return the primary product.
+When a filter expression is used, the prediction response will return primary products that have at least one primary or variant product matching the filter's attribute value.
+Optional attributes for filtering
+Keep the
+categories
+field clean and optimized for taxonomy. If more filtering is needed, implement it based on broad categories using separate custom attributes, not in the
+categories
+field. This also avoids negatively impacting autocompletion training for category suggestions.
+For example, say you typically set categories like
+[lvl1, lvl1>lvl2, lvl1>lvl2>lvl3]
+for filtering. Autocomplete counts the most frequent categories for a given query, so you end up with
+lvl1
+and
+lvl2
+(all your products) as suggested categories.
+Best practices
+If your catalog consists of primary and variant products
+and
+the same attribute is defined in both, the attribute in variant will be considered during filtering.
+Populate attributes accurately
+: Ensure that both primary and variant products have complete and accurate details for their attributes, especially those used for filtering, to maximize effectiveness.
+Use built-in fields
+: Do not rely solely on custom attributes. Map your product information to the built-in
+Product
+fields (
+brands
+,
+colors
+,
+sizes
+, and the
+required fields
+). Built-in fields have a greater impact on searchability, indexability, and relevance optimizations. Custom attributes (
+Product.attributes
+) are for product data that does not fit into predefined system attributes.
+Set site-wide retrievable fields control
+: The API supports
+variantRollupKeys
+for variants, allowing you to retrieve details in search responses.
+Caution:
+If you're using search,
+Product.retrievableFields
+, where attributes were included with a product in the search response, is deprecated. Use the retrievable site-wide control.
+Consistent catalog language
+: The product catalog should be in one language only, and search queries should be sent in the same language. Having multiple languages in the catalog can degrade model performance. Not setting the language code can affect features like spell correction.
+Price information
+: Accurately populate price information for both primary and variant products to ensure accurate recommendations and filtering. If a product lacks product-level pricing and relies solely on local inventory pricing, fill the primary product's pricing with the median from inventory-level pricing.
+Configuration modes
+The configuration mode determines how
+attribute configurations are treated and which attribute configurations you can
+set.
+Catalog-level configuration mode (default)
+: In this mode,
+attribute configurations on the catalog level on the catalog level are used as
+the source of truth.
+Product-level configuration mode (deprecated)
+: In this mode,
+attribute configurations on the product-level are used as the source of truth.
+Previously, product-level configuration was the default mode. If you are still
+on product-level configuration mode and need to switch to catalog-level
+configuration mode, contact Support. Search
+does not support returning to product-level configuration mode after you have
+switched.
+To check the configuration mode, go to the Search for commerce console
+Controls
+page
+. If the
+Indexable
+option is available as a column on the
+Site-wide controls
+tab,
+then the configuration model is catalog level. If the
+Indexable
+column is not available on the
+Site-wide controls
+tab, then
+the configuration model is product-level.
+Configuration methods
+You can set attribute configurations in the following ways:
+The Search for commerce console
+: Set
+attribute configurations on the catalog level using the
+Search for commerce console. This configures attributes globally across
+all products. Which of these settings are available in the console depends on
+the configuration mode. See the next section for more details on how to
+configure attributes in the console
+.
+The
+AttributeConfig
+API method
+: Set attribute configurations on
+the catalog level using the API. This configures attributes
+across all products.
+The
+Product
+API method (deprecated)
+: Set custom attributes on the
+product-level using the
+Product
+API method. Setting attributes with this
+method is not available to new users and is not
+recommended.
+Configure attributes in the console
+You can globally set attribute options across all products from the
+Search for commerce console
+Controls
+page
+, on the
+Site-wide controls
+tab. For more details on how to set
+this in the console, see
+Manage site-wide attribute controls
+.
+To use this feature the configuration mode must be catalog level.
+Changes to attribute configuration settings for indexable and searchable take
+effect immediately upon catalog ingestion. Otherwise, it can take up to 12 hours
+or more for changes to take effect. You can test if your changes have been
+applied on the
+Evaluate
+page.
+Configure attributes with
+AttributesConfig
+The
+AttributesConfig
+API resource lets you manage attribute configurations on
+the catalog level.
+The following fields set attribute options at the catalog level:
+CatalogAttribute.indexableOption
+: Sets the
+indexable option for an attribute.
+CatalogAttribute.dynamicFacetableOption
+:
+Sets the dynamic faceting option for an attribute.
+CatalogAttribute.searchableOption
+: Sets the
+searchable option for an attribute.
+CatalogAttribute.recommendationsFilteringOption
+(Public Preview): Sets the recommendations filtering option for an attribute.
+To retrieve all attribute configurations, use the
+GetAttributesConfig
+method.
+Update multiple attributes
+Use the
+updateAttributesConfig
+method to update
+multiple attributes at the catalog level.
+The catalog attributes you include in the request are updated in the
+catalog, or inserted if they don't exist. If there is no value for a catalog
+attribute field, it is assigned a default value.
+The maximum number of catalog attributes allowed in a request is 1000.
+Update an individual attribute
+The following
+methods
+are used to update individual catalog attributes:
+AddCatalogAttribute
+: Adds an individual attribute configuration to a
+catalog attribute.
+See the API reference documentation for
+AddCatalogAttribute
+.
+ReplaceCatalogAttribute
+: Modifies an individual attribute configuration.
+This replaces the specified
+CatalogAttribute
+in the
+AttributesConfig
+by
+updating the catalog attribute with the same
+CatalogAttribute.key
+.
+See the API reference documentation for
+ReplaceCatalogAttribute
+.
+RemoveCatalogAttribute
+: Removes an individual attribute configuration
+from
+AttributesConfig
+.
+Only
+CatalogAttributes
+that are not in use by products can be deleted. If a
+CatalogAttribute
+is in use,
+RemoveCatalogAttribute
+does not delete it, but
+resets its configuration properties to default values.
+CatalogAttribute.inUse
+is set to
+True
+if the attribute is in use by any
+products.
+See the API reference documentation for
+RemoveCatalogAttribute
+.
+Configure attributes with the
+Product
+method (deprecated)
+Setting attributes with this method is not available to new
+users and is not recommended.
+The following fields set indexable and searchable settings for a specific
+product using the
+Product
+API method:
+Product.attributes.indexable
+.
+Product.attributes.searchable
+. Only available for
+custom attributes.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español – América Latina
+Français
+Português – Brasil
+中文 – 简体
+日本語
+한국어

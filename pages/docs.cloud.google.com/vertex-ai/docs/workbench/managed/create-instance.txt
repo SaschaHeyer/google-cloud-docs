@@ -1,0 +1,307 @@
+Vertex AI deprecations  |  Google Cloud Documentation
+Skip to main content
+Technology areas
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+/
+Console
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Sign in
+Vertex AI
+Start free
+Guides
+Reference
+Samples
+Support
+Resources
+Technology areas
+More
+Guides
+Reference
+Samples
+Support
+Resources
+Cross-product tools
+More
+Console
+Vertex AI
+Release notes
+Glossary
+Pricing
+Quotas and limits
+Locations
+Support policy
+Shared responsibility
+Vertex AI framework support policy
+Supported frameworks list
+Security bulletins
+Service Level Agreement
+Security controls
+Vertex AI deprecations
+AI Agent Ecosystem partners
+Overview
+AI Agent Ecosystem partners
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Home
+Documentation
+AI and ML
+Vertex AI
+Resources
+Send feedback
+Vertex AI deprecations
+Stay organized with collections
+Save and categorize content based on your preferences.
+The
+Google Cloud Platform Terms of Service (section "Discontinuation of Services")
+defines the deprecation policy that applies to Vertex AI.
+  The
+deprecation policy
+only applies to the services,
+  features, or products listed therein.
+After a service, feature, or product is officially
+  deprecated, it continues to be available for at least the period of time defined in the
+  Terms of Service. After this period of time, the service is scheduled for shutdown.
+Feature
+Deprecated date
+Shutdown date
+Details
+AutoML Video
+July 31, 2024
+July 31, 2025
+AutoML Video is no longer available. See
+Video
+        tuning
+for detailed instructions for fine-tuning Gemini on
+        video data using supervised learning.
+AutoML Text
+September 15, 2024
+June 15, 2025
+Starting on September 15, 2024, you can only customize Text
+        classification, entity extraction, and sentiment analysis objectives by
+        moving to Vertex AI Gemini prompts and tuning. Training or
+        updating models for Vertex AI AutoML for
+        Text classification, entity extraction, and sentiment analysis
+        objectives will no longer be available. You can continue using
+        existing Vertex AI AutoML Text models until
+        June 15, 2025. For more information about how Gemini offers enhanced
+        user experience through improved prompting capabilities, see
+Introduction
+        to tuning
+.
+Legacy AI Platform Training
+January 23, 2023
+April 7, 2025
+Migrate to
+        Vertex AI custom training
+, which includes all
+        functionality of legacy AI Platform Training as well as new features.
+Legacy AI Platform Prediction
+January 23, 2023
+April 7, 2025
+All models, associated metadata, and deployments were deleted after
+        the shutdown date.
+Migrate your resources
+        to Vertex AI prediction
+to get the latest machine learning
+        features, simplify end-to-end journeys, and productionize models
+        with MLOps.
+Vertex AI Workbench managed notebooks
+January 16, 2024
+April 14, 2025
+On April 14, 2025, support for
+          managed notebooks ended, and the ability to create
+          managed notebooks instances was removed. Existing instances will
+          continue to function until
+          March 30, 2026, but patches,
+          updates, and upgrades won't be available.
+On March 30, 2026, all
+          managed notebooks instances and their associated data will be
+          deleted. There is no recovery of managed notebooks instances
+          after deletion. There isn't a way to convert these instances
+          to Compute Engine virtual machines (VMs). To continue using
+          Vertex AI Workbench,
+migrate
+          your managed notebooks instances to
+          Vertex AI Workbench instances
+before
+          March 30, 2026.
+Vertex AI Workbench user-managed notebooks
+January 16, 2024
+April 14, 2025
+On April 14, 2025, support for
+          user-managed notebooks ended, and the ability to create
+          user-managed notebooks instances was removed. Existing instances
+          will continue to function until
+          March 30, 2026, but patches,
+          updates, and upgrades won't be available.
+On March 30, 2026, your
+          user-managed notebooks instances will be converted to standard
+          Compute Engine virtual machines (VMs). You will have full control
+          over these VMs, but they won't be supported or available
+          through Vertex AI Workbench. You will incur costs for
+          these Compute Engine VMs, so we recommend that you delete
+          any VMs that you don't plan to use. To continue using
+          Vertex AI Workbench,
+migrate
+          your user-managed notebooks instances to
+          Vertex AI Workbench instances
+before
+          March 30, 2026.
+Legacy AI Platform Pipelines
+July 31, 2023
+January 31, 2025
+Migrate to
+        Vertex AI Pipelines
+, which includes all functionality of
+        legacy AI Platform Pipelines as well as new features.
+Legacy AI Platform Data Labeling Service
+January 23, 2023
+January 31, 2025
+For new labeling tasks, you can
+add labels
+        using the Google Cloud console
+or access data labeling solutions
+        from our partners in the
+Google Cloud
+        Console Marketplace
+.
+Vertex AI Data Labeling Service
+June 30, 2023
+October 3, 2024
+For new labeling tasks, you can
+add labels
+        using the Google Cloud console
+or access data labeling solutions
+        from our partners in the
+Google Cloud
+        Console Marketplace
+.
+Legacy AutoML Natural Language
+July 31, 2023
+August 7, 2024
+New models can no longer be trained nor deployed on the
+        legacy platform. Already deployed models stopped working on
+        May 30, 2024. All the functionality of legacy Vertex AI and
+        new features are available on the Vertex AI platform. See
+Migrate to
+        Vertex AI
+to learn how to migrate your resources.
+Legacy AutoML Video Intelligence
+January 23, 2023
+July 31, 2024
+Migrate to
+        Vertex AI
+, which includes all functionality of
+        legacy AutoML Video Intelligence as well as new features.
+Legacy AutoML Vision
+January 23, 2023
+July 31, 2024
+Migrate to
+        Vertex AI
+, which includes all functionality of
+        legacy AutoML Vision as well as new features.
+Legacy AutoML Tables
+January 23, 2023
+July 24, 2024
+Migrate to
+        Vertex AI
+, which includes all functionality of
+        legacy AutoML Tables as well as new features.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-28 UTC.
+Products and pricing
+See all products
+Google Cloud pricing
+Google Cloud Marketplace
+Contact sales
+Support
+Google Cloud Community
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Code samples
+Cloud Architecture Center
+Training and Certification
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

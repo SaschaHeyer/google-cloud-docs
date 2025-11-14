@@ -1,0 +1,682 @@
+Manage models  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Manage models
+This page describes how to tune, pause, resume, delete, and list
+recommendation models. For help with creating a new recommendation model, see
+Create recommendation models
+.
+Note:
+Model management is only available for recommendations.
+General recommendations for model quality
+Events should generally be uploaded at least daily to maintain good data quality.
+Data age limits
+: User events older than 2015 are not accepted. For auto-learning suggestions, the system uses user events from the past 180 days. Similarly, metrics for user events older than 180 days or generated more than 180 days ago are not exportable.
+Unique visitor IDs
+: The total number of unique visitor IDs for each event type should be at least 100 to ensure enough data for quality results.
+Most models perform best with at least three months of product page views, home page views, and
+add-to-cart
+events.
+For the Frequently Bought Together model, one to two years of purchase history is recommended. This model specifically requires
+one
+of the following:
+On average, 10 occurrences per catalog item (with a one-year window of purchase-complete events).
+Both
+90 days of purchase-complete events in the last year
+and
+1,000 purchase-complete events in that same year.
+One to two weeks of detail-page views can be sufficient to begin training
+Others You May Like
+and
+Recommended for You
+models.
+Tune a model
+Vertex AI Search for commerce uses the input data you provide to your model to
+adjust hyperparameters for training.
+Tuning takes 2-4 days, during which the model continues to work as usual.
+ For tuning cost details, see
+Pricing
+.
+Set a model's tuning frequency
+We recommend you periodically tune your model. This keeps model training optimal
+as data changes and customer behavior differs throughout the year. In addition,
+some internal major model upgrades can only be applied after the model has
+been tuned.
+When creating the model, you can set it to automatically tune every three
+months, or choose to only tune it manually. Regardless of the setting you
+choose, the model automatically tunes one time after creation.
+You can change the tuning status setting at any time. Changing this setting
+doesn't affect running tuning processes.
+To edit a model's tuning status setting:
+Console
+Go to the
+Models
+page in the Search for commerce console.
+Go to the Models page
+You can see the tuning status of every model under
+Tuning status
+.
+Click a model name to view its details page.
+Click
+Edit
+edit
+next to
+Tuning
+status
+.
+From the drop-down list, select a setting:
+Every three months
+. Automatically tunes when the last tune was 90
+days ago.
+Manual tune only
+. Tunes only when you
+manually tune
+.
+Click
+Done
+done
+to save your setting.
+curl
+Make a
+Models.patch
+request using the API. See the
+Models.patch
+API reference.
+For details about all
+Models
+fields, see the
+Models
+API reference
+.
+curl
+-X
+PATCH
+\
+-H
+"Authorization: Bearer
+$(
+gcloud
+auth
+application-default
+print-access-token
+)
+"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+-d
+'{
+"name": "projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/models/
+MODEL_ID
+",
+"PeriodicTuningState": "
+NEW_TUNING_STATE_VALUE
+"
+}'
+\
+'https://retail.googleapis.com/v2/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/models/
+MODEL_ID
+?updateMask=PeriodicTuningState'
+Manually tune a model
+Manual tune triggers a one-time tune of your model. You might manually tune your
+model when there is a significant change in your catalog (such as size increase
+or change in catalog hierarchy) or events (such as backfilling historical events
+or a change in data distribution after promoting certain groups of items).
+To manually tune a model:
+Console
+Go to the
+Models
+page in the Search for commerce console.
+Go to the Models page
+Click a model name to view its details page.
+Click
+Manual Tune
+in the button bar.
+Tuning takes 2-4 days, during which the model continues to work as usual.
+curl
+Make a
+Models.tune
+request using the API. See the
+Models.tune
+API reference.
+curl
+-X
+POST
+\
+-H
+"Authorization: Bearer
+$(
+gcloud
+auth
+application-default
+print-access-token
+)
+"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+'https://retail.googleapis.com/v2/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/models/
+MODEL_ID
+:tune'
+Pause and resume training for a model
+If your model is active (not paused), the model is retrained at least once a
+week, but no more often than once a day. For consistent retraining, make sure
+that you upload user event data no more than 24 hours after the event occurs.
+You can pause your model to stop retraining. You might want to do this if you
+have imported bad data or to stay under the limit of 10 active models per
+project. If you have fewer than 10 active models,
+you can restart a paused model at any time.
+For training cost details, see
+Pricing
+.
+You can start up to five model operations per minute. Limited model operations
+include creation, deletion, pause, and resume.
+To pause or restart a model:
+Console
+Go to the
+Models
+page in the Search for commerce console.
+Go to the Models page
+You can see the training status of every model under
+Training status
+.
+To pause an active model (
+Training status
+of
+TRAINING
+), click
+Pause
+pause
+.
+To start a paused model (
+Training status
+of
+PAUSED
+), click
+Resume
+play_arrow
+.
+curl
+To pause an active model, make a
+Models.pause
+request using the
+API. See the
+Models.pause
+API reference.
+curl
+-X
+POST
+\
+-H
+"Authorization: Bearer
+$(
+gcloud
+auth
+application-default
+print-access-token
+)
+"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+'https://retail.googleapis.com/v2/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/models/
+MODEL_ID
+:pause'
+To start a paused model, make a
+Models.resume
+request using the
+API.
+curl
+-X
+POST
+\
+-H
+"Authorization: Bearer
+$(
+gcloud
+auth
+application-default
+print-access-token
+)
+"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+'https://retail.googleapis.com/v2/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/models/
+MODEL_ID
+:resume'
+View model details
+View a model's details in the console or using the
+Models.get
+API method.
+To see the serving configs that are associated with a specific model, use this procedure. All other model details are available in the
+console and the API response.
+Console
+Go to the
+Models
+page in the Search for commerce console.
+Go to the Models page
+The
+Models
+page lists all your models and their training and query
+statuses.
+Click a model name to view its
+Details
+page.
+curl
+To get a single model's information, make a
+Models.get
+request using the
+API. See the
+Models.get
+API reference.
+curl
+-X
+GET
+\
+-H
+"Authorization: Bearer
+$(
+gcloud
+auth
+application-default
+print-access-token
+)
+"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+'https://retail.googleapis.com/v2/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/models/
+MODEL_ID
+'
+List your models
+View a list of your models in the console or using the
+Models.list
+API method.
+Console
+Go to the
+Models
+page in the Search for commerce console.
+Go to the Models page
+The
+Models
+page lists all your models and their training and query
+statuses.
+curl
+To list all models and their details inline, make a
+Models.list
+request
+using the API. See the
+Models.list
+API
+reference.
+Optionally, you can use the parameter
+pageSize
+to set a maximum number of
+results to return. If more results are available, the
+list
+response
+includes a page token. You can pass a page token in the
+pageToken
+parameter of a
+list
+request to retrieve the next page of results. This
+example uses both parameters.
+curl
+-X
+GET
+\
+-H
+"Authorization: Bearer
+$(
+gcloud
+auth
+application-default
+print-access-token
+)
+"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+'https://retail.googleapis.com/v2/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/models?pageSize=
+PAGE_SIZE
+&pageToken=
+PAGE_TOKEN
+'
+Delete a model
+You can start up to five model operations per minute. Limited model operations
+include creation, deletion, pause, and resume.
+Delete a model in the console or using the
+Models.delete
+API method.
+Console
+Go to the
+Models
+page in the Search for commerce console.
+Go to the Models page
+Click the name of the model you want to delete to open its details page.
+Click
+Delete
+delete
+in the button bar.
+Reenter the model name and click
+Confirm
+.
+curl
+Make a
+Models.delete
+request using the API. See the
+Models.delete
+API reference.
+For details about all
+Models
+fields, see the
+Models
+API reference
+.
+curl
+-X
+DELETE
+\
+-H
+"Authorization: Bearer
+$(
+gcloud
+auth
+application-default
+print-access-token
+)
+"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+'https://retail.googleapis.com/v2/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/models/
+MODEL_ID
+'
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

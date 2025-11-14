@@ -1,0 +1,616 @@
+Data quality  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español – América Latina
+Français
+Português – Brasil
+中文 – 简体
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Data quality
+This page describes search use cases, their respective
+performance tiers, and how to check the Search for commerce console for an
+assessment of your data quality and which performance tiers you have unlocked.
+Each performance tier is automatically activated when you satisfy all of its
+upgrade-blocking data requirements. You must also meet the requirements for all
+previous tiers to upgrade to the next tier.
+Search use cases
+Search provides search results for two use cases:
+Text query search
+, used when your shoppers look for items on your
+application by entering text queries and getting a set of relevant results.
+Browse search
+, used when your shoppers land on a particular category
+page, such as the "Appliances" category web page of a home improvement
+store's retail site and browse the sorted items in that category.
+For more about the differences between these use cases, see
+About text search and browse search
+.
+Unlock search performance tiers
+Text query search and browse search have different performance tiers that
+increasingly improve your search results. Unlocking performance tiers relies on
+the user event and catalog data that you upload to Vertex AI Search for commerce.
+The following performance tiers are available for both use cases, text query search and browse:
+Text query search
+TIER 1
+Relevance
+:
+Results are returned based on degree of relevance to the query, such as
+how
+black a dress is when a black dress is queried.
+Minimum data requirements
+:
+Catalog
+Query
+TIER 2
+Relevance and popularity
+:
+Refines TIER 1 for the most popular items in the queried search.
+Equally relevant products are ranked by the popularity of the product on your site.
+Minimum data requirements
+: Click data
+TIER 3
+Revenue-optimized ranking
+: Relevant results are ranked by the product's likelihood of being purchased based on specific site-wide activity.
+Minimum data requirements
+: A large volume of user events.
+TIER 4
+Personalized revenue-optimized ranking
+:
+Relevant results are ranked by the individual user's preferences and the product's likelihood of being purchased based on this user's site-wide activity.
+Products ranked based on "quality of match" to the unique user searching or browsing the site.
+Minimum data requirements
+:
+A large volume of user events.
+Matching
+visitorID
+and or
+userId
+, formatted consistently across user events.
+Note:
+Attribution tokens
+are needed for better performance and measurement for search events served by Vertex AI Search for commerce. They are required for Tier 4 model training.
+Browse
+BRONZE
+Random results
+Any search result that fits your filters, in random order.
+SILVER
+Popularity
+Results are returned based only on relevance to the category.
+GOLD
+Revenue-optimized ranking
+Relevant results are ranked by the product's likelihood of being purchased based on site-wide activity.
+PLATINUM
+Personalized revenue-optimized ranking
+Relevant results are ranked by the individual user's preferences and the product's likelihood of being purchased based on site-wide activity.
+The Search for commerce console provides a
+Data quality
+page where you
+can check if you have met each tier's data requirements.
+The next sections show how to sign up for data quality alerts that notify you which of the tiers your data falls into, given your current parameters. These alerts also serve as a guide for your specific use case data requirements for best optimizing your search results.
+Check your data quality
+After uploading your data, go to the Search for commerce console to see data
+check metrics for each performance tier for your use case.
+Go to the
+Data quality
+page in the Search for commerce console.
+Go to the Data quality page
+View the data check metrics for your search use case:
+For text search metrics, click the
+Search
+tab.
+For browse search metrics, click the
+Browse
+tab.
+Check each performance tier's score card of issues at the top of the page.
+If it is labeled "In use":
+You have satisfied all blocking
+issues for that tier and have unlocked it.
+If there are 0 blocking issues:
+You have satisfied the data
+checks for that tier. If there are 0 blocking issues for this tier and
+all previous tiers, it takes about 24 hours to train and prepare the
+model and activate the newly unlocked tier.
+If there are any blocking issues:
+Check that tier's metrics
+to see which data issues to address to unlock that tier.
+View each performance tier's data check metric table to see a list of
+issues that can block tier upgrades or impact search performance.
+Check the
+Status
+column for the priority level of each data check
+metric:
+Upgrade blocking
+: Identifies data issues that prevent
+search from upgrading your use case to the next
+performance tier. To unlock a tier, satisfy all upgrade blocking data
+checks for that performance tier (and those of its previous tiers).
+Performance critical
+: Identifies data issues that don't
+block an upgrade, but can have a significant impact on text search or
+browse search performance.
+Compliant
+: Indicates that this data check has passed.
+Unavailable
+: Indicates that a non-upgrade blocking data
+check is not yet completed. Values for these metrics are displayed as
+N/A
+. It can take up to 24 hours after importing data to compute
+some data checks.
+For more information about any metric, click
+Details
+to see a detail
+panel that displays that metric's description, data check timestamp, and
+threshold values.
+Check the thresholds in a metric's
+Details
+panel for the values
+needed to satisfy that metric's data check and improve results. Not all
+thresholds apply to all metrics:
+Blocking threshold
+: A required threshold to meet for satisfying
+this metric's data check.
+Critical threshold
+: A highly recommended threshold to meet.
+Not meeting this threshold can have a significant negative impact on
+performance.
+Warning threshold
+: A recommended threshold to meet. Not
+meeting this threshold can have a minor impact on performance.
+To import more data to satisfy any data issues, see
+Import historical user events
+or
+Import catalog information
+in the public documentation.
+Best practices
+In search requests and in user events, provide user IDs in addition to visitor
+IDs for signed-in users. This allows search to personalize
+results for the user based on users' signed-in events across devices.
+Send user events in real time instead of in batch uploads with a delay. This
+helps search personalize using a user's most recent activity
+on your site.
+Upload all user events. For example, don't submit only events that are
+attributable to searches.
+Feature selection for upper revenue-optimized tiers
+Vertex AI Search for commerce has been upgraded for retailers whose data has reached the upper performance tiers that unlock revenue-optimized search capabilities. These retailers in these upper tiers can now make use of feature selection:
+For Browse: SILVER and GOLD
+For Search: Tiers 3 and 4
+Why the ranking upgrade?
+Large Vertex AI Search for commerce customers have up to 10,000 custom attributes in their product catalog, while the ranking model previously had only 20 static product features (such as price and average rating) shared across all customers. This resulted in the ranking model having very incomplete product data, and no ability to customize the product features to different retail domains and use cases like fashion, hardware or home goods.
+The inability to model custom attributes led some users to put the attributes they considered important into the static (fixed) product features. However, this required manual effort and clearly only worked for a small number of attributes.
+Dynamic custom feature selection
+Vertex AI Search for commerce has upgraded its revenue-optimized tiers to auto select custom attributes. The upgrade involves incorporating relevant custom attributes into the ranking process:
+Goes through all custom attributes for each retailer and chooses the most useful ones to be added to the set of static product features.
+Displays selected attributes for each retailer.
+Repeats the feature selection process on a regular basis (once every 30 days).
+In sum, Vertex AI Search for commerce not only gives the ranking model access up to 100 times or more potential new features to select from for the model, but each customer's attributes are also refreshed regularly to adapt to seasonal sales and other dynamic data changes.
+The upgraded ranking solution provides more powerful search insights, utilizing regularly refreshed custom attributes to drive data quality.
+Full product knowledge
+Feature selection
+: The Vertex AI Search for commerce algorithm selects up to 20 most important custom attributes for each retailer.
+Benefits:
+Improved ranking accuracy by leveraging additional information about products, such as sale codes and product or style specifications.
+Visibility
+: Retailers can view the selected custom attributes and ensure they are maintained and up-to-date.
+Customization and learning
+: Customers can identify patterns in selected custom attributes and add other relevant ones to further increase ranking performance.
+How to see which attributes are being used
+If a customer has the higher tiers enabled with sufficient user event data points, the new custom attributes information is now visible in the Console, listed under the
+Text search
+and/or
+Browse search
+tab in the
+Data quality
+page of the Search for commerce. Here, it tells you which custom attributes were chosen by the Vertex AI Search for commerce system.
+Note:
+Attributes don't have to be searchable, but they must be in your product catalog.
+Note: The number of attributes is not limited. You can add as many attributes according to your preferences. All are eligible for feature selection.
+What to do with the custom attributes
+Maintain and don't delete or deprecate attributes that were chosen because it may affect the model.
+Improve coverage for auto selected attributes, filling in these fields for more products
+Examine trends in which custom attributes are autoselected. If you have other similar attributes, add them to your catalog. They will become candidates for selection by the feature search algorithm.
+Correctly annotate numeric attributes by assigning them numeric values rather than string values. For example, provide a numeric value of
+10.5
+, instead of text ("10.5").
+Turn off personalization
+To turn off personalization, set
+ServingConfig.personalizationSpec
+to
+mode.DISABLED
+.
+Data quality alerts
+The data quality alerts are triggered if a metric value on the dashboard changes from satisfying to non satisfying. Alerts are sent by emails.
+If you want to see Cloud Monitoring related alerts, go to
+Set up alerts
+.
+View data quality
+Go to the
+Data quality
+page in the Search for commerce console.
+Go to the Data quality page
+Review rows, metrics, and alerts: One row corresponds to one metric, and one metric corresponds to one alert.
+Set up data quality alerts
+REST
+Call the
+UpdateAlertConfig
+API.
+curl -X PATCH -H "Authorization: Bearer $(gcloud auth print-access-token)" \
+    -H "Content-Type: application/json" -H "X-GFE-SSL: yes" -H "X-Goog-User-Project:
+PROJECT_ID
+" \
+ "https://retail.googleapis.com/v2alpha/projects/
+PROJECT_ID
+/alertConfig" \
+--data '
+{
+  "alertPolicies": [
+    {
+      "alertGroup": "search-data-quality",
+      "enrollStatus": "ENROLLED",
+      "recipients": [
+        {
+          "emailAddress": "
+EMAIL_ADDRESS_1
+"
+        },
+        {
+          "emailAddress": "
+EMAIL_ADDRESS_2
+"
+        }
+      ]
+    }
+  ]
+}'
+Replace the following:
+PROJECT_ID
+: The ID of your Google Cloud project.
+EMAIL_ADDRESS_1
+,
+EMAIL_ADDRESS_2
+: The email addresses that you want to enroll in for the alerts. They should be SMTP compliant. At most 20 email addresses can be added to one alert policy.
+Console
+Go to the
+Data quality
+page in the Search for commerce console.
+Go to the Data quality page
+At the top, click
+settings
+Configure alerts
+.
+Add at least one email address. The email addresses should be compliant to SMTP (Simple Mail Transfer Protocol). At most, you can add up to 20 email addresses to one alert policy.
+Click
+Submit
+.
+Disable data quality alerts
+REST
+Call the UpdateAlertConfig API.
+curl -X PATCH -H "Authorization: Bearer $(gcloud auth print-access-token)" \
+    -H "Content-Type: application/json" -H "X-GFE-SSL: yes" -H "X-Goog-User-Project:
+PROJECT_ID
+" \
+ "https://retail.googleapis.com/v2alpha/projects/
+PROJECT_ID
+/alertConfig" \
+--data '
+{
+  "alertPolicies": [
+    {
+      "alertGroup": "search-data-quality",
+      "enrollStatus": "DECLINED",
+      "recipients": [
+      ]
+    }
+  ]
+}'
+Replace the following:
+PROJECT_ID
+: The ID of your Google Cloud project.
+Console
+Go to the
+Data quality
+page in the Search for commerce console.
+Go to the Data quality page
+Click
+settings
+Configure alerts
+.
+Delete all existing emails.
+Click
+Submit
+.
+Troubleshoot
+Here is how to solve the following common issues.
+Data check isn't passing
+If a data check isn't passing, click
+Details
+for that metric on the
+Data
+quality
+page to see a more detailed description of that metric and the
+thresholds to meet that satisfy that data check.
+If you have already met the data requirements, check the
+Timestamp
+section
+for when that metric was last computed. If you recently reformatted or ingested
+a significant amount of data, it might take several hours to re-compute that
+metric.
+If you haven't met the data requirements, you might need to reformat data or
+collect more data to meet the data check requirements. After you have ensured
+your data will meet the metric threshold, re-import your reformatted data or
+import your additional data, then wait for the metric to re-compute.
+A metric value labeled as N/A
+Metrics values are displayed as N/A if no data has been uploaded or if the
+metrics are not yet computed. It can take up to 24 hours after importing data to
+compute some data checks.
+Performance tier has no blocking issues but isn't in use
+To troubleshoot, follow these steps:
+Check if there are any blocking data issues for previous tiers. You need to
+meet the requirements for all previous tiers to upgrade to the next tier.
+Wait 24 hours. After all upgrade-blocking data checks have passed, it takes
+about 24 hours to train and prepare the model and activate the newly unlocked
+tier.
+If the performance tier isn't marked as in-use within two days of passing all of
+its upgrade-blocking data checks, contact Vertex AI Search for commerce
+support
+with
+your project number and project ID for assistance.
+Additional data requirement information
+For more about Vertex AI Search for commerce data requirements, see the documentation:
+General Vertex AI Search for commerce requirements when uploading user event data:
+Requirements for user events
+Minimum user event requirements to get results for search:
+Search requirements
+Catalog data requirements:
+Catalog data quality metrics
+What's next
+Import historical user events
+Import catalog information
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español – América Latina
+Français
+Português – Brasil
+中文 – 简体
+日本語
+한국어

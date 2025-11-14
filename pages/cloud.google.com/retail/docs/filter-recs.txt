@@ -1,0 +1,982 @@
+Filter recommendations  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Filter recommendations
+This page describes filtering results for recommendations using
+product attributes.
+You can filter prediction results by specifying a filter expression in predict
+requests. The filter expression is a logical expression that is evaluated for
+each product. The list of products in the response is narrowed down to products
+where the expression evaluates to true.
+Note:
+Tag expression updates can take up to eight hours to become available for
+use in filtering predictions with v1 and v2, including to the attribute configs for filtering and product-level metadata changes. Only the
+Availability
+field has real-time updates.
+There are two versions of filtering for recommendations:
+Version 2
+is recommended.
+Version 1
+is deprecated but may still be in use.
+The sections in this how-to guide only apply to version 2 of filtering, which
+filters recommendations using product attributes.
+Recommendation filtering, version 2
+Version 2 uses product attributes. Filter expressions
+are based on product attributes. These can be predefined system attributes,
+such as
+categories
+and
+colors
+, or custom attributes you define, such as
+attributes.styles
+. When you set a product attribute as filterable,
+recommendations can then automatically use those attributes as
+tags for recommendations filtering, instead of requiring that you manually
+add filter tags.
+When you use attributes to filter products, the prediction response
+returns primary products that contain at least one primary or variant product
+that has an attribute value matching the filter
+expression. For more about primary and variant products, see
+Product levels
+.
+The following filter expression example also filters for any red or blue
+products set as "New-Arrival" and not set as promotional:
+colors: ANY("red", "blue") AND attributes.status: ANY("New-Arrival") AND NOT attributes.is_promotional: ANY("true")
+To use version 2 of filtering for recommendations follow these
+procedures. Each procedure is given later on this page.
+Turn on recommendations filtering for a model
+that will
+serve filtered recommendations.
+Turn on recommendations filtering for product attributes
+that you plan to filter on.
+Use filterable product attributes in predict requests
+.
+Recommendation filtering, version 1 (deprecated)
+Version 1 uses manually created filter tags. Filter expressions are based
+on
+filter tags
+, which you must manually add to any products in your
+catalog that you plan to filter.
+The following filter expression example uses filter tags to specify products
+tagged as "Red" or "Blue", as well as the tag "New-Arrival", and are not
+tagged as "promotional":
+tag=("Red" OR "Blue") tag="New-Arrival" tag=(NOT "promotional")
+See the API reference documentation for the
+Product.tags[]
+field.
+Tag expressions can contain the boolean operators
+OR
+or
+NOT
+, which must
+be separated from the tag values by one or more spaces. Tag values can
+also be immediately prepended by a dash (
+-
+), which is equivalent to
+the
+NOT
+operator. Tag expressions that use the boolean operators must
+be enclosed in parentheses.
+In addition to tags, you can filter by
+filterOutOfStockItems
+.
+The
+filterOutOfStockItems
+flag filters out any products with a
+stockState
+of
+OUT_OF_STOCK
+.
+You can combine tag filters and out-of-stock filters so that only items that
+satisfy all specified filter expressions are returned.
+Some example filter strings:
+"filter": "tag=\"spring-sale\""
+"filter": "filterOutOfStockItems"
+"filter": "tag=\"spring-sale\" tag=\"exclusive\" filterOutOfStockItems"
+The following example returns only items that are in stock that have either
+the
+spring-sale
+or the
+exclusive
+tag (or both) and also does not have the
+items-to-exclude
+tag.
+"filter": "tag=(\"spring-sale\" OR \"exclusive\") tag=(-\"items-to-exclude\") filterOutOfStockItems"
+Attribute filter and tag filter compatibility
+If a model has both manually created tags and filterable product attributes, it
+can serve predict requests using either version of filtering. However, it's not
+possible to include both v1 filtering and v2 filtering expressions in the same
+predict request.
+Recommendations filtering limits
+Manually add filter criteria to restrict the set of recommendations returned to end users.
+Use Vertex AI Search for commerce to apply business rules to fine-tune what customers see, including options to filter by product availability, custom tags, and other criteria.
+Each filterable attribute consumes some memory in each of your models. The
+following limits help prevent adverse effects on serving performance:
+Up to 10 custom attributes can be set as filterable in your catalog.
+Up to 100,000,000 filterable attribute values can be present in your catalog.
+The total number of attribute values in your catalog can be estimated by
+multiplying the number of products in your catalog by the number of filterable
+attributes.
+For example, if you have a catalog with 1,000 products and 3 attributes set
+as filterable, the total number of attribute values can be estimated as
+3*1000=3000.
+If you are using version 1 recommendations filtering alongside version 2, the
+number of filter tags count towards your quota. Make sure that the number of
+filter tags added to the total number of attribute values is less than
+100,000,000.
+If you exceed the limits, you are prevented from
+setting additional attributes as filterable. If you need to exceed these limits,
+request a quota increase.
+The total number of tags is computed during model training. If the total number
+exceeds the limit, model training fails. If more than 10 filterable custom
+attributes are found during model training, only 10 are used.
+Recommendations filter expression syntax
+The filter expression syntaxes for search and
+recommendations are similar. However, recommendations have several limitations.
+The recommendations filter expression syntax can be summarized by
+the following
+EBNF
+:
+# A single expression or multiple expressions that are joined by "AND" or "OR".
+filter
+=
+expression
+,
+{
+" AND "
+|
+"OR"
+,
+expression
+}
+;
+# An expression can be prefixed with "-" or "NOT" to express a negation.
+expression
+=
+[
+"-"
+|
+"NOT "
+]
+,
+# A parenthesized expression
+|
+"("
+,
+expression,
+")"
+# A simple expression applying to a textual field.
+# Function "ANY" returns true if the field contains any of the literals.
+(
+textual_field
+,
+":"
+,
+"ANY"
+,
+"("
+,
+literal
+,
+{
+","
+,
+literal
+}
+,
+")"
+# A literal is any double-quoted case sensitive string. You must escape backslash (\) and
+# quote (") characters. We do not support textual values containing `/` characters, or partial string matches.
+# The literal must be an exact match for products in the catalog. The Predict
+# API returns empty results when no possible matches exist.
+literal
+=
+double-quoted
+string
+;
+textual_field
+=
+see
+the
+tables
+below
+;
+Filter syntax restrictions
+The following restrictions apply:
+The depth of embedding
+AND
+and
+OR
+operators in parentheses is limited. The
+logical expressions in the filter must be in
+conjunctive normal form (CNF)
+. The most complex
+supported logical expression can be an
+AND
+-connected list of clauses that
+only contain
+OR
+operators, such as:
+(... OR ... OR ...) AND (... OR ...)
+AND (... OR ...)
+Expressions can be negated with the
+NOT
+keyword or with
+-
+. This only works
+with
+ANY()
+-expressions with a single argument that don't include
+inventory-related attributes.
+availability
+-based restrictions must be on the top-level. They cannot be
+used as part of an
+OR
+-clause or a negation (
+NOT
+).
+Because standard recommendations filtering supports textual fields only,
+less-than, greater-than, and range-check operations are not supported for
+standard recommendations filtering. Less-than and greater-than operations can
+be used only with recommendations boost or bury control conditions, which support
+some numerical fields (see
+Boost/bury supported fields
+).
+The maximum number of terms in the top-level
+AND
+-clause is 20.
+An
+OR
+clause can have up to 100 arguments that are included in
+ANY()
+expressions. If an
+OR
+clause has multiple
+ANY()
+expressions, their
+arguments all count toward this limit. For example,
+colors: ANY("red",
+"green") OR colors: ANY("blue")
+has three arguments. For the Vertex AI Search for commerce use case, you can think of an
+argument as the equivalent of an attribute value.
+The following table shows valid filter expression examples, as well as invalid
+examples and the reasons they are invalid.
+Expression
+Valid
+Notes
+colors: ANY("red", "green")
+Yes
+NOT colors: ANY("red")
+Yes
+NOT colors: ANY("red", green")
+No
+Negates an `ANY()` with more than one argument.
+colors: ANY("red", "green") OR
+categories: ANY(\"Phone > Android > Pixel\")
+Yes
+(colors: ANY("red") OR colors: ANY("green")) AND
+categories: ANY(\"Phone > Android > Pixel\")
+Yes
+(colors: ANY("red") AND colors: ANY("green")) OR
+categories: ANY(\"Phone > Android > Pixel\")
+No
+Not in conjunctive normal form.
+(colors: ANY("red")) AND (availability: ANY("IN_STOCK")
+Yes
+(colors: ANY("red")) OR (availability: ANY("IN_STOCK"))
+No
+Combines
+availability
+in an
+OR
+expression with other conditions.
+Inventory-related attribute filtering
+Filtering on inventory-related attributes is based on the real-time state of
+your products. For
+availability: ANY("IN_STOCK")
+filtering, the prediction response
+returns primary products where the primary or a variant product has the matching value of
+IN_STOCK
+. For more about primary and variant products, see
+Product levels
+. We don't support
+Primary only
+or
+Variant only
+filtering.
+IN_STOCK
+is the only
+availability
+attribute value supported by version 2 of
+recommendations filtering.
+Inventory-related attributes can be used in
+AND
+-clauses, but not in
+OR
+-clauses.
+Tip:
+While the Search API supports filtering by local inventory stock status, the Recommendations API doesn't. A workaround to filter Recommendations responses by stock status at the
+local inventory level
+is to add a post-processing step, where you filter the product list using your own method before sending the product list on to the client.
+Supported fields
+Supported textual fields are summarized in the following table.
+Boost or bury for recommendations supports additional fields that
+are not supported by standard recommendations filtering. For a list of
+such fields, see
+Boost/bury supported fields
+.
+field
+description
+"productId"
+The product ID (the last segment of Product.name).
+"brands"
+The Product.brands.
+"categories"
+The Product.categories.
+"genders"
+The Audience.genders.
+"ageGroups"
+The Audience.age_groups.
+"colorFamilies"
+The ColorInfo.color_families.
+"colors"
+The ColorInfo.colors.
+"sizes"
+The Product.sizes.
+"materials"
+The Product.materials.
+"patterns"
+The Product.patterns.
+"conditions"
+The Product.conditions.
+"attributes.key"
+The textual custom attribute in Product object. Key can be any key in
+        the Product.attributes map, if the attribute values are textual.
+Boost/bury supported fields
+Boost/bury supports some additional fields that are not supported by standard
+recommendations filtering, including numerical fields.
+In addition to the fields listed in
+Supported fields
+,
+boost/bury for recommendations supports the following fields:
+Textual fields
+field
+description
+"tags"
+Product.tags[]
+. Custom tags associated with the
+        product.
+Numerical fields
+field
+description
+"price"
+PriceInfo.price
+. The price of the product.
+"discount"
+The product discount. This field is computed using the original price
+        and price field values from
+PriceInfo
+.
+"rating"
+Product.rating
+. The total number of ratings for the
+        product.
+"ratingCount"
+rating.ratingCount
+. The total number of ratings for the
+        product.
+Set recommendations filtering for a model
+You can turn on filtering for recommendations using the
+Search for commerce console or the
+Models
+API resource.
+From the console, you can create a new model that has recommendations filtering
+enabled. You can also update this option for existing models.
+Using the
+Models
+API resource, you can create a new model with recommendations
+filtering turned on or update this setting for an existing model using
+models.Patch
+.
+Note that if the serving config that returns predictions has
+category matching
+enabled, filtering does not work
+the "categories" attribute because the response returns only product results
+that share a category with the context product.
+Set filtering for a model using the console
+Using the Search for commerce console, select the
+Auto generate tags
+option during model creation to allow recommendation filtering for that model.
+Double check the compatibility with other settings such as
+diversity-level
+and
+category-match-level
+etc because the total effects combine together and filtering happens last.
+For example, combining rule-based
+diversity-level
+and
+category attribute filtering
+frequently results in empty output.
+diversity-level=high-diversity
+forces the model to limit the maximum results for the same category strings. Ie, 1 result for category1, 1 result for category2, etc.
+Attribute filtering using category metadata (
+Product.categories = ANY ("category2")
+) causes the model to discard items that don't match.
+Final output has fewer than three results.
+For the
+similar-items
+model, it already contains extra category relevancy boosting with the default
+category-match-level = relaxed-category-match
+. Switch to
+category-match-level=no-category-match
+to disable the behavior and use custom filtering rules.
+See
+Create recommendation models
+for instructions on creating a
+recommendation model using the console.
+This setting can't be updated in the console for existing models. To update this
+setting for a model, use the
+models.Patch
+API method.
+Set filtering for a model using the API
+You can turn on recommendations filtering for a model using
+models.Create
+when creating a new model or
+models.Patch
+when updating an existing model.
+To allow filtering, set the
+filteringOption
+field for your model. This field's
+allowed values are:
+RECOMMENDATIONS_FILTERING_DISABLED
+(default): Filtering is turned off for
+the model.
+RECOMMENDATIONS_FILTERING_ENABLED
+: Filtering is turned on for primary
+products.
+The following curl example creates a new model that has recommendations
+filtering turned on.
+curl
+-
+X
+PATCH
+\
+-
+H
+"Authorization: Bearer $(gcloud auth application-default print-access-token)"
+\
+-
+H
+"Content-Type: application/json; charset=utf-8"
+\
+-
+H
+"X-Goog-User-Project:
+PROJECT_NUMBER
+"
+\
+--
+data
+"{
+'name': '
+MODEL_NAME
+',
+'displayName': '
+MODEL_DISPLAY_NAME
+',
+'type': 'home-page',
+'filteringOption': 'RECOMMENDATIONS_FILTERING_ENABLED',
+}"
+\
+"https://retail.googleapis.com/v2/projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog/models"
+The following curl example updates the filtering option setting for an existing
+model.
+curl
+-X
+PATCH
+\
+-H
+"Authorization: Bearer $(gcloud auth application-default print-access-token)"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+-H
+"X-Goog-User-Project:
+PROJECT_NUMBER
+"
+\
+--data
+"{
+'filteringOption': 'RECOMMENDATIONS_FILTERING_ENABLED',
+}"
+\
+"https://retail.googleapis.com/v2/projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog/models/
+MODEL_ID
+?updateMask=filteringOption"
+Set attributes as filterable
+To filter recommended products, turn on filtering for the product attributes
+that you will use in filter expressions. You can update this setting using the
+Search for commerce console or using the
+Attributes
+API resource.
+Don't make more attributes filterable than needed. There is a limit on the
+number of filterable attributes.
+Set attributes as filterable using the console
+You can set an attribute as filterable
+Controls page
+in the
+Search for commerce console.
+Go to the
+Controls
+page in the Search for commerce console.
+Go to the Controls page
+Go to the
+Attribute controls
+tab.
+This tab displays a table of all product attributes you can set site-wide
+controls for.
+Click
+edit
+Modify Controls
+.
+Set
+Filterable
+to
+True
+for the product attribute.
+Click
+Save Controls
+.
+You can start using the attribute for filtering after the next model training
+cycle has completed.
+Set attributes as filterable using the API
+AttributesConfig
+represents a list of attributes for a catalog.
+Set the
+AttributesConfig.filteringOption
+field for
+CatalogAttribute
+. This
+field's allowed values are:
+RECOMMENDATIONS_FILTERING_DISABLED
+(default): Filtering is turned off for
+the attribute.
+RECOMMENDATIONS_FILTERING_ENABLED
+: Filtering is turned on for the attribute.
+The following curl example queries your existing product attributes.
+curl
+-X
+GET
+\
+-H
+"Authorization: Bearer $(gcloud auth application-default print-access-token)"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+-H
+"X-Goog-User-Project:
+PROJECT_NUMBER
+"
+\
+"https://retail.googleapis.com/v2/projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog/attributesConfig"
+The following curl example sets the product attribute
+categories
+as
+filterable.
+When updating an existing attribute, keep the attribute's original values for
+indexableOption
+,
+dynamicFacetableOption
+, and
+searchableOption
+as they
+appear in the previous step. If your chosen attribute did not appear when
+viewing
+attributesConfig
+as in the previous example, then use the default
+settings as shown in the following example.
+curl
+-X
+PATCH
+\
+-H
+"Authorization: Bearer $(gcloud auth application-default print-access-token)"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+-H
+"X-Goog-User-Project:
+PROJECT_NUMBER
+"
+\
+--data
+"{
+'name': 'projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/attributesConfig',
+'catalogAttributes': {
+'categories': {
+'key': 'categories',
+'indexableOption': 'INDEXABLE_ENABLED',
+'dynamicFacetableOption': 'DYNAMIC_FACETABLE_DISABLED',
+'searchableOption': 'SEARCHABLE_DISABLED',
+'recommendationsFilteringOption': 'RECOMMENDATIONS_FILTERING_ENABLED'
+}
+},
+'attributeConfigLevel': 'CATALOG_LEVEL_ATTRIBUTE_CONFIG'
+}"
+\
+"https://retail.googleapis.com/v2/projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog/attributesConfig"
+You can start using the attribute for filtering after the next model training
+cycle has completed. This typically takes at least eight hours.
+Use filterable attributes in a predict request
+After your model has been retrained, you can use filterable product attributes
+in your predict requests.
+Set the request parameter value
+filterSyntaxV2
+to true to activate version 2
+recommendations filtering. If the parameter is not set, version 1 filtering
+remains active. If a model has both manually created tags and filterable product
+attributes, it can serve predict requests using either version of filtering.
+However, it's not possible to include both v1 filtering and v2 filtering
+expressions in the same predict request.
+The following partial curl example shows
+filterSyntaxV2
+set to true, and a
+filter expression using the product attributes
+colors
+and
+categories
+. This
+example assumes
+colors
+and
+categories
+are set as filterable.
+"params": {
+  "filterSyntaxV2": true
+},
+"filter": "(categories: ANY(\"Phone > Android > Pixel\") OR colors: ANY(\"red\", \"green\")) AND (availability: ANY(\"IN_STOCK\"))"
+The following curl example shows a complete predict request.
+curl
+-X
+POST
+\
+-H
+"Authorization: Bearer $(gcloud auth application-default print-access-token)"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+-H
+"X-Goog-User-Project:
+PROJECT_NUMBER
+"
+\
+--data
+"{
+'userEvent': {
+'eventType': 'detail-page-view',
+'visitorId': '
+VISITOR_ID
+',
+'productDetails': {
+'product': {
+'id': '
+PRODUCT_ID
+'
+}
+}
+},
+'params': {
+'returnProduct': true,
+'filterSyntaxV2': true,
+'strictFiltering': true,
+},
+'filter': 'categories: ANY(\"xyz\")'
+}"
+\
+"https://retail.googleapis.com/v2/projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog/placements/
+SERVING_CONFIG
+:predict"
+In addition to filters, the serving config's
+diversification setting
+can also affect the number of
+results returned by the response.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

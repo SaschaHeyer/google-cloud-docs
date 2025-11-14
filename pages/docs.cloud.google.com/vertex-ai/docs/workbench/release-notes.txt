@@ -1,0 +1,1786 @@
+Vertex AI Workbench release notes  |  Google Cloud Documentation
+Skip to main content
+Technology areas
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+/
+Console
+English
+Deutsch
+Español – América Latina
+Français
+Português – Brasil
+中文 – 简体
+日本語
+한국어
+Sign in
+Vertex AI Workbench
+Start free
+Guides
+Reference
+Samples
+Support
+Resources
+Technology areas
+More
+Guides
+Reference
+Samples
+Support
+Resources
+Cross-product tools
+More
+Console
+Discover
+Overview
+Introduction to Vertex AI
+MLOps on Vertex AI
+Interfaces for Vertex AI
+Vertex AI beginner's guides
+Train an AutoML model
+Train a custom model
+Get inferences from a custom model
+Train a model using Vertex AI and the Python SDK
+Introduction
+Prerequisites
+Create a notebook
+Create a dataset
+Create a training script
+Train a model
+Make an inference
+Integrated ML frameworks
+PyTorch
+TensorFlow
+Vertex AI for BigQuery users
+Glossary
+Get started
+Set up a project and a development environment
+Install the Vertex AI SDK for Python
+Choose a training method
+Try a tutorial
+Tutorials overview
+AutoML tutorials
+Hello image data
+Overview
+Set up your project and environment
+Create a dataset and import images
+Train an AutoML image classification model
+Evaluate and analyze model performance
+Deploy a model to an endpoint and make an inference
+Clean up your project
+Hello tabular data
+Overview
+Set up your project and environment
+Create a dataset and train an AutoML classification model
+Deploy a model and request an inference
+Clean up your project
+Custom training tutorials
+Train a custom tabular model
+Train a TensorFlow Keras image classification model
+Overview
+Set up your project and environment
+Train a custom image classification model
+Serve predictions from a custom image classification model
+Clean up your project
+Fine-tune an image classification model with custom data
+Custom training notebook tutorials
+Use Generative AI and LLMs
+About Generative AI
+Use Vertex AI development tools
+Development tools overview
+Use the Vertex AI SDK
+Overview
+Introduction to the Vertex AI SDK for Python
+Vertex AI SDK for Python classes
+Vertex AI SDK classes overview
+Data classes
+Training classes
+Model classes
+Prediction classes
+Tracking classes
+Use Vertex AI in notebooks
+Choose a notebook solution
+Colab Enterprise
+Quickstart:Create a notebook by using the console
+Connect to a runtime
+Manage runtimes and runtime templates
+Create a runtime template
+Create a runtime
+Vertex AI Workbench
+Introduction
+Notebook tutorials
+Get started
+Create an instance by using the Console
+Schedule a notebook run
+Set up an instance
+Create an instance
+Create a specific version of an instance
+Create an instance with user credential access
+Create an instance with Confidential Computing
+Add a conda environment
+Idle shutdown
+Create an instance using a custom container
+Create a Dataproc-enabled instance
+Create an instance with third party credentials
+Manage features through metadata
+Use reservations
+Connect to data
+Query data in BigQuery from within JupyterLab
+Access Cloud Storage buckets and files in JupyterLab
+Explore and visualize data
+Explore and visualize data in BigQuery
+Maintain
+Manage your conda environment
+Back up and restore
+Save a notebook to GitHub
+Use a snapshot
+Use Cloud Storage
+Shut down an instance
+Upgrade the environment of an instance
+Access JupyterLab by using SSH
+Migrate data to a new instance
+Change machine type and configure GPUs
+Provision resources using Terraform
+Monitor
+Monitor health status
+Control access
+Access control
+Manage access to an instance
+Manage access to an instance's JupyterLab interface
+Use customer-managed encryption keys
+Use an instance within a service perimeter
+Troubleshoot Vertex AI Workbench
+Vertex AI Workbench release notes
+Managed notebooks
+Introduction to managed notebooks
+Get started
+Create a managed notebooks instance by using the Cloud console
+Schedule a managed notebooks run
+Set up a managed notebooks instance
+Create an instance with a custom container
+Run a managed notebooks instance on a Dataproc cluster
+Use Dataproc Serverless Spark with managed notebooks
+Idle shutdown
+Managed notebooks versions
+Connect to data
+Query data in BigQuery from within JupyterLab
+Access Cloud Storage buckets and files in JupyterLab
+Explore and visualize data
+Overview
+Explore and visualize data in BigQuery
+Develop a model
+Model development in a managed notebooks instance
+Deploy
+Run notebook files with the executor
+Run notebook executions with parameters
+Maintain
+Migrate to a Vertex AI Workbench instance
+Save a notebook to GitHub
+Change machine type and configure GPUs of a managed notebooks instance
+Upgrade the environment of a managed notebooks instance
+Migrate data to a new managed notebooks instance
+Monitor
+Audit logging
+Control access
+Access control
+Manage access to an instance
+Manage access to an instance's JupyterLab interface
+Use customer-managed encryption keys
+Set up a network
+Use a managed notebooks instance within a service perimeter
+Troubleshoot managed notebooks
+User-managed notebooks
+Introduction to user-managed notebooks
+Get started
+Create a user-managed notebooks instance by using the Cloud console
+Set up a user-managed notebooks instance
+Create a specific version of an instance
+Install dependencies
+Choose a virtual machine image
+Create an instance with a custom container
+Explore data
+Data science with R on Google Cloud: Exploratory data analysis tutorial
+Monitor
+Monitor health status
+Audit logging
+Control access
+Access control
+Manage access to an instance
+Manage access to an instance's JupyterLab interface
+Customer-managed encryption keys
+Use a user-managed notebooks instance within a service perimeter
+Use a shielded virtual machine with user-managed notebooks
+Tutorial: Create a notebooks instance in a VPC network
+Maintain
+Migrate to a Vertex AI Workbench instance
+Save a notebook to GitHub
+Back up your data by using a snapshot
+Shut down a user-managed notebooks instance
+Change machine type and configure GPUs of a user-managed notebooks instance
+Upgrade the environment of a user-managed notebooks instance
+Migrate data to a new user-managed notebooks instance
+Register a legacy instance with Notebooks API
+Access JupyterLab by using SSH
+Troubleshoot user-managed notebooks
+Terraform support for Vertex AI
+Managed Training on reserved clusters
+Managed Training overview
+Get started with Managed Training
+Predictive AI model development
+Overview
+AutoML model development
+AutoML training overview
+Image data
+Classification
+Prepare data
+Create dataset
+Train model
+Evaluate model
+Get predictions
+Interpret results
+Object detection
+Prepare data
+Create dataset
+Train model
+Evaluate model
+Get predictions
+Interpret results
+Encode image data using Base64
+Export an AutoML Edge model
+Tabular data
+Overview
+Introduction to tabular data
+Tabular Workflows
+Overview
+Feature engineering
+End-to-End AutoML
+Overview
+Train a model
+Get online inferences
+Get batch inferences
+TabNet
+Overview
+Train a model
+Get online inferences
+Get batch inferences
+Wide & Deep
+Overview
+Train a model
+Get online inferences
+Get batch inferences
+Forecasting
+Overview
+Train a model
+Get online inferences
+Get batch inferences
+Pricing
+Service accounts
+Manage quotas
+Perform classification and regression with AutoML
+Overview
+Quickstart: AutoML Classification (Cloud Console)
+Prepare training data
+Create a dataset
+Train a model
+Evaluate model
+View model architecture
+Get online inferences
+Get batch inferences
+Export model
+Perform forecasting with AutoML
+Overview
+Prepare training data
+Create a dataset
+Train a model
+Evaluate model
+Get inferences
+Hierarchical forecasting
+Perform forecasting with ARIMA+
+Perform forecasting with Prophet
+Perform entity reconciliation
+Feature attributions for classification and regression
+Feature attributions for forecasting
+Data types and transformations for tabular AutoML data
+Training parameters for forecasting
+Data splits for tabular data
+Best practices for creating tabular training data
+Forecast with Timeseries Insights
+Train an AutoML Edge model
+Using the Console
+Using the API
+AutoML Text
+Migrate from AutoML text to Gemini
+Gemini for AutoML text users
+Vertex AI Training
+Overview of custom training in Vertex AI
+Load and prepare data
+Data preparation overview
+Use Cloud Storage as a mounted file system
+Mount an NFS share for custom training
+Use managed datasets
+Prepare training application
+Understand the custom training service
+Prepare training code
+Use prebuilt containers
+Create a Python training application for a prebuilt container
+Prebuilt containers for custom training
+Use custom containers
+Custom containers for training
+Create a custom container
+Containerize and run training code locally
+Use Deep Learning VM Images and Containers
+Train on a persistent resource
+Overview
+Create persistent resource
+Run training jobs on a persistent resource
+Get persistent resource information
+Reboot a persistent resource
+Delete a persistent resource
+Configure training job
+Choose a custom training method
+Configure container settings for training
+Configure compute resources for training
+Use reservations with training
+Use Spot VMs with training
+Submit training job
+Create custom jobs
+Hyperparameter tuning
+Hyperparameter tuning overview
+Use hyperparameter tuning
+Create training pipelines
+Schedule jobs based on resource availability
+Use distributed training
+Training with Cloud TPU VMs
+Use private IP for custom training
+Use Private Service Connect interface for training (recommended)
+Perform Neural Architecture Search
+Overview
+Set up environment
+Beginner tutorials
+Best practices and workflow
+Proxy task design
+Optimize training speed for PyTorch
+Use prebuilt training containers and search spaces
+Monitor and debug
+Monitor and debug training using an interactive shell
+Profile model training performance
+Optimize using Vertex AI Vizier
+Overview of Vertex AI Vizier
+Create Vertex AI Vizier studies
+Vertex AI Vizier notebook tutorials
+Get inferences
+Tutorial: Build a pipeline for continuous training
+Create custom organization policy constraints
+Ray on Vertex AI
+Ray on Vertex AI overview
+Set up for Ray on Vertex AI
+Create a Ray cluster on Vertex AI
+Monitor Ray clusters on Vertex AI
+Scale a Ray cluster on Vertex AI
+Develop a Ray application on Vertex AI
+Run Spark on Ray cluster on Vertex AI
+Use Ray on Vertex AI with BigQuery
+Deploy a model and get inferences
+Delete a Ray cluster
+Ray on Vertex AI notebook tutorials
+Generative AI model development
+Overview
+Create and manage datasets
+Overview
+Data splits for AutoML models
+Create an annotation set
+Delete an annotation set
+Add labels (console)
+Export metadata and annotations from a dataset
+Manage dataset versions
+Use Data Catalog to search for model and dataset resources
+Get inferences
+Overview
+Configure models for inference
+Export model artifacts for inference
+Prebuilt containers for inference
+Custom container requirements for inference
+Use a custom container for inference
+Use arbitrary custom routes
+Use the optimized TensorFlow runtime
+Serve inferences with NVIDIA Triton
+Custom inference routines
+Get online inferences
+Create an endpoint
+Choose an endpoint type
+Create a public endpoint
+Use dedicated public endpoints (recommended)
+Use dedicated private endpoints based on Private Service Connect (recommended)
+Use private services access endpoints
+Deploy a model to an endpoint
+Overview of model deployment
+Compute resources for inference
+Deploy a model by using the Google Cloud console
+Deploy a model by using the gcloud CLI or Vertex AI API
+Use autoscaling for inference
+Use a rolling deployment to replace a deployed model
+Undeploy a model and delete the endpoint
+Use Cloud TPUs for online inference
+Use reservations with online inference
+Use Flex-start VMs with inference
+Use Spot VMs with inference
+Get an online inference
+View online inference metrics
+View endpoint metrics
+View DCGM metrics
+Share resources across deployments
+Use online inference logging
+Get batch inferences
+Get batch inferences from a custom model
+Use reservations with batch inference
+Get batch prediction from a self-deployed Model Garden model
+Serve generative AI models
+Deploy generative AI models
+Serve Gemma open models using Cloud TPUs with Saxml
+Serve Llama 3 open models using multi-host Cloud TPUs with Saxml
+Serve a DeepSeek-V3 model using multi-host GPU deployment
+Custom organization policies
+Vertex AI inference notebook tutorials
+Perform vector similarity searches
+Vector Search overview
+Try it
+Get started
+Vector Search quickstart
+Before you begin
+Notebook tutorials
+About hybrid search
+Create and manage index
+Input data format and structure
+Create and manage your index
+Storage-optimized indexes
+Index configuration parameters
+Update and rebuild index
+Filter vector matches
+Import index data from BigQuery
+Embeddings with metadata
+Deploy and query an index
+Private Service Connect (recommended)
+Set up Vector Search with Private Service Connect
+Query
+JSON Web Token authentication
+Public endpoint
+Deploy
+Query
+Private services access
+Set up a VPC network peering connection
+Deploy
+Query
+JSON Web Token authentication
+Monitor a deployed index
+Use custom organization policies
+Get support
+Machine learning operations (MLOps)
+Manage features
+Feature management in Vertex AI
+Vertex AI Feature Store
+About Vertex AI Feature Store
+Set up features
+Prepare data source
+Create a feature group
+Create a feature
+Set up online serving
+Online serving types
+Create an online store instance
+Create a feature view instance
+Control access
+Control access to resources
+Sync online store
+Start a data sync
+List sync operations
+Update features in a feature view
+Serve features
+Serve features from online store
+Serve historical feature values
+Monitor
+Monitor features
+Manage feature resources
+List feature groups
+List features
+Update a feature group
+Update a feature
+Delete a feature group
+Delete a feature
+Manage online store resources
+List online stores
+List feature views
+Update an online store
+Update a feature view
+Delete an online store
+Delete a feature view
+Feature metadata
+Update labels
+Search for resources
+Search for resources
+Search for resource metadata in Data Catalog
+Manage embeddings
+Search using embeddings
+Notebook tutorials
+Vertex AI Feature Store tutorial notebooks
+Vertex AI Feature Store (Legacy)
+About Vertex AI Feature Store (Legacy)
+Data model and resources
+Source data requirements
+Setup
+Best practices
+Use Vertex AI Feature Store (Legacy)
+Manage featurestores
+Manage entity types
+Manage and find features
+Batch import
+Streaming import
+Online serving
+Fetch training data
+Export feature values
+Delete feature values
+Monitoring
+Control access to resources
+Manage models
+Introduction to Vertex AI Model Registry
+Versioning in Model Registry
+Import models to Model Registry
+Copy models in Model Registry
+Delete a model
+Integrate with BigQuery ML
+Use model aliases
+Use model labels
+Use Data Catalog to search for model and dataset resources
+Evaluate models
+Model evaluation in Vertex AI
+Perform model evaluation in Vertex AI
+Model evaluation for fairness
+Introduction to model evaluation for fairness
+Data bias metrics for Vertex AI
+Model bias metrics for Vertex AI
+Model evaluation notebook tutorials
+Orchestrate ML workflows using pipelines
+Introduction
+Interfaces
+Configure your project
+Build a pipeline
+Run a pipeline
+Use pipeline templates
+Create, upload, and use a pipeline template
+Use a prebuilt template from the Template Gallery
+Configure your pipeline
+Configure execution caching
+Configure failure policy
+Configure retries for a pipeline task
+Specify machine types for a pipeline step
+Request Google Cloud machine resources with Vertex AI Pipelines
+Configure Private Service Connect interface (recommended)
+Configure secrets with Secret Manager
+Configure a pipeline run on a persistent resource
+Schedule and trigger pipeline runs
+Schedule a pipeline run with scheduler API
+Trigger a pipeline run with Pub/Sub
+Cancel or delete pipeline runs
+Cancel pipeline runs
+Delete pipeline runs
+Rerun a pipeline
+Monitor pipeline execution
+View pipeline metrics
+View pipeline job logs
+Route logs to a Cloud Pub/Sub sink
+Configure email notifications
+Visualize results
+Visualize and analyze pipeline results
+Track the lineage of pipeline artifacts
+Output HTML and Markdown
+Resource labeling by Vertex AI Pipelines
+Understand pipeline run costs
+Migrate from Kubeflow Pipelines to Vertex AI Pipelines
+Use custom constraints
+Google Cloud Pipeline Components
+Quickstart
+Introduction to Google Cloud Pipeline Components
+Google Cloud Pipeline Component list
+Use Google Cloud Pipeline Components
+Build your own pipeline components
+Vertex AI Pipelines tutorials
+Tutorial notebooks
+Track and analyze your ML metadata
+Introduction to Vertex ML Metadata
+Data model and resources
+Configure your project's metadata store
+Use Vertex ML Metadata
+Track Vertex ML Metadata
+Analyze Vertex ML Metadata
+Manage Vertex ML Metadata
+System schemas
+Create and use custom schemas
+Use custom constraints with metadata stores
+Vertex ML Metadata notebook tutorials
+Understand model behavior
+Introduction to Explainable AI
+Configure example-based explanations for custom training
+Configure feature-based explanations for custom training
+Configure explanations
+Configure visualization settings
+Improve explanations
+Configure feature-based explanations for AutoML image classification
+Configure visualization settings
+Improve explanations
+Use TensorFlow for explanations
+Get explanations
+Limitations of Explainable AI
+Explainable AI notebook tutorials
+Monitor model quality
+Introduction to Model Monitoring
+Model Monitoring v2
+Set up model monitoring
+Run monitoring jobs
+Manage model monitors
+Model Monitoring v1
+Provide schemas to Model Monitoring
+Monitor feature skew and drift
+Monitor feature attribution skew and drift
+Model Monitoring for batch predictions
+Track Experiments
+Introduction to Vertex AI Experiments
+Set up for Vertex AI Experiments
+Create an experiment
+Create and manage experiment runs
+Log data
+Autolog data to an experiment run
+Manually log data to an experiment run
+Log models to an experiment run
+Track executions and artifacts
+Add pipeline run to experiment
+Run training job with experiment tracking
+Compare and analyze runs
+Use Vertex AI TensorBoard
+Introduction to Vertex AI TensorBoard
+Set up Vertex AI TensorBoard
+Configure training script
+Use Vertex AI TensorBoard with custom training
+Use Vertex AI TensorBoard with Vertex AI Pipelines
+Manually log TensorBoard data
+Upload existing logs
+View Vertex AI TensorBoard
+Notebook tutorials
+Get started with Vertex AI Experiments
+Compare pipeline runs
+Model training
+Compare models
+Autologging
+Custom training autologging
+Track parameters and metrics for custom training
+Delete outdated Vertex AI TensorBoard experiments
+Vertex AI TensorBoard custom training with custom container
+Vertex AI TensorBoard custom training with prebuilt container
+Vertex AI TensorBoard hyperparameter tuning with HParams dashboard
+Profile model training performance using Cloud Profiler
+Profile model training performance using Cloud Profiler in custom training with prebuilt container
+Vertex AI TensorBoard integration with Vertex AI Pipelines
+Administer
+Access control
+Access control with IAM
+IAM permissions
+Set up a project for a team
+Control access to Vertex AI endpoints
+Use a custom service account
+Use customer-managed encryption keys
+Access Transparency
+Monitor Vertex AI resources
+Cloud Monitoring metrics
+Audit logging information
+Networking
+Networking access overview
+Accessing the Vertex AI API
+Accessing Vertex AI services through private services access
+Accessing Vertex AI services through PSC endpoints
+Accessing Vertex AI services through PSC interfaces
+Set up VPC Network Peering
+Set up connectivity to other networks
+Set up a Private Service Connect interface
+Tutorial: Access training pipelines privately from on-premises
+Tutorial: Access a Vector Search index privately from on-premises
+Tutorial: Access the Generative AI API from on-premises
+Tutorial: Access batch predictions privately from on-premises
+Tutorial: Create a Vertex AI Workbench instance in a VPC network
+Security
+VPC Service Controls
+Allow public endpoint access to protected resources from outside a perimeter
+Allow multicloud access to protected resources from outside a perimeter
+Allow access to protected resources from inside a perimeter
+Name resources
+Samples and tutorials
+Notebook tutorials
+Code samples
+All Vertex AI code samples
+Code samples for all products
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Home
+Documentation
+AI and ML
+Vertex AI Workbench
+Guides
+Send feedback
+Vertex AI Workbench release notes
+Stay organized with collections
+Save and categorize content based on your preferences.
+This page documents production updates to Vertex AI Workbench. Check this page for
+announcements about new or updated features, bug fixes, known issues, and
+deprecated functionality.
+
+Vertex AI Workbench is a component of Vertex AI. For information
+on all Vertex AI releases, see the
+Vertex AI release notes
+.
+You can see the latest product updates for all of Google Cloud on the
+Google Cloud
+page, browse and filter all release notes in the
+Google Cloud console
+,
+        or programmatically access release notes in
+BigQuery
+.
+To get the latest product updates delivered to you, add the URL of this page to your
+feed
+          reader
+, or add the
+feed URL
+directly.
+October 09, 2025
+v2
+Feature
+M134 release
+The M134 release of Vertex AI Workbench instances includes the following:
+Patched a regression with custom notebook metrics reporting (for example,
+jupyterlab_kernels
+and
+docker_status metrics
+).
+Updated the Dataproc JupyterLab plugin (
+dataproc-jupyter-plugin
+) to
+version 0.1.92.
+When using Google Cloud CLI commands, the
+project
+and
+region
+properties
+are preset.
+October 01, 2025
+v2
+Feature
+Generally available (GA)
+:
+You can use
+Workforce Identity Federation
+with Vertex AI Workbench instances. Workforce Identity Federation lets
+you create and manage Vertex AI Workbench instances with credentials
+provided by an external identity provider (IdP). For more information, see
+Create an instance with third party credentials
+.
+September 17, 2025
+v2
+Feature
+M133 release
+The M133 release of Vertex AI Workbench instances includes the following:
+Patched an incompatibility with the Dataproc JupyterLab plugin (
+dataproc-jupyter-plugin
+) and instances with end-user credentials enabled.
+August 29, 2025
+v2
+Feature
+M132 release
+The M132 release of Vertex AI Workbench instances includes the following:
+The new scheduler Jupyter plugin (
+scheduler-jupyter-plugin
+) is now preinstalled in the Jupyterlab 4 environment, with support for both the Cloud Composer and Vertex AI notebook schedulers.
+Updated the Dataproc JupyterLab plugin (
+dataproc-jupyter-plugin
+) to version 0.1.90.
+Patched bugs related to the managed end user credentials feature (Preview), resolving an incompatibility with listing Dataproc remote kernels.
+Patched a bug that caused instances with disabled proxy access to get stuck in provisioning.
+Removed the archived Debian 11 backports repository, resolving an issue with running
+apt update
+within the instance.
+August 05, 2025
+v2
+Feature
+Generally available
+: You can consume reservations with Vertex AI Workbench instances. Reservations of Compute Engine zonal resources help you gain a high level of assurance that your jobs have the necessary resources to run. For more information, see
+Use reservations with Vertex AI Workbench instances
+.
+July 10, 2025
+v2
+Feature
+M131 release
+The M131 release of Vertex AI Workbench instances includes the following:
+Updated the Dataproc JupyterLab plugin to version 0.1.89.
+June 26, 2025
+v2
+Feature
+M130 release
+The M130 release of Vertex AI Workbench instances includes the following:
+Updated the Dataproc JupyterLab plugin to version 0.1.87.
+Added the BigQuery JupyterLab plugin, version 0.0.1.
+The
+GOOGLE_CLOUD_REGION
+environment variable is now set by default.
+June 10, 2025
+v2
+Feature
+Available in
+Preview
+: You can consume reservations with Vertex AI Workbench instances. Reservations of Compute Engine zonal resources help you gain a high level of assurance that your jobs have the necessary resources to run. For more information, see
+Use reservations with Vertex AI Workbench instances
+.
+April 16, 2025
+v2
+Feature
+M129 release
+The M129 release of Vertex AI Workbench instances includes the following:
+Updated the Dataproc JupyterLab plugin to version 0.1.85.
+March 26, 2025
+v2
+Feature
+The ability to back up and restore data on a Vertex AI Workbench instance is now
+generally available
+. For more information, see
+Back up and restore data on an instance
+.
+March 20, 2025
+v2
+Feature
+Encrypt your data-in-use by using
+Confidential Computing
+. This feature is now available in
+Preview
+. You can enable the Confidential VM service when you create a Vertex AI Workbench instance. To get started, see
+Create an instance with Confidential Computing
+.
+March 12, 2025
+v1
+Feature
+M128 release
+The M128 release of Vertex AI Workbench user-managed notebooks includes the following:
+Miscellaneous package updates.
+v1
+Feature
+The M128 release of Vertex AI Workbench managed notebooks includes the following:
+Miscellaneous package updates.
+v2
+Feature
+M128 release
+The M128 release of Vertex AI Workbench instances includes the following:
+Miscellaneous package updates.
+January 16, 2025
+v1
+Feature
+M127 release
+The M127 release of Vertex AI Workbench user-managed notebooks includes the following:
+Fixed an issue related to ownership of the home directory when using authorized ssh keys.
+v1
+Feature
+The M127 release of Vertex AI Workbench managed notebooks includes the following:
+Fixed an issue related to ownership of the home directory when using authorized ssh keys.
+v2
+Feature
+M127 release
+The M127 release of Vertex AI Workbench instances includes the following:
+Fixed an issue related to ownership of the home directory when using authorized ssh keys.
+November 20, 2024
+v1
+Feature
+M126 release
+The M126 release of Vertex AI Workbench user-managed notebooks includes the following:
+Upgraded JupyterLab to 3.6.8.
+One or more framework versions have reached their end of patch and support dates. To view end of patch and support dates, see
+Supported framework versions
+.
+v1
+Feature
+The M126 release of Vertex AI Workbench managed notebooks includes the following:
+Upgraded JupyterLab to 3.6.8.
+v2
+Feature
+M126 release
+The M126 release of Vertex AI Workbench instances includes the following:
+Preview
+: JupyterLab 4+ is available on new Vertex AI Workbench instances. To try it, select JupyterLab 4 when you
+create your instance
+.
+Upgraded JupyterLab to 3.6.8.
+September 26, 2024
+v1
+Feature
+M125 release
+The M125 release of Vertex AI Workbench user-managed notebooks includes the following:
+Patched a vulnerability with
+adm
+and
+docker
+permissions when the instance's root access isn't enabled.
+v1
+Feature
+The M125 release of Vertex AI Workbench managed notebooks includes the following:
+Patched a vulnerability with
+adm
+and
+docker
+permissions when the instance's root access isn't enabled.
+v2
+Feature
+M125 release
+The M125 release of Vertex AI Workbench instances includes the following:
+bigframes
+1.9.0 is now available in all environments except TensorFlow.
+Fixed a regression introduced in M124 where Conda was getting downgraded to an older version.
+Patched a vulnerability with
+adm
+and
+docker
+permissions when the instance's root access isn't enabled.
+September 10, 2024
+v2
+Feature
+The ability to back up and restore data on a Vertex AI Workbench instance is now available in
+Preview
+. For more information, see
+Back up and restore an instance
+.
+August 20, 2024
+v1
+Feature
+M124 release
+The M124 release of Vertex AI Workbench user-managed notebooks includes the following:
+Pytorch 2.3.0 with CUDA 12.1 and Python 3.10 user-managed notebooks instances are now available.
+Fixed a bug that prevented kernels from appearing when the Cloud Resource Manager API is turned off and Dataproc is enabled.
+August 19, 2024
+v2
+Announcement
+The ability to create a Vertex AI Workbench instance based on a custom container is now
+generally available
+. Only custom containers derived from the Google-provided base container are supported. For more information, see
+Create an instance using a custom container
+.
+August 08, 2024
+v1
+Feature
+M124 release
+The M124 release of Vertex AI Workbench managed notebooks includes the following:
+Fixed a bug that prevented kernels from appearing when the Cloud Resource Manager API is turned off and Dataproc is enabled.
+v2
+Feature
+M124 release
+The M124 release of Vertex AI Workbench instances includes the following:
+Fixed a bug that prevented kernels from appearing when the Cloud Resource Manager API is turned off and Dataproc is enabled.
+Spark notebooks on Dataproc: The Serverless Spark runtime template creation screen now has an easy-to-use UI for configuring resource allocation, autoscaling, and GPU settings.
+July 24, 2024
+v1
+Feature
+M123 release
+The M123 release of Vertex AI Workbench managed notebooks includes the following:
+Fixed a bug that caused conflicting permissions with the Jupyter user and google-sudoers.
+Updated Nvidia drivers to version 550.90.07 to fix vulnerabilities.
+July 16, 2024
+v2
+Feature
+M123 release
+The M123 release of Vertex AI Workbench instances includes the following:
+Fixed a bug that caused conflicting permissions with the Jupyter user and google-sudoers.
+v1
+Feature
+M123 release
+The M123 release of Vertex AI Workbench user-managed notebooks includes the following:
+Fixed a bug that caused conflicting permissions with the Jupyter user and google-sudoers.
+Fixed a bug for custom container instances using a disabled root.
+June 21, 2024
+v2
+Feature
+M122 release
+The M122 release of Vertex AI Workbench instances includes the following:
+Updated Nvidia drivers to version 550.90.07 to fix vulnerabilities.
+v1
+Feature
+M122 release
+The M122 release of Vertex AI Workbench user-managed notebooks includes the following:
+Updated Nvidia drivers to version 550.90.07 to fix vulnerabilities.
+June 07, 2024
+v2
+Feature
+You can now create a Vertex AI Workbench instance based on a custom container. This feature is available in
+Preview
+. Only custom containers derived from the Google-provided base container are supported. For more information, see
+Create an instance using a custom container
+.
+June 03, 2024
+v2
+Feature
+You can now use
+Workforce Identity Federation
+with Vertex AI Workbench instances in
+Preview
+. Workforce Identity Federation lets you create and manage Vertex AI Workbench instances with credentials provided by an external identity provider (IdP).
+For more information, see
+Create an instance with third party credentials
+.
+May 17, 2024
+v1
+Feature
+M121 release
+The M121 release of Vertex AI Workbench user-managed notebooks includes the following:
+Updated Nvidia drivers to 550.54.15 to fix an issue where Nvidia drivers failed to install on startup after Debian 11 images upgraded kernel to
+linux-image-5.10.0-29-cloud-amd64
+.
+The
+linux-headers-cloud-amd64
+metapackage is now installed for faster driver recompiling on kernel upgrades.
+TensorFlow 2.6 CPU and GPU images are deprecated. There will be no further updates to these images in future releases.
+v1
+Feature
+The M121 release of Vertex AI Workbench managed notebooks includes the following:
+Updated the R CPU kernel from R 4.3 to R 4.4.
+v2
+Feature
+M121 release
+The M121 release of Vertex AI Workbench instances includes the following:
+Updated Nvidia drivers to 550.54.15 to fix an issue where Nvidia drivers failed to install on startup after Debian 11 images upgraded kernel to
+linux-image-5.10.0-29-cloud-amd64
+.
+The
+linux-headers-cloud-amd64
+metapackage is now installed for faster driver recompiling on kernel upgrades.
+April 29, 2024
+v1
+Feature
+M120 release
+The M120 release of Vertex AI Workbench managed notebooks includes the following:
+Minor bug fixes for the
+libcurl
+package.
+April 25, 2024
+v1
+Feature
+M120 release
+The M120 release of Vertex AI Workbench user-managed notebooks includes the following:
+Upgraded TensorFlow 2.15 user-managed notebooks to TensorFlow 2.15.1.
+Minor bug fixes for the
+libcurl
+package.
+v2
+Feature
+M120 release
+The M120 release of Vertex AI Workbench instances includes the following:
+Minor bug fixes for the
+libcurl
+package.
+March 29, 2024
+v1
+Fixed
+M119 release
+The M119 release of Vertex AI Workbench user-managed notebooks includes the following:
+Fixed an issue wherein Dataproc extensions caused JupyterLab to crash when remote kernels weren't available.
+March 18, 2024
+v2
+Feature
+M118 release
+The M118 release of Vertex AI Workbench instances includes the following:
+Updated Nvidia drivers to R535.
+v1
+Feature
+M118 release
+The M118 release of Vertex AI Workbench user-managed notebooks includes the following:
+PyTorch 2.1.0 with CUDA 12.1 and Python 3.10 user-managed notebooks instances are now available.
+PyTorch 2.2.0 with CUDA 12.1 and Python 3.10 user-managed notebooks instances are now available.
+Updated Nvidia drivers of older user-managed notebooks images to R535.
+v1
+Feature
+The M118 release of Vertex AI Workbench managed notebooks includes the following:
+Updated Nvidia drivers to R535, which fixed a bug where the latest PyTorch 2.0 kernel didn't work due to outdated drivers.
+February 28, 2024
+v2
+Feature
+M117 release
+The M117 release of Vertex AI Workbench instances includes the following:
+Removed the Cloud Storage browser in the left side pane in favor of the existing
+Mount shared storage
+button.
+February 08, 2024
+v1
+Feature
+M116 release
+The M116 release of Vertex AI Workbench user-managed notebooks includes the following:
+Updated custom container user-managed notebooks to use NVIDIA driver version 535.104.05.
+Fixed bugs in custom container user-managed notebooks where GPUs either wouldn't attach to the container properly, or detached after some time.
+v1
+Feature
+The M116 release of Vertex AI Workbench managed notebooks includes the following:
+Fixed a bug (present in versions M113 through M115) that prevented new local kernels from being usable.
+January 19, 2024
+v2
+Feature
+M115 release
+The M115 release of Vertex AI Workbench instances includes the following:
+Added support for
+venv
+kernels.
+v1
+Feature
+M115 release
+The M115 release of Vertex AI Workbench user-managed notebooks includes the following:
+Added support for TensorFlow 2.15 with Python 3.10 on Debian 11.
+Added support for TensorFlow 2.14 with Python 3.10 on Debian 11.
+v1
+Feature
+The M115 release of Vertex AI Workbench managed notebooks includes the following:
+Fixed the BigQuery connector within PySpark containers.
+January 16, 2024
+v1
+Deprecated
+Vertex AI Workbench managed notebooks is
+deprecated
+. On January 30, 2025, support for managed notebooks will end and the ability to create managed notebooks instances will be removed. Existing instances will continue to function but patches, updates, and upgrades won't be available. To continue using Vertex AI Workbench, you can
+migrate your managed notebooks instances to Vertex AI Workbench instances
+.
+v1
+Deprecated
+Vertex AI Workbench user-managed notebooks is
+deprecated
+. On January 30, 2025, support for user-managed notebooks will end and the ability to create user-managed notebooks instances will be removed. Existing instances will continue to function but patches, updates, and upgrades won't be available. To continue using Vertex AI Workbench, you can
+migrate your user-managed notebooks instances to Vertex AI Workbench instances
+.
+December 14, 2023
+v1
+Feature
+M114 release
+The M114 release of Vertex AI Workbench user-managed notebooks includes the following:
+Starting with this release, Python 3.7 is no longer available.
+Upgraded R to 4.3 on Debian 11 Python 3.10 instances.
+Upgraded JupyterLab to 3.6.6.
+v1
+Feature
+The M114 release of Vertex AI Workbench managed notebooks includes the following:
+Starting with this release, Python 3.7 is no longer available.
+Added new Dataproc extension for remote kernels.
+Upgraded JupyterLab to 3.6.6.
+Fixed an issue that sometimes prevented users from running or scheduling notebooks using a default kernel.
+November 16, 2023
+v2
+Feature
+M113 release
+The M113 release of Vertex AI Workbench instances includes the following:
+Added the Dataproc JupyterLab plugin to Vertex AI Workbench instances. To get started, see
+Create a Dataproc-enabled instance
+.
+When using an instance's Google Cloud CLI,
+gcloud config
+is preset with the following defaults:
+project
+is set to your instance's project.
+Your compute region is set to your instance's region.
+Your Dataproc region is set to your instance's region.
+Fixed an issue that prevented Dataproc kernels from working.
+Fixed a CORS (cross-origin resource sharing) error.
+v1
+Feature
+M113 release
+The M113 release of Vertex AI Workbench user-managed notebooks includes the following:
+Miscellaneous bug fixes and improvements in Python 3.10 notebooks.
+October 10, 2023
+v1
+Feature
+M112 release
+The M112 release of Vertex AI Workbench user-managed notebooks includes the following:
+Miscellaneous bug fixes and improvements.
+September 25, 2023
+v2
+Feature
+Vertex AI Workbench instances are now generally available (
+GA
+). Vertex AI Workbench instances combine features from managed notebooks and user-managed notebooks to provide a robust data science solution. Supported features include:
+Idle timeout
+BigQuery and Cloud Storage integrations
+End-user and service account authentication
+VPC Service Controls
+Customer managed encryption keys (CMEK) and Cloud External Key Manager (Cloud EKM)
+Health status monitoring
+Scheduled notebook runs
+Dataproc integration
+To get started, see
+Introduction to Vertex AI Workbench instances
+.
+September 18, 2023
+v1
+Deprecated
+Debian 10 and Python 3.7 images have reached their end of patch and support life for Vertex AI Workbench managed notebooks and user-managed notebooks. Debian 11 and Python 3.10 images are available.
+September 14, 2023
+v1 & v2
+Feature
+M111 release
+The M111 release of Vertex AI Workbench instances includes the following:
+Miscellaneous software updates.
+v1 & v2
+Feature
+The M111 release of Vertex AI Workbench user-managed notebooks includes the following:
+PyTorch 2.0 user-managed notebooks instances now include PyTorch XLA 2.0.
+Miscellaneous software updates.
+v1 & v2
+Feature
+The M111 release of Vertex AI Workbench managed notebooks includes the following:
+Miscellaneous software updates.
+August 10, 2023
+v1 & v2
+Feature
+M110 release
+The M110 release of Vertex AI Workbench user-managed notebooks includes the following:
+Added support for TensorFlow 2.13 with Python 3.10 on Debian 11.
+Added support for TensorFlow 2.8 with Python 3.10 on Debian 11.
+Miscellaneous software updates.
+v1 & v2
+Deprecated
+TensorFlow 2.9 user-managed instances are deprecated.
+v1 & v2
+Feature
+The M110 release of Vertex AI Workbench managed notebooks includes the following:
+Increased shared memory size to available memory capacity.
+Added support for Python 3.10 on Debian 11.
+Added support for PyTorch 2.0 with Python 3.10.
+Note:
+Python 3.7 on Debian 10 images are still available.
+July 19, 2023
+v2
+Feature
+Vertex AI Workbench instances are now available in
+Preview
+. Vertex AI Workbench instances combine features from managed notebooks and user-managed notebooks to provide a robust data science solution. Supported features include:
+Idle timeout
+BigQuery and Cloud Storage integrations
+End-user and service account authentication
+VPC Service Controls
+Customer managed encryption keys (CMEK)
+Health status monitoring
+Run notebooks on a schedule
+Dataproc integration
+To get started, see
+Introduction to Vertex AI Workbench instances
+.
+June 26, 2023
+v1
+Feature
+M109 release
+The M109 release of Vertex AI Workbench user-managed notebooks includes the following:
+PyTorch 2.0 with Python 3.10 and CUDA 11.8 user-managed notebooks instances are now available.
+Miscellaneous software updates.
+v1
+Feature
+The M109 release of Vertex AI Workbench managed notebooks includes the following:
+Fixed a bug that caused high cpu utilization due to excessive internal diagnostic tool processes.
+Fixed a bug that was showing incorrect kernel image icons in the Jupyterlab launcher.
+May 04, 2023
+v1
+Feature
+M108 release
+The M108 release of Vertex AI Workbench user-managed notebooks includes the following:
+Miscellaneous software updates.
+April 13, 2023
+v1
+Feature
+M107 release
+The M107 release of Vertex AI Workbench user-managed notebooks includes the following:
+Fixed a bug that displayed the wrong version of the JupyterLab user interface.
+Fixed a bug where a cron job for the diagnostic tool was added at every restart.
+Miscellaneous software updates.
+April 06, 2023
+v1
+Feature
+M106 release
+The M106 release of Vertex AI Workbench user-managed notebooks includes the following:
+Rolled back a previous change in which Jupyter dependencies were located in a separate Conda environment.
+Fixed a bug in which kernels used by notebooks did not contain the specified machine learning frameworks.
+Miscellaneous software updates.
+March 31, 2023
+v1
+Feature
+M105 release
+The M105 release of Vertex AI Workbench user-managed notebooks includes the following:
+The following user-managed notebooks images are now available with Python 3.10 on Debian 11:
+TensorFlow 2.11 CPU (
+tf-2-11-cpu-debian-11-py310
+)
+TensorFlow 2.11 GPU with Cuda 11.3 (
+tf-2-11-cu113-notebooks-debian-11-py310
+)
+PyTorch 1.13 with Cuda 11.3 (
+pytorch-1-13-cu113-notebooks-debian-11-py310
+)
+Base CPU (
+common-cpu-notebooks-debian-11-py310
+)
+Base GPU with Cuda 11.3 (
+common-cu113-notebooks-debian11-py310
+)
+The following user-managed notebooks images are now available with Python 3.9 on Debian 11:
+TensorFlow 2.6 CPU (
+tf-2-6-cpu-notebooks-debian-11-py39
+)
+TensorFlow 2.6 GPU with Cuda 11.3 (
+tf-2-6-cu113-notebooks-debian-11-py39
+)
+Jupyter-related libraries have been moved to a different Conda environment, separate from the one containing machine learning frameworks and base software libraries.
+March 27, 2023
+v1
+Feature
+M105 release
+The M105 release of Vertex AI Workbench managed notebooks includes the following:
+Fixed an issue wherein a runtime with idle shutdown enabled doesn't detect activity and shuts down.
+Fixed an issue wherein the runtime data disk runs out of space and prevents access.
+Fixed an issue wherein end user credentials are not preserved after shutdown.
+Changed Health Agent logging levels from
+DEBUG
+to
+INFO
+.
+March 16, 2023
+v1
+Feature
+M104 release
+The M104 release of Vertex AI Workbench user-managed notebooks includes the following:
+Fixed a regression in which
+jupyter-user
+metadata was ignored.
+Enabled access to the Jupyter Gateway Client configuration by using the
+notebook-enable-gateway-client
+and
+gateway-client-url
+metadata tags.
+Added the following packages:
+google-cloud-artifact-registry
+google-cloud-bigquery-storage
+google-cloud-language
+keyring
+keyrings.google-artifactregistry-auth
+Fixed a bug in which curl could not find the right SSL certificate path by default.
+v1
+Change
+TensorFlow Enterprise 2.1 has reached the end of its support period. See
+Version details
+.
+February 21, 2023
+v1
+Feature
+M104 update
+This update of the M104 release of Vertex AI Workbench managed notebooks includes the following:
+Fixed a bug where local and remote kernels are not displayed. This happens when remote kernels are not accessible.
+Minor bug fixes and improvements.
+February 09, 2023
+v1
+Feature
+M104 release
+The M104 release of Vertex AI Workbench managed notebooks includes the following:
+Added a fix for a security vulnerability in single-user managed notebooks instances.
+Made enhancements to the network selection user experience in the managed notebooks executor.
+Minor bug fixes and improvements.
+January 30, 2023
+v1
+Feature
+M103 release
+The M103 release of Vertex AI Workbench user-managed notebooks includes the following:
+Fixed a bug in which a warning tells the user to run
+jupyter lab build
+when creating a new instance.
+Upgraded PyTorch to 1.13.1.
+Minor bug fixes and improvements.
+December 15, 2022
+v1
+Feature
+M102 release
+The M102 release of Vertex AI Workbench user-managed notebooks includes the following:
+TensorFlow 2.11 is now available.
+PyTorch 1.13 is now available.
+Regular security patches and package upgrades.
+December 09, 2022
+v1
+Feature
+M101 release
+The M101 release of Vertex AI Workbench includes the following:
+TensorFlow patch version upgrades:
+From 2.8.3 to 2.8.4.
+From 2.9.2 to 2.9.3.
+From 2.10.0 to 2.10.1.
+TensorFlow 1.15 on Vertex AI Workbench is now deprecated.
+Added
+*.notebooks.cloud.google.com
+as part of the domains required for users to access Notebooks API. Removed
+*.datalab.cloud.google.com
+.
+Regular security patches and package upgrades.
+November 08, 2022
+v1
+Feature
+M100 release
+The M100 release of Vertex AI Workbench includes the following:
+Fixed a bug that prevented an instance with a GPU from starting.
+Regular package updates.
+Miscellaneous bug and display fixes.
+v1
+Fixed
+Fixed a server-side request forgery (SSRF) vulnerability. Previous versions of managed notebooks and user-managed notebooks instances still contain the vulnerability. It is recommended that you
+migrate your data
+to a new instance.
+October 25, 2022
+v1beta1
+Breaking
+The
+v1beta1
+version of the Notebooks API is scheduled for removal no earlier than January 16, 2023. After this date, you must use Notebooks API
+v1
+to manage Vertex AI Workbench resources.
+October 18, 2022
+v1
+Feature
+M98 release
+The M98 release of Vertex AI Workbench managed notebooks includes the following:
+Upgraded Go from 1.16.5 to 1.19.2.
+Upgraded R from 4.1 to 4.2.
+Upgraded JupyterLab from 3.2 to 3.4.
+Miscellaneous bug and display fixes.
+Added a fix for the BigQuery SQL editor to run queries correctly in non-US locations.
+Regular package updates.
+Learn more about managed notebooks versions
+.
+September 20, 2022
+v1
+Feature
+M96 release
+The M96 release of Vertex AI Workbench managed notebooks includes the following:
+Fixed a problem where users were not able to save large Notebooks.
+Fixed a display issue when using JupyterLab's simple interface.
+Improved timeout behavior switch hardware operations.
+Improved error messaging when a service account cannot access the Runtime.
+Security fixes.
+Regular package refreshment and bug fixes.
+Learn more about managed notebooks versions
+.
+v1
+Fixed
+Fixed a server-side request forgery (SSRF) vulnerability. Previous versions of managed notebooks and user-managed notebooks instances still contain the vulnerability. It is recommended that you
+migrate your data
+to a new instance.
+August 17, 2022
+v1 & v1beta1
+Feature
+M95 release
+The M95 release of Vertex AI Workbench managed notebooks includes the following:
+Fixed a bug where users were regularly getting a 502 error when trying to access JupyterLab.
+Fixed a bug where opening an instance in Single User mode slowed the start of an instance.
+Fixed a bug where a managed notebooks instance was not starting after adding a GPU.
+Fixed bugs on the Serverless Spark form input.
+Improved the ActivityLog refresh after Serverless Spark creation.
+Fixed a bug related to the display of materialized views in BigQuery.
+Refreshed the JupyterLab interface with an improved Google-specific theme.
+Fixed a bug related to viewing Cloud Storage buckets and folders with large numbers of objects.
+Regular package refreshment and bug fixes.
+Learn more about managed notebooks versions
+.
+May 27, 2022
+v1 & v1beta1
+Feature
+M93 release
+The M93 release of Vertex AI Workbench managed notebooks includes the following:
+v1 & v1beta1
+Fixed
+Fixed a bug that prevented kernels from shutting down properly in Vertex AI Workbench managed notebooks.
+Learn more about managed notebooks versions
+.
+May 12, 2022
+v1 & v1beta1
+Feature
+M91 release
+The M91 release of Vertex AI Workbench managed notebooks includes the following:
+Log streaming to the consumer project via Logs Viewer is now supported.
+Added the
+net-tools
+package.
+Regular package refreshments and bug fixes.
+v1 & v1beta1
+Fixed
+Fixed an issue that caused Spark server networking errors when using Dataproc Serverless Spark and VPC Peering.
+Learn more about managed notebooks versions
+.
+April 06, 2022
+v1 & v1beta1
+Feature
+Vertex AI Workbench
+is generally available (
+GA
+). Vertex AI Workbench is a single notebook surface for all your data science needs that lets you access BigQuery data and Cloud Storage from within JupyterLab, execute notebook code in Vertex AI custom training and Spark, use custom containers, manage costs with idle timeout, and secure your instances with VPC Service Controls and customer managed encryption keys (CMEK).
+Features supported include:
+Google-managed instances and the latest GPU support
+Idle shutdown
+for managed notebooks instances
+Custom containers
+End-user and service account authentication
+Native plug-ins for
+BigQuery
+and
+Cloud Storage
+In-notebook Spark connect to Dataproc clusters
+Jobs support via the
+managed notebooks executor
+on Vertex AI custom training and Spark
+One-click deploy for NGC containers
+VPC Service Controls
+Customer managed encryption keys (CMEK)
+v1 & v1beta1
+Feature
+The Vertex AI Workbench managed notebooks
+executor
+is generally available (
+GA
+). Use the executor to run notebook files on a schedule or as a one-time execution. You can use parameters in your execution to make specific changes to each run. For example, you might specify a different dataset to use, change the learning rate on your model, or change the version of the model. For more information, see
+Run notebook files with the executor
+.
+October 11, 2021
+v1 & v1beta1
+Feature
+Vertex AI Workbench
+is now available in
+Preview
+. Vertex AI Workbench is a notebook-based development environment for the entire data science workflow.
+v1 & v1beta1
+Announcement
+The Notebooks product and all existing Notebooks instances are now part of Vertex AI Workbench as
+user-managed notebooks
+.
+September 10, 2021
+v1 & v1beta1
+Change
+Due to a recent change, the
+iam.serviceAccounts.actAs
+permission on the specified service account for the notebook instance is required for users to continue to have access to their notebook instances. The Google internal Inverting Proxy server that provides access to notebook instances now verifies that this permission is present before allowing users access to the JupyterLab URL. The JupyterLab URL this update covers is:
+*.notebooks.googleusercontent.com
+This update only applies to notebook instances in
+Single User
+mode and verifies that the assigned single user is authorized to execute code inside the notebook instance. Notebook instances running in Service Account or Project Editor mode already perform this verification via the Inverting Proxy server.
+July 26, 2021
+v1 & v1beta1
+Change
+If using proxy single-user mode, Notebooks API now verifies if the specified user (
+proxy-user-mail
+) has Service Account permissions on the Service Account. This check is performed during instance creation and registration.
+June 18, 2021
+v1
+Feature
+Support for Compute Reservations. Notebooks API allows the use of Compute Reservations during instance creation.
+March 26, 2021
+v1
+Feature
+Cross Project Service Account is supported for user-managed notebooks.
+March 04, 2021
+v1
+Change
+New Notebooks instances add labels for VM image (
+goog-caip-notebook
+) and volume (
+goog-caip-notebook-volume
+).
+February 01, 2021
+v1
+Feature
+Notebooks
+Terraform Module
+supports Notebooks API v1
+January 23, 2021
+v1
+Announcement
+VPC-SC for Notebooks (now known as user-managed notebooks) is now
+Generally Available
+.
+v1
+Feature
+Notebooks API supports
+Shielded VM configuration
+.
+September 21, 2020
+v1
+Feature
+AI Platform Notebooks (now known as user-managed notebooks) API is now
+Generally Available
+. The API now includes an
+isUpgradable
+endpoint and adds manual and auto-upgrade functionality to notebooks instances created using the API.
+v1
+Feature
+Cloud Audit Logging for AI Platform Notebooks
+(now known as user-managed notebooks) is now
+Generally Available
+.
+Granular IAM permissions for AI Platform Notebooks
+(now known as user-managed notebooks) is now
+Generally Available
+.
+AI Platform Notebooks now supports
+E2 machine types
+.
+The following new regions have been added:
+europe-west2
+(London, UK)
+europe-west3
+(Frankfurt, Germany)
+europe-west6
+(Zürich, Switzerland)
+March 31, 2020
+v1beta1
+Feature
+AI Platform Notebooks (now known as user-managed notebooks) is now
+Generally Available
+. Some integrations with and specific features of AI Platform Notebooks are still in beta, such as
+Virtual Private Cloud Service Controls
+,
+Identity and Access Management (IAM)
+roles, and
+AI Platform Notebooks API
+.
+February 04, 2020
+v1beta1
+Feature
+VPC Service Controls
+now supports AI Platform Notebooks. Learn
+how to use a notebook instance within a service perimeter
+. This functionality is in
+beta
+.
+February 03, 2020
+v1beta1
+Feature
+AI Platform Notebooks now supports Access Transparency. Access Transparency provides you with logs of actions that Google staff have taken when accessing your data. To learn more about Access Transparency, see the
+Overview of Access Transparency
+.
+September 12, 2019
+v1
+Feature
+You can now use customer-managed encryption keys (CMEK) to protect data on the boot disks of your AI Platform Notebooks (now known as user-managed notebooks) VM instances. CMEK in AI Platform Notebooks is generally available. For more information, see
+Using customer-managed encryption keys (CMEK)
+.
+September 09, 2019
+v1beta1
+Feature
+AI Platform Notebooks now provides more ways for you to customize your network settings, encrypt your notebook content, and grant access to your notebook instance. These options are available when you
+create a notebook
+.
+v1beta1
+Feature
+Now you can implement AI Platform Notebooks using custom containers. Use a
+Deep Learning Containers image
+or
+create a derivative container
+of your own, then
+create a new notebook instance using your custom container
+.
+July 12, 2019
+v1beta1
+Change
+R upgraded to version 3.6.
+R Notebooks are no longer dependent on a Conda environment.
+June 03, 2019
+v1beta1
+Feature
+You can now create AI Platform Notebooks instances with R and core R packages installed. Learn
+how to install R dependencies
+, and read guides for
+using R with BigQuery in AI Platform Notebooks
+and
+using R and Python in the same notebook
+.
+March 01, 2019
+v1beta1
+Feature
+AI Platform Notebooks
+is now available in beta. AI Platform Notebooks enables you to create and manage virtual machine (VM) instances that are pre-packaged with
+JupyterLab
+and a suite of deep learning software.
+Visit the
+AI Platform Notebooks overview
+and the
+guide to creating a new notebook instance
+to learn more.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-28 UTC.
+Products and pricing
+See all products
+Google Cloud pricing
+Google Cloud Marketplace
+Contact sales
+Support
+Google Cloud Community
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Code samples
+Cloud Architecture Center
+Training and Certification
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español – América Latina
+Français
+Português – Brasil
+中文 – 简体
+日本語
+한국어

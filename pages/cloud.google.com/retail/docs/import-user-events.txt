@@ -1,0 +1,1610 @@
+Import historical user events  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Import historical user events
+This page describes how to import user event data from past events in bulk into Vertex AI Search for commerce. User event data is required for training models.
+After you've set up
+real-time event recording
+, it can take a
+considerable amount of time to record sufficient user event data to train your
+models. Importing historical data can accelerate the process.
+The import procedures on this page apply to both recommendations
+and search. After you import data, both services are able to use those events, so you don't need to import the same
+data twice if you use both services.
+You can import events from:
+Cloud Storage
+.
+BigQuery
+.
+BigQuery
+for Google Analytics 360 events.
+BigQuery
+for Google Analytics 4 events.
+Events inline
+using the
+userEvents.import
+method.
+General tips to start
+Verify that the data is completely imported from Google Analytics 4 to BigQuery.
+Check the import status in the console
+, and refer to
+debug or error data
+for troubleshooting.
+Before importing historical user event data, review the
+best practices for recording user events
+and the
+Before you begin
+section on this page.
+Importing
+historical catalog data
+can further enhance user events and improve model accuracy.
+Caution:
+Use a secure form of a unique identifier to keep users anonymous to Vertex AI Search for commerce and
+protect your users' privacy. You are responsible for redacting PII (personally identifiable
+information), such as email or home addresses, from your data.
+Tutorials
+These tutorials show you how to import user events from various sources.
+Import events from Cloud Storage
+This tutorial shows how to import user events from Cloud Storage.
+To follow step-by-step guidance for this task directly in the
+  Cloud Shell Editor, click
+Guide me
+:
+Guide me
+Import events from BigQuery
+This tutorial shows how to import user events from BigQuery.
+To follow step-by-step guidance for this task directly in the
+  Cloud Shell Editor, click
+Guide me
+:
+Guide me
+Import events inline
+This tutorial shows how to import user events data inline.
+To follow step-by-step guidance for this task directly in the
+  Cloud Shell Editor, click
+Guide me
+:
+Guide me
+Before you begin
+To avoid import errors and verify that there is sufficient data
+to generate good results, review the following information before importing your
+user events.
+Review the
+best practices for recording user events
+.
+User event formatting differs depending on the user event type. See
+User event types and examples schema
+for the format to
+specify when creating tables for each event type.
+Recommendations and search have differing
+minimum data requirements. Make sure your user events meet the requirements of
+the service you plan to use:
+See
+User event requirements and best practices
+for
+search and recommendations requirements.
+If you use recommendations models, also see
+User event data requirements
+, which lists additional
+requirements depending on the recommendation model type and optimization
+objective you plan to use.
+Event import considerations
+This section describes the methods that can be used for batch importing of your
+historical user events, when you might use each method, and some of their
+limitations.
+Cloud Storage
+Description
+Import data in a JSON format from files loaded in a Cloud Storage
+      bucket. Each file must be 2 GB or smaller, and up to 100 files at a time
+      can be imported. The import can be done using the Google Cloud console
+      or curl. Uses the
+Product
+JSON data format, which allows
+      custom attributes.
+When to use
+If you need higher volumes of data to be loaded in a single step.
+Limitations
+If your data is in Google Analytics, that data can only be exported to
+      BigQuery and requires the extra step of then importing it
+      to Cloud Storage.
+BigQuery
+Description
+Import data from a previously loaded BigQuery table that
+      uses the Vertex AI Search for commerce schema. Can be performed using
+      Google Cloud console or curl.
+When to use
+If you are also using analytics or preprocessing event data before
+      importing it.
+Limitations
+Requires the extra step of creating a BigQuery table that
+      maps to the Vertex AI Search for commerce schema. If you have a high volume of
+      user events, also consider that BigQuery is a higher cost
+      resource than Cloud Storage.
+BigQuery with Analytics 360
+Description
+Import pre-existing data from Analytics 360 into
+      Vertex AI Search for commerce.
+When to use
+If you have Analytics 360 and track conversions for
+      recommendations or searches. No additional schema mapping is required.
+Limitations
+Only a subset of attributes is available, so some advanced
+      Vertex AI Search for commerce features cannot be used. Tracking impressions in
+      Google Analytics is required if you plan to use
+      search.
+BigQuery with Google Analytics 4
+Description
+Import pre-existing data from Google Analytics 4 into
+      Vertex AI Search for commerce.
+When to use
+If you have Google Analytics 4 and track conversions for
+      recommendations or searches. No additional schema mapping is required.
+Limitations
+Only a subset of attributes is available, so some advanced
+      Vertex AI Search for commerce features cannot be used.
+      If you plan to use search, you need to set up event
+      parameter key-value pairs for tracking; the recommended key is
+search_query
+.
+Inline import
+Description
+Import using a call to the
+userEvents.import
+method.
+When to use
+If you want to have the increased privacy of having all authentication
+      occur on the backend and are capable of performing a backend import.
+Limitations
+Usually more complicated than a web import.
+Size limitations
+There is a total system limit of 40 billion user events. The following size limitations for data imports according to ingest platform are:
+For bulk import from Cloud Storage, each file must be 2 GB or smaller, and you can include up to 100 files in a single bulk import request.
+For BigQuery imports, the size limitation is 128 GB.
+For inline imports, a recommended maximum of 10,000 user events is suggested per request.
+For the minimum days needed for recording live or importing historical user events for model training and search optimization:
+General model training and tuning
+: Initial model training and tuning typically takes 2-5 days to complete, though it can take longer for larger datasets.
+Search optimization
+To optimize the search experience based on ingested events, at least 250,000 search events in the last 90 days are required.
+For optimizing search results using user events, 500,000 detail-page-view events attributable to a search event in the last 30 days are required.
+An average of 10 detail-page-view events attributable to a search event per product in the last 30 days is required, unless events for the past 21 days are uploaded.
+For search personalization, at least 100,000 search events served by search in the last 30 days are required.
+Import user events from Cloud Storage
+Import user events from Cloud Storage using the Google Cloud console
+or the
+userEvents.import
+method.
+Console
+Go to the
+Data
+> page in the Search for commerce console.
+Go to the Data page
+Click
+Import
+to open the
+Import Data
+panel.
+Choose
+User events
+.
+Select
+Google Cloud Storage
+as the data source.
+Choose
+Retail User Events Schema
+as the schema.
+Enter the Cloud Storage location of your data.
+Click
+Import
+.
+curl
+Use the
+userEvents.import
+method to import your user
+events.
+Create a data file for the input parameters for the import. Use the
+GcsSource
+object to point to your Cloud Storage
+bucket.
+You can provide multiple files, or just one.
+INPUT_FILE
+: A file or files in Cloud Storage
+containing your user event data. See
+About user events
+for
+examples of each user event type format. Make sure each user event is
+on its own single line, with no line breaks.
+ERROR_DIRECTORY
+: A Cloud Storage directory for
+error information about the import.
+The input file fields must be in the format
+gs://<bucket>/<path-to-file>/
+.
+The error directory must be in the format
+gs://<bucket>/<folder>/
+.
+If the error directory does not exist, Vertex AI Search for commerce
+creates it. The bucket must already exist.
+{
+"inputConfig"
+:{
+"gcsSource"
+:
+{
+"inputUris"
+:
+[
+"
+INPUT_FILE_1
+"
+,
+"
+INPUT_FILE_2
+"
+],
+},
+"errorsConfig"
+:{
+"gcsPrefix"
+:
+"
+ERROR_DIRECTORY
+"
+}
+}
+Import your catalog information by
+making a
+POST
+request to the
+userEvents:import
+REST
+method, providing the name of the data file.
+export GOOGLE_APPLICATION_CREDENTIALS=/tmp/my-key.json
+curl -X POST \
+-v \
+-H "Content-Type: application/json; charset=utf-8" \
+-H "Authorization: Bearer $(gcloud auth application-default print-access-token)" \
+--data @./
+DATA_FILE
+.json \
+"https://retail.googleapis.com/v2/projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog/userEvents:import"
+}
+}'
+Import user events from BigQuery
+Import user events from BigQuery using the Google Cloud console
+or the
+userEvents.import
+method.
+Set up BigQuery access
+Follow the instructions in
+Setting up access to your BigQuery dataset
+to give your
+Vertex AI Search for commerce service account the minimum
+BigQuery User
+role required for the import to succeed and the additional
+BigQuery Data Editor
+role for your
+BigQuery dataset. The
+BigQuery Data Owner
+role is unnecessary.
+Import your user events from BigQuery
+You can import user events using the
+Search for commerce console or the
+userEvents.import
+method.
+Console
+Go to the
+Data
+> page in the Search for commerce console.
+Go to the Data page
+Click
+Import
+to open the
+Import Data
+panel.
+Choose
+User events
+.
+Select
+BigQuery
+as the data source.
+Select the data schema.
+Google Analytics 4
+: Use for Google Analytics 4 events.
+Google Analytics 360
+: Use for Google Analytics
+        360 events, unless you are
+importing events only home-page-views from Google Analytics 360
+(in that case, use
+Retail User Events Schema
+).
+Retail User Events Schema
+: Use for importing events from sources other
+        than Google Analytics and for
+importing events only home-page-views from Google Analytics 360
+.
+Enter the BigQuery table where your data is located.
+Optional: Enter the location of a Cloud Storage bucket in
+   your project as a temporary location for your data.
+If not specified, a default location is
+   used. If specified, the BigQuery and Cloud Storage bucket have to be
+   in the same region.
+Optional: Under
+Show advanced options
+, enter the location of a
+   Cloud Storage bucket in your project as a temporary location for your data.
+If not specified, a default location is used. If specified, the BigQuery and
+   Cloud Storage bucket have to be in the same region.
+Click
+Import
+.
+curl
+Import your user events by including the data for the events in your call
+to the
+userEvents.import
+method. See the
+userEvents.import
+API reference.
+The value you specify for
+dataSchema
+depends on what you're importing:
+user_event_ga4
+: Use for Google Analytics 4 events.
+user_event_ga360
+: Use for Google Analytics 360 events,
+unless you are
+importing only home-page-views from
+Google Analytics 360
+(in that case, use
+user_event
+).
+user_event
+: Use for importing events from sources other than
+Google Analytics and for
+importing events only home-page-views from
+Google Analytics 360
+.
+export GOOGLE_APPLICATION_CREDENTIALS=/tmp/my-key.json
+curl \
+-v \
+-X POST \
+-H "Content-Type: application/json; charset=utf-8" \
+-H "Authorization: Bearer $(gcloud auth application-default print-access-token)" \
+"https://retail.googleapis.com/v2/projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog/userEvents:import" \
+--data '{
+"inputConfig": {
+"bigQuerySource": {
+"datasetId": "
+DATASET_ID
+",
+"tableId": "
+TABLE_ID
+",
+"dataSchema": "
+SCHEMA_TYPE
+"
+}
+}
+}'
+Import Analytics 360 user events with BigQuery
+You can import Analytics 360 user events if you have
+integrated Analytics 360 with BigQuery and use
+Enhanced Ecommerce.
+Note:
+If you use Google Analytics 4,
+see
+Importing Google Analytics 4 user events with BigQuery
+.
+The following procedures assume you are familiar with using
+BigQuery
+and Analytics 360.
+Before you begin
+Before you begin the next steps, make sure:
+You're using
+Enhanced Ecommerce
+.
+You have
+BigQuery linked to Analytics 360
+.
+Check your data source
+Make sure that the user event data that you will import is correctly formatted
+in a BigQuery table you have access to.
+Make sure that the table is named
+project_id:ga360_export_dataset.ga_sessions_YYYYMMDD
+.
+See the
+Google Analytics documentation
+for more about
+the table format and naming.
+In the
+BigQuery Google Cloud console
+,
+select the table from the
+Explorer
+panel to preview the table.
+Check that:
+The
+clientId
+column has a valid value—for example,
+123456789.123456789
+.
+Note that this value is different from the full _ga cookie value (which has
+a format such as
+GA1.3.123456789.123456789
+).
+The
+hits.transaction.currencyCode
+column has a
+valid currency code
+.
+Note:
+The Vertex AI Search for commerce
+purchase-complete
+event type requires a
+currency code. If you're importing purchase events, which
+some Vertex AI Search for commerce models
+require,
+update Enhanced Ecommerce reporting
+to include
+currency code.
+If you plan to import
+search
+events, check that either a
+hits.page.searchKeyword
+or
+hits.customVariable.searchQuery
+column
+is present.
+While Vertex AI Search for commerce requires both
+searchQuery
+and
+productDetails
+to
+return a list of search results
+, Analytics 360 doesn't store both search queries and product impressions in one event. For Vertex AI Search for commerce to work, you need to create a tag at the data layer or a JavaScript Pixel to be able to import both types of user events from Google Analytics sources:
+searchQuery
+, which is read from the
+search_term
+parameter, or from
+view_search_results
+events, is derived from either
+hits.page.searchKeyword
+, or from
+hits.customVariables.customVarValue
+if
+hits.customVariables.customVarName
+is
+searchQuery
+.
+productDetails
+, the product impression which is read from the
+items
+parameter of the
+view_item_list
+event, is taken from
+hits.product
+if
+hits.product.isImpressions
+is
+TRUE
+.
+Check the consistency of item IDs between the uploaded catalog and the
+Analytics 360 user event table.
+Using any product ID from the
+hits.product.productSKU
+column in the
+BigQuery table preview, use the
+product.get
+method to make sure the same product is in your uploaded catalog.
+export
+GOOGLE_APPLICATION_CREDENTIALS
+=/
+tmp
+/
+my
+-
+key
+.
+json
+curl
+\
+-
+v
+\
+-
+X
+GET
+\
+-
+H
+"Content-Type: application/json; charset=utf-8"
+\
+-
+H
+"Authorization: Bearer $(gcloud auth application-default print-access-token)"
+\
+"https://retail.googleapis.com/v2/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/branches/default_branch/products/
+PRODUCT_ID
+"
+Import your Analytics 360 events
+You can import Google Analytics 360 events using the
+Search for commerce console or the
+userEvents.import
+method.
+Console
+Go to the
+Data
+> page in the Search for commerce console.
+Go to the Data page
+Click
+Import
+to open the
+Import Data
+panel.
+Choose
+User events
+.
+Select
+BigQuery
+as the data source.
+Select the data schema.
+Google Analytics 4
+: Use for Google Analytics 4 events.
+Google Analytics 360
+: Use for Google Analytics
+        360 events, unless you are
+importing events only home-page-views from Google Analytics 360
+(in that case, use
+Retail User Events Schema
+).
+Retail User Events Schema
+: Use for importing events from sources other
+        than Google Analytics and for
+importing events only home-page-views from Google Analytics 360
+.
+Enter the BigQuery table where your data is located.
+Optional: Enter the location of a Cloud Storage bucket in
+   your project as a temporary location for your data.
+If not specified, a default location is
+   used. If specified, the BigQuery and Cloud Storage bucket have to be
+   in the same region.
+Optional: Under
+Show advanced options
+, enter the location of a
+   Cloud Storage bucket in your project as a temporary location for your data.
+If not specified, a default location is used. If specified, the BigQuery and
+   Cloud Storage bucket have to be in the same region.
+Click
+Import
+.
+REST
+Import your user events by including the data for the events in your call
+to the
+userEvents.import
+method.
+For
+dataSchema
+, use the value
+user_event_ga360
+.
+export GOOGLE_APPLICATION_CREDENTIALS=/tmp/my-key.json
+curl \\
+  -v \\
+  -X POST \\
+  -H "Content-Type: application/json; charset=utf-8" \\
+  -H "Authorization: Bearer $(gcloud auth application-default print-access-token)" \\
+  "https://retail.googleapis.com/v2/projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog/userEvents:import" \\
+  --data '{
+    "inputConfig": {
+      "bigQuerySource": {
+        "datasetId": "
+some_ga360_export_dataset
+",
+        "tableId": "
+ga_sessions_YYYYMMDD
+",
+        "dataSchema": "user_event_ga360"
+    }
+  }
+}'
+Java
+public
+static
+String
+importUserEventsFromBigQuerySource
+()
+throws
+IOException
+,
+InterruptedException
+,
+ExecutionException
+{
+UserEventServiceClient
+userEventsClient
+=
+getUserEventServiceClient
+();
+BigQuerySource
+bigQuerySource
+=
+BigQuerySource
+.
+newBuilder
+()
+.
+setProjectId
+(
+PROJECT_ID
+)
+.
+setDatasetId
+(
+DATASET_ID
+)
+.
+setTableId
+(
+TABLE_ID
+)
+.
+setDataSchema
+(
+"user_event"
+)
+.
+build
+();
+UserEventInputConfig
+inputConfig
+=
+UserEventInputConfig
+.
+newBuilder
+()
+.
+setBigQuerySource
+(
+bigQuerySource
+)
+.
+build
+();
+ImportUserEventsRequest
+importRequest
+=
+ImportUserEventsRequest
+.
+newBuilder
+()
+.
+setParent
+(
+DEFAULT_CATALOG_NAME
+)
+.
+setInputConfig
+(
+inputConfig
+)
+.
+build
+();
+String
+operationName
+=
+userEventsClient
+.
+importUserEventsAsync
+(
+importRequest
+).
+getName
+();
+userEventsClient
+.
+shutdownNow
+();
+userEventsClient
+.
+awaitTermination
+(
+2
+,
+TimeUnit
+.
+SECONDS
+);
+return
+operationName
+;
+}
+Import your Analytics 360 home-page-views with BigQuery
+In Analytics 360, home-page-view events are not
+distinguished from other page-view events. This means that home-page-view events
+are not imported as events with the other event types (such as detail-page-view)
+in
+Import your Analytics 360 events
+.
+The following procedure explains how you can extract home-page-view events from
+your Analytics 360 data and import them into
+Vertex AI Search for commerce. In short, this is done by extracting users' views of the home
+page (identified by the home-page path) into a new BigQuery table
+and then importing data from that new table into Vertex AI Search for commerce.
+To import home-page-view events from Analytics 360 into
+Vertex AI Search for commerce:
+Create a BigQuery dataset or make sure that you have a
+BigQuery dataset available that you can add a table to.
+This dataset can be in your Vertex AI Search for commerce project or in the project where
+you have your Analytics 360 data. It is the target
+dataset into which you'll copy the Analytics 360
+home-page-view events.
+Create a BigQuery table in the dataset as follows:
+Replace the variables in the following SQL code as follows.
+target_project_id:
+The project where the dataset from step 1 is
+located.
+target_dataset:
+The dataset name from step 1.
+CREATE TABLE
+TARGET_PROJECT_ID
+.
+TARGET_DATASET
+.ga_homepage (
+ eventType STRING NOT NULL,
+ visitorId STRING NOT NULL,
+ userId STRING,
+ eventTime STRING NOT NULL
+);
+Copy the SQL code sample.
+Open the BigQuery page in the Google Cloud console.
+Go to the BigQuery page
+If it's not already selected, select the target project.
+In the
+Editor
+pane, paste the SQL code sample.
+Click
+play_circle
+Run
+and wait for
+the query to finish running.
+Running this code creates a table in the format
+target_project_id:target_dataset.ga_homepage_YYYYMMDD
+—for example,
+my-project:view_events.ga_homepage_20230115
+.
+Copy the Analytics 360 home-page-view events from your
+Analytics 360 data table into the table created in the
+preceding step 2.
+Replace the variables in the following SQL example code as follows:
+source_project_id:
+The ID of the project that contains the
+Analytics 360 data in a BigQuery
+table.
+source_dataset:
+The dataset in the source project that
+contains the Analytics 360 data in a
+BigQuery table.
+source_table:
+The table in the source project that contains
+the Analytics 360 data.
+target_project_id:
+The same target project ID as in the
+preceding step 2.
+target_dataset:
+The same target dataset as in the preceding
+step 2.
+path:
+This is the path to the home page. Usually this is
+/
+—for
+example, if the home page is
+example.com/
+. However, if the home page
+is like
+examplepetstore.com/index.html
+, the path is
+/index.html
+.
+INSERT
+INTO
+`
+TARGET_PROJECT_ID
+.
+TARGET_DATASET
+.
+ga_homepage
+(
+eventType
+,
+visitorId
+,
+userID
+,
+eventTime
+)
+`
+SELECT
+"home-page-view"
+as
+eventType
+,
+clientId
+as
+visitorId
+,
+userId
+,
+CAST
+(
+FORMAT_TIMESTAMP
+(
+"%Y-%m-%dT%H:%M:%SZ"
+,
+TIMESTAMP_SECONDS
+(
+visitStartTime
+))
+as
+STRING
+)
+AS
+eventTime
+FROM
+`
+SOURCE_PROJECT_ID
+.
+SOURCE_DATASET
+.
+SOURCE_TABLE
+`
+,
+UNNEST
+(
+hits
+)
+as
+hits
+WHERE
+hits
+.
+page
+.
+pagePath
+=
+"
+PATH
+"
+AND
+visitorId
+is
+NOT
+NULL
+;
+Copy the SQL code sample.
+Open the BigQuery page in the Google Cloud console.
+Go to the BigQuery page
+If it's not already selected, select the target project.
+In the
+Editor
+pane, paste the SQL code sample.
+Click
+play_circle
+Run
+and wait for
+the query to finish running.
+Follow the instructions in
+Import user events from BigQuery
+to import
+the home-page-view events from the target table. During schema selection, if
+you import using console, select
+Retail User Events Schema
+; if you import
+using
+userEvents.import
+, specify
+user_event
+for the
+dataSchema
+value.
+Delete the table and dataset that you created in steps 1 and 2.
+Import Google Analytics 4 user events with BigQuery
+You can import Google Analytics 4 user events if you have
+integrated Google Analytics 4 with BigQuery and use
+Google Analytics Ecommerce.
+The following procedures assume you are familiar with using
+BigQuery
+and Google Analytics 4.
+Before you begin
+Before you begin the next steps, make sure:
+You're using
+Google Analytics Ecommerce
+.
+You have
+BigQuery linked to Google Analytics 4
+.
+Check your data source
+To make sure that your user event data is prepared for importing, follow these
+steps.
+For a table of Google Analytics 4 fields that Vertex AI Search for commerce
+uses and which Vertex AI Search for commerce fields they map to,
+see
+Google Analytics 4 user event fields
+.
+For all Google Analytics event parameters, see the
+Google Analytics Events reference documentation
+.
+Make sure that the user event data that you will import is correctly formatted
+in a BigQuery table you have access to.
+The dataset should be named
+analytics_PROPERTY_ID
+.
+The table should be named
+events_YYYYMMDD
+.
+For information about the table names and format, see the
+Google Analytics documentation
+.
+In the
+BigQuery Google Cloud console
+,
+select the dataset from the
+Explorer
+panel and find the table of user
+events that you plan to import.
+Check that:
+The
+event_params.key
+column has a
+currency
+key and that its associated
+string value is a
+valid currency code
+.
+Note:
+The Vertex AI Search for commerce
+purchase-complete
+event type requires a
+currency code. If you're importing purchase events, which
+some Vertex AI Search for commerce models
+require,
+update your event reporting
+to include currency codes.
+If you plan to import
+search
+events, check that the
+event.event_params.key
+column has a
+search_term
+key and an associated
+value.
+While Vertex AI Search for commerce requires both
+searchQuery
+and
+productDetails
+to
+return a list of search results
+, Google Analytics 4 doesn't store both search queries and product impressions in one event. For Vertex AI Search for commerce to work, you need to create a tag at the data layer or from a JavaScript Pixel to be able to import both types of user events from Google Analytics sources:
+searchQuery
+, which is read from the
+search_term
+parameter, or from
+view_search_results
+events.
+productDetails
+, the product impression which is read from the
+items
+parameter of the
+view_item_list
+event.
+For information about
+search
+in Google Analytics 4, see
+search
+in the Google Analytics documentation.
+Check the consistency of item IDs between the uploaded catalog and the
+Google Analytics 4 user event table.
+To make sure that a product in the Google Analytics 4 user table is
+also in your uploaded catalog, copy a product ID from the
+event.items.item_id
+column in the BigQuery table preview
+and use the
+product.get
+method to check if that product ID
+is in your uploaded catalog.
+export
+GOOGLE_APPLICATION_CREDENTIALS
+=/
+tmp
+/
+my
+-
+key
+.
+json
+curl
+\
+-
+v
+\
+-
+X
+GET
+\
+-
+H
+"Content-Type: application/json; charset=utf-8"
+\
+-
+H
+"Authorization: Bearer $(gcloud auth application-default print-access-token)"
+\
+"https://retail.googleapis.com/v2/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/branches/default_branch/products/
+PRODUCT_ID
+"
+Import your Google Analytics 4 events
+You can import Google Analytics 4 events using the
+Search for commerce console or the
+userEvents.import
+method.
+Use the console
+Go to the
+Data
+> page in the Search for commerce console.
+Go to the Data page
+Click
+Import
+to open the
+Import Data
+panel.
+Choose
+User events
+.
+Select
+BigQuery
+as the data source.
+Select the data schema.
+Google Analytics 4
+: Use for Google Analytics 4 events.
+Google Analytics 360
+: Use for Google Analytics
+        360 events, unless you are
+importing events only home-page-views from Google Analytics 360
+(in that case, use
+Retail User Events Schema
+).
+Retail User Events Schema
+: Use for importing events from sources other
+        than Google Analytics and for
+importing events only home-page-views from Google Analytics 360
+.
+Enter the BigQuery table where your data is located.
+Optional: Enter the location of a Cloud Storage bucket in
+   your project as a temporary location for your data.
+If not specified, a default location is
+   used. If specified, the BigQuery and Cloud Storage bucket have to be
+   in the same region.
+Optional: Under
+Show advanced options
+, enter the location of a
+   Cloud Storage bucket in your project as a temporary location for your data.
+If not specified, a default location is used. If specified, the BigQuery and
+   Cloud Storage bucket have to be in the same region.
+Click
+Import
+.
+Use the API
+Import your user events by including the data for the events in your call
+to the
+userEvents.import
+method. See the
+userEvents.import
+API reference.
+For
+dataSchema
+, use the value
+user_event_ga4
+.
+export
+GOOGLE_APPLICATION_CREDENTIALS
+=/
+tmp
+/
+my
+-
+key
+.
+json
+curl
+\\
+-
+v
+\\
+-
+X
+POST
+\\
+-
+H
+"Content-Type: application/json; charset=utf-8"
+\\
+-
+H
+"Authorization: Bearer $(gcloud auth application-default print-access-token)"
+\\
+"https://retail.googleapis.com/v2/projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog/userEvents:import"
+\\
+--
+data
+'{
+"inputConfig"
+:
+{
+"bigQuerySource"
+:
+{
+"projectId"
+:
+"
+PROJECT_ID
+"
+,
+"datasetId"
+:
+"
+DATASET_ID
+"
+,
+"tableId"
+:
+"
+TABLE_ID
+"
+,
+"dataSchema"
+:
+"user_event_ga4"
+}
+}
+}
+'
+Import user events inline
+You can import user events inline by including the data for the events in your
+call to the
+userEvents.import
+method.
+The easiest way to do this is to put your user event data into a JSON file and
+provide the file to curl.
+For the formats of the user event types, see
+About user events
+.
+curl
+Create the JSON file:
+{
+  "inputConfig": {
+    "userEventInlineSource": {
+      "userEvents": [
+        \{
+          "<userEvent1>"
+        \},
+        \{
+          "<userEvent2>"
+        \},
+        \....
+      \]
+    \}
+  }
+}
+Call the POST method:
+curl -X POST \
+     -H "Authorization: Bearer $(gcloud auth application-default print-access-token)" \
+     -H "Content-Type: application/json; charset=utf-8" \
+     --data @./data.json \
+  "https://retail.googleapis.com/v2/projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog/userEvents:import"
+Java
+public
+static
+String
+importUserEventsFromInlineSource
+(
+List<UserEvent>
+userEventsToImport
+)
+throws
+IOException
+,
+InterruptedException
+,
+ExecutionException
+{
+UserEventServiceClient
+userEventsClient
+=
+getUserEventServiceClient
+();
+UserEventInlineSource
+inlineSource
+=
+UserEventInlineSource
+.
+newBuilder
+()
+.
+addAllUserEvents
+(
+userEventsToImport
+)
+.
+build
+();
+UserEventInputConfig
+inputConfig
+=
+UserEventInputConfig
+.
+newBuilder
+()
+.
+setUserEventInlineSource
+(
+inlineSource
+)
+.
+build
+();
+ImportUserEventsRequest
+importRequest
+=
+ImportUserEventsRequest
+.
+newBuilder
+()
+.
+setParent
+(
+DEFAULT_CATALOG_NAME
+)
+.
+setInputConfig
+(
+inputConfig
+)
+.
+build
+();
+String
+operationName
+=
+userEventsClient
+.
+importUserEventsAsync
+(
+importRequest
+).
+getName
+();
+userEventsClient
+.
+shutdownNow
+();
+userEventsClient
+.
+awaitTermination
+(
+2
+,
+TimeUnit
+.
+SECONDS
+);
+return
+operationName
+;
+}
+Historical catalog data
+You can also import catalog data that appears in your historical
+user events. This catalog data can be helpful because
+past product information can be used to enrich
+user event capturing, which can in turn improve model accuracy.
+For more details, see
+Import historical catalog data
+.
+View imported events
+View event integration metrics in the
+Events
+tab on the Search for commerce console
+Data
+page. This page shows all events written or imported in last year. Metrics can take up
+  to 24 hours to appear after successful data ingestion.
+Go to the Data page
+A/B testing evaluation
+The following parameters for A/B apply, depending on your testing objective:
+For a click-through rate (CTR) objective, at least 21 days of user events are required, or specific event volumes. For example, more than 2 million search events and more than 500,000 search clicks.
+For a conversion rate (CVR) or revenue objective, at least 28 days of user events are required, or specific event volumes. For example, over 4 million search events, over 1 million search clicks, over 0.5 purchase events per searchable product.
+Refer to the
+A/B testing
+page For more information about A/B testing and best practices.
+What's next
+Start
+recording user events
+.
+Manage your user events
+.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

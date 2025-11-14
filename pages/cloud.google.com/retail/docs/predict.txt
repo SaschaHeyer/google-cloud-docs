@@ -1,0 +1,629 @@
+Get recommendations  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Get recommendations
+This page describes how to request product recommendations for a specific user
+and user event.
+After you have uploaded your products and recorded user events, you can request
+product recommendations for specific users based on the recorded user
+events for that user and their current activity.
+It can take up to 48 hours for new products and user events to be
+reflected in the recommendation model.
+Vertex AI Search for commerce returns a list of ranked product identifiers. You are
+responsible for rendering the results on your website with images and text.
+Never cache personalized results from an end user, and never return personalized
+results to a different end user.
+Before You Begin
+You must create a Google Cloud
+project and set up authentication using the steps in
+Before you begin
+.
+In addition, before you can request predictions from
+recommendations, you need a
+trained and tuned recommendation (model)
+and one or more active
+serving configs
+.
+Evaluate recommendations
+Before you update your website code to request recommendations, you can use
+preview prediction results to confirm that your model and serving config are
+working as you expect.
+For more information about serving configs, see
+About serving configs
+.
+You can preview serving config results either from the
+Evaluate
+page, or by
+going to a serving config's
+Details
+page in the console and clicking its
+Evaluate
+tab. The following steps show you how to preview from the
+Evaluate
+page.
+To preview recommendations returned by your serving config:
+Go to the
+Evaluate
+page in the Search for commerce console.
+Go to the Evaluate page
+Click the
+Recommendations
+tab, if it isn't already selected.
+Select the serving config you want to preview.
+Optional: Enter a visitor ID to preview recommendations for that user.
+If the
+Associated items
+section is shown, click
+Add item
+and enter a
+product ID to get associated recommendations for that item. You can add
+multiple associated items.
+Adding items is available only if the selected serving config's model type
+requires products as input for recommendations. Recommended for You models don't
+require associated items to be entered.
+Click
+Prediction preview
+to see the prediction results.
+To see the
+Details
+page for the serving config you're previewing, click
+View serving config
+under the
+Select serving config
+field.
+Get a recommendation
+The Recommendations API has limits on the number of items returned. However, there are workarounds to increase the number of items returned.
+Increase limits
+The limit for Vertex AI Search for commerce results is 120.
+The Recommendations API supports reranking up to 2,000 items.
+Although latency increases, it's possible to increase page size up to 500 or 1,000.
+Workarounds
+For category pages, you can personalize and rerank them using personal recommendations. To work around the result limit of 120, make multiple simultaneous calls for the first given number of pages, then stitch the results together to look like one large page.
+To manually restrict the set of recommendations returned to end users, you can add
+filter criteria
+in
+PredictRequest.params
+queries.
+Mark your selected attributes as filterable using the API, then refer to them directly in their prediction requests.
+For prediction cost details, see
+Pricing
+.
+curl
+To get a recommendation, make a
+POST
+request to the
+predict
+REST method and provide the appropriate request
+body:
+The service account you use needs to have role "Retail Viewer" or above.
+Replace
+SERVING_CONFIG_ID
+with the serving config where
+you will use the predictions.
+Learn more
+.
+If you imported Google Analytics 360 user events
+using BigQuery
+,
+set
+visitorId
+to the Google Analytics client ID. See the
+Google Analytics documentation
+for how to get the
+client ID.
+If you are running an A/B experiment, set
+experimentIds
+to the ID for this
+experiment group.
+Learn more
+.
+Provide a user event object for the user action that initiated the
+recommendation request.
+Note that this user event is not recorded; it is only used to provide
+context for this recommendation request. You should also record the user
+event the same way you record other user events.
+Optionally, provide a filter to narrow the potential products returned.
+Learn more
+.
+Note:
+If your recommendation is not yet active, or you want to test your method
+call, you can call this method with the
+validateOnly
+flag set to
+true
+. This
+call returns a placeholder result, and does not incur charges. You can see
+whether your recommendation is active on the
+Dashboard
+tab.
+curl
+-X
+POST
+\
+-H
+"Authorization: Bearer
+$(
+gcloud
+auth
+application-default
+print-access-token
+)
+"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+--data
+'{
+"filter": "
+FILTER_STRING
+",
+"validateOnly": false,
+"userEvent": {
+"eventType": "detail-page-view",
+"visitorId": "
+VISITOR_ID
+",
+"userInfo": {
+"userId": "
+USER_ID
+",
+"ipAddress": "
+IP_ADDRESS
+",
+"userAgent": "
+USER_AGENT
+"
+},
+"experimentIds": "
+EXPERIMENT_GROUP
+",
+"productDetails": [{
+"product": {
+"id": "
+PRODUCT_ID
+"
+}
+}]
+}
+}'
+\
+https://retail.googleapis.com/v2/projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog/servingConfigs/
+SERVING_CONFIG_ID
+:predict
+You should see results similar to the following:
+{
+"results"
+:
+[{
+"id"
+:
+"sample-id-1"
+},
+{
+"id"
+:
+"sample-id-2"
+}],
+"attribution_token"
+:
+"sample-atr-token"
+}
+Java
+public
+static
+PredictResponse
+predictWithNextPageToken
+(
+UserEvent
+userEvent
+,
+int
+pageSize
+,
+String
+nextPageToken
+)
+throws
+IOException
+,
+InterruptedException
+{
+PredictionServiceClient
+predictionClient
+=
+getPredictionServiceClient
+();
+PredictRequest
+request
+=
+PredictRequest
+.
+newBuilder
+()
+.
+setPlacement
+(
+HOME_PAGE_PLACEMENT_NAME
+)
+.
+setUserEvent
+(
+userEvent
+)
+.
+setPageSize
+(
+pageSize
+)
+.
+setPageToken
+(
+nextPageToken
+)
+.
+setValidateOnly
+(
+true
+)
+.
+build
+();
+PredictResponse
+response
+=
+predictionClient
+.
+predict
+(
+request
+);
+predictionClient
+.
+shutdownNow
+();
+predictionClient
+.
+awaitTermination
+(
+2
+,
+TimeUnit
+.
+SECONDS
+);
+return
+response
+;
+}
+Price reranking
+Price reranking causes recommended products with a similar recommendation
+probability to be ordered by price, with the highest-priced items first.
+Relevance is still also used to order items, so enabling price reranking is not
+the same as sorting by price.
+Price reranking can be set on the serving config level, or per prediction
+request.
+When you choose a price reranking setting when
+creating a serving config
+in the Search for commerce
+console, that setting applies to all recommendations served by that
+configuration, without you having to take further action.
+If you need to control the price reranking of a particular recommendation, you
+can do so using the
+PredictRequest.params
+field. This overrides any
+configuration-level reranking setting that would otherwise apply to this
+recommendation.
+Recommendation diversity
+Recommendation diversification affects whether results returned from a single prediction
+request are from different categories of your product catalog.
+Recommendation diversification can be set on the serving config level, or per prediction
+request.
+When you choose a recommendation diversification setting when
+creating a serving config
+in the Search for commerce
+console, that setting applies by default to all predictions served by that
+configuration, without you having to take further action.
+If you need to control the diversity of a particular recommendation, you can do
+so using the
+PredictRequest.params
+field. This overrides any
+configuration-level diversification setting that would otherwise apply to this
+recommendation. See for accepted values.
+Use recommendation filters
+You can filter the recommendations returned by recommendations
+by using the
+filter
+field in the
+predict
+method.
+For information, see
+Filter recommendations
+.
+Prediction calls with Page-Level Optimization models
+Providing recommendations using
+Page-Level Optimization
+requires an extra prediction call
+step.
+Make an initial prediction call using a serving config containing the Page-Level Optimization
+model. The prediction response returns a sorted list of serving
+config IDs representing the model to use for each panel.
+Then make a prediction call for each panel using the serving config ID that the
+Page-Level Optimization model recommended for it. The prediction response contains the model
+name (such as Recommended for You) and list of recommended items to display in that panel.
+Price reranking, recommendation diversity, and recommendation filters are not
+available for serving configs using the Page-Level Optimization model.
+Monitor and troubleshoot recommendations
+After setting up your website to get recommendations, we recommend that you set
+up alerts. See
+Set up an alert for prediction errors
+.
+To troubleshoot errors, see
+Monitor and troubleshoot
+.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

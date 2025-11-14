@@ -1,0 +1,456 @@
+Set up Cloud Monitoring alerts  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Set up Cloud Monitoring alerts
+This page describes how you can create alerts for Vertex AI Search for commerce,
+including examples of creating alerts for user event recording, predictions,
+and searches.
+For information about data quality alerts, see
+Data quality alerts
+.
+For information about troubleshooting errors and viewing error logs, see
+Troubleshooting data upload issues
+.
+Introduction
+Keeping your catalog up to date and recording user events successfully is
+important for getting high-quality results. Even if your initial imports
+and event recording are successful, monitoring error rates is still needed in
+case of unexpected environmental issues, such as network connectivity failures.
+You should set up Cloud Monitoring alerts so you can take action promptly in
+case any issues arise with user event recording, predictions, and search
+results. You can also monitor recent data integration error rates in the
+Google Cloud console at any time.
+Set up Cloud Monitoring alerts
+Cloud Monitoring can be set up to alert on a large number of triggers.
+When you set up alerts, Vertex AI Search for commerce suggests
+several to set up. If you're unsure which alerts to set up, start with setting
+up alerts for
+prediction errors
+,
+search errors
+, and
+reductions in user event recording
+.
+Set up an alert for prediction errors
+Generally, calling the
+predict
+method should rarely return an error. This
+alert is triggered if the number of errors returned by the predict method causes
+the error ratio to stay above the given threshold for more than 5 minutes. You
+can adjust the threshold to suit your environment.
+To set up alerts from the Search for commerce console:
+Go to the
+Monitoring
+page in the Search for commerce console.
+Go to the Monitoring page
+Click
+add
+Recommended Alerts
+.
+The Recommended Alert Policies panel appears on the right. It displays a list
+of recommended alerts to set up for your project.
+Enable
+High predict error ratio
+.
+Optionally, adjust the threshold to suit your environment.
+The default predict error ratio is 0.03.
+Choose a notification channel through which you'll be notified if the alert
+is triggered, such as an email address or mobile device.
+To set up a new notification channel, select
+Notification Channels >
+refresh
+Manage Notification Channels
+.
+See
+the Cloud Monitoring documentation
+for more about creating and editing channels.
+Click the
+Submit
+button to create your alert.
+You can also create a custom alert by using Cloud Monitoring. For more
+information, see
+the Cloud Monitoring documentation
+.
+Set up an alert for search errors
+This alert is triggered if the number of errors returned by the
+search
+method
+causes the error ratio to stay above the given threshold for more than 5
+minutes. You can adjust the threshold to suit your environment.
+To set up alerts from the Search for commerce console:
+Go to the
+Monitoring
+page in the Search for commerce console.
+Go to the Monitoring page
+Click
+add
+Recommended Alerts
+.
+The Recommended Alert Policies panel appears on the right. It displays a list
+of recommended alerts to set up for your project.
+Enable
+High search error ratio
+.
+Optionally, adjust the threshold to suit your environment.
+The default threshold ratio is 0.03.
+Choose a notification channel through which you'll be notified if the alert
+is triggered, such as an email address or mobile device.
+To set up a new notification channel, select
+Notification Channels >
+refresh
+Manage Notification Channels
+.
+See
+the Cloud Monitoring documentation
+for more about creating and editing channels.
+Click the
+Submit
+button to create your alert.
+You can also create a custom alert by using Cloud Monitoring. For more
+information, see
+the Cloud Monitoring documentation
+.
+Set up an alert for user event recording reduction
+If you see a drop in user event recording that lasts for a prolonged period of
+time, there could be issues with your user event recording code. This alert
+is triggered if you don't record any user events for 10 minutes.
+To set up a user event recording reduction alert from the Search for commerce console:
+Go to the
+Monitoring
+page in the Search for commerce console.
+Go to the Monitoring page
+Click
+add
+Recommended Alerts
+.
+The Recommended Alert Policies panel appears on the right. It displays a list
+of recommended alerts to set up for your project.
+Enable
+User events record reduction
+.
+Choose a notification channel through which you'll be notified if the alert
+is triggered, such as an email address or mobile device.
+To set up a new notification channel, select
+Notification Channels >
+refresh
+Manage Notification Channels
+.
+See
+the Cloud Monitoring documentation
+for more about creating and editing channels.
+Click the
+Submit
+button to create your alert.
+If you are using a method other than
+WriteUserEvent
+, such as
+ImportUserEvents
+, you can also create a custom alert by using Cloud Monitoring. For more
+information, see the
+Cloud Monitoring documentation
+.
+Set up an alert for unjoined user events
+This alert is triggered if the ratio of user events that aren't associated with
+valid products stays above the given threshold for more than one or twelve
+hours. You can choose the time window and adjust the threshold.
+To set up a user event recording reduction alert from the Search for commerce console:
+Go to the
+Monitoring
+page in the Search for commerce console.
+Go to the Monitoring page
+Click
+add
+Recommended Alerts
+.
+The Recommended Alert Policies panel appears on the right. It displays a list
+of recommended alerts to set up for your project.
+Enable
+Ratio of unjoined user events ratio is above the threshold for last hour
+or
+Ratio of unjoined user events increases above threshold for last 12 hours
+.
+Optionally, adjust the threshold to suit your environment.
+The default unjoined events ratio is 0.1. This means that if more than 10% of total events ingested are not joined with a valid product within the specified time window, an alert is triggered.
+Choose a notification channel through which you'll be notified if the alert
+is triggered, such as an email address or mobile device.
+To set up a new notification channel, select
+Notification Channels >
+refresh
+Manage Notification Channels
+.
+See
+the Cloud Monitoring documentation
+for more about creating and editing channels.
+Click the
+Submit
+button to create your alert.
+What's next
+Troubleshoot your errors using Error Reporting
+.
+Learn more about
+Google Cloud Observability alerting
+.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

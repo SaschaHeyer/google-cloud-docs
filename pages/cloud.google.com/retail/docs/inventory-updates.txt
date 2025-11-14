@@ -1,0 +1,1115 @@
+Update inventory for Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Update inventory for Vertex AI Search for commerce
+While the
+Product
+create, read, update, and delete (CRUD) methods are used to
+broadly modify a
+Product
+'s attributes, there is a set of
+Product
+methods
+that can be used for updating inventory-specific fields with varying levels of
+granularity. The following
+Product
+fields are considered inventory fields:
+Product.price_info
+Product.availability
+Product.available_quantity
+Product.fulfillment_info
+Set inventory tutorial
+This tutorial shows how to push inventory updates using the
+SetInventory
+method instead of updating the entire product.
+To follow step-by-step guidance for this task directly in the
+  Cloud Shell Editor, click
+Guide me
+:
+Guide me
+Add fulfillment tutorial
+We recommend using the
+AddLocalInventories
+method instead of
+AddFulfillmentPlaces
+.
+AddLocalInventories
+achieves the same results but provides more fine-grained control over ingesting local inventory data. For more information, see the
+AddLocalInventories
+documentation
+.
+This tutorial shows how to update product fulfillment information using the
+AddFulfillmentPlaces
+method. In this way, search can show updates where products are available and
+orders can be fulfilled. For example, a shopper is looking for blue jeans in a
+shop but they're out of stock. The moment the jeans are in stock again at this
+shop or any other shop, the shopper sees the updates and can proceed with their
+order.
+To follow step-by-step guidance for this task directly in the
+  Cloud Shell Editor, click
+Guide me
+:
+Guide me
+Remove fulfillment tutorial
+We recommend using the
+RemoveLocalInventories
+method instead of
+RemoveFulfillmentPlaces
+.
+RmoveLocalInventories
+achieves the same results but provides more fine-grained control over ingesting local inventory data. For more information, see the
+RemoveLocalInventories
+documentation
+.
+This tutorial shows how to update product fulfillment information using
+the
+RemoveFulfillmentPlaces
+method. In this way,
+Vertex AI Search for commerce can show updates where products aren't available and orders
+can't be fulfilled. In this way, search can show updates where products aren't
+available and orders can't be fulfilled. For example, a shopper is looking for
+blue jeans in a shop. If the jeans become out of stock in this shop, the shopper
+sees this and can't proceed with their order.
+To follow step-by-step guidance for this task directly in the
+  Cloud Shell Editor, click
+Guide me
+:
+Guide me
+Inventory update methods
+Changes to a product's inventory information may occur much more frequently than
+changes to its catalog information. As such, a specialized set of methods are
+provided to handle large volumes of inventory-specific updates. These methods
+are asynchronous because of downstream optimizations that support hundreds of
+concurrent updates per product, without sacrificing performance.
+Incremental updates
+Note that it is recommended to follow the
+local inventory updates guide
+to issue incremental inventory updates. The newer API methods provide more fine-grained control for per-place inventory attributes.
+fulfillment_info
+is often used to encode place-level fulfillment availability
+for a
+Product
+. In some cases, fulfillment availability for some specific
+place(s) may change, and you may decide to issue updates that describe this
+change instead of using the
+UpdateProduct
+method to re-
+specify the entire product's fulfillment information.
+In such cases, the
+AddFulfillmentPlaces
+and
+RemoveFulfillmentPlaces
+methods can be used to
+incrementally update a product's fulfillment changes based on which place IDs
+are added or removed for a given fulfillment type.
+Java
+To learn how to install and use the client library for Vertex AI Search for commerce, see
+Vertex AI Search for commerce client libraries
+.
+        
+      
+      
+  For more information, see the
+Vertex AI Search for commerce
+Java
+API
+    reference documentation
+.
+To authenticate to Vertex AI Search for commerce, set up Application Default Credentials.
+      For more information, see
+Set up authentication for a local development environment
+.
+public
+static
+AddFulfillmentPlacesResponse
+addFulfillmentPlaces
+(
+Product
+productToUpdate
+,
+String
+fulfillmentInfoType
+,
+ImmutableList<String>
+placeIds
+)
+throws
+IOException
+,
+InterruptedException
+,
+ExecutionException
+{
+ProductServiceClient
+productClient
+=
+getProductServiceClient
+();
+AddFulfillmentPlacesRequest
+request
+=
+AddFulfillmentPlacesRequest
+.
+newBuilder
+()
+.
+setProduct
+(
+productToUpdate
+.
+getName
+())
+.
+setType
+(
+fulfillmentInfoType
+)
+.
+addAllPlaceIds
+(
+placeIds
+)
+.
+setAddTime
+(
+Timestamps
+.
+fromMillis
+(
+System
+.
+currentTimeMillis
+()))
+.
+build
+();
+AddFulfillmentPlacesResponse
+response
+=
+productClient
+.
+addFulfillmentPlacesAsync
+(
+request
+).
+get
+();
+productClient
+.
+shutdownNow
+();
+productClient
+.
+awaitTermination
+(
+2
+,
+TimeUnit
+.
+SECONDS
+);
+return
+response
+;
+}
+Proto
+{
+product
+:
+"projects/123/locations/global/catalogs/default_catalog/branches/default_branch/products/p123"
+type
+:
+"pickup-in-store"
+place_ids
+:
+"store0"
+place_ids
+:
+"store1"
+add_time
+:
+{
+seconds
+:
+100
+nanos
+:
+100
+}
+allow_missing
+:
+true
+}
+This sample
+AddFulfillmentPlacesRequest
+adds fulfillment type
+"pickup-in-store"
+to place IDs
+"store0"
+and
+"store1"
+for the specified
+product. Because
+AddFulfillmentPlacesRequest.allow_missing
+is set to true, even if the product
+does not already exist, the updated inventory information will be stored for
+when the product is eventually created. The update is time stamped with
+AddFulfillmentPlacesRequest.add_time
+to prevent stale updates from overriding
+the fulfillment status of these place IDs. These features are discussed in
+greater detail in the following sections.
+The behavior is identical for
+RemoveFulfillmentPlacesRequest
+and the schema is
+very similar.
+When
+fulfillment_types
+is updated by
+AddLocalInventories
+and
+RemoveLocalInventories
+, it reflects a mapping from
+each place ID to a list of fulfillment types it supports. When
+fulfillment_info
+is updated by
+AddFulfillmentPlaces
+and
+RemoveFulfillmentPlaces
+, it reflects a mapping
+from each specific fulfillment type to a list of place IDs that supports each
+type. Both API types are modifying the same underlying fulfillment
+information, and the effect of both types of APIs is reflected by
+Product.fulfillment_info
+.
+Non-incremental updates
+price_info
+,
+availability
+, and
+available_quantity
+cannot be incrementally
+updated because they represent product-level inventory, as opposed to place-
+level information. Furthermore, it may be desirable to issue non-incremental
+updates to
+fulfillment_info
+instead of only incremental changes. In such
+cases, the
+SetInventory
+method is recommended.
+Java
+To learn how to install and use the client library for Vertex AI Search for commerce, see
+Vertex AI Search for commerce client libraries
+.
+        
+      
+      
+  For more information, see the
+Vertex AI Search for commerce
+Java
+API
+    reference documentation
+.
+To authenticate to Vertex AI Search for commerce, set up Application Default Credentials.
+      For more information, see
+Set up authentication for a local development environment
+.
+public
+static
+SetInventoryResponse
+setInventoryWithMask
+(
+Product
+productToUpdate
+,
+FieldMask
+updateMask
+)
+throws
+IOException
+,
+ExecutionException
+,
+InterruptedException
+{
+ProductServiceClient
+productClient
+=
+getProductServiceClient
+();
+SetInventoryRequest
+request
+=
+SetInventoryRequest
+.
+newBuilder
+()
+.
+setInventory
+(
+productToUpdate
+)
+.
+setSetMask
+(
+updateMask
+)
+.
+setSetTime
+(
+Timestamps
+.
+fromMillis
+(
+System
+.
+currentTimeMillis
+()))
+.
+setAllowMissing
+(
+true
+)
+.
+build
+();
+SetInventoryResponse
+response
+=
+productClient
+.
+setInventoryAsync
+(
+request
+).
+get
+();
+productClient
+.
+shutdownNow
+();
+productClient
+.
+awaitTermination
+(
+2
+,
+TimeUnit
+.
+SECONDS
+);
+return
+response
+;
+}
+Proto
+{
+product
+:
+{
+name
+:
+"projects/123/locations/global/catalogs/default_catalog/branches/default_branch/products/p123"
+availability
+:
+IN_STOCK
+fulfillment_info
+:
+{
+type
+:
+"pickup-in-store"
+place_ids
+:
+"store0"
+place_ids
+:
+"store1"
+place_ids
+:
+"store2"
+place_ids
+:
+"store3"
+}
+fulfillment_info
+:
+{
+type
+:
+"same-day-delivery"
+}
+}
+set_time
+:
+{
+seconds
+:
+100
+nanos
+:
+100
+}
+set_mask
+:
+{
+paths
+:
+"availability"
+paths
+:
+"fulfillment_info"
+}
+allow_missing
+:
+true
+}
+In this particular request, the
+SetInventoryRequest.product.fulfillment_info
+fields are complete descriptions of each fulfillment type's eligible place IDs,
+as opposed to incremental specifications. The update to
+"same-day-delivery"
+indicates that no place IDs are eligible for this fulfillment type for this
+product. All other fulfillment types are not updated in this request. Thus, this method can be used to replace the place IDs for only a subset of fulfillment types while leaving the other types untouched.
+By default,
+SetInventory
+will update all inventory fields if
+SetInventory.set_mask
+is unset or empty. If the mask is not empty or if an
+inventory field is not explicitly listed in
+SetInventoryRequest.set_mask
+, then
+any specified value for that inventory field will be ignored in the update
+request.
+As with incremental updates, the
+SetInventoryRequest.set_time
+field can be
+used to set an update time that will be against the last recorded update time of
+all updated inventory fields.
+Timestamp protections for inventory updates
+There are several different paths to update a product's inventory fields, and to
+protect against out-of-order updates, each inventory field is associated with a
+latest update time.
+The latest update time is recorded for
+price_info
+,
+availability
+,
+available_quantity
+, and each pair of
+(fulfillment_info.place_ids,
+fulfillment_info.type)
+.
+The
+AddFulfillmentPlaces
+,
+RemoveFulfillmentPlaces
+, and
+SetInventory
+methods allow the caller to specify an update
+time for when the request is issued. This update time is compared against the
+latest update time recorded for the relevant inventory fields, and the update is
+committed if and only if the update time is strictly after the latest update
+time.
+For example, suppose place ID
+"store1"
+has fulfillment type
+"pickup-in-
+store"
+enabled, with the last recorded update time set to time
+T
+. If
+RemoveFulfillmentPlacesRequest.type = "pickup-in-store"
+and
+RemoveFulfillmentPlacesRequest.place_ids
+contains
+"store1"
+, the request will
+clear
+"pickup-in-store"
+from
+"store1"
+if and only if the
+RemoveFulfillmentPlacesRequest.remove_time
+is later than time
+T
+. The same is
+true for
+AddFulfillmentPlacesRequests
+.
+SetInventory
+operates in a similar way for updating
+price_info
+,
+availability
+, and
+available_quantity
+. When updating
+fulfillment_info
+, a
+SetInventoryRequest
+is implicitly asking to add all specified place IDs for a
+given fulfillment type and remove all unspecified existing place IDs.
+Thus, when the
+SetInventoryRequest
+is processed, the
+fulfillment_info
+update
+is implicitly converted into an
+AddFulfillmentPlacesRequest
+and
+RemoveFulfillmentPlacesRequest
+for each specified fulfillment type. This means
+that if any existing place
+"store1"
+with fulfillment
+"pickup-in-store"
+has a
+last update time
+T
+that is more recent than
+SetInventoryRequest.set_time
+,
+then the implicit add/remove on
+"store1"
+and
+"pickup-in-store"
+will not be
+applied.
+Preload inventory information
+Each of the inventory update methods allows the caller to set
+allow_missing
+in
+the request. When
+allow_missing
+is set to true, an inventory update to a
+nonexistent
+Product
+will be processed as if the
+Product
+exists according to
+the method specification(s). The inventory information will be retained for a
+maximum of two days if the corresponding
+Product
+is not created via
+CreateProduct
+within this timeframe.
+Java
+public
+static
+SetInventoryResponse
+setInventory
+(
+Product
+productToUpdate
+)
+throws
+IOException
+,
+ExecutionException
+,
+InterruptedException
+{
+ProductServiceClient
+productClient
+=
+getProductServiceClient
+();
+SetInventoryRequest
+request
+=
+SetInventoryRequest
+.
+newBuilder
+()
+.
+setInventory
+(
+productToUpdate
+)
+.
+setSetTime
+(
+Timestamps
+.
+fromMillis
+(
+System
+.
+currentTimeMillis
+()))
+.
+setAllowMissing
+(
+true
+)
+.
+build
+();
+SetInventoryResponse
+response
+=
+productClient
+.
+setInventoryAsync
+(
+request
+).
+get
+();
+productClient
+.
+shutdownNow
+();
+productClient
+.
+awaitTermination
+(
+2
+,
+TimeUnit
+.
+SECONDS
+);
+return
+response
+;
+}
+When to use the
+Product
+methods
+While it is possible to update inventory fields with the Product CRUD methods,
+the caller should be explicitly aware of the effects on existing or pre-existing
+inventory information.
+These are synchronous methods, which means the downstream optimizations used for
+inventory methods do not apply, and it may become expensive to rely on these
+methods for frequent inventory updates. Wherever possible, prefer to use the
+aforementioned inventory update methods.
+CreateProduct
+When
+CreateProduct
+is invoked with any inventory fields set,
+the provided values in the
+CreateProductRequest.product
+will override any
+preloaded values for those respective fields. If no inventory fields are set,
+then any pre-existing inventory information will be automatically used.
+Furthermore, the latest update time for the overridden inventory fields will be
+reset to the time of the method call.
+CreateProduct
+with preloaded inventory
+PROTO
+{
+parent:
+"projects/123/locations/global/catalogs/default_catalog/branches/default_branch"
+product_id:
+"p123"
+product:
+{
+name:
+"projects/123/locations/global/catalogs/default_catalog/branches/default_branch/products/p123"
+title:
+"some product"
+type:
+VARIANT
+}
+}
+In this example, the created product does not have any inventory fields set,
+which means any preloaded inventory information will be automatically used if
+updated using the inventory update methods. This can be helpful when inventory
+updates are decoupled from catalog updates and you want to have a newly
+created
+Product
+synchronize with any pre-existing inventory information.
+CreateProduct
+with explicit inventory
+PROTO
+{
+parent:
+"projects/123/locations/global/catalogs/default_catalog/branches/default_branch"
+product_id:
+"p123"
+product:
+{
+name:
+"projects/123/locations/global/catalogs/default_catalog/branches/default_branch/products/p123"
+title:
+"some product"
+type:
+VARIANT
+availability:
+OUT_OF_STOCK
+fulfillment_info:
+{
+type:
+"pickup-in-store"
+}
+fulfillment_info:
+{
+type:
+"same-day-delivery"
+}
+}
+}
+In this example, a
+Product
+is created with explicitly set inventory fields.
+These fields will override any pre-existing values, ignoring the latest update
+time for the corresponding fields. Thus, the newly created
+Product
+is
+guaranteed to have availability set to
+OUT_OF_STOCK
+, and no place IDs will
+support fulfillment types
+"pickup-in-store"
+and
+"same-day-delivery"
+.
+CreateProduct
+with inventory information can be helpful if you are not
+sure if all the preloaded inventory information is accurate, and prefer to
+explicitly set the inventory at creation time of
+Product
+to fully synchronize
+the catalog and inventory.
+UpdateProduct
+When
+UpdateProduct
+is invoked and the field mask
+UpdateProductRequest.update_mask
+contains any inventory fields, the provided
+values in the
+UpdateProductRequest.product
+will override any preloaded values
+for those respective fields.
+Furthermore, the latest update time for the overridden inventory fields will be
+reset to the time of the method call.
+PROTO
+{
+product:
+{
+name:
+"projects/123/locations/global/catalogs/default_catalog/branches/default_branch/products/p123"
+availability:
+IN_STOCK
+fulfillment_info:
+{
+type:
+"pickup-in-store"
+place_ids:
+"store0"
+place_ids:
+"store1"
+place_ids:
+"store2"
+place_ids:
+"store3"
+}
+fulfillment_info:
+{
+type:
+"same-day-delivery"
+}
+}
+update_mask:
+{
+paths:
+"availability"
+paths:
+"fulfillment_info"
+}
+}
+This example is very similar to the
+SetInventory
+example, except the update is
+guaranteed to be applied regardless of the latest update time of each inventory
+field.
+UpdateProduct
+for inventory can be helpful when a full sync on inventory
+information is needed while ignoring timestamp protections.
+While it is possible to preload inventory information using
+UpdateProduct
+by
+setting
+UpdateProductRequest.allow_missing
+to
+true
+to perform a
+Product
+upsert, the method requires setting specific catalog fields such as
+UpdateProductRequest.product.title
+. Thus, it is recommended to use the
+inventory update methods for preloading use-cases.
+DeleteProduct
+When
+DeleteProduct
+is invoked, all existing inventory
+information for the product specified in
+DeleteProductRequest.name
+will be
+deleted, including all records of the latest update time for each inventory
+field.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

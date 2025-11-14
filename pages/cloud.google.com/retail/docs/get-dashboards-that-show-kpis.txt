@@ -1,0 +1,672 @@
+Get dashboards that show key performance indicators  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Get dashboards that show key performance indicators
+This page explains the process for getting Looker dashboards that can
+display key performance indicators for your retail business.
+Before you begin
+Before you can get Looker dashboards for your retail business, you
+must:
+Have your retail data uploaded using Vertex AI Search for commerce. For more
+information, see:
+Import catalog information
+Record real-time user events
+Import historical user events
+Export your retail data from Vertex AI Search for commerce into
+BigQuery. For more information, see
+Export your data into
+BigQuery
+.
+Alternatively, if your product and user event data is already in
+BigQuery, in the Vertex AI Search for commerce format, you can use
+that data to get Looker dashboards. In this case you don't need to
+upload your retail data and export it to BigQuery. For more
+information about the BigQuery format,
+see
+Product schema
+and
+About user events
+.
+Set up Looker
+Get a Looker instance from your Looker Sales Engineer or
+Professional Services consultant.
+Set up a connection in Looker to BigQuery by
+following the instructions in
+Google
+BigQuery
+in the Looker
+documentation. Your Looker Sales Engineer or Professional Services
+consultant will assist you in this task if needed. Save the name of the
+connection that you set up to use in
+Install the Looker
+Block
+.
+Convert your user event BigQuery view to a table
+Looker Dashboards require your user event data to be in a BiqQuery
+table, not a view.
+To convert your user event BigQuery view to a table, do the
+following:
+Replace the variables in the following SQL example code as follows:
+rdm_user_event_view
+. The project, dataset, and table IDs of the user
+event view that you exported to BigQuery. The format is
+project_id.dataset_id.table_id
+.
+rdm_user_event_table
+. The project, dataset, and table IDs in
+BigQuery for the new BigQuery table. Use the
+same project ID and dataset ID that you used for the user event view that
+you exported to BigQuery. For the table ID, use
+tbl_events
+.
+The format is
+project_id.dataset_id.tbl_events
+.
+CREATE
+OR
+REPLACE
+TABLE
+`
+RDM_USER_EVENT_TABLE
+`
+AS
+SELECT
+*
+FROM
+`
+RDM_USER_EVENT_VIEW
+`
+Copy the SQL code sample from the previous step.
+Open the BigQuery page in the Google Cloud console.
+Go to the BigQuery page
+If it's not already selected, select the project that contains your user
+event table.
+In the
+Editor
+pane, paste the SQL code sample.
+Click
+play_circle
+Run
+and wait for
+the query to finish running.
+Your new table is written to the location in BigQuery that you
+set using the
+rdm_user_event_table
+variable. Save this location to use in
+Install the Looker Block
+.
+Create a materialized view for sales
+Use the following SQL example code to create a materialized view that your
+Looker dashboards can query. For more information, see
+Introduction to
+materialized views
+in the
+BigQuery documentation.
+To create a materialized view for sales, do the following:
+Replace the variables in the following SQL example code as follows:
+mv_sales
+. The project, dataset, and table IDs in BigQuery
+for the new materialized view for sales. Use the same project ID and dataset
+ID that you used for the user event table that you exported to
+BigQuery. For the table ID, use
+mv_sales
+. The format is
+project_id.dataset_id.mv_sales
+.
+rdm_user_event_table
+. The project, dataset, and table IDs of the user
+event table that you exported to BigQuery. The format is
+project_id.dataset_id.table_id
+.
+CREATE
+MATERIALIZED
+VIEW
+`
+MV_SALES
+`
+OPTIONS
+(
+friendly_name
+=
+"Sales View"
+,
+description
+=
+"View of Sales Data"
+,
+labels
+=
+[
+(
+"team"
+,
+"cloud_retail_solutions"
+),
+(
+"environment"
+,
+"development"
+)
+]
+)
+AS
+SELECT
+EXTRACT
+(
+DATE
+FROM
+event_time
+)
+as
+day
+,
+session_id
+as
+session
+,
+ANY_VALUE
+(
+TRIM
+(
+UPPER
+(
+visitor_id
+)))
+as
+visitor
+,
+ANY_VALUE
+(
+TRIM
+(
+UPPER
+(
+user_info
+.
+user_id
+)))
+as
+user
+,
+ANY_VALUE
+(
+TRIM
+(
+UPPER
+(
+purchase_transaction
+.
+id
+)))
+as
+tx_id
+,
+MAX
+(
+purchase_transaction
+.
+revenue
+)
+as
+tx_total
+,
+MAX
+(
+purchase_transaction
+.
+tax
+)
+as
+tx_tax
+,
+MAX
+(
+purchase_transaction
+.
+cost
+)
+as
+tx_cost
+,
+MAX
+(
+purchase_transaction
+.
+currency_code
+)
+as
+tx_cur
+,
+SUM
+(
+d
+.
+quantity
+*
+d
+.
+product
+.
+price_info
+.
+price
+)
+as
+product_total
+,
+COUNT
+(
+d
+)
+AS
+basket_size
+FROM
+`
+RDM_USER_EVENT_TABLE
+`
+,
+UNNEST
+(
+product_details
+)
+d
+WHERE
+event_type
+=
+'purchase-complete'
+GROUP
+BY
+EXTRACT
+(
+DATE
+FROM
+event_time
+),
+session_id
+;
+Copy the SQL code sample from the previous step.
+Open the BigQuery page in the Google Cloud console.
+Go to the BigQuery page
+If it's not already selected, select the project that contains your user
+event table.
+In the
+Editor
+pane, paste the SQL code sample.
+Click
+play_circle
+Run
+and wait for
+the query to finish running.
+Your new materialized view for sales is written to the location in
+BigQuery that you set using the
+mv_sales
+variable. Save this
+location to use in
+Install the Looker
+Block
+.
+Install the Looker Block
+In this procedure, you download a Looker Block using the
+Looker Marketplace website that is connected to your Looker
+instance. We also have a public
+Looker
+Marketplace
+, where you can view the various Looker
+Blocks that are available, but you cannot download Looker Blocks from
+that website.
+Go to the Looker instance that your Looker Sales Engineer
+helped you set up in
+Set up Looker
+.
+Click
+storefront
+, and then click
+Discover
+.
+The Looker Marketplace page appears.
+In the search box, enter
+discovery
+.
+The
+Models
+pane appears, displaying
+Discovery: E-Commerce Insights
+.
+Click
+Discovery: E-Commerce Insights
+.
+Click
+Install > Install
+.
+If you accept the license agreement, click
+Accept
+.
+If you agree to allow Looker to do the actions shown in the dialog,
+click
+Agree and Continue
+.
+The
+Configuration
+dialog appears.
+Set the
+Configuration
+dialog:
+In the
+Events Table
+box, enter the project, dataset, and table IDs of
+the user event table that you exported to BigQuery. The
+format is
+project_id.dataset_id.table_id.
+In the
+Products Table
+box, enter the project, dataset, and table IDs
+of the retail product table that you exported to BigQuery.
+The format is
+project_id.dataset_id.table_id.
+In the
+Sales Materialized View
+box, enter the project, dataset, and
+table IDs of the materialized view for sales that you created in
+Create a
+materialized view for sales
+. The
+format is
+project_id.dataset_id.table_id.
+In the
+Connection
+box, select the name of the connection that you
+created in
+Set up Looker
+.
+Click
+Install
+to complete the configuration and install the
+Looker Block.
+The
+Looker Marketplace
+page appears.
+On the
+Looker Marketplace
+page, in the
+Discovery: E-Commerce
+Insights
+row, click
+Open
+.
+The
+Discovery: E-Commerce Insights
+page appears.
+Click a pane under the
+Dashboards
+heading to view a dashboard.
+Customize the Looker Block
+This Looker Block uses refinements for customization. For more
+information about using refinements to customize Looker Blocks
+installed from the Looker Marketplace, see
+Customizing Looker
+Marketplace Blocks
+.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

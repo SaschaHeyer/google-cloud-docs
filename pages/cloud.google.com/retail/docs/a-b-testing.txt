@@ -1,0 +1,341 @@
+General guidance on conducting A/B experiments  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+General guidance on conducting A/B experiments
+This page describes how you can use A/B experiments to understand how
+Vertex AI Search for commerce is impacting your business.
+Overview
+An
+A/B experiment
+is a randomized
+experiment with two groups: an experimental group and a control group. The
+experimental group receives some different treatment (in this case, predictions
+or search results from Vertex AI Search for commerce); the control group does not.
+When you run an A/B experiment, you include the
+information about which group a user was in when you record user events.
+That information is used to refine the model and provide
+metrics.
+Both versions of your application must be the same, except that users in the
+experimental group see results generated by Vertex AI Search for commerce and
+the control group does not. You log user events for both groups.
+For more on traffic splitting, see
+Splitting Traffic
+in the App Engine documentation.
+Experiment platforms
+Set up the experiment using a third-party experiment platform such as
+VWO
+,
+AB Tasty
+. The control and experimental groups
+each get a unique experiment ID from the platform. When you record a user event,
+specify which group the user is in by including the experiment ID in the
+experimentIds
+field. Providing the experiment ID lets
+you to compare the metrics for the versions of your
+application seen by the control and experimental groups.
+Best practices for A/B experiments
+The goal of an A/B experiment is to accurately determine the impact of updating
+your site (in this case, employing Vertex AI Search for commerce). To get an accurate measure
+of the impact, you must design and implement the experiment correctly, so that
+other differences don't creep in and impact the experiment results.
+To design a meaningful A/B experiment, use the following tips:
+Before setting up your A/B experiment, use prediction or search preview to
+ensure that your model is behaving as you expect.
+Make sure that the behavior of your site is identical for the experimental
+group and the control group.
+Site behavior includes latency, display format, text format, page layout,
+image quality, and image size. There should be no discernible differences
+for any of these attributes between the experience of the control and
+experiment groups.
+Accept and display results as they are returned from
+Vertex AI Search for commerce, and display them in the same order as they are
+returned.
+Filtering out items that are out of stock is acceptable. However, you should
+avoid filtering or ordering results based on your business
+rules.
+If you are using search user events and include the required attribution token with them, make sure they are
+set up correctly. See the documentation for
+Attribution tokens
+.
+Make sure that the serving config you provide when you request
+recommendations or search results matches your intention for that
+recommendation or search result, and the location where you display the
+results.
+When you use recommendations, the serving config
+affects how models are trained and therefore what products are recommended.
+Learn more
+.
+If you are comparing an existing solution with Vertex AI Search for commerce,
+keep the experience of the control group strictly segregated from the
+experience of the experimental group.
+If the control solution does not provide a recommendation or search result,
+don't provide one from Vertex AI Search for commerce in the control pages.
+Doing so will skew your test results.
+Make sure your users don't switch between the control group and the
+experiment group. This is especially important within the same session, but
+also recommended across sessions. This improves experiment performance and
+helps you get statistically significant A/B test results sooner.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

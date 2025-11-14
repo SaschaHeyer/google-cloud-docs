@@ -1,0 +1,594 @@
+Manage serving configs  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Manage serving configs
+This page describes how to delete, edit, and list serving configs, as
+well as review statistics about each configuration.
+For help with creating a new serving config, see
+Create serving configs
+.
+It is not necessary to configure a serving config for search to work. Any
+serving_config_id
+can be placed as part of the search request, in which case, it defaults to an empty or non-configured serving control. The catalog is then searched with Vertex AI Search for commerce default search capability.
+If you have existing placements, or create new placements, Vertex AI Search for commerce
+automatically creates a serving config associated
+with each placement. Creating a serving config does not create a
+corresponding placement. Deleting a serving config deletes its
+corresponding placement, and deleting a placement deletes its corresponding
+serving config.
+Edit serving configs
+You can edit serving configs using the Search for commerce console
+or the API.
+Note:
+If you are making significant changes to a a serving config that contains
+a Page-Level Optimization model, the Page-Level Optimization model might return suboptimal results while it is
+retraining. Because it can take a long time to retrain the Page-Level Optimization model,
+consider recreating the Page-Level Optimization model and its associated serving config.
+Edit serving configs in the console
+You can see and edit the controls for each serving config on the
+Serving Configs page
+. Click a
+serving config to see its
+Details
+page, which lists all serving and
+site-wide controls for that configuration.
+On this page, you can edit controls, create new controls, or apply existing
+controls to the configuration.
+It takes a few minutes for newly created or updated serving configs to
+be ready to serve live traffic. You can test changes right away on the
+Evaluate
+page
+.
+Edit serving configs inline
+You can update serving config fields, add serving controls, and remove
+serving controls inline using API methods.
+Patch serving configs inline
+To update fields in a serving config, use
+ServingConfig.patch
+and include an instance of
+ServingConfig
+in the request body. Specify the
+fields to update with the
+updateMask
+parameter, or leave it unset to update
+all supported fields.
+For more about this method, see the
+ServingConfig.patch
+API reference
+.
+curl
+-X
+PATCH
+\
+-H
+"Authorization: Bearer
+$(
+gcloud
+auth
+application-default
+print-access-token
+)
+"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+-d
+'{
+"name": "projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/servingConfigs/
+SERVING_CONFIG_ID
+",
+"
+FIELD_NAME_1
+": "
+NEW_FIELD_VALUE_1
+"
+"
+FIELD_NAME_2
+": "
+NEW_FIELD_VALUE_2
+"
+}'
+\
+'https://retail.googleapis.com/v2beta/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/servingConfigs/
+SERVING_CONFIG_ID
+?updateMask=
+FIELD_NAME_1
+,
+FIELD_NAME_2
+'
+Add controls to serving configs inline
+To add a control to a serving config, use
+ServingConfig.addControl
+.
+The control is added in the last position of the list of controls it belongs to.
+For example, a
+facetSpec
+control is applied in the last position of
+servingConfig.facetSpecIds
+.
+For more about this method, see the
+ServingConfig.addControl
+API reference
+.
+curl
+-X
+POST
+\
+-H
+"Authorization: Bearer
+$(
+gcloud
+auth
+application-default
+print-access-token
+)
+"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+-d
+'{
+"controlID": "
+CONTROL_ID
+"
+}'
+\
+'https://retail.googleapis.com/v2beta/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/servingConfigs/
+SERVING_CONFIG_ID
+:addControl'
+Remove controls from serving configs inline
+To remove a control from a serving config, use
+ServingConfig.removeControl
+.
+For more about this method, see the
+ServingConfig.removeControl
+API reference
+.
+curl
+-X
+POST
+\
+-H
+"Authorization: Bearer
+$(
+gcloud
+auth
+application-default
+print-access-token
+)
+"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+-d
+'{
+"controlID": "
+CONTROL_ID
+"
+}'
+\
+'https://retail.googleapis.com/v2beta/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/servingConfigs/
+SERVING_CONFIG_ID
+:removeControl'
+View serving configs
+You can view serving configs using the Search for commerce console
+or the API.
+View serving configs in the console
+You can see all of your serving configs on the
+Serving Configs page
+.
+View serving configs inline
+To see a single serving config inline, use
+ServingConfig.get
+.
+For more about this method, see the
+ServingConfig.get
+API reference
+.
+curl
+-X
+GET
+\
+-H
+"Authorization: Bearer
+$(
+gcloud
+auth
+application-default
+print-access-token
+)
+"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+'https://retail.googleapis.com/v2beta/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/servingConfigs/
+SERVING_CONFIG_ID
+'
+To list all serving configs inline, use
+ServingConfig.list
+.
+Optionally, you can use the parameter
+pageSize
+to set a maximum number of
+results to return. If more results are available, the
+list
+response includes a
+page token. You can pass a page token in the
+pageToken
+parameter of a
+list
+request to retrieve the next page of results.
+For more about this method, see the
+ServingConfig.list
+API reference
+.
+curl
+-X
+GET
+\
+-H
+"Authorization: Bearer
+$(
+gcloud
+auth
+application-default
+print-access-token
+)
+"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+'https://retail.googleapis.com/v2beta/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/servingConfigs?pageSize=
+PAGE_SIZE
+&pageToken=
+PAGE_TOKEN
+'
+Delete a serving config
+You can delete serving configs using the Search for commerce console
+or the API.
+Note:
+If you delete a serving config that is being used by a Page-Level Optimization model, also
+delete and re-create the Page-Level Optimization model. Otherwise the Page-Level Optimization model will return
+the deleted serving config.
+Delete serving configs in the console
+To delete a serving config in the console:
+Go to the
+Serving Configs
+page in the Search for commerce console.
+Go to the Serving configs page
+Click the serving config you want to delete to open its details page.
+Click
+delete
+Delete
+in the button bar at the
+top of the page.
+If the serving config is considered active, you must retype its ID and
+click
+Confirm
+to complete the deletion.
+Delete a serving config inline
+To delete a single serving config inline, use
+ServingConfig.delete
+.
+For more about this method, see the
+ServingConfig.delete
+API reference
+.
+curl
+-X
+DELETE
+\
+-H
+"Authorization: Bearer
+$(
+gcloud
+auth
+application-default
+print-access-token
+)
+"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+'https://retail.googleapis.com/v2beta/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/servingConfigs/
+SERVING_CONFIG_ID
+'
+Reviewing serving config statistics
+You can see details for each serving config on the
+Serving Configs page
+. For any
+configuration in the table, click
+View analytics
+to see its statistics.
+Click-through-rate
+shows the clicks per search for the serving config.
+Conversion rate
+indicates the purchases per search for the configuration.
+Note:
+The time periods for statistics are in the Pacific time zone. For example,
+daily statistics represent the data from yesterday at midnight Pacific time to
+today at midnight Pacific time.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

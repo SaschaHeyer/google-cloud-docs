@@ -1,0 +1,616 @@
+View analytics  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+View analytics
+This page describes metrics that can help you determine how Vertex AI Search for commerce is
+affecting your business.
+Prerequisites
+The analytics dashboards use ingested
+user events
+as data sources for metrics. You must complete user events integration to be able to see user event analytics. Metrics are refreshed about every six hours, so it can take hours after you create your app to see metrics on the
+Analytics
+pages.
+User events
+The following user events are required to view some metrics:
+Search events.
+Required for any type of metrics.
+Detail page view events.
+Required for page view metrics.
+Add-to-cart events.
+Required for add-to-cart rate, conversion rate.
+Purchase-complete events.
+Required for total revenue, recommender-engaged revenue, average order value, purchase rate, revenue rate, average unit value, purchase order rate, conversion rate.
+The following information is also used for analytics:
+Product details
+. To ensure accurate computation of search-related
+metrics, include
+UserInfo.productDetails
+within
+your user events. This information allows Vertex AI Search for commerce
+to attribute searches with specific product interactions.
+If the
+UserInfo.ProductDetail.quantity
+field is omitted within user
+events, a default value of
+1
+will be assumed for calculations.
+Revenue
+. The
+UserInfo.PurchaseTransaction.revenue
+field is crucial
+for generating accurate revenue metrics. Ensure this field is populated
+within your user events to enable meaningful revenue-related analysis.
+Attribution tokens
+. Attribution tokens are unique IDs generated by
+Vertex AI Search for commerce and returned with each search request. Make sure
+to include that attribution token as
+UserEvent.attributionToken
+with any
+user events resulting from a search. This is needed to identify if a search
+is served by Vertex AI Search for commerce.
+User agent
+. Include
+UserInfo.userAgent
+with user events resulting
+from a search so that you can filter on user event metrics by device type.
+View recommendations analytics
+To view recommendation analytics:
+In the Google Cloud console, go to the
+Search for commerce
+page.
+Go to the Search for commerce console
+In the navigation menu, click
+Analytics
+.
+Click the
+Recommendation
+tab.
+Use filters to view your metrics:
+If available, enter a custom date range or select a preset range.
+You can select a device type on which the recommendation occurred.
+To show metrics for a recommendation setting, use all of the following filters. Set none to display aggregated metrics over all recommendation settings.
+Serving config ID
+Recommendation ID
+Context event type with a displayed recommendation
+Note:
+Metrics displayed might be higher than actual values if only some recommendation setting filters are set while others are not.
+View search analytics
+If there are no user events, default values are shown for all metrics.
+To view search analytics:
+In the Google Cloud console, go to the
+Search for commerce
+page.
+Go to the Search for commerce console
+In the navigation menu, click
+Analytics
+.
+Click the
+Search
+tab.
+Click a tab to view that metric group:
+Per Search
+. Metrics are grouped by searches.
+Per Visit
+. Metrics are grouped by search visits.
+To filter your metrics, use the following filters:
+Date range
+. Select a preset date range or, if available,
+enter a custom date range.
+Device type
+. Select a device type that queries occurred on.
+View browse analytics
+If there are not yet any user events, default values are shown for all metrics.
+To view browse analytics:
+In the Google Cloud console, go to the
+Search for commerce
+page.
+Go to the Search for commerce console
+In the navigation menu, click
+Analytics
+.
+Click the
+Browse
+tab.
+Click a tab to view that metric group:
+Per Browse
+. Metrics are grouped by browses.
+Per Visit
+. Metrics are grouped by browse visits.
+To filter your metrics, use the following filters:
+Date range
+. Select a preset date range or, if available,
+enter a custom date range.
+Device type
+. Select a device type that browsing occurred on.
+View serving config analytics
+In the Google Cloud console, go to the
+Search for commerce
+page.
+Go to the Search for commerce console
+In the navigation menu, click
+Serving Configs
+.
+Click the name of the serving config that you want to view analytics for.
+Click the
+Analytics
+tab.
+Select a metric type from the
+Metric
+drop-down list to see its graph for the last month.
+Metrics definitions
+These sections provide definitions of the site-wide metrics displayed on the
+Analytics
+page
+:
+Recommendations summary metrics
+: Metrics
+representing user engagement with recommendation results.
+search summary metrics:
+Text query search summary metrics
+: Metrics representing
+engagement with text-based query search results.
+Browse search summary metrics
+: Metrics representing
+engagement with category browse search results.
+Recommendations summary metrics
+The following metrics are displayed for recommendations on the
+Recommendations
+tab.
+Metric
+Description
+Recommendation count
+The total number of recommendations performed across the entire site.
+Detail page-view count
+The number of times a recommended product was clicked.
+Add-to-cart count
+The number of times a recommended product was added to a cart.
+Purchase count
+The number of purchase orders in which at least one product was recommended.
+Purchase revenue
+The revenue of purchase orders in which at least one product was recommended.
+Click-through rate (CTR) per recommendation
+The percentage of times a recommended product was clicked out of the total number of times it was recommended.
+Add-to-cart rate per recommendation
+The percentage of times a recommended product was added to a cart out of the total number of times it was recommended.
+Purchase rate per recommendation
+The percentage of times an order that included a recommended product was purchased out of the total number of times the product was recommended.
+Average order value per recommendation
+The revenue of an order that included the recommended product that was purchased out of the total number of times it was recommended.
+Text search summary metrics
+The following metrics for text searches are displayed on
+the
+Search
+tab.
+Metric
+Description
+Search count
+The total number of searches performed site-wide.
+No results rate
+The number of searches without results divided by the total number
+        of searches.
+Click-through rate (CTR) per search
+The number of clicks from search results divided by the total
+        number searches.
+Add-to-cart (ATC) rate per search
+The number of add-to-cart events occurring from search results divided
+        by the total number of searches.
+Purchase rate per search
+The number of units in purchase-complete events occurring from search
+        results divided by the total number of searches.
+Revenue rate per search
+The amount of revenue generated from purchase-complete events
+        divided by the total number of searches.
+Average unit value (AUV) per search
+The amount of revenue generated from purchase-complete events divided
+        by the total unit quantity generated by purchase-complete events.
+Calculated based solely on purchase-complete events attributed to
+        searches.
+Personalization rate
+The number of personalized searches divided by the total number of
+        searches.
+Search visit count
+The total number of search visits performed site-wide.
+Page view per search visit
+The total number of detail-page-view events occurring in the search
+        visit divided by the total number of search visits.
+Add-to-cart (ATC) rate per search visit
+The number of add-to-cart events occurring in the search visit
+        divided by the total number of search visits.
+Calculated by including all add-to-cart events, regardless of whether
+        they can be directly attributed to the search.
+Purchase order rate per search visit
+The number of purchase-complete events occurring in the search visit
+        divided by the total number of search visits.
+Calculated by including all purchase-complete events, regardless of
+        whether they can be directly attributed to the search.
+Revenue rate per search visit
+The amount of revenue generated from purchase-complete events in search
+        visit divided by the total number of search visits.
+Calculated by including all purchase-complete events, regardless of
+        whether they can be directly attributed to the search.
+Average order value (AOV) per search visit
+The amount of revenue generated from purchase-complete events in
+        the search visit divided by the number of purchase-complete events
+        occurring in the search visit.
+Calculated by including all purchase-complete events, regardless of
+        whether they can be directly attributed to the search.
+Browse search summary metrics
+The following metrics for browse searches are displayed
+on the
+Browse
+tab.
+Metric
+Description
+Browse count
+The total number of browse searches performed site-wide.
+No results rate
+The number of browse searches without results divided by the total
+        number of browse searches.
+Click-through rate (CTR) per browse
+The number of clicks from browse results divided by the total number of
+        site-wide browse searches
+The total number of browse searches includes paginated queries.
+Add to cart (ATC) rate per browse
+The number of add-to-cart events occurring from browse results
+        divided by the total number of browse searches.
+Purchase rate per browse
+The number of units in purchase-complete events occurring from browse
+        results divided by the total number of browse searches.
+The total number of browse searches includes paginated queries.
+Revenue rate per browse
+The amount of revenue generated from purchase-complete events
+        divided by the total number of browse searches.
+Average unit value (AUV) per browse
+The amount of revenue generated from purchase-complete events divided
+        by the total unit quantity generated by purchase-complete events.
+Calculated based solely on purchase-complete events attributed to
+        browse searches.
+Personalization rate
+The number of personalized browse searches divided by the total number
+        of browse searches.
+Browse visit count
+The total number of browse search visits performed site-wide.
+Page view per browse visit
+The total number of detail-page-view events occurring in the browse
+        search visit divided by the total number of browse search visits.
+Add to cart (ATC) rate per browse visit
+The number of add-to-cart events occurring in the browse search visit
+        divided by the total number of browse search visits.
+Calculated by including all add-to-cart events, regardless of whether
+        they can be directly attributed to the browse search.
+Purchase order rate per browse visit
+The number of purchase-complete events occurring in the browse search
+        visit divided by the total number of browse search visits.
+Calculated by including all purchase-complete events, regardless of
+        whether they can be directly attributed to the browse search.
+Revenue rate per browse visit
+The amount of revenue generated from purchase-complete events in the
+        browse search visit divided by the total number of browse search visits.
+Calculated by including all purchase-complete events, regardless of
+        whether they can be directly attributed to the browse search.
+Average order value (AOV) per browse visit
+The amount of revenue generated from purchase-complete events in
+        the browse search visit divided by the number of purchase-complete
+        events occurring in the browse search visit.
+Calculated by including all purchase-complete events, regardless of
+        whether they can be directly attributed to the browse search.
+Configuration-specific metrics
+Note:
+Serving config metrics are only available for
+recommendations.
+You can see metrics for a specific serving config on the
+Serving Configs page
+.
+For metric graphs, click a serving config name to go to its details page,
+then select the
+Analytics
+tab.
+This table provides definitions for configuration-specific metrics.
+Metric
+Description
+Details
+Click-through rate (CTR)
+The number of product detail views from a serving config's
+      recommendation panel, divided by the total number of
+predict
+queries for this serving config.
+For example, if the serving config points to a Frequently Bought Together
+      model, then the CTR would be the number of product detail pages viewed
+      from the shopping cart recommendation panel divided by the number of
+      predict queries on the shopping cart page.
+Conversion rate (CVR)
+The number of add-to-cart events from a serving config's
+      recommendation panel divided by the total number of
+predict
+queries for this serving config.
+Similar to CTR, except that instead of product detail views, conversion
+      rate uses add-to-cart events.
+Recommender-engaged revenue
+The total revenue from the recommendations for this serving config.
+Similar to recommender-engaged revenue for summary metrics, but for this
+      serving config only.
+To track clicks from a serving config, Vertex AI Search for commerce aligns the
+results in
+predict
+and
+search
+responses with ingested user events. If a
+clicked item appears in the responses for the same visitor ID within a
+one hour time window, the click or purchase is treated as a result of the
+Vertex AI Search for commerce.
+This process is fully automatic; you don't need to set anything up. However,
+when you configure your prediction and search requests for the first time, you
+should confirm that:
+Visitor IDs in the request are the same as the visitor IDs you used in event
+ingestions.
+The timestamp in the response roughly match the timestamp for that event.
+When metrics are compared to the ideal expected result, or ground truth, the
+values might be lower, but the trends align.
+A more direct alternative to this method is to use
+attribution tokens
+. This requires significant instrumentation and
+is only recommended as an advanced tracking use case.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

@@ -1,0 +1,438 @@
+Conversational Commerce agent user experience guide  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Conversational Commerce agent user experience guide
+This page describes how to optimize the user experience for your Conversational Commerce agent implementation in Vertex AI Search for commerce.
+Search optimization checklist
+Take these steps to avoid common pitfalls:
+Ensure relevance is based on user behavior, preferences and past interactions.
+Use transparent personalization cues like
+recommended based on previous searches.
+Enable users to modify or reset personalization options.
+Core principles
+This section describes core principles and best practices for using Conversational Commerce agent as part of your guided search package.
+Clarity and transparency
+Configure your site in such a way that your users get the results they want, and have the ability to refine or adjust search parameters, as enabled by these features described:
+Ambiguous queries
+When encountering a vague search, the Conversational Commerce agent proactively seeks clarification.
+Nuanced queries
+Extremely detailed queries require strong content structures and detailed metadata for Vertex AI Search for commerce to return accurate results.
+User expectations
+The model must show results prioritized according to your user's search history.
+Candid limitations
+If a query can't be understood or if it returns only limited results, Vertex AI Search for commerce lets the site visitor know and offers alternatives.
+Efficiency and speed
+Use predictive search
+Provide
+autocomplete suggestions
+, predict intent, and surface relevant results instantly using historical data, trending queries, and user behavior.
+Enhance filtering mechanisms
+Refine results through conversational inputs to accelerate the process of getting what you are looking for.
+Ranking and optimization
+Prioritize the most relevant products based on context, user history, and search trends.
+Reduce cognitive load
+Configure Vertex AI Search for commerce to harness contextual awareness to remember a user's previous selections to minimize redundant actions and accelerate user decision-making.
+Create personalization without overload
+To avoid overwhelming users, dynamic filtering can strike a balance between personalization and user autonomy. Instead of overwhelming a user with too many filters, Conversational Commerce agent has the capability of suggesting refinement based on preferences from a user's previous search or purchase data. Additionally, Vertex AI Search for commerce is adaptable to real-time behavior. For example, purchase history might not be relevant while searching for a gift for someone else, so Conversational Commerce agent can adjust itself to this context and not show your user this unnecessary information.
+Control features to ensure context and continuity across sessions
+Rather than treating every query in isolation, contextual awareness allows for more efficient searches without repeating previous inputs. Not only should contextual awareness be pervasive within and across sessions, but also across devices to ensure continuity.
+Continuity within sessions
+Vertex AI Search for commerce is designed to remember a user's past interactions within a session to allow for incremental refinements.
+Continuity across sessions
+Site visitors should be able to pick up where they left off in a previous session without Conversational Commerce agent feeling intrusive.
+Integrate accessibility and inclusivity considerations
+Whether site visitors interact through voice, text, or images, Vertex AI Search for commerce must provide inclusive solutions that support individuals with varying abilities, preferences, or technological constraints.
+Accessibility tools
+Multimodal input support
+Voice-to-text correction
+Screen reader compatibility
+Real-time transcription
+Clear semantic structuring
+Predictive text assist
+Voiceovers for image-based content
+Autocorrect
+Use targeted questions to ensure graceful error handling
+Inevitably, there are instances when a query produces no results on a particular site. Instead of an unhelpful
+no results
+message, Conversational Commerce agent offers intelligent suggestions and alternatives. Additionally, Conversational Commerce agent prompts for clarification, asking targeted questions to narrow down preferences and needs, creating a user-centric dialogue.
+Design calls-to-action to end conversations gracefully
+To prevent user abandonment, Conversational Commerce agent ends conversations with clear, actionable pathways, maximizing user satisfaction and boosting the likelihood of conversion by maintaining momentum. Furthermore, Conversational Commerce agent can create opportunities for re-engagement after the initial interaction by surfacing relevant follow-up questions based on browsing activity or purchase history.
+Optimize web interface components and patterns
+This section details how user interface design can optimize Conversational Commerce agent experiences, particularly on mobile. It focuses on enhancing search input and presentation, managing conversational elements without disrupting browsing, and leveraging autocomplete, predictive search, and carousels for efficient product discovery. The section also covers strategies for presenting search results, handling ambiguous queries, and using communicative animations to create a smoother and more intuitive user journey.
+Search input and enhancement
+As the entry point for Conversational Commerce agent, the search box must balance clarity and functionality and, particularly on mobile where screen space is limited, it must do so with minimal disruption.
+Optimize placement for mobile
+Most people use their thumbs to navigate their phones, so placing the search box at the bottom of the screen aligns better with user behavior. This minor detail aligns with the Conversational Commerce agent goals of making search more intuitive and reducing navigation effort and friction.
+Indicate support for natural language input
+Suggested prompts
+:
+Show me red sneakers for under $100
+Dynamic placeholder text
+:
+Ask a question
+Microcopy
+:
+Try searching in full sentences!
+Icons
+: Chat bubble, microphone, or camera icons
+Manage Conversational Commerce agent without disrupting browsing
+When search becomes conversational, it risks taking up valuable screen space.
+To mitigate this risk, you can implement:
+Collapsible conversation
+: Allows users to expand and contract the conversation area using a persistent icon.
+Conversation overlay
+: A conversation overlay floats above the page allowing users to still view results.
+Embedded conversation
+: The search journey begins as a standard input field but expands into a full-screen conversational web interface.
+Configure autocomplete and predictive search
+To reduce the need for users to type out full search terms autocomplete and predictive search reduce the need for full search terms, implement:
+Intelligent predictive assistance
+: Predictive terms appear within the search bar as users type, offering real-time, autocomplete suggestions in a lighter font.
+Dropdown prediction list
+: A dynamic list appears below the search bar, showcasing suggested queries, popular searches, and recent history
+Contextual filtering chips
+: Filters display below the search bar as users type, providing relevant filter options such as categories, price ranges, or brands.
+Smart corrections
+: Subtle autocorrect suggestions for misspelled words is displayed in the drop-down.
+Present and refine search results
+Optimizing search item returns through layout and refinement options can make the browsing experience smoother, ensuring site visitors can efficiently scan, compare, and filter results.
+Results views and layouts
+How results are presented within a Conversational Commerce agent console depends on the web interface being embedded or overlaid on the experience.
+Collapsible and overlay results
+: This view allows results to be decoupled, dynamically updating the main product grid while keeping the conversation accessible in a side panel or floating conversation.
+Embedded results
+: This view displays results directly within the conversation, as structured cards, carousels, or inline product listings, ensuring a seamless experience.
+Implement dynamic filtering and refinement
+When users enter a prompt, guided search proactively guides users towards more precise results by asking clarifying questions or surfacing relevant filter options inline.
+Use interactive page elements to handle ambiguous queries
+Instead of returning an unfocused set of results, the interface can use interactive page elements to guide users toward more relevant results.
+Integrate communicative animations on your site
+Subtle animations such as these examples provide visual feedback to make interactions feel smoother and more intuitive, helping users understand changes in real time.
+Loading states
+: A shimmer effect on product cards or a subtle pulse on the search bar can indicate that search is processing.
+Typing indicators
+: A brief typing animation (e.g., three dots pulsating) reassures users that the system is actively working.
+Streaming responses
+: Conversational Commerce agent can generate responses in real-time, with text appearing dynamically as it is processed.
+Fading transitions
+: When users adjust filters or guided search suggests refinements, results can fade in and out.
+Utilize carousels
+Carousels showcase relevant products, recommendations and trending items without overwhelming users. Especially on mobile, carousels optimize limited screen space by allowing users to browse multiple products or offers with intuitive swipe gestures.
+Carousel features are:
+Personalized recommendations based on user behavior
+Trending or featured products
+Recently viewed items
+Category-based browsing
+Carousel best practices are:
+Ensure clear navigation
+Use horizontal instead of vertical scrolling
+Limit carousel items
+Complement primary results
+Multimodal experience
+Voice search and input and transcribed text helps to ensure a multimodal model guided search experience.
+Voice search
+: Voice search is intended to feel natural and effortless to the site visitor. The web interface designed to support quick, clear user interactions.
+Voice input button
+: A microphone icon in the search bar allows the site visitor to activate voice search, with animated indicators pulsing or lighting up to provide users visual feedback when activated.
+Streaming transcribed text
+: Conversational Commerce agent can stream transcribed text as the user interacts using voice, letting the site visitor review and adjust their input while minimizing site clutter.
+Practical guidance to web interface components
+This section comprises practical guidance for how to optimize your Conversational Commerce agent components in the web interface.
+Simplify the experience
+A simplified user experience reduces cognitive load and helps to ensure that your users can quickly find what they are looking for without unnecessary distractions.
+A reduced cognitive load in a user interface can be summed up as:
+Minimizing the steps in the process.
+Keeping interfaces clean and intuitive.
+Streamlining AI suggestions.
+Avoid misleading or irrelevant personalization
+Irrelevant or misleading results can quickly frustrate users.
+Understand intent and VIP questions
+To refine intent, Conversational Commerce agent prompts users with relevant questions. Therefore, Conversational Commerce agent should be configured to ask targeted questions to further reduce the number of results and reduce ambiguity.
+User journey
+This is an example of a desirable user conversation path.
+Step 1. Conversational Commerce agent prompts your user with a question.
+For example:
+What is the location and time of year of the wedding?
+Your user might answer this prompt with something like:
+It's in New York in the
+summertime.
+Step 2. Based on your user's answer, Conversational Commerce agent then targets your user with specialized questions and shows them related items to further reduce the number of search results and reduce ambiguity.
+Conversational filtering
+Conversational filtering guides users toward more relevant options without overwhelming them by:
+Immediately updating results.
+Suggesting useful filters.
+Labeling filters clearly.
+To learn more about conversational product filtering, see
+Conversational product filtering
+.
+Handle edge cases and errors
+To make the search process more reliable and user-friendly, Vertex AI Search for commerce can gracefully handle unusual, or edge cases, and errors in a number of ways:
+Surfaces closely related alternatives.
+Clearly displays stock availability.
+Suggests similar alternatives.
+Offers back-in-stock notifications.
+Provides hand-off to customer support.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

@@ -1,0 +1,824 @@
+Vertex AI Search for commerce client libraries  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Vertex AI search for commerce
+All APIs & references
+Client Libraries
+Overview
+C++ Reference
+C Sharp Reference
+Go Reference
+Java Reference
+Node.js Reference
+PHP Reference
+Python Reference
+Ruby Reference
+REST reference
+Overview
+v2
+REST Resources
+projects.locations.catalogs
+Overview
+completeQuery
+exportAnalyticsMetrics
+getAttributesConfig
+getCompletionConfig
+getConversationalSearchCustomizationConfig
+getDefaultBranch
+getGenerativeQuestionFeature
+list
+patch
+setDefaultBranch
+updateAttributesConfig
+updateCompletionConfig
+updateConversationalSearchCustomizationConfig
+updateGenerativeQuestion
+updateGenerativeQuestionFeature
+projects.locations.catalogs.attributesConfig
+Overview
+addCatalogAttribute
+removeCatalogAttribute
+replaceCatalogAttribute
+projects.locations.catalogs.branches.operations
+Overview
+get
+projects.locations.catalogs.branches.products
+Overview
+addFulfillmentPlaces
+addLocalInventories
+create
+delete
+get
+import
+list
+patch
+purge
+removeFulfillmentPlaces
+removeLocalInventories
+setInventory
+projects.locations.catalogs.completionData
+Overview
+import
+projects.locations.catalogs.controls
+Overview
+create
+delete
+get
+list
+patch
+projects.locations.catalogs.generativeQuestion
+Overview
+batchUpdate
+projects.locations.catalogs.generativeQuestions
+Overview
+list
+projects.locations.catalogs.models
+Overview
+create
+delete
+get
+list
+patch
+pause
+resume
+tune
+projects.locations.catalogs.operations
+Overview
+get
+list
+projects.locations.catalogs.placements
+Overview
+predict
+search
+projects.locations.catalogs.servingConfigs
+Overview
+addControl
+create
+delete
+get
+list
+patch
+predict
+removeControl
+search
+projects.locations.catalogs.userEvents
+Overview
+collect
+import
+purge
+rejoin
+write
+projects.locations.operations
+Overview
+get
+list
+projects.operations
+Overview
+get
+list
+Types
+BigQuerySource
+BoostSpec
+CompletionConfig
+CompletionDataInputConfig
+ConditionBoostSpec
+ConversationalSearchCustomizationConfig
+ConversationalSearchSpec
+FacetSpec
+GcsSource
+GenerativeQuestionConfig
+GenerativeQuestionsFeatureConfig
+ImportErrorsConfig
+Interval
+PredictResponse
+ProductAttributeValue
+QueryExpansionSpec
+SearchMode
+SearchResponse
+SolutionType
+SpellCorrectionSpec
+StringList
+Tile
+TileNavigationSpec
+v2beta
+REST Resources
+projects
+Overview
+getAlertConfig
+updateAlertConfig
+projects.locations.catalogs
+Overview
+completeQuery
+exportAnalyticsMetrics
+getAttributesConfig
+getCompletionConfig
+getConversationalSearchCustomizationConfig
+getDefaultBranch
+getGenerativeQuestionFeature
+list
+patch
+setDefaultBranch
+updateAttributesConfig
+updateCompletionConfig
+updateConversationalSearchCustomizationConfig
+updateGenerativeQuestion
+updateGenerativeQuestionFeature
+projects.locations.catalogs.attributesConfig
+Overview
+addCatalogAttribute
+batchRemoveCatalogAttributes
+removeCatalogAttribute
+replaceCatalogAttribute
+projects.locations.catalogs.branches.operations
+Overview
+get
+projects.locations.catalogs.branches.products
+Overview
+addFulfillmentPlaces
+addLocalInventories
+create
+delete
+export
+get
+import
+list
+patch
+purge
+removeFulfillmentPlaces
+removeLocalInventories
+setInventory
+projects.locations.catalogs.completionData
+Overview
+import
+projects.locations.catalogs.controls
+Overview
+create
+delete
+get
+list
+patch
+projects.locations.catalogs.generativeQuestion
+Overview
+batchUpdate
+projects.locations.catalogs.generativeQuestions
+Overview
+list
+projects.locations.catalogs.models
+Overview
+create
+delete
+get
+list
+patch
+pause
+resume
+tune
+projects.locations.catalogs.operations
+Overview
+get
+list
+projects.locations.catalogs.placements
+Overview
+predict
+search
+projects.locations.catalogs.servingConfigs
+Overview
+addControl
+create
+delete
+get
+list
+patch
+predict
+removeControl
+search
+projects.locations.catalogs.userEvents
+Overview
+collect
+export
+import
+purge
+rejoin
+write
+projects.locations.operations
+Overview
+get
+list
+projects.operations
+Overview
+get
+list
+Types
+AlertConfig
+BigQuerySource
+BoostSpec
+CompletionConfig
+CompletionDataInputConfig
+ConditionBoostSpec
+ConversationalSearchCustomizationConfig
+ConversationalSearchSpec
+FacetSpec
+GcsSource
+GenerativeQuestionConfig
+GenerativeQuestionsFeatureConfig
+ImportErrorsConfig
+Interval
+OutputConfig
+PredictResponse
+ProductAttributeValue
+QueryExpansionSpec
+RecommendationsFilteringOption
+SearchMode
+SearchResponse
+SolutionType
+SpellCorrectionSpec
+StringList
+Tile
+TileNavigationSpec
+v2alpha
+REST Resources
+projects
+Overview
+enrollSolution
+getAlertConfig
+getLoggingConfig
+getRetailProject
+listEnrolledSolutions
+updateAlertConfig
+updateLoggingConfig
+projects.locations.catalogs
+Overview
+completeQuery
+exportAnalyticsMetrics
+getAttributesConfig
+getCompletionConfig
+getConversationalSearchCustomizationConfig
+getDefaultBranch
+getGenerativeQuestionFeature
+list
+patch
+setDefaultBranch
+updateAttributesConfig
+updateCompletionConfig
+updateConversationalSearchCustomizationConfig
+updateGenerativeQuestion
+updateGenerativeQuestionFeature
+projects.locations.catalogs.attributesConfig
+Overview
+addCatalogAttribute
+batchRemoveCatalogAttributes
+removeCatalogAttribute
+replaceCatalogAttribute
+projects.locations.catalogs.branches
+Overview
+get
+list
+projects.locations.catalogs.branches.operations
+Overview
+get
+projects.locations.catalogs.branches.places.operations
+Overview
+get
+projects.locations.catalogs.branches.products
+Overview
+addFulfillmentPlaces
+addLocalInventories
+create
+delete
+export
+get
+import
+list
+patch
+purge
+removeFulfillmentPlaces
+removeLocalInventories
+setInventory
+projects.locations.catalogs.completionData
+Overview
+import
+projects.locations.catalogs.controls
+Overview
+create
+delete
+get
+list
+patch
+projects.locations.catalogs.generativeQuestion
+Overview
+batchUpdate
+projects.locations.catalogs.generativeQuestions
+Overview
+list
+projects.locations.catalogs.merchantCenterAccountLinks
+Overview
+create
+delete
+list
+projects.locations.catalogs.models
+Overview
+create
+delete
+get
+list
+patch
+pause
+resume
+tune
+projects.locations.catalogs.operations
+Overview
+get
+list
+projects.locations.catalogs.placements
+Overview
+conversationalSearch
+predict
+search
+projects.locations.catalogs.servingConfigs
+Overview
+addControl
+conversationalSearch
+create
+delete
+get
+list
+patch
+predict
+removeControl
+search
+projects.locations.catalogs.userEvents
+Overview
+collect
+export
+import
+purge
+rejoin
+write
+projects.locations.operations
+Overview
+get
+list
+projects.operations
+Overview
+get
+list
+projects.retailProject
+Overview
+acceptTerms
+Types
+AlertConfig
+BigQuerySource
+BoostSpec
+BranchView
+CompletionConfig
+CompletionDataInputConfig
+ConditionBoostSpec
+ConversationalFilteringSpec
+ConversationalSearchCustomizationConfig
+ConversationalSearchResponse
+ConversationalSearchSpec
+Facet
+FacetSpec
+GcsSource
+GenerativeQuestionConfig
+GenerativeQuestionsFeatureConfig
+ImportErrorsConfig
+Interval
+LoggingConfig
+OutputConfig
+PredictResponse
+ProductAttributeInterval
+ProductAttributeValue
+Project
+QueryExpansionSpec
+RecommendationsFilteringOption
+RelevanceThreshold
+SafetySetting
+SearchMode
+SearchParams
+SearchResponse
+SolutionType
+SpellCorrectionSpec
+StringList
+Tile
+TileNavigationSpec
+Shared Types
+Types
+Date
+GetOperationRequest
+HttpBody
+ListOperationsRequest
+ListOperationsResponse
+RPC reference
+Overview
+google.api
+google.cloud.location
+google.cloud.retail.logging
+google.cloud.retail.v2
+google.cloud.retail.v2alpha
+google.cloud.retail.v2beta
+google.longrunning
+google.rpc
+google.type
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Reference
+Send feedback
+Vertex AI Search for commerce client libraries
+This page shows how to get started with the Cloud Client Libraries for the
+Vertex AI Search for commerce API. Client libraries make it easier to access
+Google Cloud APIs from a supported language. Although you can use
+Google Cloud APIs directly by making raw requests to the server, client
+libraries provide simplifications that significantly reduce the amount of code
+you need to write.
+Read more about the Cloud Client Libraries
+and the older Google API Client Libraries in
+Client libraries explained
+.
+Install the client library
+C++
+See
+Setting up a C++ development environment
+for details about this client library's requirements and install dependencies.
+C#
+See the
+Reference Page
+for this client library's requirements and install dependencies.
+For more information, see
+Setting Up a C# Development Environment
+.
+Go
+See the
+GitHub
+README
+for this client library's requirements and install dependencies.
+For more information, see
+Setting Up a Go Development Environment
+.
+Java
+See the
+GitHub
+README
+for this client library's requirements and install dependencies.
+For more information, see
+Setting Up a Java Development Environment
+.
+Node.js
+See the
+GitHub
+README
+for this client library's requirements and install dependencies.
+For more information, see
+Setting Up a Node.js Development Environment
+.
+PHP
+See the
+GitHub
+README
+for this client library's requirements and install dependencies.
+For more information, see
+Using PHP on Google Cloud
+.
+Python
+See the
+PyPI
+README
+for details about this client library's
+  requirements and install dependencies.
+For more information, see
+Setting Up a Python Development Environment
+.
+Ruby
+See the
+RubyDoc
+README
+for details about this client library's
+  requirements and install dependencies.
+For more information, see
+Setting Up a Ruby Development Environment
+.
+Set up authentication
+To authenticate calls to Google Cloud APIs, client libraries support
+Application Default Credentials (ADC)
+;
+the libraries look for credentials in a set of defined locations and use those credentials
+to authenticate requests to the API. With ADC, you can make
+credentials available to your application in a variety of environments, such as local
+development or production, without needing to modify your application code.
+For production environments, the way you set up ADC depends on the service
+and context. For more information, see
+Set up Application Default Credentials
+.
+For a local development environment, you can set up ADC with the credentials
+that are associated with your Google Account:
+Install
+the Google Cloud CLI.
+        
+          After installation,
+initialize
+the Google Cloud CLI by running the following command:
+gcloud
+init
+If you're using an external identity provider (IdP), you must first
+sign in to the gcloud CLI with your federated identity
+.
+If you're using a local shell, then create local authentication credentials for your user
+        account:
+gcloud
+auth
+application-default
+login
+You don't need to do this if you're using Cloud Shell.
+If an authentication error is returned, and you are using an external identity provider
+        (IdP), confirm that you have
+signed in to the gcloud CLI with your federated identity
+.
+A sign-in screen appears. After you sign in, your credentials are stored in the
+local credential file used by ADC
+.
+Additional resources
+C++
+The following list contains links to more resources related to the
+client library for C++:
+API reference
+Client libraries best practices
+Issue tracker
+tbd
+on Stack Overflow
+Source code
+C#
+The following list contains links to more resources related to the
+client library for C#:
+API reference
+Client libraries best practices
+Issue tracker
+tbd
+on Stack Overflow
+Source code
+Go
+The following list contains links to more resources related to the
+client library for Go:
+API reference
+Client libraries best practices
+Issue tracker
+tbd
+on Stack Overflow
+Source code
+Java
+The following list contains links to more resources related to the
+client library for Java:
+API reference
+Client libraries best practices
+Issue tracker
+tbd
+on Stack Overflow
+Source code
+Node.js
+The following list contains links to more resources related to the
+client library for Node.js:
+API reference
+Client libraries best practices
+Issue tracker
+tbd
+on Stack Overflow
+Source code
+PHP
+The following list contains links to more resources related to the
+client library for PHP:
+API reference
+Client libraries best practices
+Issue tracker
+tbd
+on Stack Overflow
+Source code
+Python
+The following list contains links to more resources related to the
+client library for Python:
+API reference
+Client libraries best practices
+Issue tracker
+tbd
+on Stack Overflow
+Source code
+Ruby
+The following list contains links to more resources related to the
+client library for Ruby:
+API reference
+Client libraries best practices
+Issue tracker
+tbd
+on Stack Overflow
+Source code
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

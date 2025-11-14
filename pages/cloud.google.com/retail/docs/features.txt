@@ -1,0 +1,380 @@
+Features and capabilities of Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Features and capabilities of Vertex AI Search for commerce
+Within the Vertex AI Search for commerce product, you get both the recommendations capability
+and the search and browse capability.
+You can upload and manage product catalog
+information and user event logs for your ecommerce applications. You can get and
+customize results based on this information, and this data continues to be used
+to train and update models, thus improving your recommendations and search
+results.
+For more information about the process of implementing Vertex AI Search for commerce
+for your application, see
+Implementing Vertex AI Search for commerce
+.
+Recommendations
+Vertex AI Search for commerce lets you build high quality, personalized
+product recommendation systems without requiring a high level of expertise in
+machine learning, systems design, or operations. Leveraging your site's retail
+products and user behavior, you can use recommendations to build recommendation models specific to your use case,
+such as "Frequently Bought Together" and "Recommended for You".
+Vertex AI Search for commerce uses user events and your product catalog to train
+your recommendation machine learning models, which provide recommendations
+based on this data.
+When you deploy recommendation models to your application, you can then request
+recommendations for other products in your catalog and display to your users.
+Recommendations capabilities include:
+Custom models
+. Each model is trained specifically for your data, based
+on sequence-based machine learning models using transformers.
+Personalized results
+. Use personalization algorithms without any
+machine learning expertise. Recommendations are based on user behavior and
+activities like views, clicks, and in-store purchases as well as online
+activity, so that every prediction result is personalized.
+Real-time predictions
+. Each recommendation served considers previous
+user activity like click, view, and purchase events, so recommendations are
+in real time.
+Automatic model training and tuning
+. Daily model retraining ensures all
+the models can accurately capture user behavior every day.
+Optimization objectives
+. Goals like conversion rate, click-through rate,
+and revenue optimization help you precisely optimize for your business goal.
+Omnichannel recommendations
+. With the API model, go beyond website
+recommendations to personalize your entire shopper journey to
+recommendations on mobile apps, personalized email recommendations, store
+kiosks, or call center applications.
+Search
+Vertex AI Search for commerce lets you provide high quality product search results
+that are customizable for your retail business needs. Use Google's query
+and contextual understanding to improve product discovery across your website
+and mobile applications.
+Search capabilities include:
+Product hierarchies
+: You can include collections and variants in your
+searchable product catalog.
+Query expansion
+: Increase the relevant results returned for query terms
+that would normally produce fewer results, such as queries that use very
+specific keywords.
+Relevance thresholding
+: Adjust how Vertex AI Search for commerce balances
+returning precision (the relevance of the search results returned) and
+recall (returning more results for that query).
+Pagination
+: Control pagination of your search results to decrease lookup
+time and response size.
+Filtering
+: Use expression syntax to provide filtering that refines your
+site's search results.
+Ordering
+: Set the order of search results by multiple fields in order of
+priority.
+Faceting
+: Generate faceting to provide more relevant options to your
+users based on attributes you provide. Buckets need to be provided for
+numerical attributes in the search request to return them in the search
+response.
+Dynamic faceting
+: Automatically generate facet keys based on search
+queries and automatically combine (and rerank) with facet keys provided in
+the search request. This feature is based on an allowlist. Contact
+support for help enabling this feature.
+Boosting and burying
+: Control search result ranking by prioritizing or
+deprioritizing some types of results.
+Browsing
+: Get results that are sorted to maximize revenue when your
+users browse products using site navigation. Browse search can be combined
+with filtering, ordering, faceting, dynamic faceting, boosting, and burying.
+Personalized results
+. Deliver personalized text search and browse search
+results that are personalized for each end-user, based on each user's
+behavior on your site, including each user's history of product views,
+clicks, add to cart, and purchases.
+Use Vertex AI Search for commerce
+In order to build machine learning models for recommendations or search,
+you need to supply two sets of information:
+Product catalog:
+Information about the products being recommended to
+customers. This includes the product title, description, in-stock
+availability, and pricing.
+User events:
+End user behavior on your website. This includes events
+such as when a user views or purchases a specific item, or when your
+website shows the user a list of products.
+With many integration options, you can ingest your data using tools you might
+already use, such as BigQuery, Cloud Storage, Tag Manager, and
+Google Analytics.
+Important:
+Vertex AI Search for commerce processes data on your behalf. It is your
+responsibility to ensure that the data you send to Vertex AI Search for commerce is
+collected in accordance with applicable laws.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

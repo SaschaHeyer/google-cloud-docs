@@ -1,0 +1,416 @@
+Search as you type  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español – América Latina
+Français
+Português – Brasil
+中文 – 简体
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Search as you type
+The modern ecommerce search bar is far more than just an input field. It's an interactive, dynamic assistant that guides your users to the right products before they even finish entering text. This search-as-you-type (SAYT) experience, which displays query suggestions, popular brands, relevant categories, and even top product results in real-time, drives user engagement and increases the likelihood of conversion.
+While Vertex AI Search for commerce provides distinct APIs for query autocompletion and product search, it intentionally leaves the final implementation of a SAYT user experience open-ended.
+This guide to building with Vertex AI Search for commerce explores two primary design patterns for implementing a robust SAYT widget using the Vertex AI Search for commerce APIs, detailing the trade-offs of each approach.
+Understand the core components
+To build a comprehensive SAYT feature, you need to understand the two fundamental APIs provided by Vertex AI Search for commerce:
+CompleteQuery
+API
+: This is the brains behind your autocomplete suggestions.
+Function
+: For a given input string, such as
+lipst,
+it returns a list of suggested query completions, including
+lipstick
+and
+lip gloss,
+associated popular brands, and relevant categories.
+Cost
+: This API is included in the Vertex AI Search for commerce package pricing.
+Performance
+: It's a high-throughput API designed for the rapid, low-latency responses required for a keystroke-by-keystroke experience. It leverages auto-learning features, including spell correction and suggestions that are designed to yield results, all trained on your store's daily search events.
+Search
+API
+:This is your core product discovery engine.
+Function
+:For a given query, it returns a ranked list of relevant product results.
+Cost
+:This is a paid API, and its usage directly impacts your operational costs.
+Events
+: For model training and analytics, each
+Search
+API call should ideally be paired with a search event to track user behavior and improve the relevance models over time.
+To create the SAYT experience, you must write a wrapper API or frontend logic that calls both these APIs and combines their results into a single, cohesive user interface.
+Implementation pattern 1: Direct but costlier approach
+This is the most straightforward method to implement. The logic is for every keystroke, you make parallel calls to both the
+CompleteQuery
+and
+Search
+APIs.
+Flow
+The flow follows this sequential path:
+A user enters a character, such as
+l.
+Your application sends
+l
+to the
+CompleteQuery
+API.
+Simultaneously, your application sends
+l
+to the
+Search
+API.
+The results are combined and displayed.
+The user enters another character (
+l,
+making the query
+li).
+The process repeats for the new query
+li.
+Advantages
+The advantages include fast implementation, allowing you to quickly write and deploy the log.
+Disadvantages
+High
+Search
+API volume
+: This approach dramatically inflates the number of
+Search
+API calls. A query like
+lipstick
+would trigger eight separate search requests, leading to a significant increase in volume.
+Increased cost
+: Since the
+Search
+API is a paid service, this high volume directly translates to higher operational costs, making it difficult to achieve a positive return on investment (ROI).
+Event management complexity
+: Every
+Search
+API call should be logged with a corresponding search event for accurate model training and measurement. The high volume of calls makes it challenging to ensure every event is captured, potentially leading to data loss and skewed analytics.
+Potentially lower quality results
+: Searches for one or two characters, such as
+l, li
+can return noisy or overly broad results, leading to a less relevant initial experience.
+Implementation pattern 2: The optimized and recommended approach
+This pattern optimizes for cost, performance, and relevance by using the
+CompleteQuery
+API to intelligently decide when to call the
+Search
+API.
+Flow
+The flow follows this sequential path:
+A user enters a partial text query, such as
+lip.
+Your application sends
+lip
+to the
+CompleteQuery
+API.
+The API returns a list of suggestions, with
+lipstick
+likely being the first result.
+Your application takes the first suggestion
+(lipstick)
+and makes a single call to the
+Search
+API with that term.
+The autocomplete suggestions and the product results for
+lipstick
+are displayed.
+As the user continues to type
+lips, lipst, ...
+you can add logic to only make a new search call if the first autocomplete suggestion changes.
+Advantages
+Significant cost reduction
+: By drastically reducing the number of
+Search
+API calls, this method keeps costs under control.
+Controlled API and event volume
+: API and event volumes are manageable and predictable, ensuring more reliable data for model training and analytics.
+Higher relevance
+: You are searching for more complete and probable terms, which provides higher-quality product results in the SAYT widget.
+Better ROI
+: Lower costs and a better user experience contribute to a stronger return on investment.
+Handling edge cases
+This approach is superior but requires handling a few corner cases:
+No suggestions
+: If the
+CompleteQuery
+API returns no suggestions, your logic should fall back to calling the
+Search
+API with the user's raw input.
+Partial vs. suggested query
+: In rare cases, a user might want to see results for their partial term, such as
+eye
+rather than the top suggestion,
+eye shadow.
+While this is a minor trade-off, the optimized approach prioritizes the most likely user intent.
+Measure success with experiment IDs
+Regardless of the implementation you choose, it's important to measure the performance of your SAYT widget independently from your main search results page. If you use the same tracking for both, you'll be unable to determine if the SAYT feature is truly improving click-through rates and conversions.
+The solution to measuring click-through and conversation rates of the SAYT widget specifically is to use distinct
+experimentIds
+in your search events that differentiate these metrics from those of the main search events.
+SAYT events
+: Assign a specific ID, such as
+"experimentId": "sayt-widget"
+, to all search events originating from the search-as-you-type capability.
+Main search events
+: Use a different ID (or no ID) for searches initiated when a user presses
+Enter
+or clicks
+Search
+to go to the main search results page.
+By segmenting your events this way, you can use the analytics dashboards in the Vertex AI console to filter and compare the performance of your SAYT widget against the standard search experience, giving you clear, actionable insights.
+Conclusion
+Vertex AI Search for commerce provides the components for creating a search-as-you-type experience. By acting as the architect who designs the interaction between the
+CompleteQuery
+and
+Search
+APIs, you can build a search capability that builds the bridge between user experience and performance. For most use cases, the optimized approach delivers a user-relevant experience while avoiding compute-heavy operations.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español – América Latina
+Français
+Português – Brasil
+中文 – 简体
+日本語
+한국어

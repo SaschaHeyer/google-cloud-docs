@@ -1,0 +1,261 @@
+Get support  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Vertex AI search for commerce
+All support
+Get support
+Billing questions
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Support
+Send feedback
+Get support
+Get a Google support package
+Google Cloud offers different support packages to meet different needs, such as 24/7 coverage,
+  phone support, and access to a technical support manager. For more information, see
+Google Cloud Support
+.
+Get support from the community
+Community resources are available for recommendations.
+Ask a question on Stack Overflow
+Ask a question about recommendations on
+Stack Overflow
+.
+  Use the tag
+google-cloud-recommendations
+for questions about
+  recommendations.
+Discuss Vertex AI Search for commerce
+Join the
+cloud-recommendations-users
+Google group to discuss recommendations and receive recommendations
+  announcements and updates.
+You can visit the Google Cloud
+Slack community
+to discuss
+  recommendations and other Google Cloud products. If you haven't already
+  joined,
+use this form to sign up
+.
+File bugs or feature requests
+To file a bug or a feature request, file a support ticket. To set your ticket to the correct
+  component, select the following fields.
+For recommendations:
+Category
+: Machine Learning
+Component
+: Vertex AI Search for commerce: recommendations
+Subcomponent
+: Choose the subcomponent you are experiencing
+  the issue with
+Access & Permissions
+Account Administration & Billing
+API, SDK & Client Libraries
+Outage & latency
+Migration
+Placement
+Quality of Results
+Feature Request
+Quotas
+Other
+For search:
+Category
+: Machine Learning
+Component
+: Vertex AI Search for commerce: search & browse
+Subcomponent
+: Choose the subcomponent you are experiencing
+    the issue with
+Access & Permissions
+Account Administration & Billing
+API, SDK & Client Libraries
+Autocomplete
+Indexes
+Indexing & serving
+Dynamic Facets
+Events Ingestion
+Facets/Browsing
+merchant center integration
+Outage & latency
+Product Data
+Product Ingestion
+Quality/Modeling
+Feature Request
+Quotas
+Other
+For more information on creating a support ticket, see
+Getting support
+.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

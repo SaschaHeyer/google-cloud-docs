@@ -1,0 +1,1550 @@
+Method: projects.locations.instances.getIamPolicy  |  Vertex AI  |  Google Cloud Documentation
+Skip to main content
+Technology areas
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+/
+Console
+English
+Deutsch
+Español – América Latina
+Français
+Português – Brasil
+中文 – 简体
+日本語
+한국어
+Sign in
+Vertex AI
+Start free
+Guides
+Reference
+Samples
+Support
+Resources
+Technology areas
+More
+Guides
+Reference
+Samples
+Support
+Resources
+Cross-product tools
+More
+Console
+Vertex AI
+Overview
+Authenticate to Vertex AI
+Vertex AI SDK for Python
+Introduction to the Vertex AI SDK
+Install the Vertex AI SDK
+Vertex AI SDK reference
+Vertex AI language model SDK reference
+gcloud CLI reference
+gcloud ai
+gcloud beta ai
+gcloud colab
+gcloud beta colab
+Client libraries
+Install the client libraries
+C# reference
+Go reference
+Java reference
+Node.js reference
+Long-running operations
+REST reference
+All methods
+v1
+REST Resources
+media
+Overview
+upload
+projects.locations
+Overview
+augmentPrompt
+corroborateContent
+deploy
+evaluateInstances
+getRagEngineConfig
+retrieveContexts
+updateRagEngineConfig
+projects.locations.batchPredictionJobs
+Overview
+cancel
+create
+delete
+get
+list
+projects.locations.cachedContents
+Overview
+create
+delete
+get
+list
+patch
+projects.locations.customJobs
+Overview
+cancel
+create
+delete
+get
+list
+projects.locations.datasets
+Overview
+create
+delete
+export
+get
+import
+list
+patch
+searchDataItems
+projects.locations.datasets.annotationSpecs
+Overview
+get
+projects.locations.datasets.dataItems
+Overview
+list
+projects.locations.datasets.dataItems.annotations
+Overview
+list
+projects.locations.datasets.datasetVersions
+Overview
+create
+delete
+get
+list
+patch
+restore
+projects.locations.datasets.savedQueries
+Overview
+delete
+list
+projects.locations.deploymentResourcePools
+Overview
+create
+delete
+get
+list
+patch
+queryDeployedModels
+projects.locations.endpoints
+Overview
+create
+delete
+deployModel
+directPredict
+directRawPredict
+explain
+get
+list
+mutateDeployedModel
+patch
+predict
+predictLongRunning
+rawPredict
+serverStreamingPredict
+streamRawPredict
+undeployModel
+update
+projects.locations.featureGroups
+Overview
+create
+delete
+get
+getIamPolicy
+list
+patch
+setIamPolicy
+testIamPermissions
+projects.locations.featureGroups.features
+Overview
+batchCreate
+create
+delete
+get
+list
+patch
+projects.locations.featureOnlineStores
+Overview
+create
+delete
+get
+getIamPolicy
+list
+patch
+setIamPolicy
+testIamPermissions
+projects.locations.featureOnlineStores.featureViews
+Overview
+create
+delete
+directWrite
+fetchFeatureValues
+get
+getIamPolicy
+list
+patch
+searchNearestEntities
+setIamPolicy
+sync
+testIamPermissions
+projects.locations.featureOnlineStores.featureViews.featureViewSyncs
+Overview
+get
+list
+projects.locations.featurestores
+Overview
+batchReadFeatureValues
+create
+delete
+get
+getIamPolicy
+list
+patch
+searchFeatures
+setIamPolicy
+testIamPermissions
+projects.locations.featurestores.entityTypes
+Overview
+create
+delete
+deleteFeatureValues
+exportFeatureValues
+get
+getIamPolicy
+importFeatureValues
+list
+patch
+readFeatureValues
+setIamPolicy
+streamingReadFeatureValues
+testIamPermissions
+writeFeatureValues
+projects.locations.featurestores.entityTypes.features
+Overview
+batchCreate
+create
+delete
+get
+list
+patch
+projects.locations.hyperparameterTuningJobs
+Overview
+cancel
+create
+delete
+get
+list
+projects.locations.indexEndpoints
+Overview
+create
+delete
+deployIndex
+get
+list
+mutateDeployedIndex
+patch
+undeployIndex
+projects.locations.indexes
+Overview
+create
+delete
+get
+list
+patch
+removeDatapoints
+upsertDatapoints
+projects.locations.metadataStores
+Overview
+create
+delete
+get
+list
+projects.locations.metadataStores.artifacts
+Overview
+create
+delete
+get
+list
+patch
+purge
+queryArtifactLineageSubgraph
+projects.locations.metadataStores.contexts
+Overview
+addContextArtifactsAndExecutions
+addContextChildren
+create
+delete
+get
+list
+patch
+purge
+queryContextLineageSubgraph
+removeContextChildren
+projects.locations.metadataStores.executions
+Overview
+addExecutionEvents
+create
+delete
+get
+list
+patch
+purge
+queryExecutionInputsAndOutputs
+projects.locations.metadataStores.metadataSchemas
+Overview
+create
+get
+list
+projects.locations.migratableResources
+Overview
+batchMigrate
+search
+projects.locations.modelDeploymentMonitoringJobs
+Overview
+create
+delete
+get
+list
+patch
+pause
+resume
+searchModelDeploymentMonitoringStatsAnomalies
+projects.locations.models
+Overview
+copy
+delete
+deleteVersion
+export
+get
+getIamPolicy
+list
+listCheckpoints
+listVersions
+mergeVersionAliases
+patch
+setIamPolicy
+testIamPermissions
+updateExplanationDataset
+upload
+projects.locations.models.evaluations
+Overview
+get
+import
+list
+projects.locations.models.evaluations.slices
+Overview
+batchImport
+get
+list
+projects.locations.nasJobs
+Overview
+cancel
+create
+delete
+get
+list
+projects.locations.nasJobs.nasTrialDetails
+Overview
+get
+list
+projects.locations.notebookExecutionJobs
+Overview
+create
+delete
+get
+list
+projects.locations.notebookRuntimeTemplates
+Overview
+create
+delete
+get
+getIamPolicy
+list
+patch
+setIamPolicy
+testIamPermissions
+projects.locations.notebookRuntimes
+Overview
+assign
+delete
+get
+list
+start
+stop
+upgrade
+projects.locations.operations
+Overview
+cancel
+delete
+get
+list
+wait
+projects.locations.persistentResources
+Overview
+create
+delete
+get
+list
+patch
+reboot
+projects.locations.pipelineJobs
+Overview
+batchCancel
+batchDelete
+cancel
+create
+delete
+get
+list
+projects.locations.publishers.models
+Overview
+predict
+predictLongRunning
+rawPredict
+serverStreamingPredict
+streamRawPredict
+projects.locations.ragCorpora
+Overview
+create
+delete
+get
+list
+patch
+projects.locations.ragCorpora.ragFiles
+Overview
+delete
+get
+import
+list
+projects.locations.reasoningEngines
+Overview
+create
+delete
+get
+list
+patch
+query
+streamQuery
+projects.locations.schedules
+Overview
+create
+delete
+get
+list
+patch
+pause
+resume
+projects.locations.specialistPools
+Overview
+create
+delete
+get
+list
+patch
+projects.locations.studies
+Overview
+create
+delete
+get
+list
+lookup
+projects.locations.studies.trials
+Overview
+addTrialMeasurement
+checkTrialEarlyStoppingState
+complete
+create
+delete
+get
+list
+listOptimalTrials
+stop
+suggest
+projects.locations.tensorboards
+Overview
+batchRead
+create
+delete
+get
+list
+patch
+readSize
+readUsage
+projects.locations.tensorboards.experiments
+Overview
+batchCreate
+create
+delete
+get
+list
+patch
+write
+projects.locations.tensorboards.experiments.runs
+Overview
+batchCreate
+create
+delete
+get
+list
+patch
+write
+projects.locations.tensorboards.experiments.runs.timeSeries
+Overview
+create
+delete
+exportTensorboardTimeSeries
+get
+list
+patch
+read
+readBlobData
+projects.locations.trainingPipelines
+Overview
+cancel
+create
+delete
+get
+list
+projects.locations.tuningJobs
+Overview
+cancel
+create
+get
+list
+rebaseTunedModel
+publishers.models
+Overview
+get
+Types
+Annotation
+ApiKeyConfig
+AutomaticResources
+BigQueryDestination
+BigQuerySource
+Content
+CsvSource
+CustomJobSpec
+DataItem
+DedicatedResources
+DestinationFeatureSetting
+DiskSpec
+EncryptionSpec
+EnvVar
+Event
+Explanation
+ExplanationSpec
+Fact
+FeatureSelector
+FeatureValue
+FeatureValueDestination
+FeatureViewDataKey
+FetchFeatureValuesResponse
+GcsDestination
+GcsSource
+JobState
+LineageSubgraph
+ListFeaturesResponse
+MachineSpec
+Measurement
+ModelContainerSpec
+ModelExplanation
+NasTrial
+NetworkSpec
+NotebookEucConfig
+NotebookExecutionJobView
+NotebookIdleShutdownConfig
+NotebookRuntimeType
+NotebookSoftwareConfig
+PSCAutomationConfig
+PersistentDiskSpec
+PipelineState
+PredictResponse
+PredictSchemata
+PrivateServiceConnectConfig
+PscInterfaceConfig
+RagChunk
+RagEngineConfig
+RagFileTransformationConfig
+ReadFeatureValuesResponse
+ShieldedVmConfig
+StreamingPredictResponse
+StudySpec
+Tensor
+TensorboardBlob
+TimeSeriesData
+TimeSeriesDataPoint
+v1beta1
+REST Resources
+media
+Overview
+upload
+projects
+Overview
+fetchPublisherModelConfig
+setPublisherModelConfig
+projects.locations
+Overview
+augmentPrompt
+corroborateContent
+deploy
+deployPublisherModel
+evaluateDataset
+evaluateInstances
+getRagEngineConfig
+recommendSpec
+retrieveContexts
+updateRagEngineConfig
+projects.locations.batchPredictionJobs
+Overview
+cancel
+create
+delete
+get
+list
+projects.locations.cachedContents
+Overview
+create
+delete
+get
+list
+patch
+projects.locations.customJobs
+Overview
+cancel
+create
+delete
+get
+list
+projects.locations.datasets
+Overview
+assemble
+assess
+create
+delete
+export
+get
+import
+list
+patch
+searchDataItems
+projects.locations.datasets.annotationSpecs
+Overview
+get
+projects.locations.datasets.dataItems
+Overview
+list
+projects.locations.datasets.dataItems.annotations
+Overview
+list
+projects.locations.datasets.datasetVersions
+Overview
+create
+delete
+get
+list
+patch
+restore
+projects.locations.datasets.savedQueries
+Overview
+delete
+list
+projects.locations.deploymentResourcePools
+Overview
+create
+delete
+get
+list
+patch
+queryDeployedModels
+projects.locations.endpoints
+Overview
+countTokens
+create
+delete
+deployModel
+directPredict
+directRawPredict
+explain
+get
+getIamPolicy
+list
+mutateDeployedModel
+patch
+predict
+rawPredict
+serverStreamingPredict
+setIamPolicy
+streamRawPredict
+testIamPermissions
+undeployModel
+update
+projects.locations.endpoints.chat
+Overview
+completions
+projects.locations.exampleStores
+Overview
+create
+delete
+fetchExamples
+get
+list
+patch
+removeExamples
+searchExamples
+upsertExamples
+projects.locations.extensions
+Overview
+delete
+execute
+get
+import
+list
+patch
+query
+projects.locations.featureGroups
+Overview
+create
+delete
+get
+getIamPolicy
+list
+patch
+setIamPolicy
+testIamPermissions
+projects.locations.featureGroups.featureMonitors
+Overview
+create
+delete
+get
+list
+patch
+projects.locations.featureGroups.featureMonitors.featureMonitorJobs
+Overview
+create
+get
+list
+projects.locations.featureGroups.features
+Overview
+batchCreate
+create
+delete
+get
+list
+patch
+projects.locations.featureOnlineStores
+Overview
+create
+delete
+get
+getIamPolicy
+list
+patch
+setIamPolicy
+testIamPermissions
+projects.locations.featureOnlineStores.featureViews
+Overview
+create
+delete
+directWrite
+fetchFeatureValues
+get
+getIamPolicy
+list
+patch
+searchNearestEntities
+setIamPolicy
+streamingFetchFeatureValues
+sync
+testIamPermissions
+projects.locations.featureOnlineStores.featureViews.featureViewSyncs
+Overview
+get
+list
+projects.locations.featurestores
+Overview
+batchReadFeatureValues
+create
+delete
+get
+getIamPolicy
+list
+patch
+searchFeatures
+setIamPolicy
+testIamPermissions
+projects.locations.featurestores.entityTypes
+Overview
+create
+delete
+deleteFeatureValues
+exportFeatureValues
+get
+getIamPolicy
+importFeatureValues
+list
+patch
+readFeatureValues
+setIamPolicy
+streamingReadFeatureValues
+testIamPermissions
+writeFeatureValues
+projects.locations.featurestores.entityTypes.features
+Overview
+batchCreate
+create
+delete
+get
+list
+patch
+projects.locations.hyperparameterTuningJobs
+Overview
+cancel
+create
+delete
+get
+list
+projects.locations.indexEndpoints
+Overview
+create
+delete
+deployIndex
+get
+list
+mutateDeployedIndex
+patch
+undeployIndex
+projects.locations.indexes
+Overview
+create
+delete
+get
+import
+list
+patch
+removeDatapoints
+upsertDatapoints
+projects.locations.metadataStores
+Overview
+create
+delete
+get
+list
+projects.locations.metadataStores.artifacts
+Overview
+create
+delete
+get
+list
+patch
+purge
+queryArtifactLineageSubgraph
+projects.locations.metadataStores.contexts
+Overview
+addContextArtifactsAndExecutions
+addContextChildren
+create
+delete
+get
+list
+patch
+purge
+queryContextLineageSubgraph
+removeContextChildren
+projects.locations.metadataStores.executions
+Overview
+addExecutionEvents
+create
+delete
+get
+list
+patch
+purge
+queryExecutionInputsAndOutputs
+projects.locations.metadataStores.metadataSchemas
+Overview
+create
+get
+list
+projects.locations.migratableResources
+Overview
+batchMigrate
+search
+projects.locations.modelDeploymentMonitoringJobs
+Overview
+create
+delete
+get
+list
+patch
+pause
+resume
+searchModelDeploymentMonitoringStatsAnomalies
+projects.locations.modelMonitors
+Overview
+create
+delete
+get
+list
+patch
+searchModelMonitoringAlerts
+searchModelMonitoringStats
+projects.locations.modelMonitors.modelMonitoringJobs
+Overview
+create
+delete
+get
+list
+projects.locations.models
+Overview
+copy
+delete
+deleteVersion
+export
+get
+getIamPolicy
+list
+listCheckpoints
+listVersions
+mergeVersionAliases
+patch
+setIamPolicy
+testIamPermissions
+updateExplanationDataset
+upload
+projects.locations.models.evaluations
+Overview
+get
+import
+list
+projects.locations.models.evaluations.slices
+Overview
+batchImport
+get
+list
+projects.locations.notebookExecutionJobs
+Overview
+create
+delete
+get
+list
+projects.locations.notebookRuntimeTemplates
+Overview
+create
+delete
+get
+getIamPolicy
+list
+patch
+setIamPolicy
+testIamPermissions
+projects.locations.notebookRuntimes
+Overview
+assign
+delete
+get
+list
+start
+stop
+upgrade
+projects.locations.operations
+Overview
+cancel
+delete
+get
+list
+wait
+projects.locations.persistentResources
+Overview
+create
+delete
+get
+list
+patch
+reboot
+projects.locations.pipelineJobs
+Overview
+batchCancel
+batchDelete
+cancel
+create
+delete
+get
+list
+projects.locations.publishers.models
+Overview
+countTokens
+export
+fetchPublisherModelConfig
+getIamPolicy
+predict
+rawPredict
+serverStreamingPredict
+setPublisherModelConfig
+streamRawPredict
+projects.locations.ragCorpora
+Overview
+create
+delete
+get
+list
+patch
+projects.locations.ragCorpora.ragFiles
+Overview
+delete
+get
+import
+list
+projects.locations.reasoningEngines
+Overview
+create
+delete
+get
+list
+patch
+query
+streamQuery
+projects.locations.reasoningEngines.memories
+Overview
+create
+delete
+generate
+get
+list
+patch
+retrieve
+projects.locations.reasoningEngines.sessions
+Overview
+appendEvent
+create
+delete
+get
+list
+patch
+projects.locations.reasoningEngines.sessions.events
+Overview
+list
+projects.locations.schedules
+Overview
+create
+delete
+get
+list
+patch
+pause
+resume
+projects.locations.specialistPools
+Overview
+create
+delete
+get
+list
+patch
+projects.locations.studies
+Overview
+create
+delete
+get
+list
+lookup
+projects.locations.studies.trials
+Overview
+addTrialMeasurement
+checkTrialEarlyStoppingState
+complete
+create
+delete
+get
+list
+listOptimalTrials
+stop
+suggest
+projects.locations.tensorboards
+Overview
+batchRead
+create
+delete
+get
+list
+patch
+readSize
+readUsage
+projects.locations.tensorboards.experiments
+Overview
+batchCreate
+create
+delete
+get
+list
+patch
+write
+projects.locations.tensorboards.experiments.runs
+Overview
+batchCreate
+create
+delete
+get
+list
+patch
+write
+projects.locations.tensorboards.experiments.runs.timeSeries
+Overview
+create
+delete
+exportTensorboardTimeSeries
+get
+list
+patch
+read
+readBlobData
+projects.locations.trainingPipelines
+Overview
+cancel
+create
+delete
+get
+list
+projects.locations.tuningJobs
+Overview
+cancel
+create
+get
+list
+rebaseTunedModel
+projects.modelGardenEula
+Overview
+accept
+check
+publishers.models
+Overview
+get
+list
+Types
+Annotation
+ApiKeyConfig
+AutomaticResources
+BatchDedicatedResources
+BigQueryDestination
+BigQuerySource
+Content
+CountTokensResponse
+CsvSource
+CustomJobSpec
+DataItem
+DedicatedResources
+DestinationFeatureSetting
+DiskSpec
+EncryptionSpec
+EnvVar
+Event
+Example
+ExamplesArrayFilter
+Explanation
+ExplanationSpec
+Fact
+FeatureSelectionConfig
+FeatureSelector
+FeatureStatsAndAnomaly
+FeatureStatsAndAnomalySpec
+FeatureStatsAnomaly
+FeatureValue
+FeatureValueDestination
+FeatureViewDataFormat
+FeatureViewDataKey
+FeaturestoreMonitoringConfig
+FetchFeatureValuesResponse
+FlexStart
+FunctionDeclaration
+GcsDestination
+GcsSource
+GeminiRequestReadConfig
+JobState
+LineageSubgraph
+ListFeaturesResponse
+MachineSpec
+ModelContainerSpec
+ModelExplanation
+ModelMonitoringAlertConfig
+ModelMonitoringInput
+ModelMonitoringNotificationSpec
+ModelMonitoringObjectiveConfig
+ModelMonitoringOutputSpec
+NetworkSpec
+NfsMount
+NotebookEucConfig
+NotebookExecutionJobView
+NotebookIdleShutdownConfig
+NotebookRuntimeType
+NotebookSoftwareConfig
+PSCAutomationConfig
+PersistentDiskSpec
+PipelineState
+PredictResponse
+PredictSchemata
+PrivateServiceConnectConfig
+PscInterfaceConfig
+PublisherModelConfig
+PublisherModelEulaAcceptance
+PublisherModelView
+RagChunk
+RagEngineConfig
+RagFileChunkingConfig
+RagFileMetadataConfig
+RagFileParsingConfig
+RagFileTransformationConfig
+ReadFeatureValuesResponse
+SamplingStrategy
+Schema
+SearchKeyGenerationMethod
+SessionEvent
+ShieldedVmConfig
+SliceSpec
+StoredContentsExampleFilter
+StreamingPredictResponse
+StudySpec
+TabularObjective
+Tensor
+TensorboardBlob
+ThresholdConfig
+TimeSeriesData
+TimeSeriesDataPoint
+Shared types
+Types
+Binding
+CancelOperationRequest
+DeleteOperationRequest
+GetIamPolicyRequest
+GetOperationRequest
+HttpBody
+Interval
+LatLng
+ListOperationsRequest
+ListOperationsResponse
+Policy
+SetIamPolicyRequest
+TestIamPermissionsRequest
+TestIamPermissionsResponse
+WaitOperationRequest
+RPC reference
+Overview
+cloud.ai.large_models.vision
+google.api
+google.cloud.aiplatform.v1
+Overview
+schema
+Overview
+modelevaluation.metrics
+predict.instance
+predict.params
+predict.prediction
+trainingjob.definition
+google.cloud.aiplatform.v1beta1
+Overview
+schema
+Overview
+modelevaluation.metrics
+predict.instance
+predict.params
+predict.prediction
+trainingjob.definition
+google.iam.v1
+google.longrunning
+google.rpc
+google.type
+Google Cloud Pipelines Components reference
+GCPC SDK reference
+ML metadata artifact types
+Vertex AI AutoML components
+Batch prediction components
+BigQuery ML components
+CustomJob components
+Dataflow components
+Dataproc Serverless components
+Dataset components
+Forecasting components
+Hyperparameter tuning components
+Model and endpoint components
+Model evaluation components
+Email notification component
+Vertex AI Neural Architecture Search reference
+Prebuilt search spaces
+PyGlove reference
+Client library
+Vertex AI Workbench: Notebooks API
+Overview
+Authenticate to Vertex AI Workbench
+gcloud CLI reference
+gcloud workbench
+gcloud notebooks
+gcloud beta notebooks
+Client libraries
+Overview
+C++ reference
+C# reference
+Go reference
+Java reference
+Node.js reference
+PHP reference
+Python reference
+Ruby reference
+REST reference
+Overview
+v2
+REST Resources
+projects.locations
+Overview
+get
+list
+projects.locations.instances
+Overview
+checkUpgradability
+create
+delete
+diagnose
+get
+getConfig
+getIamPolicy
+list
+patch
+reset
+resizeDisk
+restore
+rollback
+setIamPolicy
+start
+stop
+testIamPermissions
+upgrade
+projects.locations.operations
+Overview
+cancel
+delete
+get
+list
+v1
+REST Resources
+projects.locations
+Overview
+get
+list
+projects.locations.environments
+Overview
+create
+delete
+get
+list
+projects.locations.executions
+Overview
+create
+delete
+get
+list
+projects.locations.instances
+Overview
+create
+delete
+diagnose
+get
+getIamPolicy
+getInstanceHealth
+isUpgradeable
+list
+migrate
+register
+report
+reset
+rollback
+setAccelerator
+setIamPolicy
+setLabels
+setMachineType
+start
+stop
+testIamPermissions
+updateConfig
+updateMetadataItems
+updateShieldedInstanceConfig
+upgrade
+projects.locations.operations
+Overview
+cancel
+delete
+get
+list
+projects.locations.runtimes
+Overview
+create
+delete
+get
+getIamPolicy
+list
+migrate
+patch
+reportEvent
+reset
+setIamPolicy
+start
+stop
+switch
+testIamPermissions
+projects.locations.schedules
+Overview
+create
+delete
+get
+list
+Types
+ContainerImage
+ExecutionTemplate
+UpgradeType
+VmImage
+Shared types
+Types
+Binding
+CancelOperationRequest
+DeleteOperationRequest
+GetIamPolicyRequest
+GetLocationRequest
+GetOperationRequest
+ListLocationsRequest
+ListLocationsResponse
+ListOperationsRequest
+ListOperationsResponse
+Policy
+SetIamPolicyRequest
+TestIamPermissionsRequest
+TestIamPermissionsResponse
+RPC reference
+Overview
+google.cloud.common
+google.cloud.location
+google.cloud.notebooks.v1
+google.cloud.notebooks.v2
+google.iam.v1
+google.longrunning
+google.rpc
+google.type
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Home
+Documentation
+AI and ML
+Vertex AI
+Reference
+Send feedback
+Method: projects.locations.instances.getIamPolicy
+Stay organized with collections
+Save and categorize content based on your preferences.
+Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
+HTTP request
+GET https://notebooks.googleapis.com/v2/{resource}:getIamPolicy
+Path parameters
+Parameters
+resource
+string
+REQUIRED: The resource for which the policy is being requested. See
+Resource names
+for the appropriate value for this field.
+Query parameters
+Parameters
+options
+object (
+GetPolicyOptions
+)
+OPTIONAL: A
+GetPolicyOptions
+object for specifying options to
+instances.getIamPolicy
+.
+Request body
+The request body must be empty.
+Response body
+If successful, the response body contains an instance of
+Policy
+.
+Authorization scopes
+Requires the following OAuth scope:
+https://www.googleapis.com/auth/cloud-platform
+For more information, see the
+Authentication Overview
+.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-06-27 UTC.
+Products and pricing
+See all products
+Google Cloud pricing
+Google Cloud Marketplace
+Contact sales
+Support
+Google Cloud Community
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Code samples
+Cloud Architecture Center
+Training and Certification
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español – América Latina
+Français
+Português – Brasil
+中文 – 简体
+日本語
+한국어

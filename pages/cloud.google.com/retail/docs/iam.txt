@@ -1,0 +1,522 @@
+Identity and Access Management (IAM)  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Identity and Access Management (IAM)
+This page describes how you can control Vertex AI Search for commerce access and
+permissions using Identity and Access Management (IAM).
+Overview
+Google Cloud offers Identity and Access Management (IAM), which lets you give
+more granular access to specific Google Cloud resources and prevents unwanted
+access to other resources. This page describes the Vertex AI Search for commerce IAM roles and permissions. For a detailed description of Google Cloud
+IAM, see the
+IAM documentation
+.
+Vertex AI Search for commerce provides a set of
+predefined roles
+designed
+for quick control over access to your Vertex AI Search for commerce resources.
+You can also create your own
+custom roles
+, if the predefined
+roles don't provide the sets of permissions you need. The prior
+basic roles (Editor, Viewer, and Owner) are also still available to you,
+although they don't provide the same fine-grained control as the
+Vertex AI Search for commerce roles. In particular, the basic roles provide
+access to resources across Google Cloud rather than just for
+Vertex AI Search for commerce. See the
+basic roles
+documentation for more information.
+Predefined roles
+The Vertex AI Search for commerce provides some predefined roles you can use to provide
+finer-grained permissions to principals. The role you grant to a principal
+controls what actions the principal can take. Principals can be individuals,
+groups, or service accounts.
+You can grant multiple roles to the same principal, and you can change the roles
+granted to a principal at any time, provided you have the permissions to do so.
+The broader roles include the more narrowly defined roles. For example, the
+Retail Editor role includes all of the permissions of the Retail Viewer role,
+along with the addition permissions of the Retail Editor role. Likewise, the
+Retail Admin role includes all of the permissions of the Retail Editor role,
+along with its additional permissions.
+The basic roles (Owner, Editor, Viewer) provide permissions across
+Google Cloud. The roles specific to Vertex AI Search for commerce provide only
+Vertex AI Search for commerce permissions, except for the following Google Cloud
+(Google Cloud) permissions, which are needed for general
+Google Cloud usage:
+resourcemanager.projects.get
+resourcemanager.projects.list
+serviceusage.services.list
+serviceusage.services.get
+The following table lists the predefined roles available for
+Vertex AI Search for commerce, along with their Vertex AI Search for commerce permissions:
+View table
+Name
+Vertex AI Search for commerce permissions
+Description
+Project > Owner
+All
+retail
+permissions
+Full access and control for all Google Cloud resources; manage user
+       access and set up billing for a project.
+Project > Editor
+All
+retail
+permissions except the permissions in the Retail
+  Admin role.
+Read-write access to all Google Cloud and Vertex AI Search for commerce
+    resources (except the ability to modify permissions and billing).
+Project > Viewer
+retail.*.get
+retail.*.list
+Read-only access to all Google Cloud resources, including
+    Vertex AI Search for commerce resources.
+Retail Admin
+retail.retailProjects.acceptDataTerms
+retail.solutions.enroll
+retail.products.purge
+retail.places.purge
+retail.places.purgeInventoryActivities
+retail.places.purgeProductPrices
+retail.places.purgeProductSettings
+retail.orders.purge
+retail.products.setSponsorship
+retail.userEvents.purge
+retail.userEvents.rejoin
+retail.attributesConfigs.removeCatalogAttribute
+retail.attributesConfigs.batchRemoveCatalogAttributes
+retail.merchantConfigs.get
+retail.merchantConfigs.update
+retail.merchantControls.approverDelete
+retail.merchantControls.approverGet
+retail.merchantControls.approverList
+retail.merchantControls.approverUpdate
+retail.merchantControls.creatorCreate
+retail.merchantControls.creatorDelete
+retail.merchantControls.creatorGet
+retail.merchantControls.creatorList
+retail.merchantControls.creatorSubmit
+retail.merchantControls.creatorUpdate
+automlrecommendations.events.purge
+automlrecommendations.events.rejoin
+This role also includes all permissions in the Retail Editor and Retail Viewer
+  roles.
+Full control for all Vertex AI Search for commerce resources.
+Retail Editor
+retail.catalogs.import
+retail.catalogs.update
+retail.products.create
+retail.products.delete
+retail.products.update
+retail.products.import
+retail.userEvents.create
+retail.userEvents.import
+retail.servingConfigs.create
+retail.servingConfigs.update
+retail.servingConfigs.delete
+retail.controls.create
+retail.controls.update
+retail.controls.delete
+retail.controls.import
+retail.controls.export
+retail.attributesConfigs.update
+retail.attributesConfigs.addCatalogAttribute
+retail.attributesConfigs.importCatalogAttributes
+retail.attributesConfigs.exportCatalogAttributes
+retail.attributesConfigs.replaceCatalogAttribute
+retail.completionConfigs.update
+retail.models.create
+retail.models.delete
+retail.models.update
+retail.models.pause
+retail.models.resume
+retail.loggingConfigs.update
+retail.alertConfigs.update
+rretail.merchantCenterAccountLinks.create
+retail.merchantCenterAccountLinks.delete
+retail.metrics.writeMetricValue
+retail.merchantConfigs.get
+retail.merchantConfigs.update
+retail.merchantControls.approverDelete
+retail.merchantControls.approverGet
+retail.merchantControls.approverList
+retail.merchantControls.approverUpdate
+retail.merchantControls.creatorCreate
+retail.merchantControls.creatorDelete
+retail.merchantControls.creatorGet
+retail.merchantControls.creatorList
+retail.merchantControls.creatorSubmit
+retail.merchantControls.creatorUpdate
+automlrecommendations.apiKeys.create
+automlrecommendations.apiKeys.delete
+automlrecommendations.catalogItems.create
+automlrecommendations.catalogItems.delete
+automlrecommendations.catalogItems.update
+automlrecommendations.catalogs.update
+automlrecommendations.events.create
+automlrecommendations.placements.create
+automlrecommendations.placements.delete
+automlrecommendations.recommendations.create
+automlrecommendations.recommendations.delete
+automlrecommendations.recommendations.pause
+automlrecommendations.recommendations.resume
+automlrecommendations.recommendations.update
+This role also includes all permissions in the Retail Viewer role.
+Can read all Vertex AI Search for commerce resources and write
+products
+,
+events
+, and other resources.
+Retail Viewer
+retail.retailProjects.get
+retail.attributesConfigs.exportCatalogAttributes
+retail.catalogs.completeQuery
+retail.catalogs.listProductAttributes
+retail.controls.export
+retail.merchantConfigs.get
+retail.placements.search
+retail.placements.predict
+retail.products.export
+retail.userEvents.export
+retail.*.get
+retail.*.list
+Read-only access to all Vertex AI Search for commerce resources.
+Retail Merchant Approver
+retail.attributesConfigs.get
+retail.controls.get
+retail.controls.list
+retail.merchantConfigs.get
+retail.merchantConfigs.update
+retail.merchantControls.approverDelete
+retail.merchantControls.approverGet
+retail.merchantControls.approverList
+retail.merchantControls.approverUpdate
+retail.merchantControls.creatorCreate
+retail.merchantControls.creatorDelete
+retail.merchantControls.creatorGet
+retail.merchantControls.creatorList
+retail.merchantControls.creatorSubmit
+retail.merchantControls.creatorUpdate
+retail.products.get
+retail.servingConfigs.list
+retail.servingConfigs.search
+Can approve content in the Merchandising console.
+Retail  Merchant Creator
+retail.attributesConfigs.get
+retail.controls.get
+retail.controls.list
+retail.merchantConfigs.get
+retail.merchantControls.creatorCreate
+retail.merchantControls.creatorDelete
+retail.merchantControls.creatorGet
+retail.merchantControls.creatorList
+retail.merchantControls.creatorSubmit
+retail.merchantControls.creatorUpdate
+retail.products.get
+retail.servingConfigs.list
+retail.servingConfigs.search
+Can create content in the Merchandising console.
+Migrate permissions from the Recommendations API
+If you are migrating from the previous
+Recommendations Engine API
+to Vertex AI Search for commerce, note that
+the following predefined roles also include
+permissions for the previous API
+.
+Retail Admin
+: Includes all the permissions of Recommendations Admin,
+except for
+apiKeys
+permissions.
+Retail Editor
+: Includes all the permissions of Recommendations Editor, as
+well as
+catalog.update
+, and excluding
+apiKeys
+permissions.
+Retail Viewer
+: Includes all the permissions of Recommendations Viewer.
+Manage Vertex AI Search for commerce IAM
+You can get and set IAM policies and IAM roles using the Google Cloud
+console, the IAM methods of the API, or Vertex AI Search for commerce. For more
+information, see
+Granting, Changing, and Revoking Access
+.
+What's next
+Learn how to
+grant and revoke access
+.
+Learn more about
+IAM
+.
+Learn more about
+basic roles
+.
+Learn more about
+custom roles
+.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

@@ -1,0 +1,3535 @@
+Vertex AI Search audit logging  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Vertex AI Search audit logging
+This page breaks down Vertex AI Search audit logging procedures by service, methods, and API interfaces. The audit logs generated vary depending on the Vertex AI Search product (including
+Recommendations AI
+) and product component, such user events and models.
+Recommendations AI audit logging
+There are key Recommendations AI methods that generate various types of audit logs.
+For data access:
+PredictionService.Predict
+: This method, used to get recommendations, is categorized as a
+DATA_READ
+operation and will appear in the data access audit logs.
+ModelService.GetModel
+and
+ModelService.ListModels
+: These methods for retrieving model information are also logged as
+DATA_READ
+operations.
+For data modification:
+Model management
+:
+CreateModel
+,
+DeleteModel
+,
+PauseModel
+,
+ResumeModel
+,
+TuneModel
+,
+UpdateModel
+.
+Methods that don't produce audit logs:
+The
+google.longrunning.Operations.GetOperation
+and
+google.longrunning.Operations.ListOperations
+methods, which are used to check the status of long-running operations like model training don't produce audit logs.
+Vertex AI Search audit logging
+This document describes audit logging for Vertex AI Search. Google Cloud services
+generate audit logs that record administrative and access activities within your Google Cloud resources.
+For more information about Cloud Audit Logs, see the following:
+Types of audit logs
+Audit log entry structure
+Storing and routing audit logs
+Cloud Logging pricing summary
+Enable Data Access audit logs
+Service name
+Vertex AI Search audit logs use the service name
+retail.googleapis.com
+.
+Filter for this service:
+protoPayload
+.
+serviceName
+=
+"retail.googleapis.com"
+Methods by permission type
+Each IAM permission has a
+type
+property, whose value is an enum
+that can be one of four values:
+ADMIN_READ
+,
+ADMIN_WRITE
+,
+DATA_READ
+, or
+DATA_WRITE
+. When you call a method,
+Vertex AI Search generates an audit log whose category is dependent on the
+type
+property of the permission required to perform the method.
+
+Methods that require an IAM permission with the
+type
+property value
+of
+DATA_READ
+,
+DATA_WRITE
+, or
+ADMIN_READ
+generate
+Data Access
+audit logs.
+
+Methods that require an IAM permission with the
+type
+property value
+of
+ADMIN_WRITE
+generate
+Admin Activity
+audit logs.
+API methods in the following list that are marked with (LRO) are long-running operations (LROs).
+These methods usually generate two audit log entries: one when the operation starts and
+another when it ends. For more information see
+Audit logs for long-running operations
+.
+Permission type
+Methods
+DATA_READ
+google.cloud.retail.v2.AnalyticsService.ExportAnalyticsMetrics
+google.cloud.retail.v2.CatalogService.GetAttributesConfig
+google.cloud.retail.v2.CatalogService.GetCompletionConfig
+google.cloud.retail.v2.CatalogService.GetDefaultBranch
+google.cloud.retail.v2.CatalogService.ListCatalogs
+google.cloud.retail.v2.CompletionService.CompleteQuery
+google.cloud.retail.v2.ControlService.GetControl
+google.cloud.retail.v2.ControlService.ListControls
+google.cloud.retail.v2.ModelService.GetModel
+google.cloud.retail.v2.ModelService.ListModels
+google.cloud.retail.v2.PredictionService.Predict
+google.cloud.retail.v2.ProductService.GetProduct
+google.cloud.retail.v2.ProductService.ListProducts
+google.cloud.retail.v2.SearchService.Search
+google.cloud.retail.v2.ServingConfigService.GetServingConfig
+google.cloud.retail.v2.ServingConfigService.ListServingConfigs
+google.cloud.retail.v2alpha.AnalyticsService.ExportAnalyticsMetrics
+(LRO)
+google.cloud.retail.v2alpha.BranchService.GetBranch
+google.cloud.retail.v2alpha.BranchService.ListBranches
+google.cloud.retail.v2alpha.CatalogService.GetAttributesConfig
+google.cloud.retail.v2alpha.CatalogService.GetCompletionConfig
+google.cloud.retail.v2alpha.CatalogService.GetDefaultBranch
+google.cloud.retail.v2alpha.CatalogService.ListCatalogs
+google.cloud.retail.v2alpha.CompletionService.CompleteQuery
+google.cloud.retail.v2alpha.ControlService.GetControl
+google.cloud.retail.v2alpha.ControlService.ListControls
+google.cloud.retail.v2alpha.ConversationalSearchService.ConversationalSearch
+google.cloud.retail.v2alpha.ModelService.GetModel
+google.cloud.retail.v2alpha.ModelService.ListModels
+google.cloud.retail.v2alpha.PredictionService.Predict
+google.cloud.retail.v2alpha.ProductService.ExportProducts
+(LRO)
+google.cloud.retail.v2alpha.ProductService.GetProduct
+google.cloud.retail.v2alpha.ProductService.ListProducts
+google.cloud.retail.v2alpha.ProjectService.GetAlertConfig
+google.cloud.retail.v2alpha.ProjectService.GetLoggingConfig
+google.cloud.retail.v2alpha.ProjectService.GetProject
+google.cloud.retail.v2alpha.ProjectService.ListEnrolledSolutions
+google.cloud.retail.v2alpha.SearchService.Search
+google.cloud.retail.v2alpha.ServingConfigService.GetServingConfig
+google.cloud.retail.v2alpha.ServingConfigService.ListServingConfigs
+google.cloud.retail.v2alpha.UserEventService.ExportUserEvents
+(LRO)
+google.cloud.retail.v2beta.AnalyticsService.ExportAnalyticsMetrics
+google.cloud.retail.v2beta.CatalogService.GetAttributesConfig
+google.cloud.retail.v2beta.CatalogService.GetCompletionConfig
+google.cloud.retail.v2beta.CatalogService.GetDefaultBranch
+google.cloud.retail.v2beta.CatalogService.ListCatalogs
+google.cloud.retail.v2beta.CompletionService.CompleteQuery
+google.cloud.retail.v2beta.ControlService.GetControl
+google.cloud.retail.v2beta.ControlService.ListControls
+google.cloud.retail.v2beta.ModelService.GetModel
+google.cloud.retail.v2beta.ModelService.ListModels
+google.cloud.retail.v2beta.PredictionService.Predict
+google.cloud.retail.v2beta.ProductService.ExportProducts
+(LRO)
+google.cloud.retail.v2beta.ProductService.GetProduct
+google.cloud.retail.v2beta.ProductService.ListProducts
+google.cloud.retail.v2beta.ProjectService.GetAlertConfig
+google.cloud.retail.v2beta.SearchService.Search
+google.cloud.retail.v2beta.ServingConfigService.GetServingConfig
+google.cloud.retail.v2beta.ServingConfigService.ListServingConfigs
+google.cloud.retail.v2beta.UserEventService.ExportUserEvents
+(LRO)
+DATA_WRITE
+google.cloud.retail.v2.CatalogService.AddCatalogAttribute
+google.cloud.retail.v2.CatalogService.RemoveCatalogAttribute
+google.cloud.retail.v2.CatalogService.ReplaceCatalogAttribute
+google.cloud.retail.v2.CatalogService.SetDefaultBranch
+google.cloud.retail.v2.CatalogService.UpdateAttributesConfig
+google.cloud.retail.v2.CatalogService.UpdateCatalog
+google.cloud.retail.v2.CatalogService.UpdateCompletionConfig
+google.cloud.retail.v2.CompletionService.ImportCompletionData
+(LRO)
+google.cloud.retail.v2.ControlService.CreateControl
+google.cloud.retail.v2.ControlService.DeleteControl
+google.cloud.retail.v2.ControlService.UpdateControl
+google.cloud.retail.v2.ModelService.CreateModel
+google.cloud.retail.v2.ModelService.DeleteModel
+google.cloud.retail.v2.ModelService.PauseModel
+google.cloud.retail.v2.ModelService.ResumeModel
+google.cloud.retail.v2.ModelService.TuneModel
+google.cloud.retail.v2.ModelService.UpdateModel
+google.cloud.retail.v2.ProductService.AddFulfillmentPlaces
+google.cloud.retail.v2.ProductService.AddLocalInventories
+(LRO)
+google.cloud.retail.v2.ProductService.CreateProduct
+google.cloud.retail.v2.ProductService.DeleteProduct
+google.cloud.retail.v2.ProductService.ImportProducts
+(LRO)
+google.cloud.retail.v2.ProductService.PurgeProducts
+(LRO)
+google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces
+google.cloud.retail.v2.ProductService.RemoveLocalInventories
+(LRO)
+google.cloud.retail.v2.ProductService.SetInventory
+(LRO)
+google.cloud.retail.v2.ProductService.UpdateProduct
+google.cloud.retail.v2.ServingConfigService.AddControl
+google.cloud.retail.v2.ServingConfigService.CreateServingConfig
+google.cloud.retail.v2.ServingConfigService.DeleteServingConfig
+google.cloud.retail.v2.ServingConfigService.RemoveControl
+google.cloud.retail.v2.ServingConfigService.UpdateServingConfig
+google.cloud.retail.v2.UserEventService.ImportUserEvents
+(LRO)
+google.cloud.retail.v2.UserEventService.PurgeUserEvents
+(LRO)
+google.cloud.retail.v2.UserEventService.RejoinUserEvents
+(LRO)
+google.cloud.retail.v2.UserEventService.WriteUserEvent
+google.cloud.retail.v2alpha.CatalogService.AddCatalogAttribute
+google.cloud.retail.v2alpha.CatalogService.BatchRemoveCatalogAttributes
+google.cloud.retail.v2alpha.CatalogService.RemoveCatalogAttribute
+google.cloud.retail.v2alpha.CatalogService.ReplaceCatalogAttribute
+google.cloud.retail.v2alpha.CatalogService.SetDefaultBranch
+google.cloud.retail.v2alpha.CatalogService.UpdateAttributesConfig
+google.cloud.retail.v2alpha.CatalogService.UpdateCatalog
+google.cloud.retail.v2alpha.CatalogService.UpdateCompletionConfig
+google.cloud.retail.v2alpha.CompletionService.ImportCompletionData
+(LRO)
+google.cloud.retail.v2alpha.ControlService.CreateControl
+google.cloud.retail.v2alpha.ControlService.DeleteControl
+google.cloud.retail.v2alpha.ControlService.UpdateControl
+google.cloud.retail.v2alpha.ModelService.CreateModel
+(LRO)
+google.cloud.retail.v2alpha.ModelService.DeleteModel
+google.cloud.retail.v2alpha.ModelService.PauseModel
+google.cloud.retail.v2alpha.ModelService.ResumeModel
+google.cloud.retail.v2alpha.ModelService.TuneModel
+(LRO)
+google.cloud.retail.v2alpha.ModelService.UpdateModel
+google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces
+(LRO)
+google.cloud.retail.v2alpha.ProductService.AddLocalInventories
+(LRO)
+google.cloud.retail.v2alpha.ProductService.CreateProduct
+google.cloud.retail.v2alpha.ProductService.DeleteProduct
+google.cloud.retail.v2alpha.ProductService.ImportProducts
+(LRO)
+google.cloud.retail.v2alpha.ProductService.PurgeProducts
+(LRO)
+google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces
+(LRO)
+google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories
+(LRO)
+google.cloud.retail.v2alpha.ProductService.SetInventory
+(LRO)
+google.cloud.retail.v2alpha.ProductService.UpdateProduct
+google.cloud.retail.v2alpha.ProjectService.AcceptTerms
+google.cloud.retail.v2alpha.ProjectService.EnrollSolution
+(LRO)
+google.cloud.retail.v2alpha.ProjectService.UpdateAlertConfig
+google.cloud.retail.v2alpha.ProjectService.UpdateLoggingConfig
+google.cloud.retail.v2alpha.ServingConfigService.AddControl
+google.cloud.retail.v2alpha.ServingConfigService.CreateServingConfig
+google.cloud.retail.v2alpha.ServingConfigService.DeleteServingConfig
+google.cloud.retail.v2alpha.ServingConfigService.RemoveControl
+google.cloud.retail.v2alpha.ServingConfigService.UpdateServingConfig
+google.cloud.retail.v2alpha.UserEventService.ImportUserEvents
+(LRO)
+google.cloud.retail.v2alpha.UserEventService.PurgeUserEvents
+(LRO)
+google.cloud.retail.v2alpha.UserEventService.RejoinUserEvents
+google.cloud.retail.v2alpha.UserEventService.WriteUserEvent
+google.cloud.retail.v2beta.CatalogService.AddCatalogAttribute
+google.cloud.retail.v2beta.CatalogService.BatchRemoveCatalogAttributes
+google.cloud.retail.v2beta.CatalogService.RemoveCatalogAttribute
+google.cloud.retail.v2beta.CatalogService.ReplaceCatalogAttribute
+google.cloud.retail.v2beta.CatalogService.SetDefaultBranch
+google.cloud.retail.v2beta.CatalogService.UpdateAttributesConfig
+google.cloud.retail.v2beta.CatalogService.UpdateCatalog
+google.cloud.retail.v2beta.CatalogService.UpdateCompletionConfig
+google.cloud.retail.v2beta.CompletionService.ImportCompletionData
+google.cloud.retail.v2beta.ControlService.CreateControl
+google.cloud.retail.v2beta.ControlService.DeleteControl
+google.cloud.retail.v2beta.ControlService.UpdateControl
+google.cloud.retail.v2beta.ModelService.CreateModel
+google.cloud.retail.v2beta.ModelService.DeleteModel
+google.cloud.retail.v2beta.ModelService.PauseModel
+google.cloud.retail.v2beta.ModelService.ResumeModel
+google.cloud.retail.v2beta.ModelService.TuneModel
+google.cloud.retail.v2beta.ModelService.UpdateModel
+google.cloud.retail.v2beta.ProductService.AddFulfillmentPlaces
+google.cloud.retail.v2beta.ProductService.AddLocalInventories
+(LRO)
+google.cloud.retail.v2beta.ProductService.CreateProduct
+google.cloud.retail.v2beta.ProductService.DeleteProduct
+google.cloud.retail.v2beta.ProductService.ImportProducts
+(LRO)
+google.cloud.retail.v2beta.ProductService.PurgeProducts
+(LRO)
+google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces
+google.cloud.retail.v2beta.ProductService.RemoveLocalInventories
+google.cloud.retail.v2beta.ProductService.SetInventory
+google.cloud.retail.v2beta.ProductService.UpdateProduct
+google.cloud.retail.v2beta.ProjectService.UpdateAlertConfig
+google.cloud.retail.v2beta.ServingConfigService.AddControl
+google.cloud.retail.v2beta.ServingConfigService.CreateServingConfig
+google.cloud.retail.v2beta.ServingConfigService.DeleteServingConfig
+google.cloud.retail.v2beta.ServingConfigService.RemoveControl
+google.cloud.retail.v2beta.ServingConfigService.UpdateServingConfig
+google.cloud.retail.v2beta.UserEventService.ImportUserEvents
+(LRO)
+google.cloud.retail.v2beta.UserEventService.PurgeUserEvents
+(LRO)
+google.cloud.retail.v2beta.UserEventService.RejoinUserEvents
+google.cloud.retail.v2beta.UserEventService.WriteUserEvent
+API interface audit logs
+For information about how and which permissions are evaluated for each method,
+see the Identity and Access Management documentation for Vertex AI Search.
+google.cloud.retail.v2.AnalyticsService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2.AnalyticsService
+.
+ExportAnalyticsMetrics
+Method
+:
+google.cloud.retail.v2.AnalyticsService.ExportAnalyticsMetrics
+Audit log type
+:
+Data access
+Permissions
+:
+retail.catalogs.exportAnalyticsMetrics - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.AnalyticsService.ExportAnalyticsMetrics"
+google.cloud.retail.v2.CatalogService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2.CatalogService
+.
+AddCatalogAttribute
+Method
+:
+google.cloud.retail.v2.CatalogService.AddCatalogAttribute
+Audit log type
+:
+Data access
+Permissions
+:
+retail.attributesConfigs.addCatalogAttribute - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.CatalogService.AddCatalogAttribute"
+GetAttributesConfig
+Method
+:
+google.cloud.retail.v2.CatalogService.GetAttributesConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.attributesConfigs.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.CatalogService.GetAttributesConfig"
+GetCompletionConfig
+Method
+:
+google.cloud.retail.v2.CatalogService.GetCompletionConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.completionConfigs.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.CatalogService.GetCompletionConfig"
+GetDefaultBranch
+Method
+:
+google.cloud.retail.v2.CatalogService.GetDefaultBranch
+Audit log type
+:
+Data access
+Permissions
+:
+retail.catalogs.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.CatalogService.GetDefaultBranch"
+ListCatalogs
+Method
+:
+google.cloud.retail.v2.CatalogService.ListCatalogs
+Audit log type
+:
+Data access
+Permissions
+:
+retail.catalogs.list - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.CatalogService.ListCatalogs"
+RemoveCatalogAttribute
+Method
+:
+google.cloud.retail.v2.CatalogService.RemoveCatalogAttribute
+Audit log type
+:
+Data access
+Permissions
+:
+retail.attributesConfigs.removeCatalogAttribute - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.CatalogService.RemoveCatalogAttribute"
+ReplaceCatalogAttribute
+Method
+:
+google.cloud.retail.v2.CatalogService.ReplaceCatalogAttribute
+Audit log type
+:
+Data access
+Permissions
+:
+retail.attributesConfigs.replaceCatalogAttribute - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.CatalogService.ReplaceCatalogAttribute"
+SetDefaultBranch
+Method
+:
+google.cloud.retail.v2.CatalogService.SetDefaultBranch
+Audit log type
+:
+Data access
+Permissions
+:
+retail.catalogs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.CatalogService.SetDefaultBranch"
+UpdateAttributesConfig
+Method
+:
+google.cloud.retail.v2.CatalogService.UpdateAttributesConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.attributesConfigs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.CatalogService.UpdateAttributesConfig"
+UpdateCatalog
+Method
+:
+google.cloud.retail.v2.CatalogService.UpdateCatalog
+Audit log type
+:
+Data access
+Permissions
+:
+retail.catalogs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.CatalogService.UpdateCatalog"
+UpdateCompletionConfig
+Method
+:
+google.cloud.retail.v2.CatalogService.UpdateCompletionConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.completionConfigs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.CatalogService.UpdateCompletionConfig"
+google.cloud.retail.v2.CompletionService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2.CompletionService
+.
+CompleteQuery
+Method
+:
+google.cloud.retail.v2.CompletionService.CompleteQuery
+Audit log type
+:
+Data access
+Permissions
+:
+retail.catalogs.completeQuery - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.CompletionService.CompleteQuery"
+ImportCompletionData
+Method
+:
+google.cloud.retail.v2.CompletionService.ImportCompletionData
+Audit log type
+:
+Data access
+Permissions
+:
+retail.catalogs.import - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.CompletionService.ImportCompletionData"
+google.cloud.retail.v2.ControlService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2.ControlService
+.
+CreateControl
+Method
+:
+google.cloud.retail.v2.ControlService.CreateControl
+Audit log type
+:
+Data access
+Permissions
+:
+retail.controls.create - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ControlService.CreateControl"
+DeleteControl
+Method
+:
+google.cloud.retail.v2.ControlService.DeleteControl
+Audit log type
+:
+Data access
+Permissions
+:
+retail.controls.delete - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ControlService.DeleteControl"
+GetControl
+Method
+:
+google.cloud.retail.v2.ControlService.GetControl
+Audit log type
+:
+Data access
+Permissions
+:
+retail.controls.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ControlService.GetControl"
+ListControls
+Method
+:
+google.cloud.retail.v2.ControlService.ListControls
+Audit log type
+:
+Data access
+Permissions
+:
+retail.controls.list - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ControlService.ListControls"
+UpdateControl
+Method
+:
+google.cloud.retail.v2.ControlService.UpdateControl
+Audit log type
+:
+Data access
+Permissions
+:
+retail.controls.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ControlService.UpdateControl"
+google.cloud.retail.v2.ModelService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2.ModelService
+.
+CreateModel
+Method
+:
+google.cloud.retail.v2.ModelService.CreateModel
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.create - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ModelService.CreateModel"
+DeleteModel
+Method
+:
+google.cloud.retail.v2.ModelService.DeleteModel
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.delete - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ModelService.DeleteModel"
+GetModel
+Method
+:
+google.cloud.retail.v2.ModelService.GetModel
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ModelService.GetModel"
+ListModels
+Method
+:
+google.cloud.retail.v2.ModelService.ListModels
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.list - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ModelService.ListModels"
+PauseModel
+Method
+:
+google.cloud.retail.v2.ModelService.PauseModel
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.pause - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ModelService.PauseModel"
+ResumeModel
+Method
+:
+google.cloud.retail.v2.ModelService.ResumeModel
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.resume - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ModelService.ResumeModel"
+TuneModel
+Method
+:
+google.cloud.retail.v2.ModelService.TuneModel
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.tune - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ModelService.TuneModel"
+UpdateModel
+Method
+:
+google.cloud.retail.v2.ModelService.UpdateModel
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ModelService.UpdateModel"
+google.cloud.retail.v2.PredictionService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2.PredictionService
+.
+Predict
+Method
+:
+google.cloud.retail.v2.PredictionService.Predict
+Audit log type
+:
+Data access
+Permissions
+:
+retail.placements.predict - DATA_READ
+retail.servingConfigs.predict - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.PredictionService.Predict"
+google.cloud.retail.v2.ProductService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2.ProductService
+.
+AddFulfillmentPlaces
+Method
+:
+google.cloud.retail.v2.ProductService.AddFulfillmentPlaces
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ProductService.AddFulfillmentPlaces"
+AddLocalInventories
+Method
+:
+google.cloud.retail.v2.ProductService.AddLocalInventories
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ProductService.AddLocalInventories"
+CreateProduct
+Method
+:
+google.cloud.retail.v2.ProductService.CreateProduct
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.create - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ProductService.CreateProduct"
+DeleteProduct
+Method
+:
+google.cloud.retail.v2.ProductService.DeleteProduct
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.delete - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ProductService.DeleteProduct"
+GetProduct
+Method
+:
+google.cloud.retail.v2.ProductService.GetProduct
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ProductService.GetProduct"
+ImportProducts
+Method
+:
+google.cloud.retail.v2.ProductService.ImportProducts
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.import - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ProductService.ImportProducts"
+ListProducts
+Method
+:
+google.cloud.retail.v2.ProductService.ListProducts
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.list - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ProductService.ListProducts"
+PurgeProducts
+Method
+:
+google.cloud.retail.v2.ProductService.PurgeProducts
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.purge - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ProductService.PurgeProducts"
+RemoveFulfillmentPlaces
+Method
+:
+google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces"
+RemoveLocalInventories
+Method
+:
+google.cloud.retail.v2.ProductService.RemoveLocalInventories
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ProductService.RemoveLocalInventories"
+SetInventory
+Method
+:
+google.cloud.retail.v2.ProductService.SetInventory
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ProductService.SetInventory"
+UpdateProduct
+Method
+:
+google.cloud.retail.v2.ProductService.UpdateProduct
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ProductService.UpdateProduct"
+google.cloud.retail.v2.SearchService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2.SearchService
+.
+Search
+Method
+:
+google.cloud.retail.v2.SearchService.Search
+Audit log type
+:
+Data access
+Permissions
+:
+retail.placements.search - DATA_READ
+retail.servingConfigs.search - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.SearchService.Search"
+google.cloud.retail.v2.ServingConfigService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2.ServingConfigService
+.
+AddControl
+Method
+:
+google.cloud.retail.v2.ServingConfigService.AddControl
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ServingConfigService.AddControl"
+CreateServingConfig
+Method
+:
+google.cloud.retail.v2.ServingConfigService.CreateServingConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.create - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ServingConfigService.CreateServingConfig"
+DeleteServingConfig
+Method
+:
+google.cloud.retail.v2.ServingConfigService.DeleteServingConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.delete - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ServingConfigService.DeleteServingConfig"
+GetServingConfig
+Method
+:
+google.cloud.retail.v2.ServingConfigService.GetServingConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ServingConfigService.GetServingConfig"
+ListServingConfigs
+Method
+:
+google.cloud.retail.v2.ServingConfigService.ListServingConfigs
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.list - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ServingConfigService.ListServingConfigs"
+RemoveControl
+Method
+:
+google.cloud.retail.v2.ServingConfigService.RemoveControl
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ServingConfigService.RemoveControl"
+UpdateServingConfig
+Method
+:
+google.cloud.retail.v2.ServingConfigService.UpdateServingConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.ServingConfigService.UpdateServingConfig"
+google.cloud.retail.v2.UserEventService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2.UserEventService
+.
+ImportUserEvents
+Method
+:
+google.cloud.retail.v2.UserEventService.ImportUserEvents
+Audit log type
+:
+Data access
+Permissions
+:
+retail.userEvents.import - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.UserEventService.ImportUserEvents"
+PurgeUserEvents
+Method
+:
+google.cloud.retail.v2.UserEventService.PurgeUserEvents
+Audit log type
+:
+Data access
+Permissions
+:
+retail.userEvents.purge - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.UserEventService.PurgeUserEvents"
+RejoinUserEvents
+Method
+:
+google.cloud.retail.v2.UserEventService.RejoinUserEvents
+Audit log type
+:
+Data access
+Permissions
+:
+retail.userEvents.rejoin - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.UserEventService.RejoinUserEvents"
+WriteUserEvent
+Method
+:
+google.cloud.retail.v2.UserEventService.WriteUserEvent
+Audit log type
+:
+Data access
+Permissions
+:
+retail.userEvents.create - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2.UserEventService.WriteUserEvent"
+google.cloud.retail.v2alpha.AnalyticsService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2alpha.AnalyticsService
+.
+ExportAnalyticsMetrics
+Method
+:
+google.cloud.retail.v2alpha.AnalyticsService.ExportAnalyticsMetrics
+Audit log type
+:
+Data access
+Permissions
+:
+retail.catalogs.exportAnalyticsMetrics - DATA_READ
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.AnalyticsService.ExportAnalyticsMetrics"
+google.cloud.retail.v2alpha.BranchService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2alpha.BranchService
+.
+GetBranch
+Method
+:
+google.cloud.retail.v2alpha.BranchService.GetBranch
+Audit log type
+:
+Data access
+Permissions
+:
+retail.branches.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.BranchService.GetBranch"
+ListBranches
+Method
+:
+google.cloud.retail.v2alpha.BranchService.ListBranches
+Audit log type
+:
+Data access
+Permissions
+:
+retail.branches.list - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.BranchService.ListBranches"
+google.cloud.retail.v2alpha.CatalogService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2alpha.CatalogService
+.
+AddCatalogAttribute
+Method
+:
+google.cloud.retail.v2alpha.CatalogService.AddCatalogAttribute
+Audit log type
+:
+Data access
+Permissions
+:
+retail.attributesConfigs.addCatalogAttribute - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.CatalogService.AddCatalogAttribute"
+BatchRemoveCatalogAttributes
+Method
+:
+google.cloud.retail.v2alpha.CatalogService.BatchRemoveCatalogAttributes
+Audit log type
+:
+Data access
+Permissions
+:
+retail.attributesConfigs.batchRemoveCatalogAttributes - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.CatalogService.BatchRemoveCatalogAttributes"
+GetAttributesConfig
+Method
+:
+google.cloud.retail.v2alpha.CatalogService.GetAttributesConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.attributesConfigs.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.CatalogService.GetAttributesConfig"
+GetCompletionConfig
+Method
+:
+google.cloud.retail.v2alpha.CatalogService.GetCompletionConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.completionConfigs.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.CatalogService.GetCompletionConfig"
+GetDefaultBranch
+Method
+:
+google.cloud.retail.v2alpha.CatalogService.GetDefaultBranch
+Audit log type
+:
+Data access
+Permissions
+:
+retail.catalogs.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.CatalogService.GetDefaultBranch"
+ListCatalogs
+Method
+:
+google.cloud.retail.v2alpha.CatalogService.ListCatalogs
+Audit log type
+:
+Data access
+Permissions
+:
+retail.catalogs.list - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.CatalogService.ListCatalogs"
+RemoveCatalogAttribute
+Method
+:
+google.cloud.retail.v2alpha.CatalogService.RemoveCatalogAttribute
+Audit log type
+:
+Data access
+Permissions
+:
+retail.attributesConfigs.removeCatalogAttribute - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.CatalogService.RemoveCatalogAttribute"
+ReplaceCatalogAttribute
+Method
+:
+google.cloud.retail.v2alpha.CatalogService.ReplaceCatalogAttribute
+Audit log type
+:
+Data access
+Permissions
+:
+retail.attributesConfigs.replaceCatalogAttribute - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.CatalogService.ReplaceCatalogAttribute"
+SetDefaultBranch
+Method
+:
+google.cloud.retail.v2alpha.CatalogService.SetDefaultBranch
+Audit log type
+:
+Data access
+Permissions
+:
+retail.catalogs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.CatalogService.SetDefaultBranch"
+UpdateAttributesConfig
+Method
+:
+google.cloud.retail.v2alpha.CatalogService.UpdateAttributesConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.attributesConfigs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.CatalogService.UpdateAttributesConfig"
+UpdateCatalog
+Method
+:
+google.cloud.retail.v2alpha.CatalogService.UpdateCatalog
+Audit log type
+:
+Data access
+Permissions
+:
+retail.catalogs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.CatalogService.UpdateCatalog"
+UpdateCompletionConfig
+Method
+:
+google.cloud.retail.v2alpha.CatalogService.UpdateCompletionConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.completionConfigs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.CatalogService.UpdateCompletionConfig"
+google.cloud.retail.v2alpha.CompletionService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2alpha.CompletionService
+.
+CompleteQuery
+Method
+:
+google.cloud.retail.v2alpha.CompletionService.CompleteQuery
+Audit log type
+:
+Data access
+Permissions
+:
+retail.catalogs.completeQuery - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.CompletionService.CompleteQuery"
+ImportCompletionData
+Method
+:
+google.cloud.retail.v2alpha.CompletionService.ImportCompletionData
+Audit log type
+:
+Data access
+Permissions
+:
+retail.catalogs.import - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.CompletionService.ImportCompletionData"
+google.cloud.retail.v2alpha.ControlService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2alpha.ControlService
+.
+CreateControl
+Method
+:
+google.cloud.retail.v2alpha.ControlService.CreateControl
+Audit log type
+:
+Data access
+Permissions
+:
+retail.controls.create - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ControlService.CreateControl"
+DeleteControl
+Method
+:
+google.cloud.retail.v2alpha.ControlService.DeleteControl
+Audit log type
+:
+Data access
+Permissions
+:
+retail.controls.delete - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ControlService.DeleteControl"
+GetControl
+Method
+:
+google.cloud.retail.v2alpha.ControlService.GetControl
+Audit log type
+:
+Data access
+Permissions
+:
+retail.controls.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ControlService.GetControl"
+ListControls
+Method
+:
+google.cloud.retail.v2alpha.ControlService.ListControls
+Audit log type
+:
+Data access
+Permissions
+:
+retail.controls.list - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ControlService.ListControls"
+UpdateControl
+Method
+:
+google.cloud.retail.v2alpha.ControlService.UpdateControl
+Audit log type
+:
+Data access
+Permissions
+:
+retail.controls.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ControlService.UpdateControl"
+google.cloud.retail.v2alpha.ConversationalSearchService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2alpha.ConversationalSearchService
+.
+ConversationalSearch
+Method
+:
+google.cloud.retail.v2alpha.ConversationalSearchService.ConversationalSearch
+Audit log type
+:
+Data access
+Permissions
+:
+retail.placements.conversationalSearch - DATA_READ
+Method is a long-running or streaming operation
+:
+Streaming RPC
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ConversationalSearchService.ConversationalSearch"
+google.cloud.retail.v2alpha.ModelService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2alpha.ModelService
+.
+CreateModel
+Method
+:
+google.cloud.retail.v2alpha.ModelService.CreateModel
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.create - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ModelService.CreateModel"
+DeleteModel
+Method
+:
+google.cloud.retail.v2alpha.ModelService.DeleteModel
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.delete - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ModelService.DeleteModel"
+GetModel
+Method
+:
+google.cloud.retail.v2alpha.ModelService.GetModel
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ModelService.GetModel"
+ListModels
+Method
+:
+google.cloud.retail.v2alpha.ModelService.ListModels
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.list - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ModelService.ListModels"
+PauseModel
+Method
+:
+google.cloud.retail.v2alpha.ModelService.PauseModel
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.pause - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ModelService.PauseModel"
+ResumeModel
+Method
+:
+google.cloud.retail.v2alpha.ModelService.ResumeModel
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.resume - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ModelService.ResumeModel"
+TuneModel
+Method
+:
+google.cloud.retail.v2alpha.ModelService.TuneModel
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.tune - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ModelService.TuneModel"
+UpdateModel
+Method
+:
+google.cloud.retail.v2alpha.ModelService.UpdateModel
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ModelService.UpdateModel"
+google.cloud.retail.v2alpha.PredictionService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2alpha.PredictionService
+.
+Predict
+Method
+:
+google.cloud.retail.v2alpha.PredictionService.Predict
+Audit log type
+:
+Data access
+Permissions
+:
+retail.placements.predict - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.PredictionService.Predict"
+google.cloud.retail.v2alpha.ProductService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2alpha.ProductService
+.
+AddFulfillmentPlaces
+Method
+:
+google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces"
+AddLocalInventories
+Method
+:
+google.cloud.retail.v2alpha.ProductService.AddLocalInventories
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ProductService.AddLocalInventories"
+CreateProduct
+Method
+:
+google.cloud.retail.v2alpha.ProductService.CreateProduct
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.create - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ProductService.CreateProduct"
+DeleteProduct
+Method
+:
+google.cloud.retail.v2alpha.ProductService.DeleteProduct
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.delete - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ProductService.DeleteProduct"
+ExportProducts
+Method
+:
+google.cloud.retail.v2alpha.ProductService.ExportProducts
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.export - DATA_READ
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ProductService.ExportProducts"
+GetProduct
+Method
+:
+google.cloud.retail.v2alpha.ProductService.GetProduct
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ProductService.GetProduct"
+ImportProducts
+Method
+:
+google.cloud.retail.v2alpha.ProductService.ImportProducts
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.import - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ProductService.ImportProducts"
+ListProducts
+Method
+:
+google.cloud.retail.v2alpha.ProductService.ListProducts
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.list - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ProductService.ListProducts"
+PurgeProducts
+Method
+:
+google.cloud.retail.v2alpha.ProductService.PurgeProducts
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.purge - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ProductService.PurgeProducts"
+RemoveFulfillmentPlaces
+Method
+:
+google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces"
+RemoveLocalInventories
+Method
+:
+google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories"
+SetInventory
+Method
+:
+google.cloud.retail.v2alpha.ProductService.SetInventory
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ProductService.SetInventory"
+UpdateProduct
+Method
+:
+google.cloud.retail.v2alpha.ProductService.UpdateProduct
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ProductService.UpdateProduct"
+google.cloud.retail.v2alpha.ProjectService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2alpha.ProjectService
+.
+AcceptTerms
+Method
+:
+google.cloud.retail.v2alpha.ProjectService.AcceptTerms
+Audit log type
+:
+Data access
+Permissions
+:
+retail.retailProjects.acceptDataTerms - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ProjectService.AcceptTerms"
+EnrollSolution
+Method
+:
+google.cloud.retail.v2alpha.ProjectService.EnrollSolution
+Audit log type
+:
+Data access
+Permissions
+:
+retail.solutions.enroll - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ProjectService.EnrollSolution"
+GetAlertConfig
+Method
+:
+google.cloud.retail.v2alpha.ProjectService.GetAlertConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.alertConfigs.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ProjectService.GetAlertConfig"
+GetLoggingConfig
+Method
+:
+google.cloud.retail.v2alpha.ProjectService.GetLoggingConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.loggingConfigs.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ProjectService.GetLoggingConfig"
+GetProject
+Method
+:
+google.cloud.retail.v2alpha.ProjectService.GetProject
+Audit log type
+:
+Data access
+Permissions
+:
+retail.retailProjects.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ProjectService.GetProject"
+ListEnrolledSolutions
+Method
+:
+google.cloud.retail.v2alpha.ProjectService.ListEnrolledSolutions
+Audit log type
+:
+Data access
+Permissions
+:
+retail.solutions.listEnrolled - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ProjectService.ListEnrolledSolutions"
+UpdateAlertConfig
+Method
+:
+google.cloud.retail.v2alpha.ProjectService.UpdateAlertConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.alertConfigs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ProjectService.UpdateAlertConfig"
+UpdateLoggingConfig
+Method
+:
+google.cloud.retail.v2alpha.ProjectService.UpdateLoggingConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.loggingConfigs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ProjectService.UpdateLoggingConfig"
+google.cloud.retail.v2alpha.SearchService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2alpha.SearchService
+.
+Search
+Method
+:
+google.cloud.retail.v2alpha.SearchService.Search
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.search - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.SearchService.Search"
+google.cloud.retail.v2alpha.ServingConfigService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2alpha.ServingConfigService
+.
+AddControl
+Method
+:
+google.cloud.retail.v2alpha.ServingConfigService.AddControl
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ServingConfigService.AddControl"
+CreateServingConfig
+Method
+:
+google.cloud.retail.v2alpha.ServingConfigService.CreateServingConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.create - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ServingConfigService.CreateServingConfig"
+DeleteServingConfig
+Method
+:
+google.cloud.retail.v2alpha.ServingConfigService.DeleteServingConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.delete - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ServingConfigService.DeleteServingConfig"
+GetServingConfig
+Method
+:
+google.cloud.retail.v2alpha.ServingConfigService.GetServingConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ServingConfigService.GetServingConfig"
+ListServingConfigs
+Method
+:
+google.cloud.retail.v2alpha.ServingConfigService.ListServingConfigs
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.list - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ServingConfigService.ListServingConfigs"
+RemoveControl
+Method
+:
+google.cloud.retail.v2alpha.ServingConfigService.RemoveControl
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ServingConfigService.RemoveControl"
+UpdateServingConfig
+Method
+:
+google.cloud.retail.v2alpha.ServingConfigService.UpdateServingConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.ServingConfigService.UpdateServingConfig"
+google.cloud.retail.v2alpha.UserEventService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2alpha.UserEventService
+.
+ExportUserEvents
+Method
+:
+google.cloud.retail.v2alpha.UserEventService.ExportUserEvents
+Audit log type
+:
+Data access
+Permissions
+:
+retail.userEvents.export - DATA_READ
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.UserEventService.ExportUserEvents"
+ImportUserEvents
+Method
+:
+google.cloud.retail.v2alpha.UserEventService.ImportUserEvents
+Audit log type
+:
+Data access
+Permissions
+:
+retail.userEvents.import - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.UserEventService.ImportUserEvents"
+PurgeUserEvents
+Method
+:
+google.cloud.retail.v2alpha.UserEventService.PurgeUserEvents
+Audit log type
+:
+Data access
+Permissions
+:
+retail.userEvents.purge - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.UserEventService.PurgeUserEvents"
+RejoinUserEvents
+Method
+:
+google.cloud.retail.v2alpha.UserEventService.RejoinUserEvents
+Audit log type
+:
+Data access
+Permissions
+:
+retail.userEvents.rejoin - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.UserEventService.RejoinUserEvents"
+WriteUserEvent
+Method
+:
+google.cloud.retail.v2alpha.UserEventService.WriteUserEvent
+Audit log type
+:
+Data access
+Permissions
+:
+retail.userEvents.create - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2alpha.UserEventService.WriteUserEvent"
+google.cloud.retail.v2beta.AnalyticsService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2beta.AnalyticsService
+.
+ExportAnalyticsMetrics
+Method
+:
+google.cloud.retail.v2beta.AnalyticsService.ExportAnalyticsMetrics
+Audit log type
+:
+Data access
+Permissions
+:
+retail.catalogs.exportAnalyticsMetrics - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.AnalyticsService.ExportAnalyticsMetrics"
+google.cloud.retail.v2beta.CatalogService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2beta.CatalogService
+.
+AddCatalogAttribute
+Method
+:
+google.cloud.retail.v2beta.CatalogService.AddCatalogAttribute
+Audit log type
+:
+Data access
+Permissions
+:
+retail.attributesConfigs.addCatalogAttribute - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.CatalogService.AddCatalogAttribute"
+BatchRemoveCatalogAttributes
+Method
+:
+google.cloud.retail.v2beta.CatalogService.BatchRemoveCatalogAttributes
+Audit log type
+:
+Data access
+Permissions
+:
+retail.attributesConfigs.batchRemoveCatalogAttributes - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.CatalogService.BatchRemoveCatalogAttributes"
+GetAttributesConfig
+Method
+:
+google.cloud.retail.v2beta.CatalogService.GetAttributesConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.attributesConfigs.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.CatalogService.GetAttributesConfig"
+GetCompletionConfig
+Method
+:
+google.cloud.retail.v2beta.CatalogService.GetCompletionConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.completionConfigs.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.CatalogService.GetCompletionConfig"
+GetDefaultBranch
+Method
+:
+google.cloud.retail.v2beta.CatalogService.GetDefaultBranch
+Audit log type
+:
+Data access
+Permissions
+:
+retail.catalogs.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.CatalogService.GetDefaultBranch"
+ListCatalogs
+Method
+:
+google.cloud.retail.v2beta.CatalogService.ListCatalogs
+Audit log type
+:
+Data access
+Permissions
+:
+retail.catalogs.list - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.CatalogService.ListCatalogs"
+RemoveCatalogAttribute
+Method
+:
+google.cloud.retail.v2beta.CatalogService.RemoveCatalogAttribute
+Audit log type
+:
+Data access
+Permissions
+:
+retail.attributesConfigs.removeCatalogAttribute - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.CatalogService.RemoveCatalogAttribute"
+ReplaceCatalogAttribute
+Method
+:
+google.cloud.retail.v2beta.CatalogService.ReplaceCatalogAttribute
+Audit log type
+:
+Data access
+Permissions
+:
+retail.attributesConfigs.replaceCatalogAttribute - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.CatalogService.ReplaceCatalogAttribute"
+SetDefaultBranch
+Method
+:
+google.cloud.retail.v2beta.CatalogService.SetDefaultBranch
+Audit log type
+:
+Data access
+Permissions
+:
+retail.catalogs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.CatalogService.SetDefaultBranch"
+UpdateAttributesConfig
+Method
+:
+google.cloud.retail.v2beta.CatalogService.UpdateAttributesConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.attributesConfigs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.CatalogService.UpdateAttributesConfig"
+UpdateCatalog
+Method
+:
+google.cloud.retail.v2beta.CatalogService.UpdateCatalog
+Audit log type
+:
+Data access
+Permissions
+:
+retail.catalogs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.CatalogService.UpdateCatalog"
+UpdateCompletionConfig
+Method
+:
+google.cloud.retail.v2beta.CatalogService.UpdateCompletionConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.completionConfigs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.CatalogService.UpdateCompletionConfig"
+google.cloud.retail.v2beta.CompletionService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2beta.CompletionService
+.
+CompleteQuery
+Method
+:
+google.cloud.retail.v2beta.CompletionService.CompleteQuery
+Audit log type
+:
+Data access
+Permissions
+:
+retail.catalogs.completeQuery - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.CompletionService.CompleteQuery"
+ImportCompletionData
+Method
+:
+google.cloud.retail.v2beta.CompletionService.ImportCompletionData
+Audit log type
+:
+Data access
+Permissions
+:
+retail.catalogs.import - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.CompletionService.ImportCompletionData"
+google.cloud.retail.v2beta.ControlService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2beta.ControlService
+.
+CreateControl
+Method
+:
+google.cloud.retail.v2beta.ControlService.CreateControl
+Audit log type
+:
+Data access
+Permissions
+:
+retail.controls.create - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ControlService.CreateControl"
+DeleteControl
+Method
+:
+google.cloud.retail.v2beta.ControlService.DeleteControl
+Audit log type
+:
+Data access
+Permissions
+:
+retail.controls.delete - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ControlService.DeleteControl"
+GetControl
+Method
+:
+google.cloud.retail.v2beta.ControlService.GetControl
+Audit log type
+:
+Data access
+Permissions
+:
+retail.controls.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ControlService.GetControl"
+ListControls
+Method
+:
+google.cloud.retail.v2beta.ControlService.ListControls
+Audit log type
+:
+Data access
+Permissions
+:
+retail.controls.list - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ControlService.ListControls"
+UpdateControl
+Method
+:
+google.cloud.retail.v2beta.ControlService.UpdateControl
+Audit log type
+:
+Data access
+Permissions
+:
+retail.controls.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ControlService.UpdateControl"
+google.cloud.retail.v2beta.ModelService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2beta.ModelService
+.
+CreateModel
+Method
+:
+google.cloud.retail.v2beta.ModelService.CreateModel
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.create - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ModelService.CreateModel"
+DeleteModel
+Method
+:
+google.cloud.retail.v2beta.ModelService.DeleteModel
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.delete - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ModelService.DeleteModel"
+GetModel
+Method
+:
+google.cloud.retail.v2beta.ModelService.GetModel
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ModelService.GetModel"
+ListModels
+Method
+:
+google.cloud.retail.v2beta.ModelService.ListModels
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.list - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ModelService.ListModels"
+PauseModel
+Method
+:
+google.cloud.retail.v2beta.ModelService.PauseModel
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.pause - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ModelService.PauseModel"
+ResumeModel
+Method
+:
+google.cloud.retail.v2beta.ModelService.ResumeModel
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.resume - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ModelService.ResumeModel"
+TuneModel
+Method
+:
+google.cloud.retail.v2beta.ModelService.TuneModel
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.tune - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ModelService.TuneModel"
+UpdateModel
+Method
+:
+google.cloud.retail.v2beta.ModelService.UpdateModel
+Audit log type
+:
+Data access
+Permissions
+:
+retail.models.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ModelService.UpdateModel"
+google.cloud.retail.v2beta.PredictionService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2beta.PredictionService
+.
+Predict
+Method
+:
+google.cloud.retail.v2beta.PredictionService.Predict
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.predict - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.PredictionService.Predict"
+google.cloud.retail.v2beta.ProductService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2beta.ProductService
+.
+AddFulfillmentPlaces
+Method
+:
+google.cloud.retail.v2beta.ProductService.AddFulfillmentPlaces
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ProductService.AddFulfillmentPlaces"
+AddLocalInventories
+Method
+:
+google.cloud.retail.v2beta.ProductService.AddLocalInventories
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ProductService.AddLocalInventories"
+CreateProduct
+Method
+:
+google.cloud.retail.v2beta.ProductService.CreateProduct
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.create - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ProductService.CreateProduct"
+DeleteProduct
+Method
+:
+google.cloud.retail.v2beta.ProductService.DeleteProduct
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.delete - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ProductService.DeleteProduct"
+ExportProducts
+Method
+:
+google.cloud.retail.v2beta.ProductService.ExportProducts
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.export - DATA_READ
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ProductService.ExportProducts"
+GetProduct
+Method
+:
+google.cloud.retail.v2beta.ProductService.GetProduct
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ProductService.GetProduct"
+ImportProducts
+Method
+:
+google.cloud.retail.v2beta.ProductService.ImportProducts
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.import - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ProductService.ImportProducts"
+ListProducts
+Method
+:
+google.cloud.retail.v2beta.ProductService.ListProducts
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.list - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ProductService.ListProducts"
+PurgeProducts
+Method
+:
+google.cloud.retail.v2beta.ProductService.PurgeProducts
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.purge - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ProductService.PurgeProducts"
+RemoveFulfillmentPlaces
+Method
+:
+google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces"
+RemoveLocalInventories
+Method
+:
+google.cloud.retail.v2beta.ProductService.RemoveLocalInventories
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ProductService.RemoveLocalInventories"
+SetInventory
+Method
+:
+google.cloud.retail.v2beta.ProductService.SetInventory
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ProductService.SetInventory"
+UpdateProduct
+Method
+:
+google.cloud.retail.v2beta.ProductService.UpdateProduct
+Audit log type
+:
+Data access
+Permissions
+:
+retail.products.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ProductService.UpdateProduct"
+google.cloud.retail.v2beta.ProjectService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2beta.ProjectService
+.
+GetAlertConfig
+Method
+:
+google.cloud.retail.v2beta.ProjectService.GetAlertConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.alertConfigs.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ProjectService.GetAlertConfig"
+UpdateAlertConfig
+Method
+:
+google.cloud.retail.v2beta.ProjectService.UpdateAlertConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.alertConfigs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ProjectService.UpdateAlertConfig"
+google.cloud.retail.v2beta.SearchService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2beta.SearchService
+.
+Search
+Method
+:
+google.cloud.retail.v2beta.SearchService.Search
+Audit log type
+:
+Data access
+Permissions
+:
+retail.placements.search - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.SearchService.Search"
+google.cloud.retail.v2beta.ServingConfigService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2beta.ServingConfigService
+.
+AddControl
+Method
+:
+google.cloud.retail.v2beta.ServingConfigService.AddControl
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ServingConfigService.AddControl"
+CreateServingConfig
+Method
+:
+google.cloud.retail.v2beta.ServingConfigService.CreateServingConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.create - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ServingConfigService.CreateServingConfig"
+DeleteServingConfig
+Method
+:
+google.cloud.retail.v2beta.ServingConfigService.DeleteServingConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.delete - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ServingConfigService.DeleteServingConfig"
+GetServingConfig
+Method
+:
+google.cloud.retail.v2beta.ServingConfigService.GetServingConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.get - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ServingConfigService.GetServingConfig"
+ListServingConfigs
+Method
+:
+google.cloud.retail.v2beta.ServingConfigService.ListServingConfigs
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.list - DATA_READ
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ServingConfigService.ListServingConfigs"
+RemoveControl
+Method
+:
+google.cloud.retail.v2beta.ServingConfigService.RemoveControl
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ServingConfigService.RemoveControl"
+UpdateServingConfig
+Method
+:
+google.cloud.retail.v2beta.ServingConfigService.UpdateServingConfig
+Audit log type
+:
+Data access
+Permissions
+:
+retail.servingConfigs.update - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.ServingConfigService.UpdateServingConfig"
+google.cloud.retail.v2beta.UserEventService
+The following audit logs are associated with methods belonging to
+google.cloud.retail.v2beta.UserEventService
+.
+ExportUserEvents
+Method
+:
+google.cloud.retail.v2beta.UserEventService.ExportUserEvents
+Audit log type
+:
+Data access
+Permissions
+:
+retail.userEvents.export - DATA_READ
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.UserEventService.ExportUserEvents"
+ImportUserEvents
+Method
+:
+google.cloud.retail.v2beta.UserEventService.ImportUserEvents
+Audit log type
+:
+Data access
+Permissions
+:
+retail.userEvents.import - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.UserEventService.ImportUserEvents"
+PurgeUserEvents
+Method
+:
+google.cloud.retail.v2beta.UserEventService.PurgeUserEvents
+Audit log type
+:
+Data access
+Permissions
+:
+retail.userEvents.purge - DATA_WRITE
+Method is a long-running or streaming operation
+:
+Long-running operation
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.UserEventService.PurgeUserEvents"
+RejoinUserEvents
+Method
+:
+google.cloud.retail.v2beta.UserEventService.RejoinUserEvents
+Audit log type
+:
+Data access
+Permissions
+:
+retail.userEvents.rejoin - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.UserEventService.RejoinUserEvents"
+WriteUserEvent
+Method
+:
+google.cloud.retail.v2beta.UserEventService.WriteUserEvent
+Audit log type
+:
+Data access
+Permissions
+:
+retail.userEvents.create - DATA_WRITE
+Method is a long-running or streaming operation
+:
+No.
+Filter for this method
+:
+protoPayload.methodName="google.cloud.retail.v2beta.UserEventService.WriteUserEvent"
+Methods that don't produce audit logs
+A method might not produce audit logs for one or more of the following
+reasons:
+It is a high volume method involving significant log generation and storage
+  costs.
+It has low auditing value.
+Another audit or platform log already provides method coverage.
+The following methods don't produce audit logs:
+google.cloud.retail.v2.UserEventService.CollectUserEvent
+google.cloud.retail.v2alpha.MerchantCenterAccountLinkService.CreateMerchantCenterAccountLink
+google.cloud.retail.v2alpha.MerchantCenterAccountLinkService.DeleteMerchantCenterAccountLink
+google.cloud.retail.v2alpha.MerchantCenterAccountLinkService.ListMerchantCenterAccountLinks
+google.cloud.retail.v2alpha.UserEventService.CollectUserEvent
+google.cloud.retail.v2beta.UserEventService.CollectUserEvent
+google.longrunning.Operations.GetOperation
+google.longrunning.Operations.ListOperations
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

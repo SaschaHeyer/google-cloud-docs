@@ -1,0 +1,796 @@
+Monitor and analyze A/B experiments  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Monitor and analyze A/B experiments
+This page describes how you can monitor A/B experiment traffic and compare key
+business metrics for search in the Search for commerce
+console.
+Overview
+You can conduct an A/B experiment to compare key business metrics between
+your existing search implementation and Vertex AI Search for commerce.
+After setting up the experiment and its traffic splitting, you can monitor
+experiment traffic and view business metrics using the
+Experiment
+page in
+the Search for commerce console.
+To set up A/B experiment monitoring in the console, you input information about
+your A/B test such as name, time range, and experiment arm information. Each
+experiment variant arm maps to a experiment group that you have created for the
+A/B experiment, where the first arm you set up in the console is treated as the
+baseline control.
+Each experiment has a
+Monitoring
+tab displaying traffic split metrics that
+can help you determine if the A/B test is set up correctly. This is important
+for validating whether bias has been introduced into the A/B test. For example, a
+typical issue to look out is whether some queries or categories are served by
+one experiment arm but not others.
+Each experiment also has an
+Analytics
+tab where you can view key business
+metrics comparisons. Two categories of business metrics are included:
+Per search or per browse metrics, such as clicks per search.
+Per search or per browse visit metrics, such as revenue per browse visit.
+See
+Metrics list
+for a complete list of metrics.
+Each business metric provides raw values, relative lift compared with the
+baseline control, and a 95% confidence interval. You can view both aggregated
+metrics and metrics by date.
+The traffic monitoring tab displays whether unintended traffic splits have
+occurred and the dates on which they occurred. An unintended traffic split is
+determined by comparing the actual traffic split percentage with the intended
+split percentage that you input when setting up monitoring. The traffic split is
+considered correct if the relative difference is equal to or less than 10%. For
+example, if traffic is intended to split evenly across two arms, an actual split
+of 45% to 55% is just within the intended range.
+You can use the console to monitor multiple experiments simultaneously.
+The experiment date and metrics sliced by date use America/Los_Angeles as the
+time zone and 12:00 AM America/Los_Angeles time for start dates and end dates.
+You can update experiment details in the console such as start and end dates,
+number of variant arms, experiment IDs, and intended traffic split percentage at
+any time, regardless of whether the experiment is ongoing, finished, or pending.
+The data is updated retroactively.
+Monitoring and analyzing the A/B experiments has following
+requirements/limitations:
+The maximum time range of experiment data you can track is 180 days. If an
+experiment started more than 180 days ago, metrics older than that are not
+captured.
+Per-query or per-category traffic monitoring returns only the top 100
+queries or categories that get the most traffic of all variant arms in the
+experiment.
+Before you begin
+Before you set up monitoring in the Search for commerce console for an A/B
+experiment:
+Set up user event ingestion for events served by your existing search
+implementation and by Vertex AI Search for commerce.
+Review
+A/B experiment best practices
+.
+Set up the experiment using a third-party experiment platform such as
+Google Optimize
+or
+Optimizely
+.
+Set up and note the user event
+experimentIds
+for each experiment group.
+When you set up experiment monitoring, you need to specify the experiment
+IDs for each variant arm.
+Add an experiment in the console
+Use the following procedures to add a new experiment to monitor in the
+Search for commerce console:
+Add experiment details
+Add variants
+In this procedure, you create variant arms in the Search for commerce
+console that correspond to the existing experiment groups that you created in
+your third-party experiment platform. For examples of how variant arms can map
+to existing experiment groups, see
+Examples of experiment
+setups
+.
+Add experiment details
+Add an experiment in the console and enter its details.
+Go to the
+Experiments
+page in the Search for commerce console.
+Go to the Experiments page
+Click
+Add Experiment
+.
+The
+New Experiment
+page opens.
+Enter a name for your experiment.
+Select the start and end dates of your experiment.
+If your experiment traffic is set to ramp up gradually, set the start date to
+a date when ramping up is completed and the traffic split is stabilized.
+Select what kind of activity this experiment tracks:
+Browse
+: Navigation on your site by page category.
+Browsing activity is indicated by an empty
+query in the search response.
+Search
+: Text query searches on your site.
+Next, create variant arms for your experiment.
+Add variants
+After adding experiment details in the console, create variant arms that
+correspond to each experiment group.
+The first variant arm that you set up is the baseline variant. The baseline
+typically represents your existing solution.
+Before starting, make sure you have the user event
+experimentIds
+for each
+experiment group.
+Click
+Add Variant Arm
+.
+The
+Create Variant Arm
+panel opens.
+Enter the user event
+experimentId
+associated with the experiment setup
+that this variant arm will monitor:
+If you are setting up your first variant arm:
+Enter the user event
+experimentId
+associated with the baseline group that will serve as
+your baseline.
+If you have already set up your baseline variant arm
+: Enter the user
+event
+experimentId
+associated with the next experiment group.
+Enter a human-readable name for this variant arm.
+This name is displayed in monitoring dashboards in the console.
+(Optional) Provide a description of this variant arm.
+Select a serving traffic destination:
+Google Vertex AI Search for Retail API
+: If this variant arm monitors
+traffic for Vertex AI Search for commerce results.
+External
+: If this variant arm monitors traffic for results from an
+external service. For example, the baseline (or control) variant arm
+likely represents an external destination if the experiment is comparing
+an existing service's traffic to Vertex AI Search for commerce traffic.
+Click
+Create
+to finish creating this variant arm.
+The variant arm is displayed on the
+New Experiment
+page.
+Repeat the previous steps to create variant arms associated with each
+experiment group you plan to monitor.
+You must have at least one
+External
+arm and one
+Google Vertex AI Search
+for Retail API
+arm.
+(Optional) By default, intended traffic percentage is split evenly across
+all variant arms. To customize the intended traffic percentages:
+Under the
+Add Variants
+section, click a traffic percentage value in
+Traffic %
+column.
+The
+Traffic Percentage
+panel opens.
+In the
+Weight distribution
+field, select
+Custom percentages
+.
+In the
+Traffic %
+column for each variant arm, enter its intended
+traffic percentage.
+The total traffic percentage across all variant arms must add up to 100%.
+Click
+Done
+.
+The
+Traffic Percentage
+panel closes.
+Click
+Create
+on the
+New Experiment
+page to finish creating your
+experiment.
+The experiment is displayed on the
+Onboarding Experiments
+page.
+Examples of experiment setups
+This section presents two examples of experiment setups.
+Example 1 shows a baseline control and one Vertex AI Search for commerce experiment
+group.
+Example 2 shows comparing a baseline control with two Vertex AI Search for commerce
+experiment groups.
+Example 1: Two variant arms
+In this example, assume that you plan to set up an A/B experiment with:
+20% of search requests sent to in-house search engines as the baseline
+control group
+20% of search requests sent to Google Vertex AI Search for Retail API as the experiment group
+60% as a holdout group that is not in the A/B test
+The request and user event configuration would be:
+Traffic type
+Discovery engine
+60%
+event.experimentIds
+event.attributionToken
+Traffic %
+Control traffic
+In-house
+CONTROL
+N/A
+20%
+Experiment traffic
+Google Vertex AI Search for Retail API
+EXPERIMENT
+Attribution token from search response
+20%
+Holdout traffic
+Either / both
+N/A
+Depends on discovery engine
+60%
+Holdout traffic might be served by an in-house search engine,
+Vertex AI Search for commerce, or both. Because they are not part of the A/B test,
+they don't have an experiment ID. To indicate which user events are part of the
+A/B test, make sure to provide
+experimentIds
+and
+attributionToken
+information. Your
+experimentId
+strings might be different from those given in
+this example. Make sure that the IDs you use are consistent between your
+experiments and user events.
+When creating the corresponding experiment in the console, you would create only
+two variant arms, because the holdout group is not part of the experiment. The
+intended traffic percentage split between the two variant arms is 50% / 50%.
+To set up monitoring for this example experiment, you would create corresponding
+variant arms in the console for each experiment group. The following table shows
+information you would enter in the console during variant arm setup for this
+example.
+Variant arm name
+Traffic destination
+User event experiment ID
+Intended traffic %
+Example control arm
+External
+CONTROL
+50%
+Example experiment arm
+Google Vertex AI Search for Retail API
+EXPERIMENT
+50%
+Example 2: Three variant arms
+In this example, assume that you plan to conduct an A/B experiment on the head
+queries (high-frequency queries) and include both turning on and off dynamic
+facets. The requests and user events configurations would be:
+Variant arm name
+Traffic destination
+event.experimentIds
+event.attributionToken
+Traffic %
+Head queries control
+In-house
+CONTROL
+N/A
+50% of head queries
+Head queries dynamic facets ON experiment
+Google Vertex AI Search for Retail API
+EXP_DF_ON
+Attribution token from search response
+25% of head queries
+Head queries dynamic facets OFF experiment
+Google Vertex AI Search for Retail API
+EXP_DF_OFF
+Attribution token from search response
+25% of head queries
+Non-head queries and other holdouts
+Google Vertex AI Search for Retail API
+N/A
+Depends on engine used
+N/A
+To set up monitoring for this example experiment, you would create corresponding
+variant arms in the console for each experiment group. The following table shows
+information you would enter in the console during variant arm setup for this
+example.
+Variant arm name
+Traffic destination
+User event experiment ID
+Intended traffic %
+Example control arm
+External
+CONTROL
+50%
+Example experiment arm 1
+Google Vertex AI Search for Retail API
+EXP_DF_ON
+25%
+Example experiment arm 2
+Google Vertex AI Search for Retail API
+EXP_DF_OFF
+25%
+Traffic metrics
+An experiment's
+Monitoring
+page shows if there are unintended traffic splits
+for the following metrics:
+Search/Browse event count per date
+Search/Browse visitor count per date
+Search/Browse event count per category
+When unintended traffic splits occur for one of these metrics, its card at the
+top of the
+Monitoring
+page shows the dates on which the unintended traffic
+split occurred. Click
+Unintended traffic splits
+to see a filterable table
+listing unintended traffic splits for that metric.
+The following tables on an experiment's
+Monitoring
+page compare traffic
+metrics across variant arms according to usage. Click
+View more
+next to any
+table title to see a filterable table listing all traffic splits for that
+metric:
+Search/Browse event count per date
+: The total number of searches or
+browses that have occurred on a variant arm on a given date.
+Search/Browse visitor count per date
+: The number of visitors who have
+queried or browsed on a variant arm on a given date.
+Search/Browse event count per category
+: The total number of times that a
+given query or category has been searched for on a variant arm from the
+experiment start date to its end date (or to today's date, if the experiment
+is ongoing). This table shows only the top 100 queries or categories in
+terms of the total traffic of all variant arms in the experiment.
+Monitor an experiment
+The
+Onboarding experiments
+page displays a table of your recent experiments.
+To monitor an experiment:
+Go to the
+Experiments
+page in the Search for commerce console.
+Go to the Experiments page
+Click the experiment name.
+The
+Monitoring
+page for that experiment opens.
+Review the page for unintended traffic splits.
+Each metric displays the dates on which any unintended traffic splits
+occurred.
+If you see unintended splits, click
+Unintended traffic splits
+to see a
+filterable table listing unintended traffic splits for that metric.
+Address unintended traffic splits
+Monitoring experiments from the Search for commerce console can help bring
+your attention to potential issues in your experiment.
+If you encounter unintended traffic splits, make sure events are tagged with the
+correct experiment ID. For example, an event belonging to a control group being
+tagged with the wrong experiment ID can cause the event to be attributed to the
+wrong variant arm.
+If event tagging is working correctly, unintended traffic splits reported by the
+Search for commerce console can indicate traffic split issues in your
+experiment platform. When this is the case, pause your A/B testing before
+resolving the issue so that your experiment does not produce incorrect results.
+Business metrics for analytics
+Two groups of business metrics are available:
+Per-search or per-browse metrics
+Per-search visit or per-browse visit
+Per search visit metrics
+Per-search-visit metrics definitions are listed here. Per-browse-visit metrics
+definitions are the similar to those of per-search-visit metrics, with all
+instances of search replaced with browse.
+In purchase order rate, one purchase order can include multiple SKUs. Each SKU
+can have a quantity of more than or equal to one.
+Metric Name
+Definition
+Search visit count
+Count of visits that contains at least one search.
+Bounce rate
+Count of search visits that only has 1 user event / search visit count
+-->
+Page view rate
+Count of clicks (page views) / search visit count
+Add-to-cart (ATC) rate
+Count of add-to-cart units in search visits / search visit count
+Purchase order rate
+Count of purchase orders in search visits / search visit count
+Revenue rate
+Sum of revenue in search visits / search visit count
+Average order value (AOV)
+Sum of revenue in search visits / count of purchase orders in search visits
+Per search metrics
+Per-search metrics definitions are listed here. Per-browse metrics definitions are the similar to those of per-search metrics, with all instances of search replaced with browse.
+Metric Name
+Definition
+Search count
+Count of search events
+No Result rate
+Count of search events without results / search count
+Clickthrough rate (CTR)
+Count of search-driven clicks (page views) / search count
+Add-to-cart (ATC) rate
+Count of search-driven add-to-cart units / search count
+Purchase rate
+Count of search-driven purchase units / search count
+Revenue rate
+Sum of search-driven revenue / search count
+Average Unit Value (AUV)
+Sum of search driven revenue / count of search driven purchase units
+Analyze experiment business performance
+Each experiment's
+Analytics
+tab displays business metrics dashboards. The
+dashboards show performance comparisons across variant arms.
+There are two dashboards of metrics:
+Per search visit and per browse visit metrics
+Per search and per browse metrics
+Either search metrics or browse metrics are shown based on the
+ProductType
+attribute of the experiment.
+Each dashboard displays a summary metrics table showing metrics results
+aggregated across the dates shown in the date range filter. The default date
+values are the experiment start and end dates.
+Each metric is displayed as an aggregated
+result table as well as a daily value chart that provides more detailed
+information.
+The aggregated table date range uses the experiment's start and end dates as
+the default date values. If the experiment is ongoing, the end date is set to
+the current date. You can modify the date range filter. If
+userAgent
+is
+provided with ingested user events, you can also slice metrics by device type.
+Click the
+Refresh
+icon to apply modified filters to metrics.
+When the metrics relative lift is positive enough to exceed the confidence
+interval bandwidth, a green background color is displayed for that variant.
+Similarly, if the relative lift is negative enough, a red background color is
+displayed for that variant. If the relative lift is smaller than the confidence
+interval width, a grey background color indicates that the result does not
+have statistical significance.
+For example, when comparing a variant arm versus baseline control arm:
+If a metric
+Clickthrough rate per search
+is +3.0%
+and the confidence interval, displayed as
+Lift CI
+, is [2.1%, 4.0%], the
+variant arm is highlighted in green to indicate it is a better performing
+variant for this metric compared to the baseline control.
+If a metric
+Revenue rate per browse visit
+is -1.5%
+and the confidence interval is [-2.6%, -0.4%], the variant arm is
+highlighted in red to indicate it performs worse in this metric compared
+to the baseline control.
+If a metric
+Average unit value per search
+is +1.0%
+and the confidence interval is [-1.1%, 3.0%], the variant arm is highlighted
+in gray to indicate that the difference in performance doesn't yet have
+statistical significance.
+Generally, the more data points, the smaller the variance is. Accumulated
+metrics over a few weeks will have a lower confidence interval bandwidth than
+daily metrics and are more likely to show statistical significance.
+Modify experiment details
+You can update experiment details in the console such as start and end date,
+number of variant arms, experiment IDs, and intended traffic split percentage at
+any time, regardless of whether the experiment is ongoing, finished, or pending.
+The data is updated retroactively.
+To edit experiment details:
+Go to the
+Experiments
+page in the Search for commerce console.
+Go to the Experiments page
+In the table showing your recent experiments, find the experiment you plan to
+modify.
+Click the three-dot
+Actions
+icon to the right of its table row and click
+Edit
+.
+The
+Edit Experiment
+page opens.
+Modify the experiment fields you intend to update.
+Click
+Update
+to save your changes.
+Delete an experiment from the console
+To delete an experiment from the Search for commerce console:
+Go to the
+Experiments
+page in the Search for commerce console.
+Go to the Experiments page
+In the table showing your recent experiments, find the experiment you plan to
+delete.
+Click the three-dot
+Actions
+icon to the right of its table row and click
+Delete
+.
+The
+Delete experiment?
+confirmation window opens.
+Type the experiment name and click
+Confirm
+to confirm deletion.
+When the deletion is complete, the console displays a message that your
+experiment has been successfully deleted.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

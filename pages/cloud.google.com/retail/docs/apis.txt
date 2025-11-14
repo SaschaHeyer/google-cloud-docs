@@ -1,0 +1,645 @@
+APIs and reference  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Vertex AI search for commerce
+All APIs & references
+Client Libraries
+Overview
+C++ Reference
+C Sharp Reference
+Go Reference
+Java Reference
+Node.js Reference
+PHP Reference
+Python Reference
+Ruby Reference
+REST reference
+Overview
+v2
+REST Resources
+projects.locations.catalogs
+Overview
+completeQuery
+exportAnalyticsMetrics
+getAttributesConfig
+getCompletionConfig
+getConversationalSearchCustomizationConfig
+getDefaultBranch
+getGenerativeQuestionFeature
+list
+patch
+setDefaultBranch
+updateAttributesConfig
+updateCompletionConfig
+updateConversationalSearchCustomizationConfig
+updateGenerativeQuestion
+updateGenerativeQuestionFeature
+projects.locations.catalogs.attributesConfig
+Overview
+addCatalogAttribute
+removeCatalogAttribute
+replaceCatalogAttribute
+projects.locations.catalogs.branches.operations
+Overview
+get
+projects.locations.catalogs.branches.products
+Overview
+addFulfillmentPlaces
+addLocalInventories
+create
+delete
+get
+import
+list
+patch
+purge
+removeFulfillmentPlaces
+removeLocalInventories
+setInventory
+projects.locations.catalogs.completionData
+Overview
+import
+projects.locations.catalogs.controls
+Overview
+create
+delete
+get
+list
+patch
+projects.locations.catalogs.generativeQuestion
+Overview
+batchUpdate
+projects.locations.catalogs.generativeQuestions
+Overview
+list
+projects.locations.catalogs.models
+Overview
+create
+delete
+get
+list
+patch
+pause
+resume
+tune
+projects.locations.catalogs.operations
+Overview
+get
+list
+projects.locations.catalogs.placements
+Overview
+predict
+search
+projects.locations.catalogs.servingConfigs
+Overview
+addControl
+create
+delete
+get
+list
+patch
+predict
+removeControl
+search
+projects.locations.catalogs.userEvents
+Overview
+collect
+import
+purge
+rejoin
+write
+projects.locations.operations
+Overview
+get
+list
+projects.operations
+Overview
+get
+list
+Types
+BigQuerySource
+BoostSpec
+CompletionConfig
+CompletionDataInputConfig
+ConditionBoostSpec
+ConversationalSearchCustomizationConfig
+ConversationalSearchSpec
+FacetSpec
+GcsSource
+GenerativeQuestionConfig
+GenerativeQuestionsFeatureConfig
+ImportErrorsConfig
+Interval
+PredictResponse
+ProductAttributeValue
+QueryExpansionSpec
+SearchMode
+SearchResponse
+SolutionType
+SpellCorrectionSpec
+StringList
+Tile
+TileNavigationSpec
+v2beta
+REST Resources
+projects
+Overview
+getAlertConfig
+updateAlertConfig
+projects.locations.catalogs
+Overview
+completeQuery
+exportAnalyticsMetrics
+getAttributesConfig
+getCompletionConfig
+getConversationalSearchCustomizationConfig
+getDefaultBranch
+getGenerativeQuestionFeature
+list
+patch
+setDefaultBranch
+updateAttributesConfig
+updateCompletionConfig
+updateConversationalSearchCustomizationConfig
+updateGenerativeQuestion
+updateGenerativeQuestionFeature
+projects.locations.catalogs.attributesConfig
+Overview
+addCatalogAttribute
+batchRemoveCatalogAttributes
+removeCatalogAttribute
+replaceCatalogAttribute
+projects.locations.catalogs.branches.operations
+Overview
+get
+projects.locations.catalogs.branches.products
+Overview
+addFulfillmentPlaces
+addLocalInventories
+create
+delete
+export
+get
+import
+list
+patch
+purge
+removeFulfillmentPlaces
+removeLocalInventories
+setInventory
+projects.locations.catalogs.completionData
+Overview
+import
+projects.locations.catalogs.controls
+Overview
+create
+delete
+get
+list
+patch
+projects.locations.catalogs.generativeQuestion
+Overview
+batchUpdate
+projects.locations.catalogs.generativeQuestions
+Overview
+list
+projects.locations.catalogs.models
+Overview
+create
+delete
+get
+list
+patch
+pause
+resume
+tune
+projects.locations.catalogs.operations
+Overview
+get
+list
+projects.locations.catalogs.placements
+Overview
+predict
+search
+projects.locations.catalogs.servingConfigs
+Overview
+addControl
+create
+delete
+get
+list
+patch
+predict
+removeControl
+search
+projects.locations.catalogs.userEvents
+Overview
+collect
+export
+import
+purge
+rejoin
+write
+projects.locations.operations
+Overview
+get
+list
+projects.operations
+Overview
+get
+list
+Types
+AlertConfig
+BigQuerySource
+BoostSpec
+CompletionConfig
+CompletionDataInputConfig
+ConditionBoostSpec
+ConversationalSearchCustomizationConfig
+ConversationalSearchSpec
+FacetSpec
+GcsSource
+GenerativeQuestionConfig
+GenerativeQuestionsFeatureConfig
+ImportErrorsConfig
+Interval
+OutputConfig
+PredictResponse
+ProductAttributeValue
+QueryExpansionSpec
+RecommendationsFilteringOption
+SearchMode
+SearchResponse
+SolutionType
+SpellCorrectionSpec
+StringList
+Tile
+TileNavigationSpec
+v2alpha
+REST Resources
+projects
+Overview
+enrollSolution
+getAlertConfig
+getLoggingConfig
+getRetailProject
+listEnrolledSolutions
+updateAlertConfig
+updateLoggingConfig
+projects.locations.catalogs
+Overview
+completeQuery
+exportAnalyticsMetrics
+getAttributesConfig
+getCompletionConfig
+getConversationalSearchCustomizationConfig
+getDefaultBranch
+getGenerativeQuestionFeature
+list
+patch
+setDefaultBranch
+updateAttributesConfig
+updateCompletionConfig
+updateConversationalSearchCustomizationConfig
+updateGenerativeQuestion
+updateGenerativeQuestionFeature
+projects.locations.catalogs.attributesConfig
+Overview
+addCatalogAttribute
+batchRemoveCatalogAttributes
+removeCatalogAttribute
+replaceCatalogAttribute
+projects.locations.catalogs.branches
+Overview
+get
+list
+projects.locations.catalogs.branches.operations
+Overview
+get
+projects.locations.catalogs.branches.places.operations
+Overview
+get
+projects.locations.catalogs.branches.products
+Overview
+addFulfillmentPlaces
+addLocalInventories
+create
+delete
+export
+get
+import
+list
+patch
+purge
+removeFulfillmentPlaces
+removeLocalInventories
+setInventory
+projects.locations.catalogs.completionData
+Overview
+import
+projects.locations.catalogs.controls
+Overview
+create
+delete
+get
+list
+patch
+projects.locations.catalogs.generativeQuestion
+Overview
+batchUpdate
+projects.locations.catalogs.generativeQuestions
+Overview
+list
+projects.locations.catalogs.merchantCenterAccountLinks
+Overview
+create
+delete
+list
+projects.locations.catalogs.models
+Overview
+create
+delete
+get
+list
+patch
+pause
+resume
+tune
+projects.locations.catalogs.operations
+Overview
+get
+list
+projects.locations.catalogs.placements
+Overview
+conversationalSearch
+predict
+search
+projects.locations.catalogs.servingConfigs
+Overview
+addControl
+conversationalSearch
+create
+delete
+get
+list
+patch
+predict
+removeControl
+search
+projects.locations.catalogs.userEvents
+Overview
+collect
+export
+import
+purge
+rejoin
+write
+projects.locations.operations
+Overview
+get
+list
+projects.operations
+Overview
+get
+list
+projects.retailProject
+Overview
+acceptTerms
+Types
+AlertConfig
+BigQuerySource
+BoostSpec
+BranchView
+CompletionConfig
+CompletionDataInputConfig
+ConditionBoostSpec
+ConversationalFilteringSpec
+ConversationalSearchCustomizationConfig
+ConversationalSearchResponse
+ConversationalSearchSpec
+Facet
+FacetSpec
+GcsSource
+GenerativeQuestionConfig
+GenerativeQuestionsFeatureConfig
+ImportErrorsConfig
+Interval
+LoggingConfig
+OutputConfig
+PredictResponse
+ProductAttributeInterval
+ProductAttributeValue
+Project
+QueryExpansionSpec
+RecommendationsFilteringOption
+RelevanceThreshold
+SafetySetting
+SearchMode
+SearchParams
+SearchResponse
+SolutionType
+SpellCorrectionSpec
+StringList
+Tile
+TileNavigationSpec
+Shared Types
+Types
+Date
+GetOperationRequest
+HttpBody
+ListOperationsRequest
+ListOperationsResponse
+RPC reference
+Overview
+google.api
+google.cloud.location
+google.cloud.retail.logging
+google.cloud.retail.v2
+google.cloud.retail.v2alpha
+google.cloud.retail.v2beta
+google.longrunning
+google.rpc
+google.type
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Reference
+Send feedback
+APIs and reference
+Vertex AI Search for commerce client libraries
+Get started with Vertex AI Search for commerce in your language of choice.
+REST API Reference
+Vertex AI Search for commerce REST API Reference.
+RPC Reference
+Vertex AI Search for commerce RPC Reference.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

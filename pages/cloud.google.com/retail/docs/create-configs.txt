@@ -1,0 +1,711 @@
+Create serving configs  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Create serving configs
+This page describes how to create serving configs. A serving
+configuration is a serving entity that associates a model or a set of controls
+that are used to generate your search or recommendation results. For more information about serving configs, see
+About serving configs
+.
+Before you begin
+Recommendations and search serving configs
+have different requirements and options:
+Recommendations serving configs require a model. If you
+plan to attach an existing model to a new serving config, get the ID of
+the model you plan to use (required when using the
+ServingConfig.create
+method).
+If creating the serving config using the console, you can create a new
+model during the creation process instead of attaching an existing model.
+You can switch models later, as long as it is of the same model type.
+Search can use serving controls, but they are not required. If
+you plan to attach existing controls to a new serving config, get the
+IDs of the controls you plan to use.
+If creating the serving config using the console, you can also create
+new controls during the creation process.
+You can switch or add serving controls to your serving config after
+you create it.
+Create a serving config
+You can create a serving config using:
+The
+Search for commerce console
+.
+The
+ServingConfig.create
+API
+.
+Up to 100 serving configs are allowed per catalog.
+Search works with non-configured serving configs. Any
+serving_config_id
+can be
+placed as part of the search request, and this
+default_search
+will search the
+catalog with Vertex AI Search for commerce default search capability.
+If you have existing placements, or create new placements,
+a serving config associated with each placement is automatically created.
+Creating a serving config does not create a corresponding placement. Deleting a
+serving config deletes its corresponding placement, and deleting a placement
+deletes its corresponding serving config.
+Create a serving config in the console
+Add a new serving config on the
+Serving Configs page
+in the
+Search for commerce console.
+To create a new serving config:
+Go to the
+Serving Configs
+page in the Search for commerce console.
+Go to the Serving configs page
+Click
+add_box
+Create serving config
+.
+Recommendations
+Select
+Recommendation
+as the product the serving config
+will be used for.
+Provide a name for your serving config.
+The name must be 1024 characters or less, and can contain only
+alphanumeric characters, underscores, hyphens, and spaces.
+Optional: If needed, update the ID.
+The ID is generated from the name you provide, and must be unique
+across your project. It must be 50 characters or less, and cannot
+contain spaces.
+Choose or create a model you want this serving config to
+provide recommendations for.
+Learn more
+about creating new models.
+Select how much price reranking should affect recommendation results,
+if available for the model you selected.
+Price reranking causes recommended products with a similar
+recommendation probability to be ordered by price, with the
+highest-priced items first. Relevance is still also used to order
+items, so enabling price reranking is not the same as sorting by
+price.
+Select whether to use rule-based or data-driven result diversification:
+Ruled-based:
+Ruled-based result diversification affects whether
+results returned from a single prediction request are from
+different categories of your product catalog.
+Data-driven:
+Data-driven result diversification uses machine learning
+to balance category diversity and relevance in your prediction
+results.
+For more information, see
+Result diversification
+.
+Select how much to diversify recommendation results.
+If you selected a Similar Items model for this serving config, select
+whether to enable category matching.
+When category matching is enabled, the only product results returned
+are ones that share at least one category with the context product.
+Category matching can be used in combination with other filtering
+options, such as price, availability, and filter tags.
+Search
+On the
+Create Serving Config
+page, choose
+Search
+as the product the serving configuration
+will be used for.
+Provide a name for your serving configuration.
+The name must be
+1024 characters or less, and can contain only alphanumeric characters,
+underscores, hyphens, and spaces.
+Optional: If needed, update the ID.
+The ID is generated from the
+name you provide, and must be unique across your project. It must be 50
+characters or less, and cannot contain spaces.
+Click
+Continue
+.
+Choose whether to enable dynamic faceting for this serving configuration.
+Choose or create serving controls to optimize your searches with.
+For more
+information on controls, see
+Creating and managing controls.
+Click
+Create
+to create the new configuration.
+The new configuration appears in your
+Serving Configs page
+.
+It might take a few minutes for the configuration to become available for use
+in search requests. It is immediately available for recommendations.
+Optional: On the Serving Configs page, click a serving config name
+and go to its
+Evaluate
+tab to preview the products that would be returned
+for this configuration.
+Evaluation preview can help you to confirm that your configuration is
+performing as you expect.
+Create a serving config with
+ServingConfig.create
+You can create a serving config with the
+ServingConfig.create
+API
+method. For API reference documentation for this method, see
+ServingConfig.create
+.
+Which fields you use depend on if you're creating a serving config for
+recommendations or search.
+For more details about the
+ServingConfig
+fields, see the
+ServingConfigs
+API reference
+.
+Recommendations
+Make a
+ServingConfig.create
+request with a serving config ID and an
+instance of
+ServingConfig
+contained in the request body.
+servingConfigId
+: Required. Creates an ID for your
+ServingConfig
+. This
+value should be 4-63 characters. Valid characters are
+/[a-z][0-9]-_/
+.
+displayName
+: Required. The human readable
+ServingConfig
+name displayed
+in the Search for commerce console.
+modelID
+: Required. The ID of the model to use at serving time.
+priceRerankingLevel
+: Optional. Sets how much price reranking should
+affect recommendation results. Allowed values are
+no-price-reranking
+(default value if unset),
+low-price-raranking
+,
+medium-price-reranking
+,
+and
+high-price-reranking
+.
+diversityLevel
+: Optional. Sets how much to diversify recommendations
+results. Allowed values are
+no-diversity
+(default),
+low-diversity
+,
+medium-diversity
+,
+high-diversity
+, and
+auto-diversity
+. If
+diversityLevel
+is not set, then diversity is disabled.
+diversityType
+: Optional. Set to
+RULE_BASED_DIVERSITY
+to diversify
+recommendation results based on product category. Set to
+DATA_DRIVEN_DIVERSITY
+to diversify recommendations based on learning
+from product metadata to balances relevance and category diversity.
+If
+diversityLevel
+is set but
+diversityType
+is not set, then
+diversityType
+defaults to rule-based. For more information, see
+result diversification
+.
+enableCategoryFilterLevel
+: Optional. Sets whether to add additional
+category filters on the Similar Items model. Allowed values are
+relaxed-category-match
+(default value if unset) and
+no-category-match
+.
+solutionTypes
+: Required. Set to
+SOLUTION_TYPE_RECOMMENDATION
+for
+recommendations serving configs.
+curl
+-X
+POST
+\
+-H
+"Authorization: Bearer
+$(
+gcloud
+auth
+application-default
+print-access-token
+)
+"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+--data
+'{
+"displayName": "
+DISPLAY_NAME
+",
+"modelId": "
+MODEL_ID
+",
+"priceRerankingLevel": "
+PRICE_RERANKING_LEVEL
+",
+"diversityType": "
+DIVERSITY_TYPE
+",
+"diversityLevel": "
+DIVERSITY_LEVEL
+",
+"enableCategoryFilterLevel": "
+CATEGORY_FILTER_LEVEL
+",
+"solutionTypes": [ "SOLUTION_TYPE_RECOMMENDATION" ]
+}'
+\
+"https://retail.googleapis.com/v2/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/servingConfigs?servingConfigId=
+SERVING_CONFIG_ID
+"
+Search
+Make a
+ServingConfig.create
+request with a serving config ID and an
+instance of
+ServingConfig
+contained in the request body.
+servingConfigId
+: Required. Creates an ID for your
+ServingConfig
+. This
+value should be 4-63 characters. Valid characters are
+/[a-z][0-9]-_/
+.
+displayName
+: Required. The human readable
+ServingConfig
+name displayed
+in the Search for commerce console.
+facetControlIds
+: Optional. IDs of controls that have only
+FacetSpec
+set.
+dynamicFacetSpec.mode
+: Optional. Mode of the
+DynamicFacet
+feature.
+Allowed values are
+DISABLED
+(default if unset) and
+ENABLED
+.
+boostControlIds
+: Optional. IDs of boost serving controls.
+filterControlIds
+: Optional. IDs of filter serving controls.
+redirectControlIds
+: Optional. IDs of redirect serving controls.
+twowaySynonymsControlIds
+: Optional. IDs of two-way synonym serving
+controls.
+onewaySynonymsControlIds
+: Optional. IDs of one-way synonym serving
+controls.
+doNotAssociateControlIds
+: Optional. IDs of do-not-associate serving
+controls.
+replacementControlIds
+: Optional. IDs of replacement serving controls.
+ignoreControlIds
+: Optional. IDs of ignore serving controls.
+solutionTypes
+: Required. Set to
+SOLUTION_TYPE_SEARCH
+for
+search serving configs.
+curl
+-X
+POST
+\
+-H
+"Authorization: Bearer
+$(
+gcloud
+auth
+application-default
+print-access-token
+)
+"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+--data
+'{
+"displayName":
+DISPLAY_NAME
+,
+"facetControlIds": [
+"
+FACET_CONTROL_ID_1
+",
+"
+FACET_CONTROL_ID_2
+"
+],
+"dynamicFacetSpec": {
+"mode": "
+DYNAMIC_FACET_MODE
+"
+},
+"boostControlIds": [
+"
+BOOST_CONTROL_ID_1
+",
+"
+BOOST_CONTROL_ID_2
+"
+],
+"filterControlIds": [
+"
+FILTER_CONTROL_ID_1
+",
+"
+FILTER_CONTROL_ID_2
+"
+],
+"redirectControlIds": [
+"
+REDIRECT_CONTROL_ID_1
+",
+"
+REDIRECT_CONTROL_ID_2
+"
+],
+"twowaySynonymsControlIds": [
+"
+TWO_WAY_SYNONYM_CONTROL_ID_1
+",
+"
+TWO_WAY_SYNONYM_CONTROL_ID_2
+"
+],
+"onewaySynonymsControlIds": [
+"
+ONE_WAY_SYNONYM_CONTROL_ID_1
+",
+"
+ONE_WAY_SYNONYM_CONTROL_ID_2
+"
+],
+"doNotAssociateControlIds": [
+"
+DO_NOT_ASSOCIATE_CONTROL_ID_1
+",
+"
+DO_NOT_ASSOCIATE_CONTROL_ID_2
+"
+],
+"replacementControlIds": [
+"
+REPLACEMENT_CONTROL_ID_1
+",
+"
+REPLACEMENT_CONTROL_ID_2
+"
+],
+"ignoreControlIds": [
+"
+IGNORE_CONTROL_ID_1
+",
+"
+IGNORE_CONTROL_ID_2
+"
+],
+"solutionTypes": [ "SOLUTION_TYPE_SEARCH" ]
+}'
+\
+"https://retail.googleapis.com/v2/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/servingConfigs?servingConfigId=
+SERVING_CONFIG_ID
+"
+Next steps
+Request predictions
+from your new placement.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

@@ -1,0 +1,832 @@
+Frequently asked questions  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Vertex AI search for commerce
+All resources
+Pricing
+Quotas and limits
+FAQ
+Overview
+Conversational features
+Search for commerce console
+Release notes
+Data use terms & conditions
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Resources
+Send feedback
+Frequently asked questions
+Have other challenges or don't see your issue outlined here?
+Report a bug or request a feature
+and join the
+cloud-recommendations-users
+Google group or
+Stack Overflow
+discussions.
+General
+These are general frequently asked questions.
+1. Do you have client libraries for Vertex AI Search for commerce or more sample code?
+Yes. You can see the
+client libraries guide
+for setup and reference information for each library.
+The
+Google API Discovery Service
+can also be used instead of raw REST calls.
+2. Are all the recommendation models personalized?
+The Recommended for You, Others You May Like, and Buy it Again models make personalized recommendations when
+provided with user history. The Frequently Bought Together and Similar Items models are not
+personalized.
+See
+About recommendation models
+.
+3. Will I receive personalized recommendations immediately, or will I need to wait for these to improve over time?
+Recommendations improve as you collect more user history. The Recommended for You model
+shows popular products and the Others You May Like model shows similar products based
+mostly on other's views. Both of these models start taking user behavior into
+account immediately, so it's important to send real-time events. See
+About recommendation models
+.
+User events need to be sent in real-time, or very close to real-time, for
+personalization to be effective. If user events are only submitted daily, or in
+batches throughout the day, the personalized models may not perform as well as
+they could if real-time events were sent.
+4. Are you using Google user demographic data in your models?
+The models only use the catalog and user event data that you provide. If you
+want to include demographic data, you can include other textual or numerical
+information that might be useful as
+custom attributes
+. This
+data will begin to be used by the model after it has been retuned.
+Don't include personally identifiable information (PII) such as email addresses
+or usernames. We suggest you anonymize demographic data, such as by hashing the
+values or using group IDs.
+5. Can I make recommendations based on the event history of a group of users rather than a single user's history?
+Recommendations are based on a single visitor ID or user ID. You
+would need to make individual requests and then combine the results to base
+recommendations on a group's history. If the users have common metadata
+attributes, you could use group IDs as user IDs to provide group-level
+recommendations.
+6. I noticed that you can submit image URLs for products. Do the models take into consideration the product images?
+Yes, product images can be submitted as part of your product catalog data. Vertex AI Search for commerce uses product URLs and the identifiers behind them (URIs) to
+enrich product descriptions
+.
+The
+Product
+object contains an images field, which is a list of image objects. Each image object can include a URI, height, and width. Up to 300 images are allowed per product.
+While optional, providing product images is highly recommended. (
+Prediction preview
+) also uses image
+URLs to display the images when you preview a model's prediction results in the
+Search for commerce console.
+7. My company isn't a retail ecommerce website. Can I still use recommendations for predicting x,y,z?
+We've had customers use recommendations for content
+recommendations, video streaming and gaming, and other use cases. However, our
+content and experience is designed with the retail ecommerce use case
+in mind and may not be suited for other use cases yet.
+8. Can I place recommendations on any page of my site?
+Yes, but the models are each designed for specific use cases and may work best
+on certain pages. See
+About recommendation models
+.
+Frequently Bought Together and Others You May Like require item IDs, so they should be used for
+recommendations using, for example, a product ID or items in a cart. Frequently Bought Together
+typically works best on add-to-cart or checkout pages, while Others You May Like and
+Similar Items work best on product detail pages. Recommended for You could be placed on any
+page, since it only requires a visitor ID as input, but it is designed as a home
+page serving config. Buy it Again is designed to be placed on any page.
+9. Can I use recommendations for recommendations in email newsletters?
+Yes. This can be done by making a call to the API with a visitor ID or user ID,
+then incorporating the results into an email template. If you want the items to
+be loaded dynamically at email-read time, you would need to use an intermediary
+endpoint, such as a
+Google Cloud Function
+, to send the predict
+request. The API only provides a list of ordered product IDs and metadata, so
+you will also need to write your own code to render the image results.
+10. Can I use Vertex AI Search for commerce for other non-web use cases (mobile apps, kiosks)?
+Yes. You can set up an endpoint (for example,
+Google Cloud Function
+) to get results for the app. You also
+need a similar mechanism to send real-time events.
+11. I don't have 3+ months of event data. Can I still use Vertex AI Search for commerce? Can I add more data at a later point?
+The Similar Items model does not use user event data or model tuning. If you don't
+have any event data, you can still create and train a Similar Items model as long as
+you have catalog data.
+If you can record sufficient traffic for real-time events, recent data can be
+used for training other models. If you have additional data available at a later
+date, you can upload it after the initial model training. The newly backfilled
+data gets incorporated into the models during daily retraining. However, if the
+data is significantly different than the events that were used for the initial
+training, the models may need to be
+retuned
+.
+Most models work best with at least three months of product page views, home
+page views, and add-to-cart events for all models, and ideally one to two years
+of purchase history for the Frequently Bought Together model.
+One to two weeks of detail page views can be enough to start training Others You May Like
+and Recommended for You models, while Frequently Bought Together and Buy it Again usually require more because there
+are typically fewer purchases per day than there are page views. Model quality
+can be significantly improved with more data; the minimum amount might not produce
+optimal results. A year's worth of purchases, for example, allows the models to
+better take advantage of seasonality and trends.
+12. Can I recommend categories along with products?
+Recommendations returns product recommendations only,
+but you can get the categories for each product returned as part of the results.
+13. Do you have integrations for uploading data from SQL databases or other systems, such as BigQuery?
+Yes. For events, there is
+sample code
+that reads from
+BigQuery. See a
+Google Analytics sample dataset for BigQuery
+.
+14. Does Vertex AI Search for commerce use cookies?
+No, it doesn't use cookies. However, all events sent to
+the Vertex AI Search for commerce must have a visitor ID specified, which is often a
+session identifier from a cookie.
+15. Do I need a dedicated Google Cloud project?
+You can create a new, dedicated project, or
+enable Vertex AI Search for commerce in an existing project.
+16. Why aren't my credentials working when using Cloud Shell?
+Check that you've completed the
+authentication setup steps
+for
+Vertex AI Search for commerce. You should be using a service account that you've made
+available in your environment. Otherwise, you might get an error like this:
+Your application has authenticated using end user credentials from the Google Cloud SDK or Google Cloud Shell which are not supported.
+For more about service accounts, see the
+Authentication section
+of the Google Cloud
+documentation.
+17. How can I compare Vertex AI Search for commerce to similar solutions?
+You can conduct
+A/B tests
+to compare results from
+Vertex AI Search for commerce to those of other products.
+18. I think feature x,y,z would be great. Can you add this?
+We'd love to hear from you. Feature requests can be submitted through your
+account team, Google Support, or the
+issue-tracker
+.
+19. Can I still use the old API for recommendations?
+Recommendations has migrated from the Recommendations Engine API
+to Vertex AI Search for commerce. If you were using the Recommendations Engine API while
+it was in beta, we recommend migrating your recommendations to
+Vertex AI Search for commerce (service endpoint
+https://retail.googleapis.com
+),
+which is GA.
+The previous API (service endpoint
+https://recommendationengine.googleapis.com
+) and its
+documentation
+remain available, but they are no longer updated.
+Catalogs and products
+These are frequently asked questions about catalogs and products.
+1. How does recommendations handle cold starts for new products?
+For products that don't have any purchase history, we make recommendations
+based on similar products. In these cases, it is especially important to have
+good product titles, categories, and descriptions defined in the catalog.
+For cold-start users (visitors with no history) the models start with the most
+popular general products, and become more personalized in real time as more user
+events are received.
+See
+About catalogs and products
+and the
+product reference page
+.
+2. Can I use my Merchant Center catalog for recommendations?
+Yes, you can export a Merchant Center catalog to
+BigQuery using the Merchant Center Data Transfer
+Service. Then we can read the catalog directly from BigQuery. See
+Import catalog data from Merchant Center
+.
+3. How else can I import my catalog?
+Merchant Center
+: Import with
+Merchant Center. If you use search, you can
+use the console to link Merchant Center so that its catalog
+syncs automatically.
+BigQuery
+: Import directly from a table or view.
+Cloud Storage
+: Import using text files with one JSON catalog
+item per line.
+Inline import
+: Import with an API call, using text files with
+one JSON catalog item per line.
+Create product items
+: Use the
+Products
+create method.
+4. How can I keep my catalog updated? How often does the catalog need to be updated?
+See
+Keep your catalog up to date
+.
+We recommend updating your catalog daily. You can do a full update from
+Cloud Storage or BigQuery, or an incremental update
+(i.e., new and changed items only).
+If possible, update price and availability in real time. This affects how
+quickly new items can be made searchable with search.
+If you have a way to be notified of catalog changes (such as using
+Pub/Sub, message queue, events, etc.) then you can update the
+catalog in real-time using the
+import
+or
+create
+API
+methods.
+For example,
+Cloud Scheduler
+can be used to make a daily
+BigQuery import call.
+5. Are there minimum and maximum catalog sizes?
+There is no minimum, but very small catalog sizes (< 100 items) may not see much
+benefit from recommendations due to there being very few different products to
+recommend.
+The catalog maximum is 40 million items.
+See the documentation for default
+quotas and limits
+and for how to
+request a change to your quota.
+6. My company operates websites in multiple countries. Should I use one catalog for all of my data?
+It is usually best to have just one catalog with all items. Events must be
+submitted all using a single currency. There is no way to have
+multiple catalogs within the same project, but, if you use
+entities
+,
+you can specify search, recommendations, and autocomplete behavior for a
+particular country.
+If the catalogs are considerably different between websites, we recommend having
+a separate project for each website. Also, if the countries have different
+languages, we recommend having separate projects, one for each language.
+If there are similar websites with low traffic compared to the main website, it
+may be best to use a single catalog if there are not enough events to produce
+high quality models for all individual websites.
+To use a single catalog, the catalog item IDs should be consistent, i.e., the
+same product should have a single item ID on all websites so that there is no
+duplication of products within the catalog.
+For recommendations only, an alternative to using entities is to filter to a
+specific website using
+filters
+. However, filters may take up
+to 8 hours to update, so if there are country-specific availability (out of
+stock) requirements, they normally need to be handled by a business rule that
+filters out the results after the predict response. This applies to v1
+filter_tag
+filtering and v2 attribute-based filtering.
+7. Does Vertex AI Search for commerce support multiple currencies per catalog?
+No, only one one currency type per catalog is supported. Events
+must be uploaded using a single currency.
+If you plan to use the
+Search for commerce
+console to get your revenue
+metrics, make sure your events all use a single currency or convert them all to
+the same currency before uploading them.
+8. I have multiple websites with a shared catalog or similar items. Can recommendations provide cross-site recommendations?
+We typically recommend using a single catalog like this only if there is
+significant overlap between the sites; they should share many or all of the same
+products. Then, as with multi-region sites, you can use
+entities
+or
+filter tags
+to return only site-specific items for a particular
+predict call.
+If the sites don't share many, or any, catalog items,
+then multiple catalogs should be used. Using multiple catalogs
+requires a separate Google Cloud project for each catalog.
+9. Does including more metadata improve the model? Does the model consider fields x,y,z?
+See
+Required catalog item information
+for required fields.
+Other metadata fields are optional (for example, images and itemAttributes). They may be
+used for prediction preview, results analysis, training, and tuning. We
+recommend including useful attributes such as color, size, material, etc. These
+fields can be returned as part of
+predict
+results by specifying
+returnProduct:true
+, so they can be useful for rendering
+results. Images and item attributes are used for
+prediction preview
+in the Search for commerce console.
+10. Which attributes of a catalog item are used as inputs of model training?
+A combination of both user behavior and product attributes is used. The primary
+fields used are ID, title, category hierarchy, price, and URL. You can include
+other custom key-value attributes that might be useful in
+Product.attributes[]
+.
+Image URLs are more of a convenience feature; you can return this metadata as
+part of the
+prediction
+results by specifying
+returnProduct:true
+, which can save an extra call to retrieve
+this information. Having image URLs also allows
+prediction preview
+to display the images when you preview a model's prediction results in the
+Search for commerce console.
+11. What languages are supported for my products?
+The
+recommendations feature
+: Supports most languages. The model
+automatically detects the text language. For a list of all languages that can
+be automatically detected, see the Compact Language Detector
+GitHub
+README
+.
+The
+search feature
+: Supports
+these world languages
+.
+You set the language when you upload the catalog. The
+catalog should be in one language only and the queries should be sent in the
+same language. Having multiple languages in the catalog degrades model
+performance. For example, if the catalog is in Spanish but the search query is
+in English, the query is not translated the query to Spanish.
+Note:
+If you already have a mixed language catalog for
+search, you can improve results by adding synonyms for
+search query terms. For example, add both Spanish and English synonyms. For
+information about synonyms, see
+OnewaySynonymsAction
+and
+TwowaySynonymsAction
+.
+12. My catalog has primary/variant or parent/child SKUs. Are these supported?
+Yes. This would be similar to the
+item_group_id
+in
+Merchant Center. You need to determine how you want to get
+recommendations back (at the parent or child level) and if the events are at the
+parent or child level.
+See
+Product levels
+for more about product levels.
+Determine and set your correct product level before sending any items or events.
+The product level
+can be changed
+, but requires rejoining the
+items and retuning the models.
+13. Can I delete products from the catalog when they are no longer available?
+If an item is no longer current, we recommend that you set its status to
+OUT_OF_STOCK
+rather than deleting it, so that previous user events that
+reference it are not invalidated.
+User events
+These are frequently asked questions about user events.
+1. What user events do I need to collect?
+See
+About user events
+for a list of user event types
+as well as user event requirements and best practices.
+2. How do I troubleshoot data quality issues in model creation?
+In the Search for commerce console, go to the
+Data Quality
+page for data
+quality metrics about your ingested catalog and user events.
+3. Can I integrate with Google Analytics 360?
+You can use historical data from Google Analytics 360 (GA360). Similar to
+Merchant Center data, GA360 data can be exported to
+BigQuery, and then Vertex AI Search for commerce can read the events
+directly from BigQuery.
+For real-time events, we recommend integrating tracking pixels with
+Google Tag Manager, because events are delayed from GA360.
+4. I want to import user events from Google Analytics 360. Does it provide all the user events needed?
+Google Analytics 360 natively supports all user events used by
+Vertex AI Search for commerce except for search events. You can still import search
+user events from Analytics 360, but note that
+Vertex AI Search for commerce constructs the search user event from search queries and,
+if present, product impressions.
+5. How do I feed events into Recommendations AI?
+Cloud Storage
+API inline import
+JavaScript Pixel
+Google Tag Manager
+API write method
+Users typically import historical events using Cloud Storage or API import,
+then stream real-time events using the JavaScript Pixel or Tag Manager
+tag on the live site, or using the write method on the backend.
+6. What if I can't send all of the user event types listed as required for a model? What are the minimum event types needed for each model?
+Each model and optimization objective has slightly different requirements. See
+the
+User event data requirements
+.
+Model performance is typically better when there are more events per catalog
+item. For sites with large amounts of traffic and smaller catalogs, you may be
+able to start with a smaller volume of historical events, but still typically
+need at least a few weeks of historical data as well as real-time events going
+forward.
+7. I have add-to-cart and purchase-complete events that don't have a value for revenue or quantity. What should I submit?
+If you don't have a value for quantity, you can pass a default value of 1
+without affecting model results. Items should always have displayPrice set (this
+can be whatever is shown to the user, such as a discount price). The
+originalPrice and cost are optional.
+8. My data only covered limited types of events. Can I still use Vertex AI Search for commerce?
+See
+User event data requirements
+for the minimum data requirements
+of each model type.
+Search results
+These are frequently asked questions about search results.
+1. Are search results personalized?
+Yes. Search can provide personalized results.
+Search results are personalized based on visitor IDs.
+For more information, see
+Personalization
+.
+2. How do I include context, like the store a user is shopping from, as part of the search request?
+Store ID-based availability and fulfilment options are attributes of the product
+catalog. Fulfilment options are attributes such as "delivered online", "buy
+online", and "pick up in store".
+Attributes can be sent as a parameter in the search request. So, for this
+example, the search request can specify the user's store ID. The results can be
+filtered or ranked higher based on the store ID in the request.
+3. Can I hide products from search results?
+Yes. The
+filter
+parameter can filter results out based on
+their tags.
+4. Is it possible to rank on multiple criteria, such as both availability and price?
+Yes, the
+boostSpec
+allows complex ranking rules.
+5. Is it possible to group some attributes in order to deliver results with multiple facets? For example, grouping cities in the same country for origin of production.
+Product attributes are not hierarchical. However, you could use multiple custom
+attributes to accomplish this. In this example, you could use custom attributes
+for both country of production and city of production.
+6. How do suggestions work?
+Suggestions are a combination of user queries, rewritten queries, product names
+etc. To generate high quality autocomplete suggestions, a sufficient
+number of search events should be ingested along with the catalog.
+Prediction results
+These are frequently asked questions about prediction results.
+1. Is there a limit to the number of predictions I can return?
+By default, a prediction request returns 20 items in the response. This can be
+increased or decreased by submitting a value for
+pageSize
+.
+If you need to return more than 100 items, contact Google Support to increase
+the limit. Note, however, that returning more than 100 items can increase
+response latency.
+2. Am I able to view the reasons why a model made a specific product recommendation?
+No.
+3. Can I download and cache prediction results?
+Since prediction results improve in real-time in response to user activity on
+your site, we don't recommend using cached predictions. The models retrain
+daily to incorporate changes to your catalog and react to new trends in user
+events, which also changes results.
+4. I need to re-rank the returned recommendations based on a business rule. Is this supported?
+Yes. But while you can re-rank the returned recommendations based on your
+business rules, be aware that re-ordering or filtering recommended results can
+reduce the overall effectiveness of the model at achieving the optimization goal
+that you chose.
+Price reranking orders relevant high-priced items first in the set of
+recommendations returned and is available as a built-in customization for the
+Others You May Like and Recommended for You models.
+See
+Price reranking
+.
+5. Are there restrictions on the number of filter tags that I can create and use?
+There are no hard limits on the number of unique tags that you can create or
+use. However, the system is not designed to handle many filter tags per item. We
+recommend keeping filter tags limited to a maximum of 10 per catalog item if
+possible. More than 10 values can be used across the entire catalog; this is a
+per-item limit. The limit for total tags (the total sum of all per-item tag
+counts) is 100,000,000.
+See the documentation for Vertex AI Search for commerce
+quotas and limits
+.
+6. Can I diversify recommendations?
+Yes.
+Recommendation diversification
+can be specified as part of the serving
+configuration or in the predict request
+parameters
+.With low
+diversification, predictions may contain similar items in the same category.
+With higher diversification, the results will contain items from other
+categories.
+7. Can I prioritize recommendations by price?
+Yes.
+Price reranking
+causes recommended products with a similar
+recommendation probability to be ordered by price, with the highest-priced items
+first. Relevance is still also used to order items, so enabling price reranking
+is not the same as sorting by price. Price reranking can be specified as part of
+the serving config or in the predict request parameters.
+Conversational features
+These are frequently asked questions about Vertex AI Search for commerce's conversational features, product filtering, and commerce.
+1. How is a conversational session maintained, and how do I refresh the context?
+A conversational session is maintained using the conversation ID returned in the Conversational Commerce agent response. You must pass this conversation ID in all subsequent requests within the same conversation. The system retains all context associated with this ID. To refresh or start a new conversation with a clean slate, initiate a new API request
+without
+a conversation ID, and a new conversation ID is issued in the response.
+2. How does the streaming API affect my implementation and user experience?
+The streaming nature means that you can immediately receive query types. This lets you differentiate between queries that have a conversational text response, which may have higher latency, and those that won't like
+SIMPLE_PRODUCT_SEARCH
+. For
+SIMPLE_PRODUCT_SEARCH
+, you can immediately trigger a call to the core Search API for quick product display. For LLM-driven responses, you can show loading indicators or fetch search results in parallel while the conversational text streams in, optimizing the perceived responsiveness for the user.
+3. Why is it important for
+searchParams
+in the
+ConversationalSearchRequest
+to mirror my core Search API calls?
+You want to maintain consistency in your
+searchParams
+, such as filters, sort order, boost rules between your
+ConversationalSearchRequest
+and your
+SearchService.Search
+calls. Maintaining consistency helps to ensure that any conversational answers or refined queries provided by the API are aligned with the actual product results being displayed to the user. This prevents discrepancies and provides a coherent shopping experience.
+4. If a basic product search is detected, does the conversation end? Can the user go back to other conversational modes?
+The conversation
+doesn't end
+. The conversation ID remains valid. However, from a UX perspective, retailers often transition the user to a standard search results page. If the user then submits a new query
+without
+the original conversation ID, such as typing directly into the standard search bar, a new conversation session starts. Retailers can, however, design their UX to keep the chat window persistent and allow users to continue the conversation (especially if
+conversationalFilteringSpec.mode
+is
+ENABLED
+to enable follow-up questions). The ability to "revert back" to a rich conversational mode depends on this specific UX implementation choice.
+5. What data does the Conversational API store for conversation context, and for how long?
+To maintain the flow of a conversation, the Conversational API stores the user query, the conversational text response, and the follow-up question that are linked to the conversation ID. This contextual information is retained for
+seven days
+to ensure that when you pass the conversation ID in subsequent requests, the system can retrieve and utilize this history.
+6. Why doesn't the Conversational API provide suggested answers for follow up questions, similarly to how conversational product filtering does?
+While providing suggested answers to follow up questions isn't supported, it is on our roadmap to provide this capability. Stay tuned!
+7. How does the Conversational API use caching for performance and context?
+The Conversational API caches the query types and refined search queries for a given customer and project for up to
+10 days
+. This means that if the same query is repeated, then the system can quickly retrieve the intent and suggested refinements.
+Models
+These are frequently asked questions about models.
+1. I've uploaded my catalog & events, but I'm still getting this response when I call the predict API:
+Recommendation model is not ready.
+You can set 'dryRun'
+to true in prediction request for integration purpose, which returns
+arbitrary catalog items from your Catalog (please DO NOT use this for production
+traffic)."**
+This usually means that your model has not finished training. If it has been
+more than 10 days since you created the model and you are continuing to get this
+response, please contact Support.
+2. How long does it take to train a model?
+Initial model training and tuning takes 2-5 days to complete, but can take
+longer for large datasets.
+ Subsequently, models are automatically
+retrained daily unless disabled. See
+Pause and resume training for a model
+.
+3. Can I download or export the model?
+No.
+4. Can I use models I created in an existing project in a new project?
+No. You need to
+create and retrain
+the models in the new
+project.
+5. I want to use a model for my category pages. Can I do that?
+Yes. Recommended for You is useful on category pages. 
+A category page is similar to a home page, except that you display only items from that category.
+You can achieve this using a standard Recommended for You model with filter tags.
+For example, you can add customized filter tags (corresponding to each category page) to the items
+in your catalog. When you send the prediction request, set the user event object as
+category-page-view
+and specify a specific category page's tag in the
+filter
+field. Only recommendation results matching the requested filter tag are
+returned. Diversity should be disabled in this use case, because diversity can conflict with
+category-based filter tags.
+6. Can I disable personalization for my models?
+By default, prediction results are personalized by user for the
+Others You May Like
+,
+Recommended for You
+, and
+Buy it Again
+recommendation model types.
+Disabling personalization isn't recommended because it can negatively impact
+model performance.
+If you need to show catalog items relevant to the product being viewed rather
+than based on the user's previous engagements with your site, it is possible to
+receive non-personalized recommendations by using a random unique visitor ID in
+a prediction request. Make sure you only do so for requests in serving
+configurations that you don't want to be personalized.
+Search for commerce console
+These are frequently asked questions about using the Search for commerce console.
+1. I purged a number of events, but the dashboard still shows the counts for those event types.
+This is expected. The Search for commerce dashboard shows the number of
+events ingested over a certain period of time; it doesn't show the current count
+or number of events.
+Generally, you should leave user events in place after they have been recorded.
+Purging events is not recommended. If you plan to reset user events entirely,
+consider creating a new project instead.
+If you do need to purge events that have not been recorded properly, see the
+documentation for
+Remove user events
+. An event purge can take
+up to several days to complete.
+2. How can I tell if there are errors with my catalog or user events?
+Most API calls for catalog item updates or user events return an error if there
+is a problem with syntax or the request can't be processed for some reason.
+The Search for commerce dashboard shows percentage of unjoined events, which
+is also a useful metric to use for spotting catalog or event issues. Unjoined
+events (or unjoined predict calls) happen when an item ID is specified that
+isn't in the catalog. This usually means the catalog is out of date and the new
+or changed catalog items need to be uploaded, but it can also be due to bad item
+IDs being passed. Check your requests to make sure the item IDs map correctly to
+the catalog, then check the catalog you uploaded to be sure the items exist.
+Cloud Monitoring
+and
+Cloud Logging
+can be used to
+monitor the status of events. For example, you can receive alerts if there are
+no events over a given period of time, or if predict calls drop below a certain
+threshold.
+3. Why do my recommendation serving configs show as inactive? How do I activate them?
+In order to use recommendation serving configs, you first need to submit
+catalog
+and
+user event data
+to train the corresponding
+model. Once a model has been trained, the dashboard indicates that the model
+is ready to query.
+4. In what currency does Search for commerce report revenue metrics?
+Search for commerce reports metrics in the currency used in
+your uploaded data. Vertex AI Search for commerce does not support using multiple
+currencies per catalog and does not convert currencies.
+If you plan to use the Search for commerce console to get your
+revenue metrics, make sure your events all use a single currency or convert
+them all to the same currency before uploading them to Vertex AI Search for commerce.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

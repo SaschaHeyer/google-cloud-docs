@@ -1,0 +1,531 @@
+Interactive tutorials  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Interactive tutorials
+This page lists a set of interactive tutorials for Vertex AI Search for commerce. These
+tutorials include actions that can be run in the Google Cloud Shell Editor.
+With this tool you can write, build, test, run, and debug cloud native
+applications directly from your browser.
+Overview
+Try different tutorials depending on what you'd like to learn:
+If you're starting a project, try the
+Import catalog information
+tutorials. Here, you learn how to import products into the catalog so you can
+try out, for example, different search functionalities. Next, see the
+Import historical user events
+tutorials. Vertex AI Search for commerce uses user events to generate initial
+recommendations and search results. Then try the
+Record real-time user events
+tutorials. Real-time user events provide high quality and
+relevant results.
+If you're interested in how search works in general, try the
+Search tutorials
+.
+If you want to learn how to configure search with serving configs and controls,
+try the following tutorials:
+Filtering
+Ordering
+Query expansion
+Pagination
+Boosting
+Redirect control
+If you need to update your catalog information, see the
+Manage catalog information
+tutorials.
+If you want to learn how to update inventory, see the
+Update inventory for search
+tutorials.
+If you want to learn how to record, view, or remove real-time user events, see
+the
+Record real-time user events
+tutorials.
+If you plan to use recommendations, see the tutorials for importing and managing catalogs and user events.
+Import catalog information
+These tutorials describe how to import your catalog information
+and keep it up to date.
+Import catalog data from BigQuery
+This tutorial shows you how to use a BigQuery table to import
+large amounts of catalog data with no limits.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Import catalog data from Cloud Storage
+This tutorial shows you how to import a large number of items to a catalog.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Import catalog data inline
+This tutorial shows how to import products into a catalog inline.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Manage catalog information
+These tutorials describe how to manage your product information after you have
+imported a catalog. You can read, write, and
+delete products in your catalog.
+Learn how to call the API with your language of choice.
+Create/Get/Update/Delete product tutorial
+This tutorial shows you how to use API
+methods, which perform the following actions:
+Create a product
+Get a product
+Update a product
+Delete a product
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Create product tutorial
+This tutorial shows you how to create a single product.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Get product tutorial
+This tutorial shows you how to retrieve a product item.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Update product tutorial
+This tutorial shows you how to update a product in a catalog.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Delete product tutorial
+This tutorial shows you how to delete a product from a catalog.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Import historical user events
+These tutorials describe how to import user event data from past events in bulk.
+Models require user event data for training.
+Import events from Cloud Storage tutorial
+This tutorial shows how to import user events from Cloud Storage.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Import events from BigQuery tutorial
+This tutorial shows how to import user events from BigQuery.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Import events inline tutorial
+This tutorial shows how to import user events data inline.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Record real-time user events
+These tutorials describe how to record, view or remove real-time user events.
+Vertex AI Search for commerce uses real-time user events to generate recommendations
+and search results. Recording as many types of user events as possible with
+valid product information increases the quality of your results.
+Write user events tutorial
+This tutorial shows how to record user events using the
+userEvents.write
+method.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Rejoin user events tutorial
+This tutorial shows how to rejoin user events by making a
+POST
+request to the
+userEvents:rejoin
+endpoint.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Remove user events tutorial
+This tutorial shows how to purge user events.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Search Tutorials
+The
+search()
+method is used to search over the catalog according to the search query and other parameters, such as filter, facet, or order_by.
+By default, the search response contains a reasonable number of results ordered by relevance.
+Querying tutorial
+This tutorial shows you how to send a simple search query and analyze the response.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Pagination tutorial
+This tutorial shows how to control pagination in the search request. When a shopper looks for products in a shop, they can improve their navigation through search results. For example, they can limit the number of items in the search response by using the page size feature or jump to their preferred page by using the offset feature.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Query expansion tutorial
+This tutorial shows you how to enable the query expansion feature. When a shopper uses an ambiguous or a multi-word search phrase, they can get an empty response. After turning on query expansion, the request is analyzed and what's returned is the expanded list of products based on the parsed search query.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Filtering tutorial
+This tutorial demonstrates the filtering feature. It lets you fine-tune search requests according to your or your customer's needs. You can filter by single or multiple fields, filter by text or numeric fields, or both. You can use an expression language to construct a predicate for each field or combine different expressions using logical operators. For example, a shopper looking for shoes can use filters to narrow their search to their preferred brand and color.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Ordering tutorial
+This tutorial shows how to order items in a search response. When a shopper looks for a product on your site, you can show results ordered by multiple fields. For example, a shopper is searching for a dress with the best price and discount. Price and discount are multiple fields here. The shopper is shown dresses ordered by price, and for the dresses with the same price, ordered by discount.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Boosting tutorial
+This tutorial shows some examples of product boosting in search results. With boosting, you can apply a boost to a product to prioritize or deprioritize it in the search results.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Redirect control tutorial
+This tutorial shows you how to use the redirect control. The redirect control lets you specify a URL to which you can redirect users when they use a specific search query. For example, if a user requests "sustainable manufacturing products", you can redirect them to a page containing the environmental brands that you are working with.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Update inventory for search
+While the
+Product
+create, read, update, and delete (CRUD) methods are used to
+broadly modify a
+Product
+'s attributes, there is a set of
+Product
+methods
+that can be used for updating inventory-specific fields with varying levels of
+granularity. The following
+Product
+fields are considered inventory fields:
+Product.price_info
+Product.availability
+Product.available_quantity
+Product.fulfillment_info
+Add fulfillment tutorial
+This tutorial shows how to update product fulfillment information using the
+AddFulfillmentPlaces
+method. In this way, search can show updates where products are available and orders can be fulfilled. For example, a shopper is looking for blue jeans in a shop but they're out of stock. The moment the jeans are in stock again at this shop or any other shop, the shopper sees the updates and can proceed with their order.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Remove fulfillment tutorial
+This tutorial shows how to update product fulfillment information using
+the
+RemoveFulfillmentPlaces
+method. In this way, search can show updates where products aren't available and orders can't be fulfilled. For example, a shopper is looking for blue jeans in a shop. If the jeans become out of stock in this shop, the shopper sees this and can't proceed with their order.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Set inventory tutorial
+This tutorial shows how to push inventory updates using the
+SetInventory
+method instead of updating the entire product.
+To follow step-by-step guidance for this task directly in the Cloud Shell Editor,
+  click
+Guide me
+:
+Guide me
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

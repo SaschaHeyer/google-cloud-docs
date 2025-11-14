@@ -1,0 +1,4934 @@
+Back up your data by using a snapshot  |  Vertex AI Workbench  |  Google Cloud Documentation
+Skip to main content
+Technology areas
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+/
+Console
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Sign in
+Vertex AI Workbench
+Start free
+Guides
+Reference
+Samples
+Support
+Resources
+Technology areas
+More
+Guides
+Reference
+Samples
+Support
+Resources
+Cross-product tools
+More
+Console
+Discover
+Overview
+Introduction to Vertex AI
+MLOps on Vertex AI
+Interfaces for Vertex AI
+Vertex AI beginner's guides
+Train an AutoML model
+Train a custom model
+Get inferences from a custom model
+Train a model using Vertex AI and the Python SDK
+Introduction
+Prerequisites
+Create a notebook
+Create a dataset
+Create a training script
+Train a model
+Make an inference
+Integrated ML frameworks
+PyTorch
+TensorFlow
+Vertex AI for BigQuery users
+Glossary
+Get started
+Set up a project and a development environment
+Install the Vertex AI SDK for Python
+Choose a training method
+Try a tutorial
+Tutorials overview
+AutoML tutorials
+Hello image data
+Overview
+Set up your project and environment
+Create a dataset and import images
+Train an AutoML image classification model
+Evaluate and analyze model performance
+Deploy a model to an endpoint and make an inference
+Clean up your project
+Hello tabular data
+Overview
+Set up your project and environment
+Create a dataset and train an AutoML classification model
+Deploy a model and request an inference
+Clean up your project
+Custom training tutorials
+Train a custom tabular model
+Train a TensorFlow Keras image classification model
+Overview
+Set up your project and environment
+Train a custom image classification model
+Serve predictions from a custom image classification model
+Clean up your project
+Fine-tune an image classification model with custom data
+Custom training notebook tutorials
+Use Generative AI and LLMs
+About Generative AI
+Use Vertex AI development tools
+Development tools overview
+Use the Vertex AI SDK
+Overview
+Introduction to the Vertex AI SDK for Python
+Vertex AI SDK for Python classes
+Vertex AI SDK classes overview
+Data classes
+Training classes
+Model classes
+Prediction classes
+Tracking classes
+Use Vertex AI in notebooks
+Choose a notebook solution
+Colab Enterprise
+Quickstart:Create a notebook by using the console
+Connect to a runtime
+Manage runtimes and runtime templates
+Create a runtime template
+Create a runtime
+Vertex AI Workbench
+Introduction
+Notebook tutorials
+Get started
+Create an instance by using the Console
+Schedule a notebook run
+Set up an instance
+Create an instance
+Create a specific version of an instance
+Create an instance with user credential access
+Create an instance with Confidential Computing
+Add a conda environment
+Idle shutdown
+Create an instance using a custom container
+Create a Dataproc-enabled instance
+Create an instance with third party credentials
+Manage features through metadata
+Use reservations
+Connect to data
+Query data in BigQuery from within JupyterLab
+Access Cloud Storage buckets and files in JupyterLab
+Explore and visualize data
+Explore and visualize data in BigQuery
+Maintain
+Manage your conda environment
+Back up and restore
+Save a notebook to GitHub
+Use a snapshot
+Use Cloud Storage
+Shut down an instance
+Upgrade the environment of an instance
+Access JupyterLab by using SSH
+Migrate data to a new instance
+Change machine type and configure GPUs
+Provision resources using Terraform
+Monitor
+Monitor health status
+Control access
+Access control
+Manage access to an instance
+Manage access to an instance's JupyterLab interface
+Use customer-managed encryption keys
+Use an instance within a service perimeter
+Troubleshoot Vertex AI Workbench
+Vertex AI Workbench release notes
+Managed notebooks
+Introduction to managed notebooks
+Get started
+Create a managed notebooks instance by using the Cloud console
+Schedule a managed notebooks run
+Set up a managed notebooks instance
+Create an instance with a custom container
+Run a managed notebooks instance on a Dataproc cluster
+Use Dataproc Serverless Spark with managed notebooks
+Idle shutdown
+Managed notebooks versions
+Connect to data
+Query data in BigQuery from within JupyterLab
+Access Cloud Storage buckets and files in JupyterLab
+Explore and visualize data
+Overview
+Explore and visualize data in BigQuery
+Develop a model
+Model development in a managed notebooks instance
+Deploy
+Run notebook files with the executor
+Run notebook executions with parameters
+Maintain
+Migrate to a Vertex AI Workbench instance
+Save a notebook to GitHub
+Change machine type and configure GPUs of a managed notebooks instance
+Upgrade the environment of a managed notebooks instance
+Migrate data to a new managed notebooks instance
+Monitor
+Audit logging
+Control access
+Access control
+Manage access to an instance
+Manage access to an instance's JupyterLab interface
+Use customer-managed encryption keys
+Set up a network
+Use a managed notebooks instance within a service perimeter
+Troubleshoot managed notebooks
+User-managed notebooks
+Introduction to user-managed notebooks
+Get started
+Create a user-managed notebooks instance by using the Cloud console
+Set up a user-managed notebooks instance
+Create a specific version of an instance
+Install dependencies
+Choose a virtual machine image
+Create an instance with a custom container
+Explore data
+Data science with R on Google Cloud: Exploratory data analysis tutorial
+Monitor
+Monitor health status
+Audit logging
+Control access
+Access control
+Manage access to an instance
+Manage access to an instance's JupyterLab interface
+Customer-managed encryption keys
+Use a user-managed notebooks instance within a service perimeter
+Use a shielded virtual machine with user-managed notebooks
+Tutorial: Create a notebooks instance in a VPC network
+Maintain
+Migrate to a Vertex AI Workbench instance
+Save a notebook to GitHub
+Back up your data by using a snapshot
+Shut down a user-managed notebooks instance
+Change machine type and configure GPUs of a user-managed notebooks instance
+Upgrade the environment of a user-managed notebooks instance
+Migrate data to a new user-managed notebooks instance
+Register a legacy instance with Notebooks API
+Access JupyterLab by using SSH
+Troubleshoot user-managed notebooks
+Terraform support for Vertex AI
+Managed Training on reserved clusters
+Managed Training overview
+Get started with Managed Training
+Predictive AI model development
+Overview
+AutoML model development
+AutoML training overview
+Image data
+Classification
+Prepare data
+Create dataset
+Train model
+Evaluate model
+Get predictions
+Interpret results
+Object detection
+Prepare data
+Create dataset
+Train model
+Evaluate model
+Get predictions
+Interpret results
+Encode image data using Base64
+Export an AutoML Edge model
+Tabular data
+Overview
+Introduction to tabular data
+Tabular Workflows
+Overview
+Feature engineering
+End-to-End AutoML
+Overview
+Train a model
+Get online inferences
+Get batch inferences
+TabNet
+Overview
+Train a model
+Get online inferences
+Get batch inferences
+Wide & Deep
+Overview
+Train a model
+Get online inferences
+Get batch inferences
+Forecasting
+Overview
+Train a model
+Get online inferences
+Get batch inferences
+Pricing
+Service accounts
+Manage quotas
+Perform classification and regression with AutoML
+Overview
+Quickstart: AutoML Classification (Cloud Console)
+Prepare training data
+Create a dataset
+Train a model
+Evaluate model
+View model architecture
+Get online inferences
+Get batch inferences
+Export model
+Perform forecasting with AutoML
+Overview
+Prepare training data
+Create a dataset
+Train a model
+Evaluate model
+Get inferences
+Hierarchical forecasting
+Perform forecasting with ARIMA+
+Perform forecasting with Prophet
+Perform entity reconciliation
+Feature attributions for classification and regression
+Feature attributions for forecasting
+Data types and transformations for tabular AutoML data
+Training parameters for forecasting
+Data splits for tabular data
+Best practices for creating tabular training data
+Forecast with Timeseries Insights
+Train an AutoML Edge model
+Using the Console
+Using the API
+AutoML Text
+Migrate from AutoML text to Gemini
+Gemini for AutoML text users
+Vertex AI Training
+Overview of custom training in Vertex AI
+Load and prepare data
+Data preparation overview
+Use Cloud Storage as a mounted file system
+Mount an NFS share for custom training
+Use managed datasets
+Prepare training application
+Understand the custom training service
+Prepare training code
+Use prebuilt containers
+Create a Python training application for a prebuilt container
+Prebuilt containers for custom training
+Use custom containers
+Custom containers for training
+Create a custom container
+Containerize and run training code locally
+Use Deep Learning VM Images and Containers
+Train on a persistent resource
+Overview
+Create persistent resource
+Run training jobs on a persistent resource
+Get persistent resource information
+Reboot a persistent resource
+Delete a persistent resource
+Configure training job
+Choose a custom training method
+Configure container settings for training
+Configure compute resources for training
+Use reservations with training
+Use Spot VMs with training
+Submit training job
+Create custom jobs
+Hyperparameter tuning
+Hyperparameter tuning overview
+Use hyperparameter tuning
+Create training pipelines
+Schedule jobs based on resource availability
+Use distributed training
+Training with Cloud TPU VMs
+Use private IP for custom training
+Use Private Service Connect interface for training (recommended)
+Perform Neural Architecture Search
+Overview
+Set up environment
+Beginner tutorials
+Best practices and workflow
+Proxy task design
+Optimize training speed for PyTorch
+Use prebuilt training containers and search spaces
+Monitor and debug
+Monitor and debug training using an interactive shell
+Profile model training performance
+Optimize using Vertex AI Vizier
+Overview of Vertex AI Vizier
+Create Vertex AI Vizier studies
+Vertex AI Vizier notebook tutorials
+Get inferences
+Tutorial: Build a pipeline for continuous training
+Create custom organization policy constraints
+Ray on Vertex AI
+Ray on Vertex AI overview
+Set up for Ray on Vertex AI
+Create a Ray cluster on Vertex AI
+Monitor Ray clusters on Vertex AI
+Scale a Ray cluster on Vertex AI
+Develop a Ray application on Vertex AI
+Run Spark on Ray cluster on Vertex AI
+Use Ray on Vertex AI with BigQuery
+Deploy a model and get inferences
+Delete a Ray cluster
+Ray on Vertex AI notebook tutorials
+Generative AI model development
+Overview
+Create and manage datasets
+Overview
+Data splits for AutoML models
+Create an annotation set
+Delete an annotation set
+Add labels (console)
+Export metadata and annotations from a dataset
+Manage dataset versions
+Use Data Catalog to search for model and dataset resources
+Get inferences
+Overview
+Configure models for inference
+Export model artifacts for inference
+Prebuilt containers for inference
+Custom container requirements for inference
+Use a custom container for inference
+Use arbitrary custom routes
+Use the optimized TensorFlow runtime
+Serve inferences with NVIDIA Triton
+Custom inference routines
+Get online inferences
+Create an endpoint
+Choose an endpoint type
+Create a public endpoint
+Use dedicated public endpoints (recommended)
+Use dedicated private endpoints based on Private Service Connect (recommended)
+Use private services access endpoints
+Deploy a model to an endpoint
+Overview of model deployment
+Compute resources for inference
+Deploy a model by using the Google Cloud console
+Deploy a model by using the gcloud CLI or Vertex AI API
+Use autoscaling for inference
+Use a rolling deployment to replace a deployed model
+Undeploy a model and delete the endpoint
+Use Cloud TPUs for online inference
+Use reservations with online inference
+Use Flex-start VMs with inference
+Use Spot VMs with inference
+Get an online inference
+View online inference metrics
+View endpoint metrics
+View DCGM metrics
+Share resources across deployments
+Use online inference logging
+Get batch inferences
+Get batch inferences from a custom model
+Use reservations with batch inference
+Get batch prediction from a self-deployed Model Garden model
+Serve generative AI models
+Deploy generative AI models
+Serve Gemma open models using Cloud TPUs with Saxml
+Serve Llama 3 open models using multi-host Cloud TPUs with Saxml
+Serve a DeepSeek-V3 model using multi-host GPU deployment
+Custom organization policies
+Vertex AI inference notebook tutorials
+Perform vector similarity searches
+Vector Search overview
+Try it
+Get started
+Vector Search quickstart
+Before you begin
+Notebook tutorials
+About hybrid search
+Create and manage index
+Input data format and structure
+Create and manage your index
+Storage-optimized indexes
+Index configuration parameters
+Update and rebuild index
+Filter vector matches
+Import index data from BigQuery
+Embeddings with metadata
+Deploy and query an index
+Private Service Connect (recommended)
+Set up Vector Search with Private Service Connect
+Query
+JSON Web Token authentication
+Public endpoint
+Deploy
+Query
+Private services access
+Set up a VPC network peering connection
+Deploy
+Query
+JSON Web Token authentication
+Monitor a deployed index
+Use custom organization policies
+Get support
+Machine learning operations (MLOps)
+Manage features
+Feature management in Vertex AI
+Vertex AI Feature Store
+About Vertex AI Feature Store
+Set up features
+Prepare data source
+Create a feature group
+Create a feature
+Set up online serving
+Online serving types
+Create an online store instance
+Create a feature view instance
+Control access
+Control access to resources
+Sync online store
+Start a data sync
+List sync operations
+Update features in a feature view
+Serve features
+Serve features from online store
+Serve historical feature values
+Monitor
+Monitor features
+Manage feature resources
+List feature groups
+List features
+Update a feature group
+Update a feature
+Delete a feature group
+Delete a feature
+Manage online store resources
+List online stores
+List feature views
+Update an online store
+Update a feature view
+Delete an online store
+Delete a feature view
+Feature metadata
+Update labels
+Search for resources
+Search for resources
+Search for resource metadata in Data Catalog
+Manage embeddings
+Search using embeddings
+Notebook tutorials
+Vertex AI Feature Store tutorial notebooks
+Vertex AI Feature Store (Legacy)
+About Vertex AI Feature Store (Legacy)
+Data model and resources
+Source data requirements
+Setup
+Best practices
+Use Vertex AI Feature Store (Legacy)
+Manage featurestores
+Manage entity types
+Manage and find features
+Batch import
+Streaming import
+Online serving
+Fetch training data
+Export feature values
+Delete feature values
+Monitoring
+Control access to resources
+Manage models
+Introduction to Vertex AI Model Registry
+Versioning in Model Registry
+Import models to Model Registry
+Copy models in Model Registry
+Delete a model
+Integrate with BigQuery ML
+Use model aliases
+Use model labels
+Use Data Catalog to search for model and dataset resources
+Evaluate models
+Model evaluation in Vertex AI
+Perform model evaluation in Vertex AI
+Model evaluation for fairness
+Introduction to model evaluation for fairness
+Data bias metrics for Vertex AI
+Model bias metrics for Vertex AI
+Model evaluation notebook tutorials
+Orchestrate ML workflows using pipelines
+Introduction
+Interfaces
+Configure your project
+Build a pipeline
+Run a pipeline
+Use pipeline templates
+Create, upload, and use a pipeline template
+Use a prebuilt template from the Template Gallery
+Configure your pipeline
+Configure execution caching
+Configure failure policy
+Configure retries for a pipeline task
+Specify machine types for a pipeline step
+Request Google Cloud machine resources with Vertex AI Pipelines
+Configure Private Service Connect interface (recommended)
+Configure secrets with Secret Manager
+Configure a pipeline run on a persistent resource
+Schedule and trigger pipeline runs
+Schedule a pipeline run with scheduler API
+Trigger a pipeline run with Pub/Sub
+Cancel or delete pipeline runs
+Cancel pipeline runs
+Delete pipeline runs
+Rerun a pipeline
+Monitor pipeline execution
+View pipeline metrics
+View pipeline job logs
+Route logs to a Cloud Pub/Sub sink
+Configure email notifications
+Visualize results
+Visualize and analyze pipeline results
+Track the lineage of pipeline artifacts
+Output HTML and Markdown
+Resource labeling by Vertex AI Pipelines
+Understand pipeline run costs
+Migrate from Kubeflow Pipelines to Vertex AI Pipelines
+Use custom constraints
+Google Cloud Pipeline Components
+Quickstart
+Introduction to Google Cloud Pipeline Components
+Google Cloud Pipeline Component list
+Use Google Cloud Pipeline Components
+Build your own pipeline components
+Vertex AI Pipelines tutorials
+Tutorial notebooks
+Track and analyze your ML metadata
+Introduction to Vertex ML Metadata
+Data model and resources
+Configure your project's metadata store
+Use Vertex ML Metadata
+Track Vertex ML Metadata
+Analyze Vertex ML Metadata
+Manage Vertex ML Metadata
+System schemas
+Create and use custom schemas
+Use custom constraints with metadata stores
+Vertex ML Metadata notebook tutorials
+Understand model behavior
+Introduction to Explainable AI
+Configure example-based explanations for custom training
+Configure feature-based explanations for custom training
+Configure explanations
+Configure visualization settings
+Improve explanations
+Configure feature-based explanations for AutoML image classification
+Configure visualization settings
+Improve explanations
+Use TensorFlow for explanations
+Get explanations
+Limitations of Explainable AI
+Explainable AI notebook tutorials
+Monitor model quality
+Introduction to Model Monitoring
+Model Monitoring v2
+Set up model monitoring
+Run monitoring jobs
+Manage model monitors
+Model Monitoring v1
+Provide schemas to Model Monitoring
+Monitor feature skew and drift
+Monitor feature attribution skew and drift
+Model Monitoring for batch predictions
+Track Experiments
+Introduction to Vertex AI Experiments
+Set up for Vertex AI Experiments
+Create an experiment
+Create and manage experiment runs
+Log data
+Autolog data to an experiment run
+Manually log data to an experiment run
+Log models to an experiment run
+Track executions and artifacts
+Add pipeline run to experiment
+Run training job with experiment tracking
+Compare and analyze runs
+Use Vertex AI TensorBoard
+Introduction to Vertex AI TensorBoard
+Set up Vertex AI TensorBoard
+Configure training script
+Use Vertex AI TensorBoard with custom training
+Use Vertex AI TensorBoard with Vertex AI Pipelines
+Manually log TensorBoard data
+Upload existing logs
+View Vertex AI TensorBoard
+Notebook tutorials
+Get started with Vertex AI Experiments
+Compare pipeline runs
+Model training
+Compare models
+Autologging
+Custom training autologging
+Track parameters and metrics for custom training
+Delete outdated Vertex AI TensorBoard experiments
+Vertex AI TensorBoard custom training with custom container
+Vertex AI TensorBoard custom training with prebuilt container
+Vertex AI TensorBoard hyperparameter tuning with HParams dashboard
+Profile model training performance using Cloud Profiler
+Profile model training performance using Cloud Profiler in custom training with prebuilt container
+Vertex AI TensorBoard integration with Vertex AI Pipelines
+Administer
+Access control
+Access control with IAM
+IAM permissions
+Set up a project for a team
+Control access to Vertex AI endpoints
+Use a custom service account
+Use customer-managed encryption keys
+Access Transparency
+Monitor Vertex AI resources
+Cloud Monitoring metrics
+Audit logging information
+Networking
+Networking access overview
+Accessing the Vertex AI API
+Accessing Vertex AI services through private services access
+Accessing Vertex AI services through PSC endpoints
+Accessing Vertex AI services through PSC interfaces
+Set up VPC Network Peering
+Set up connectivity to other networks
+Set up a Private Service Connect interface
+Tutorial: Access training pipelines privately from on-premises
+Tutorial: Access a Vector Search index privately from on-premises
+Tutorial: Access the Generative AI API from on-premises
+Tutorial: Access batch predictions privately from on-premises
+Tutorial: Create a Vertex AI Workbench instance in a VPC network
+Security
+VPC Service Controls
+Allow public endpoint access to protected resources from outside a perimeter
+Allow multicloud access to protected resources from outside a perimeter
+Allow access to protected resources from inside a perimeter
+Name resources
+Samples and tutorials
+Notebook tutorials
+Code samples
+All Vertex AI code samples
+Code samples for all products
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Home
+Documentation
+AI and ML
+Vertex AI Workbench
+Guides
+Send feedback
+Stay organized with collections
+Save and categorize content based on your preferences.
+Back up your data by using a snapshot
+Vertex AI Workbench user-managed notebooks is
+deprecated
+. On
+    April 14, 2025, support for
+    user-managed notebooks ended and the ability to create user-managed notebooks instances
+    was removed. Existing instances will continue to function until
+    March 30, 2026, but patches, updates, and upgrades
+    won't be available. To continue using Vertex AI Workbench, we recommend that you
+migrate
+    your user-managed notebooks instances to Vertex AI Workbench instances
+.
+This page shows you how to back up data stored on your
+Vertex AI Workbench user-managed notebooks instance
+by creating a snapshot.
+The data on your instance is stored on
+a zonal
+persistent disk
+.
+You can create and use snapshots of this disk to back up your data,
+create a recurring backup schedule, and restore data to a new instance.
+Create a snapshot
+You can create snapshots from disks even while they are attached to running
+instances. Snapshots are
+global resources
+,
+so you can use them to
+restore data
+to
+a new disk or instance within the same project. You can also
+share snapshots
+across projects.
+Permissions required for this task
+To perform this task, you must have the following
+permissions
+:
+compute.snapshots.create
+on the project
+compute.disks.createSnapshot
+on the disk
+Note:
+Your Jupyter notebook files are stored on a disk
+      named
+INSTANCE_NAME
+-data
+.
+Console
+In the Google Cloud console, go to the
+VM instances
+page.
+Go to VM instances
+school
+The remaining steps will appear automatically in
+      the Google Cloud console.
+Select the project that contains your VM instances.
+In the
+Name
+column, click the name of the VM that has the disk to back up.
+In
+Storage
+:
+To back up the boot disk, in the
+Boot disk
+section, click the
+Name
+of the
+        boot disk.
+To back up an attached data disk, in
+Additional disks
+, click the
+Name
+of the disk.
+Click
+Create snapshot
+.
+In
+Name
+, enter a unique name to help identify the purpose of the snapshot, for example:
+boot-disk-snapshot
+attached-data-disk-snapshot
+In
+Type
+, the default is a standard snapshot. Standard snapshots are
+    best for long-term back up and disaster recovery.
+Choose
+Archive snapshot
+to create a more cost-efficient backup than standard
+      snapshots, but with a longer data recovery time.
+For more information, see
+Snapshot type comparison
+.
+In the
+Location
+section,
+choose your snapshot
+        storage location
+.
+        The predefined or customized default location defined in your snapshot settings is
+        automatically selected. Optionally, you can override the snapshot settings and store your
+        snapshots in a custom storage location by doing the following:
+Choose the type of storage location that you want for your snapshot.
+Choose
+Multi-regional
+for higher availability at a higher cost.
+Choose
+Regional snapshots
+for more control over the physical location of your data at a lower cost.
+In the
+Select location
+field, select the specific region or multi-region that
+            you want to use. To use the region or multi-region that is closest to your
+            source disk, choose a location from the section titled
+Based on disk's location
+.
+To create a snapshot, click
+Create
+.
+gcloud
+In the Google Cloud console, activate Cloud Shell.
+Activate Cloud Shell
+At the bottom of the Google Cloud console, a
+Cloud Shell
+session starts and displays a command-line prompt. Cloud Shell is a shell environment
+      with the Google Cloud CLI
+      already installed and with values already set for
+      your current project. It can take a few seconds for the session to initialize.
+Create your snapshot using the storage location policy defined by your
+snapshot settings
+or using an alternative storage location of your choice. For more
+information, see
+Choose your snapshot storage location
+.
+You must specify a snapshot name. The name must be 1-63
+characters long, and comply with
+RFC 1035
+.
+To create a snapshot of a Persistent Disk volume in the predefined or
+customized default location configured in your snapshot settings, use
+the
+gcloud compute snapshots create
+command
+.
+gcloud compute snapshots create
+SNAPSHOT_NAME
+\
+    --source-disk
+SOURCE_DISK
+\
+    --snapshot-type
+SNAPSHOT_TYPE
+\
+    --source-disk-zone
+SOURCE_DISK_ZONE
+Alternatively, to override the snapshot settings and create a snapshot
+in a custom storage location, include the
+--storage-location
+flag to
+indicate where to store your snapshot:
+gcloud compute snapshots create
+SNAPSHOT_NAME
+\
+  --source-disk
+SOURCE_DISK
+\
+  --source-disk-zone
+SOURCE_DISK_ZONE
+\
+  --storage-location
+STORAGE_LOCATION
+\
+  --snapshot-type
+SNAPSHOT_TYPE
+Replace the following:
+SNAPSHOT_NAME
+: A name for the snapshot.
+SOURCE_DISK
+: The name of the zonal Persistent Disk volume from which you want to
+    create a snapshot.
+SNAPSHOT_TYPE
+: The snapshot type, either
+STANDARD
+or
+ARCHIVE
+. If a snapshot type is not specified, a
+STANDARD
+snapshot is created. Choose Archive for more cost-efficient data retention.
+SOURCE_DISK_ZONE
+: The zone of the zonal Persistent Disk volume from which you want
+    to create a snapshot.
+STORAGE_LOCATION
+: For custom storage locations,
+this is the
+Cloud Storage multi-region
+or the
+Cloud Storage region
+where you want to store your snapshot. You can specify only one
+storage location.
+Use the
+--storage-location
+flag only when you want to override the
+predefined or customized default storage location configured in your
+snapshot settings.
+The gcloud CLI waits until the operation returns a status of
+READY
+or
+FAILED
+, or reaches the maximum timeout and returns the last
+known details of the snapshot.
+Note:
+Google recommends using the
+gcloud compute snapshots create
+command
+instead of the
+gcloud compute disks snapshot
+command
+because it supports more features, such as creating snapshots in a
+project different from the source disk project.
+Terraform
+To create a snapshot of the zonal persistent disk, use the
+google_compute_snapshot
+resource.
+resource "google_compute_snapshot" "snapdisk" {
+  name        = "snapshot-name"
+  source_disk = google_compute_disk.default.name
+  zone        = "us-central1-a"
+}
+To learn how to apply or remove a Terraform configuration, see
+Basic Terraform commands
+.
+API
+Create your snapshot in the storage location policy defined by your
+snapshot settings
+or using an alternative storage location of your choice. For more
+information, see
+Choose your snapshot storage location
+.
+To create your snapshot in the predefined or customized default location
+configured in your snapshot settings, make a
+POST
+request to the
+snapshots.insert
+method
+:
+POST https://compute.googleapis.com/compute/v1/projects/
+DESTINATION_PROJECT_ID
+/global/snapshots
+
+{
+  "name":
+SNAPSHOT_NAME
+"sourceDisk": "projects/
+SOURCE_PROJECT_ID
+/zones/
+SOURCE_ZONE
+/disks/
+SOURCE_DISK_NAME
+"snapshotType":
+SNAPSHOT_TYPE
+}
+Replace the following:
+DESTINATION_PROJECT_ID
+: The ID of project in which you want
+to create the snapshot.
+SNAPSHOT_NAME
+: A name for the snapshot.
+SOURCE_PROJECT_ID
+: The ID of the source disk project.
+SOURCE_ZONE
+: The zone of the source disk.
+SOURCE_DISK_NAME
+: The name of the persistent disk from
+which you want to create a snapshot.
+SNAPSHOT_TYPE
+: The snapshot type, either
+STANDARD
+or
+ARCHIVE
+. If a snapshot type is not specified, a
+STANDARD
+snapshot is created.
+Alternatively, to override the snapshot settings and create a snapshot in
+a custom storage location, make a
+POST
+request to the
+snapshots.insert
+method
+and include the
+storageLocations
+property in your request:
+POST https://compute.googleapis.com/compute/v1/projects/
+DESTINATION_PROJECT_ID
+/global/snapshots
+
+{
+  "name":
+SNAPSHOT_NAME
+"sourceDisk": "projects/
+SOURCE_PROJECT_ID
+/zones/
+SOURCE_ZONE
+/disks/
+SOURCE_DISK_NAME
+"snapshotType":
+SNAPSHOT_TYPE
+"storageLocations":
+STORAGE_LOCATION
+}
+Replace the following:
+DESTINATION_PROJECT_ID
+: The ID of project in which you want
+to create the snapshot.
+SNAPSHOT_NAME
+: A name for the snapshot.
+SOURCE_PROJECT_ID
+: The ID of the source disk project.
+SOURCE_ZONE
+: The zone of the source disk.
+SOURCE_DISK_NAME
+: The name of the persistent disk from
+which you want to create a snapshot.
+SNAPSHOT_TYPE
+: The snapshot type, either
+STANDARD
+or
+ARCHIVE
+. If a snapshot type is not specified, a
+STANDARD
+snapshot is created.
+STORAGE_LOCATION
+: The
+Cloud Storage multi-region
+or the
+Cloud Storage region
+where you want to store your snapshot. You can specify only one
+storage location.
+Use the
+storageLocations
+parameter only when you want to override
+the predefined or customized default storage location configured in
+your snapshot settings.
+Note:
+Google recommends using the
+snapshots.insert
+method
+instead of the
+disks.createSnapshot
+method
+because it supports more features, such as creating snapshots in a
+project different from the source disk project.
+Go
+Go
+Before trying this sample, follow the setup instructions in the
+Compute Engine quickstart using client libraries
+.
+To authenticate to Compute Engine, set up Application Default Credentials. For
+more information, see
+Set up authentication for a local development environment
+.
+import
+(
+"context"
+"fmt"
+"io"
+compute
+"cloud.google.com/go/compute/apiv1"
+computepb
+"cloud.google.com/go/compute/apiv1/computepb"
+"google.golang.org/protobuf/proto"
+)
+// createSnapshot creates a snapshot of a disk.
+func
+createSnapshot
+(
+w
+io
+.
+Writer
+,
+projectID
+,
+diskName
+,
+snapshotName
+,
+zone
+,
+region
+,
+location
+,
+diskProjectID
+string
+,
+)
+error
+{
+// projectID := "your_project_id"
+// diskName := "your_disk_name"
+// snapshotName := "your_snapshot_name"
+// zone := "europe-central2-b"
+// region := "eupore-central2"
+// location = "eupore-central2"
+// diskProjectID = "YOUR_DISK_PROJECT_ID"
+ctx
+:=
+context
+.
+Background
+()
+snapshotsClient
+,
+err
+:=
+compute
+.
+NewSnapshotsRESTClient
+(
+ctx
+)
+if
+err
+!=
+nil
+{
+return
+fmt
+.
+Errorf
+(
+"NewSnapshotsRESTClient: %w"
+,
+err
+)
+}
+defer
+snapshotsClient
+.
+Close
+()
+if
+zone
+==
+""
+&&
+region
+==
+""
+{
+return
+fmt
+.
+Errorf
+(
+"you need to specify `zone` or `region` for this function to work"
+)
+}
+if
+zone
+!=
+""
+&&
+region
+!=
+""
+{
+return
+fmt
+.
+Errorf
+(
+"you can't set both `zone` and `region` parameters"
+)
+}
+if
+diskProjectID
+==
+""
+{
+diskProjectID
+=
+projectID
+}
+disk
+:=
+&
+computepb
+.
+Disk
+{}
+locations
+:=
+[]
+string
+{}
+if
+location
+!=
+""
+{
+locations
+=
+append
+(
+locations
+,
+location
+)
+}
+if
+zone
+!=
+""
+{
+disksClient
+,
+err
+:=
+compute
+.
+NewDisksRESTClient
+(
+ctx
+)
+if
+err
+!=
+nil
+{
+return
+fmt
+.
+Errorf
+(
+"NewDisksRESTClient: %w"
+,
+err
+)
+}
+defer
+disksClient
+.
+Close
+()
+getDiskReq
+:=
+&
+computepb
+.
+GetDiskRequest
+{
+Project
+:
+projectID
+,
+Zone
+:
+zone
+,
+Disk
+:
+diskName
+,
+}
+disk
+,
+err
+=
+disksClient
+.
+Get
+(
+ctx
+,
+getDiskReq
+)
+if
+err
+!=
+nil
+{
+return
+fmt
+.
+Errorf
+(
+"unable to get disk: %w"
+,
+err
+)
+}
+}
+else
+{
+regionDisksClient
+,
+err
+:=
+compute
+.
+NewRegionDisksRESTClient
+(
+ctx
+)
+if
+err
+!=
+nil
+{
+return
+fmt
+.
+Errorf
+(
+"NewRegionDisksRESTClient: %w"
+,
+err
+)
+}
+defer
+regionDisksClient
+.
+Close
+()
+getDiskReq
+:=
+&
+computepb
+.
+GetRegionDiskRequest
+{
+Project
+:
+projectID
+,
+Region
+:
+region
+,
+Disk
+:
+diskName
+,
+}
+disk
+,
+err
+=
+regionDisksClient
+.
+Get
+(
+ctx
+,
+getDiskReq
+)
+if
+err
+!=
+nil
+{
+return
+fmt
+.
+Errorf
+(
+"unable to get disk: %w"
+,
+err
+)
+}
+}
+req
+:=
+&
+computepb
+.
+InsertSnapshotRequest
+{
+Project
+:
+projectID
+,
+SnapshotResource
+:
+&
+computepb
+.
+Snapshot
+{
+Name
+:
+proto
+.
+String
+(
+snapshotName
+),
+SourceDisk
+:
+proto
+.
+String
+(
+disk
+.
+GetSelfLink
+()),
+StorageLocations
+:
+locations
+,
+},
+}
+op
+,
+err
+:=
+snapshotsClient
+.
+Insert
+(
+ctx
+,
+req
+)
+if
+err
+!=
+nil
+{
+return
+fmt
+.
+Errorf
+(
+"unable to create snapshot: %w"
+,
+err
+)
+}
+if
+err
+=
+op
+.
+Wait
+(
+ctx
+);
+err
+!=
+nil
+{
+return
+fmt
+.
+Errorf
+(
+"unable to wait for the operation: %w"
+,
+err
+)
+}
+fmt
+.
+Fprintf
+(
+w
+,
+"Snapshot created\n"
+)
+return
+nil
+}
+Java
+Java
+Before trying this sample, follow the setup instructions in the
+Compute Engine quickstart using client libraries
+.
+To authenticate to Compute Engine, set up Application Default Credentials. For
+more information, see
+Set up authentication for a local development environment
+.
+import
+com.google.cloud.compute.v1.
+Disk
+;
+import
+com.google.cloud.compute.v1.
+DisksClient
+;
+import
+com.google.cloud.compute.v1.
+Operation
+;
+import
+com.google.cloud.compute.v1.
+RegionDisksClient
+;
+import
+com.google.cloud.compute.v1.
+Snapshot
+;
+import
+com.google.cloud.compute.v1.
+SnapshotsClient
+;
+import
+java.io.IOException
+;
+import
+java.util.concurrent.ExecutionException
+;
+import
+java.util.concurrent.TimeUnit
+;
+import
+java.util.concurrent.TimeoutException
+;
+public
+class
+CreateSnapshot
+{
+public
+static
+void
+main
+(
+String
+[]
+args
+)
+throws
+IOException
+,
+ExecutionException
+,
+InterruptedException
+,
+TimeoutException
+{
+// TODO(developer): Replace these variables before running the sample.
+// You need to pass `zone` or `region` parameter relevant to the disk you want to
+// snapshot, but not both. Pass `zone` parameter for zonal disks and `region` for
+// regional disks.
+// Project ID or project number of the Cloud project you want to use.
+String
+projectId
+=
+"YOUR_PROJECT_ID"
+;
+// Name of the disk you want to create.
+String
+diskName
+=
+"YOUR_DISK_NAME"
+;
+// Name of the snapshot that you want to create.
+String
+snapshotName
+=
+"YOUR_SNAPSHOT_NAME"
+;
+// The zone of the source disk from which you create the snapshot (for zonal disks).
+String
+zone
+=
+"europe-central2-b"
+;
+// The region of the source disk from which you create the snapshot (for regional disks).
+String
+region
+=
+"your-disk-region"
+;
+// The Cloud Storage multi-region or the Cloud Storage region where you
+// want to store your snapshot.
+// You can specify only one storage location. Available locations:
+// https://cloud.google.com/storage/docs/locations#available-locations
+String
+location
+=
+"europe-central2"
+;
+// Project ID or project number of the Cloud project that
+// hosts the disk you want to snapshot. If not provided, the value will be defaulted
+// to 'projectId' value.
+String
+diskProjectId
+=
+"YOUR_DISK_PROJECT_ID"
+;
+createSnapshot
+(
+projectId
+,
+diskName
+,
+snapshotName
+,
+zone
+,
+region
+,
+location
+,
+diskProjectId
+);
+}
+// Creates a snapshot of a disk.
+public
+static
+void
+createSnapshot
+(
+String
+projectId
+,
+String
+diskName
+,
+String
+snapshotName
+,
+String
+zone
+,
+String
+region
+,
+String
+location
+,
+String
+diskProjectId
+)
+throws
+IOException
+,
+ExecutionException
+,
+InterruptedException
+,
+TimeoutException
+{
+// Initialize client that will be used to send requests. This client only needs to be created
+// once, and can be reused for multiple requests. After completing all of your requests, call
+// the `snapshotsClient.close()` method on the client to safely
+// clean up any remaining background resources.
+try
+(
+SnapshotsClient
+snapshotsClient
+=
+SnapshotsClient
+.
+create
+())
+{
+if
+(
+zone
+.
+isEmpty
+()
+&&
+region
+.
+isEmpty
+())
+{
+throw
+new
+Error
+(
+"You need to specify 'zone' or 'region' for this function to work"
+);
+}
+if
+(
+!
+zone
+.
+isEmpty
+()
+&&
+!
+region
+.
+isEmpty
+())
+{
+throw
+new
+Error
+(
+"You can't set both 'zone' and 'region' parameters"
+);
+}
+// If Disk's project id is not specified, then the projectId parameter will be used.
+if
+(
+diskProjectId
+.
+isEmpty
+())
+{
+diskProjectId
+=
+projectId
+;
+}
+// If zone is not empty, use the DisksClient to create a disk.
+// Else, use the RegionDisksClient.
+Disk
+disk
+;
+if
+(
+!
+zone
+.
+isEmpty
+())
+{
+DisksClient
+disksClient
+=
+DisksClient
+.
+create
+();
+disk
+=
+disksClient
+.
+get
+(
+projectId
+,
+zone
+,
+diskName
+);
+}
+else
+{
+RegionDisksClient
+regionDisksClient
+=
+RegionDisksClient
+.
+create
+();
+disk
+=
+regionDisksClient
+.
+get
+(
+diskProjectId
+,
+region
+,
+diskName
+);
+}
+// Set the snapshot properties.
+Snapshot
+snapshotResource
+;
+if
+(
+!
+location
+.
+isEmpty
+())
+{
+snapshotResource
+=
+Snapshot
+.
+newBuilder
+()
+.
+setName
+(
+snapshotName
+)
+.
+setSourceDisk
+(
+disk
+.
+getSelfLink
+())
+.
+addStorageLocations
+(
+location
+)
+.
+build
+();
+}
+else
+{
+snapshotResource
+=
+Snapshot
+.
+newBuilder
+()
+.
+setName
+(
+snapshotName
+)
+.
+setSourceDisk
+(
+disk
+.
+getSelfLink
+())
+.
+build
+();
+}
+// Wait for the operation to complete.
+Operation
+operation
+=
+snapshotsClient
+.
+insertAsync
+(
+projectId
+,
+snapshotResource
+)
+.
+get
+(
+3
+,
+TimeUnit
+.
+MINUTES
+);
+if
+(
+operation
+.
+hasError
+())
+{
+System
+.
+out
+.
+println
+(
+"Snapshot creation failed!"
++
+operation
+);
+return
+;
+}
+// Retrieve the created snapshot.
+Snapshot
+snapshot
+=
+snapshotsClient
+.
+get
+(
+projectId
+,
+snapshotName
+);
+System
+.
+out
+.
+printf
+(
+"Snapshot created: %s"
+,
+snapshot
+.
+getName
+());
+}
+}
+}
+Node.js
+Node.js
+Before trying this sample, follow the setup instructions in the
+Compute Engine quickstart using client libraries
+.
+To authenticate to Compute Engine, set up Application Default Credentials. For
+more information, see
+Set up authentication for a local development environment
+.
+/**
+* TODO(developer): Uncomment and replace these variables before running the sample.
+*/
+// const projectId = 'YOUR_PROJECT_ID';
+// const diskName = 'YOUR_DISK_NAME';
+// const snapshotName = 'YOUR_SNAPSHOT_NAME';
+// const zone = 'europe-central2-b';
+// const region = '';
+// const location = 'europe-central2';
+// let diskProjectId = 'YOUR_DISK_PROJECT_ID';
+const
+compute
+=
+require
+(
+'
+@google-cloud/compute
+'
+);
+async
+function
+createSnapshot
+()
+{
+const
+snapshotsClient
+=
+new
+compute
+.
+SnapshotsClient
+();
+let
+disk
+;
+if
+(
+!
+zone
+&&
+!
+region
+)
+{
+throw
+new
+Error
+(
+'You need to specify `zone` or `region` for this function to work.'
+);
+}
+if
+(
+zone
+&&
+region
+)
+{
+throw
+new
+Error
+(
+"You can't set both `zone` and `region` parameters"
+);
+}
+if
+(
+!
+diskProjectId
+)
+{
+diskProjectId
+=
+projectId
+;
+}
+if
+(
+zone
+)
+{
+const
+disksClient
+=
+new
+compute
+.
+DisksClient
+();
+[
+disk
+]
+=
+await
+disksClient
+.
+get
+({
+project
+:
+diskProjectId
+,
+zone
+,
+disk
+:
+diskName
+,
+});
+}
+else
+{
+const
+regionDisksClient
+=
+new
+compute
+.
+RegionDisksClient
+();
+[
+disk
+]
+=
+await
+regionDisksClient
+.
+get
+({
+project
+:
+diskProjectId
+,
+region
+,
+disk
+:
+diskName
+,
+});
+}
+const
+snapshotResource
+=
+{
+name
+:
+snapshotName
+,
+sourceDisk
+:
+disk
+.
+selfLink
+,
+};
+if
+(
+location
+)
+{
+snapshotResource
+.
+storageLocations
+=
+[
+location
+];
+}
+const
+[
+response
+]
+=
+await
+snapshotsClient
+.
+insert
+({
+project
+:
+projectId
+,
+snapshotResource
+,
+});
+let
+operation
+=
+response
+.
+latestResponse
+;
+const
+operationsClient
+=
+new
+compute
+.
+GlobalOperationsClient
+();
+// Wait for the create snapshot operation to complete.
+while
+(
+operation
+.
+status
+!==
+'DONE'
+)
+{
+[
+operation
+]
+=
+await
+operationsClient
+.
+wait
+({
+operation
+:
+operation
+.
+name
+,
+project
+:
+projectId
+,
+});
+}
+console
+.
+log
+(
+'Snapshot created.'
+);
+}
+createSnapshot
+();
+Python
+Python
+Before trying this sample, follow the setup instructions in the
+Compute Engine quickstart using client libraries
+.
+To authenticate to Compute Engine, set up Application Default Credentials. For
+more information, see
+Set up authentication for a local development environment
+.
+from
+__future__
+import
+annotations
+import
+sys
+from
+typing
+import
+Any
+from
+google.api_core.extended_operation
+import
+ExtendedOperation
+from
+google.cloud
+import
+compute_v1
+def
+wait_for_extended_operation
+(
+operation
+:
+ExtendedOperation
+,
+verbose_name
+:
+str
+=
+"operation"
+,
+timeout
+:
+int
+=
+300
+)
+-
+>
+Any
+:
+"""
+Waits for the extended (long-running) operation to complete.
+If the operation is successful, it will return its result.
+If the operation ends with an error, an exception will be raised.
+If there were any warnings during the execution of the operation
+they will be printed to sys.stderr.
+Args:
+operation: a long-running operation you want to wait on.
+verbose_name: (optional) a more verbose name of the operation,
+used only during error and warning reporting.
+timeout: how long (in seconds) to wait for operation to finish.
+If None, wait indefinitely.
+Returns:
+Whatever the operation.result() returns.
+Raises:
+This method will raise the exception received from `operation.exception()`
+or RuntimeError if there is no exception set, but there is an `error_code`
+set for the `operation`.
+In case of an operation taking longer than `timeout` seconds to complete,
+a `concurrent.futures.TimeoutError` will be raised.
+"""
+result
+=
+operation
+.
+result
+(
+timeout
+=
+timeout
+)
+if
+operation
+.
+error_code
+:
+print
+(
+f
+"Error during
+{
+verbose_name
+}
+: [Code:
+{
+operation
+.
+error_code
+}
+]:
+{
+operation
+.
+error_message
+}
+"
+,
+file
+=
+sys
+.
+stderr
+,
+flush
+=
+True
+,
+)
+print
+(
+f
+"Operation ID:
+{
+operation
+.
+name
+}
+"
+,
+file
+=
+sys
+.
+stderr
+,
+flush
+=
+True
+)
+raise
+operation
+.
+exception
+()
+or
+RuntimeError
+(
+operation
+.
+error_message
+)
+if
+operation
+.
+warnings
+:
+print
+(
+f
+"Warnings during
+{
+verbose_name
+}
+:
+\n
+"
+,
+file
+=
+sys
+.
+stderr
+,
+flush
+=
+True
+)
+for
+warning
+in
+operation
+.
+warnings
+:
+print
+(
+f
+" -
+{
+warning
+.
+code
+}
+:
+{
+warning
+.
+message
+}
+"
+,
+file
+=
+sys
+.
+stderr
+,
+flush
+=
+True
+)
+return
+result
+def
+create_snapshot
+(
+project_id
+:
+str
+,
+disk_name
+:
+str
+,
+snapshot_name
+:
+str
+,
+*
+,
+zone
+:
+str
+|
+None
+=
+None
+,
+region
+:
+str
+|
+None
+=
+None
+,
+location
+:
+str
+|
+None
+=
+None
+,
+disk_project_id
+:
+str
+|
+None
+=
+None
+,
+)
+-
+>
+compute_v1
+.
+Snapshot
+:
+"""
+Create a snapshot of a disk.
+You need to pass `zone` or `region` parameter relevant to the disk you want to
+snapshot, but not both. Pass `zone` parameter for zonal disks and `region` for
+regional disks.
+Args:
+project_id: project ID or project number of the Cloud project you want
+to use to store the snapshot.
+disk_name: name of the disk you want to snapshot.
+snapshot_name: name of the snapshot to be created.
+zone: name of the zone in which is the disk you want to snapshot (for zonal disks).
+region: name of the region in which is the disk you want to snapshot (for regional disks).
+location: The Cloud Storage multi-region or the Cloud Storage region where you
+want to store your snapshot.
+You can specify only one storage location. Available locations:
+https://cloud.google.com/storage/docs/locations#available-locations
+disk_project_id: project ID or project number of the Cloud project that
+hosts the disk you want to snapshot. If not provided, will look for
+the disk in the `project_id` project.
+Returns:
+The new snapshot instance.
+"""
+if
+zone
+is
+None
+and
+region
+is
+None
+:
+raise
+RuntimeError
+(
+"You need to specify `zone` or `region` for this function to work."
+)
+if
+zone
+is
+not
+None
+and
+region
+is
+not
+None
+:
+raise
+RuntimeError
+(
+"You can't set both `zone` and `region` parameters."
+)
+if
+disk_project_id
+is
+None
+:
+disk_project_id
+=
+project_id
+if
+zone
+is
+not
+None
+:
+disk_client
+=
+compute_v1
+.
+DisksClient
+()
+disk
+=
+disk_client
+.
+get
+(
+project
+=
+disk_project_id
+,
+zone
+=
+zone
+,
+disk
+=
+disk_name
+)
+else
+:
+regio_disk_client
+=
+compute_v1
+.
+RegionDisksClient
+()
+disk
+=
+regio_disk_client
+.
+get
+(
+project
+=
+disk_project_id
+,
+region
+=
+region
+,
+disk
+=
+disk_name
+)
+snapshot
+=
+compute_v1
+.
+Snapshot
+()
+snapshot
+.
+source_disk
+=
+disk
+.
+self_link
+snapshot
+.
+name
+=
+snapshot_name
+if
+location
+:
+snapshot
+.
+storage_locations
+=
+[
+location
+]
+snapshot_client
+=
+compute_v1
+.
+SnapshotsClient
+()
+operation
+=
+snapshot_client
+.
+insert
+(
+project
+=
+project_id
+,
+snapshot_resource
+=
+snapshot
+)
+wait_for_extended_operation
+(
+operation
+,
+"snapshot creation"
+)
+return
+snapshot_client
+.
+get
+(
+project
+=
+project_id
+,
+snapshot
+=
+snapshot_name
+)
+Caution:
+If you attempt to create a snapshot and the snapshotting process fails,
+you won't be able to delete the original persistent disk until you have cleaned
+up the failed snapshot. This failsafe helps to prevent the accidental deletion
+of source data in the event of an unsuccessful backup.
+Schedule a recurring backup
+When you create a snapshot schedule, you create a
+resource policy
+that you can apply to one or more persistent disks. You can create snapshot
+schedules in the following ways:
+Create a snapshot schedule
+and then
+attach it to an existing persistent
+disk
+.
+Create a new persistent disk with a snapshot schedule
+.
+A snapshot schedule includes the following properties:
+Schedule name
+Schedule description
+Snapshot frequency (hourly, daily, weekly)
+Snapshot start time
+Region where the snapshot schedule is available
+Source disk deletion policy for handling auto-generated snapshots
+if the source disk is deleted
+Retention policy to define how long to keep snapshots that are generated
+from the snapshot schedule
+Restrictions
+A persistent disk can have at most 10 snapshot schedules attached to it
+at a time.
+You cannot create archive snapshots using a snapshot schedule.
+You can create a maximum of 1,000 in-use snapshot schedules per region.
+Snapshot schedules apply only in the project that they were created in.
+Snapshot schedules cannot be used in other projects or organizations.
+You might need to request an increase in
+resource quota
+through the console if you require additional resources in your region.
+You cannot delete a snapshot schedule if it is attached to a disk. You must
+detach the schedule
+from all disks, then delete the schedule.
+You can update an existing snapshot schedule to change the description,
+schedule, and labels. To update other values for a snapshot schedule, you
+must delete the snapshot schedule and create a new one.
+For persistent disks that use a
+customer-supplied encryption key
+(CSEK)
+, you can't
+create snapshot schedules.
+For persistent disks that use a
+customer-managed encryption key
+(CMEK)
+, all snapshots created with a snapshot schedule are
+automatically encrypted with the same key.
+Create a schedule
+Permissions required for this task
+To perform this task, you must have the following
+permissions
+:
+compute.resourcePolicies.create
+on the project or organization
+Create a snapshot schedule for your persistent disks using the Google Cloud console,
+Google Cloud CLI, or the Compute Engine API. You must create your snapshot
+schedule in the same region where your persistent disk resides. For example, if
+your persistent disk resides in zone
+us-west1-a
+, your snapshot schedule must
+reside in the
+us-west1
+region. For more information, see
+Choose a storage location
+.
+Note:
+If you use the gcloud CLI or the Google Cloud console, you
+must always set a retention policy when creating a snapshot schedule. If you
+make a request to the API directly, you can omit this field and your snapshots
+will be retained indefinitely.
+Console
+In the Google Cloud console, go to the
+VM instances
+page.
+Go to VM instances
+school
+The remaining steps will appear automatically in
+        the Google Cloud console.
+Select the project that contains your VM instances.
+In the
+Name
+column, click the name of the VM that has the persistent disk to create a
+      snapshot schedule for.
+In
+Storage
+,
+      click the name of the
+Boot disk
+or the
+Additional disk
+to create a snapshot
+      schedule for.
+Click
+edit
+Edit
+. You might need to
+       click the
+more_vert
+More actions
+menu and then
+edit
+Edit
+.
+In
+Snapshot schedule
+, choose
+Create a schedule
+.
+In
+Name
+, enter one of the following names for the snapshot schedule:
+boot-disk-snapshot-schedule
+attached-persistent-disk-snapshot-schedule
+In the
+Location
+section,
+choose your snapshot
+          storage location
+.
+          The predefined or customized default location defined in your snapshot settings is
+          automatically selected. Optionally, you can override the snapshot settings and store your
+          snapshots in a custom storage location by doing the following:
+Choose the type of storage location that you want for your snapshot.
+Choose
+Multi-regional
+for higher availability at a higher cost.
+Choose
+Regional snapshots
+for more control over the physical location of your data at a lower cost.
+In the
+Select location
+field, select the specific region or multi-region that
+              you want to use. To use the region or multi-region that is closest to your
+              source disk, select
+Based on disk's location
+.
+To finish creating the snapshot schedule, click
+Create
+.
+To attach this snapshot schedule to the persistent disk, click
+Save
+.
+gcloud
+To create a snapshot schedule for persistent disks, use the
+compute resource-policies create snapshot-schedule
+gcloud
+command. Set your schedule frequency to hourly, daily, or weekly.
+gcloud
+compute
+resource
+-
+policies
+create
+snapshot
+-
+schedule
+[
+SCHEDULE_NAME
+]
+\
+--description "[SCHEDULE_DESCRIPTION]" \
+--max-retention-days [MAX_RETENTION_DAYS] \
+--start-time [START_TIME] \
+--hourly-schedule [SNAPSHOT_INTERVAL] \
+--daily-schedule \
+--weekly-schedule [SNAPSHOT_INTERVAL] \
+--weekly-schedule-from-file [FILE_NAME] \
+--on-source-disk-delete [DELETION_OPTION]
+where:
+[SCHEDULE_NAME]
+is the name of the new snapshot schedule.
+"[SCHEDULE_DESCRIPTION]"
+is a description of the snapshot schedule.
+ Use quotes around your description.
+[MAX_RETENTION_DAYS]
+is the number of days to retain the snapshot.
+ For example, setting
+3
+would mean that snapshots are retained for 3
+ days before they are deleted. You must set a retention policy of at
+ least 1 day.
+[START_TIME]
+is the UTC start time. The time must start on the hour.
+ For example:
+2:00 PM PST is
+22:00
+.
+If you set a start time of
+22:13
+, you will receive an error.
+[SNAPSHOT_INTERVAL]
+defines the interval at which you want
+ snapshotting to occur. Set the hourly schedule using an integer
+ between 1 and 23. Choose an hourly number that is evenly divided into 24.
+ For example, setting
+--hourly-schedule
+to 12, means the snapshot
+ is generated every 12 hours. For a weekly schedule define
+ the days you want the snapshotting to occur. You must spell out the
+ week days, they are not case-sensitive. The snapshot frequency flags
+hourly-schedule
+,
+daily-schedule
+, and
+weekly-schedule
+are
+ mutually-exclusive. You must pick one for your snapshot schedule.
+Note:
+If you want to specify a weekly schedule with different days
+ of the week and with different start times, use
+--weekly-schedule-from-file
+instead.
+[FILE_NAME]
+is the file name that contains the weekly snapshot
+ schedule, if you choose to provide the schedule in this format.
+ Note that you can specify weekly schedules on different days of the
+ week and at different times using a file (but you cannot specify
+ multiple weekly schedules directly on the command-line). For example,
+ your file might specify a snapshot schedule on Monday and Wednesday:
+[{"day": "MONDAY", "startTime": "04:00"}, {"day": "WEDNESDAY", "startTime": "02:00"}]
+If you include a start time in your file, you do not need to set the
+--start-time
+flag. The schedule uses the UTC time standard.
+[DELETION_OPTION]
+determines what happens to your snapshots if the
+ source disk is deleted. Choose either the default
+keep-auto-snapshots
+by omitting this flag, or use
+apply-retention-policy
+to apply a
+ retention policy.
+These are additional examples for setting up a snapshot schedule. In all
+the following examples:
+The disk deletion rule is included; the
+--on-source-disk-delete
+flag
+is set to the default of
+keep-auto-snapshots
+to permanently keep all
+auto-generated snapshots. The alternative is to set this flag to
+apply-retention-policy
+to use your snapshot retention policy.
+The storage location is set the
+US
+so all generated snapshots will be
+stored in the US multi-region.
+The labels
+env=dev
+and
+media=images
+are applied to all generated
+snapshots.
+The retention policy is set to 10 days.
+Hourly schedule:
+In this example, the snapshot schedule starts at 22:00
+UTC and occurs every 4 hours.
+gcloud
+compute
+resource
+-
+policies
+create
+snapshot
+-
+schedule
+SCHEDULE_NAME
+\
+--
+description
+"MY HOURLY SNAPSHOT SCHEDULE"
+\
+--
+max
+-
+retention
+-
+days
+10
+\
+--
+start
+-
+time
+22
+:
+00
+\
+--
+hourly
+-
+schedule
+4
+\
+--
+region
+us
+-
+west1
+\
+--
+on
+-
+source
+-
+disk
+-
+delete
+keep
+-
+auto
+-
+snapshots
+\
+--
+snapshot
+-
+labels
+env
+=
+dev
+,
+media
+=
+images
+\
+--
+storage
+-
+location
+US
+Daily schedule:
+In this example, the snapshot schedule starts at 22:00
+UTC and occurs every day at the same time. The
+--daily-schedule
+flag must
+be present, but not set to anything.
+gcloud
+compute
+resource
+-
+policies
+create
+snapshot
+-
+schedule
+SCHEDULE_NAME
+\
+--
+description
+"MY DAILY SNAPSHOT SCHEDULE"
+\
+--
+max
+-
+retention
+-
+days
+10
+\
+--
+start
+-
+time
+22
+:
+00
+\
+--
+daily
+-
+schedule
+\
+--
+region
+us
+-
+west1
+\
+--
+on
+-
+source
+-
+disk
+-
+delete
+keep
+-
+auto
+-
+snapshots
+\
+--
+snapshot
+-
+labels
+env
+=
+dev
+,
+media
+=
+images
+\
+--
+storage
+-
+location
+US
+Weekly schedule:
+In this example, the snapshot schedule starts at 22:00
+UTC and occurs every week on Tuesday and Thursday.
+gcloud
+compute
+resource
+-
+policies
+create
+snapshot
+-
+schedule
+SCHEDULE_NAME
+\
+--
+description
+"MY WEEKLY SNAPSHOT SCHEDULE"
+\
+--
+max
+-
+retention
+-
+days
+10
+\
+--
+start
+-
+time
+22
+:
+00
+\
+--
+weekly
+-
+schedule
+tuesday
+,
+thursday
+\
+--
+region
+us
+-
+west1
+\
+--
+on
+-
+source
+-
+disk
+-
+delete
+keep
+-
+auto
+-
+snapshots
+\
+--
+snapshot
+-
+labels
+env
+=
+dev
+,
+media
+=
+images
+\
+--
+storage
+-
+location
+US
+API
+In the API, construct a
+POST
+request to
+resourcePolicies.insert
+to create a snapshot schedule. At the minimum, you must include the snapshot
+schedule name, snapshot storage regional location, and snapshot frequency.
+By default, the
+onSourceDiskDelete
+parameter is set to
+keepAutoSnapshots
+.
+This means that if the source disk is deleted, the auto-generated snapshot
+for that disk is retained indefinitely. Alternatively, you can set the flag
+to
+applyRetentionPolicy
+to apply your retention policy.
+The following example sets a daily snapshot schedule that starts at 12:00
+UTC and repeats every day. The example also sets a retention policy of 5
+days; after 5 days, snapshots are automatically removed.
+You can also include
+snapshot locality options
+and
+snapshot labels
+in your request to ensure your snapshots are stored in the location of your
+choice.
+POST
+https
+:
+//
+compute
+.
+googleapis
+.
+com
+/
+compute
+/
+v1
+/
+projects
+/[
+PROJECT_ID
+]/
+regions
+/[
+REGION
+]/
+resourcePolicies
+{
+"name"
+:
+"[SCHEDULE_NAME]"
+,
+"description"
+:
+"[SCHEDULE_DESCRIPTION]"
+,
+"snapshotSchedulePolicy"
+:
+{
+"schedule"
+:
+{
+"dailySchedule"
+:
+{
+"startTime"
+:
+"12:00"
+,
+"daysInCycle"
+:
+"1"
+}
+}
+,
+"retentionPolicy"
+:
+{
+"maxRetentionDays"
+:
+"5"
+}
+,
+"snapshotProperties"
+:
+{
+"guestFlush"
+:
+"False"
+,
+"labels"
+:
+{
+"env"
+:
+"dev"
+,
+"media"
+:
+"images"
+}
+,
+"storageLocations"
+:
+[
+"US"
+]
+}
+}
+}
+where:
+[PROJECT_ID]
+is the project name.
+[REGION]
+is the location of the snapshot schedule resource policy.
+[SCHEDULE_DESCRIPTION]
+is the description of the snapshot schedule.
+[SCHEDULE_NAME]
+is the name of the snapshot schedule.
+Similarly, you can create a weekly or monthly schedule. Review the
+API reference
+for details specific to setting a weekly or monthly schedule.
+For example, the following request creates a weekly schedule that runs
+on Tuesday and Thursday, at 9:00 and 2:00 respectively.
+POST
+https
+:
+//
+compute
+.
+googleapis
+.
+com
+/
+compute
+/
+v1
+/
+projects
+/[
+PROJECT_ID
+]/
+regions
+/[
+REGION
+]/
+resourcePolicies
+{
+"name"
+:
+"[SCHEDULE_NAME]"
+,
+"description"
+:
+"[SCHEDULE_DESCRIPTION]"
+,
+"snapshotSchedulePolicy"
+:
+{
+"schedule"
+:
+{
+"weeklySchedule"
+:
+{
+"dayOfWeeks"
+:
+[
+{
+"day": "Monday",
+"startTime": "9:00"
+},
+{
+"day": "Thursday",
+"startTime": "2:00"
+}
+]
+}
+}
+,
+"retentionPolicy"
+:
+{
+"maxRetentionDays"
+:
+"5"
+}
+,
+"snapshotProperties"
+:
+{
+"guestFlush"
+:
+"False"
+,
+"labels"
+:
+{
+"production"
+:
+"webserver"
+}
+,
+"storageLocations"
+:
+[
+"US"
+]
+}
+}
+}
+Attach a snapshot schedule to a disk
+Permissions required for this task
+To perform this task, you must have the following
+permissions
+:
+compute.disks.addResourcePolicies
+on the disk
+compute.resourcePolicies.use
+on the resource policy to use
+Once you have a schedule, attach it to an existing disk. Use the console,
+gcloud
+command, or the Compute Engine API method.
+Console
+Attach a snapshot schedule to an existing disk.
+In the Google Cloud console, go to the
+Disks
+page.
+Go to the Disks page
+Select the name of the disk to which you want to attach a snapshot
+schedule. This opens the
+Manage disk
+page.
+On the
+Manage disk
+page, hover and click the
+more_vert
+More actions
+menu and select
+edit
+Edit
+.
+Use the
+Snapshot schedule
+drop-down menu to add the schedule
+to the disk. Or create a new schedule.
+If you created a new schedule, click
+Create
+.
+Click
+Save
+to complete the task.
+gcloud
+To attach a snapshot schedule to a disk, use the
+disks add-resource-policies
+gcloud
+command.
+gcloud
+compute
+disks
+add
+-
+resource
+-
+policies
+[
+DISK_NAME
+]
+\
+--resource-policies [SCHEDULE_NAME] \
+--zone [ZONE]
+where:
+[DISK_NAME]
+is the name of the existing disk.
+[SCHEDULE_NAME]
+is the name of the snapshot schedule.
+[ZONE]
+is the location of your disk.
+API
+In the API, construct a
+POST
+request to
+disks.addResourcePolicies
+to attach a snapshot schedule to an existing disk.
+POST
+https
+:
+//
+compute
+.
+googleapis
+.
+com
+/
+compute
+/
+v1
+/
+projects
+/[
+PROJECT_ID
+]/
+zones
+/[
+ZONE
+]/
+disks
+/[
+DISK_NAME
+]/
+addResourcePolicies
+{
+"resourcePolicies"
+:
+[
+"regions/[REGION
+]/
+resourcePolicies
+/[
+SCHEDULE_NAME
+]
+"
+]
+}
+where:
+[PROJECT_ID]
+is the project name.
+[ZONE]
+is the location of the disk.
+[REGION]
+is the location of the snapshot schedule.
+[DISK_NAME]
+is the name of the disk.
+[SCHEDULE_NAME]
+is the name of the snapshot schedule in that
+  region you are applying to this disk.
+Restore data from a snapshot
+If you backed up a boot or non-boot disk with a snapshot, you can create a new
+disk based on the snapshot.
+Restrictions
+The new disk must be at least the same size as the original source
+disk for the snapshot. If you create a disk that is larger
+than the original source disk for the snapshot, you must
+resize the file
+system on that persistent disk
+to include the additional disk space. Depending on your operating system and
+file system type, you might need to use a different file system resizing tool.
+For more information, see your operating system documentation.
+Create a disk from a snapshot and attach it to a VM
+Note:
+You must create the disk in the same zone as your instance.
+Permissions required for this task
+To perform this task, you must have the following
+permissions
+:
+compute.disks.create
+on the project to create a new disk
+compute.instances.attachDisk
+on the VM instance
+compute.disks.use
+permission on the disk to attach
+Console
+In the Google Cloud console, go to the
+Snapshots
+page.
+Go to Snapshots
+Find the name of the snapshot that you want to restore.
+Go to the
+Disks
+page.
+Go to the Disks page
+Click
+Create new disk
+.
+Specify the following configuration parameters:
+A name for the disk.
+A type for the disk.
+Optionally, you can override the default region and zone selection.
+You can select any region and zone, regardless of the storage
+location of the source snapshot.
+Under
+Source type
+, click
+Snapshot
+.
+Select the name of the snapshot to restore.
+Select the size of the new disk, in gigabytes. This number must be equal
+to or larger than the original source disk for the snapshot.
+Click
+Create
+to create the disk.
+You can then attach the new disk to an existing instance.
+Go to the
+VM instances
+page.
+Go to the VM instances page
+Click the name of the instance where you want to restore your non-boot disk.
+At the top of the instance details page, click
+Edit
+.
+Under
+Additional disks
+, click
+Attach existing disk
+.
+Select the name of the new disk made from your snapshot.
+Click
+Done
+to attach the disk.
+At the bottom of the instance details page, click
+Save
+to apply
+your changes to the instance.
+gcloud
+Use the
+gcloud compute snapshots list
+command
+command to find the name of the snapshot you want to restore:
+gcloud compute snapshots list
+Use the
+gcloud compute snapshots describe
+command
+command to find the size of the snapshot you want to restore:
+gcloud compute snapshots describe
+SNAPSHOT_NAME
+Replace
+SNAPSHOT_NAME
+with the name of the snapshot being
+restored.
+Use the
+gcloud compute disks create
+command
+command to create a new
+regional
+or
+zonal
+disk from your
+snapshot. If you need an SSD persistent disk for additional throughput
+or IOPS, include the
+--type
+flag and specify
+pd-ssd
+.
+gcloud
+compute
+disks
+create
+DISK_NAME
+\
+--
+size
+=
+DISK_SIZE
+\
+--
+source
+-
+snapshot
+=
+SNAPSHOT_NAME
+\
+--
+type
+=
+DISK_TYPE
+Replace the following:
+DISK_NAME
+: the name of the new disk.
+DISK_SIZE
+: The size of the new disk, in gigabytes. This
+number must be equal to or larger than the original source disk for
+the snapshot.
+SNAPSHOT_NAME
+: the name of the snapshot being restored.
+DISK_TYPE
+: full or partial URL for the
+type
+of the disk. For example,
+https://www.googleapis.com/compute/v1/projects/
+PROJECT_ID
+/zones/
+ZONE
+/diskTypes/pd-ssd
+.
+Attach the new disk to an existing instance by
+using the
+gcloud compute instances attach-disk
+command
+:
+gcloud compute instances attach-disk
+INSTANCE_NAME
+\
+    --disk
+DISK_NAME
+Replace the following:
+INSTANCE_NAME
+is the name of the instance.
+DISK_NAME
+is the name of the disk made from your snapshot.
+API
+Construct a
+GET
+request to
+snapshots.list
+to display the list of snapshots in your project.
+GET https://compute.googleapis.com/compute/v1/projects/
+PROJECT_ID
+/global/snapshots
+Replace
+PROJECT_ID
+with your project ID.
+Construct a
+POST
+request to create a zonal disk using
+the
+disks.insert
+method. Include the
+name
+,
+sizeGb
+, and
+type
+properties. To restore a disk using a snapshot, you must include
+the
+sourceSnapshot
+property.
+POST
+https
+:
+//compute.googleapis.com/compute/v1/projects/
+PROJECT_ID
+/zones/
+ZONE
+/disks
+{
+"name"
+:
+"
+DISK_NAME
+"
+,
+"sizeGb"
+:
+"
+DISK_SIZE
+"
+,
+"type"
+:
+"zones/
+ZONE
+/diskTypes/
+DISK_TYPE
+"
+"sourceSnapshot"
+:
+"
+SNAPSHOT_NAME
+"
+}
+Replace the following:
+PROJECT_ID
+: your project ID.
+ZONE
+the zone where your instance and new
+disk are located.
+DISK_NAME
+: the name of the new disk.
+DISK_SIZE
+: the size of the new disk, in gigabytes. This
+number must be equal to or larger than the original source disk for
+the snapshot.
+DISK_TYPE
+: full or partial URL for the
+type
+of the disk. For example
+https://www.googleapis.com/compute/v1/projects/
+PROJECT_ID
+/zones/
+ZONE
+/diskTypes/pd-ssd
+.
+SNAPSHOT_NAME
+: the source snapshot for the disk you are restoring.
+You can then attach the new disk to an existing instance by
+constructing a
+POST
+request to the
+instances.attachDisk
+method
+,
+and including the URL to the zonal disk that you just created from your
+snapshot.
+POST https://compute.googleapis.com/compute/v1/projects/
+PROJECT_ID
+/zones/
+ZONE
+/instances/
+INSTANCE_NAME
+/attachDisk
+
+{
+ "source": "/compute/v1/projects/
+PROJECT_ID
+/zones/
+ZONE
+/disks/
+DISK_NAME
+"
+}
+Replace the following:
+PROJECT_ID
+is your project ID.
+ZONE
+is the zone where your instance and new disk are located.
+INSTANCE_NAME
+is the name of the instance where you are adding the
+new disk.
+DISK_NAME
+is the name of the new disk.
+Go
+Go
+Before trying this sample, follow the
+Go
+setup instructions in the
+Vertex AI quickstart using
+            client libraries
+.
+        
+      
+      
+  For more information, see the
+Vertex AI
+Go
+API
+    reference documentation
+.
+To authenticate to Vertex AI, set up Application Default Credentials.
+      For more information, see
+Set up authentication for a local development environment
+.
+import
+(
+"context"
+"fmt"
+"io"
+compute
+"cloud.google.com/go/compute/apiv1"
+computepb
+"cloud.google.com/go/compute/apiv1/computepb"
+"google.golang.org/protobuf/proto"
+)
+// createDiskFromSnapshot creates a new disk in a project in given zone.
+func
+createDiskFromSnapshot
+(
+w
+io
+.
+Writer
+,
+projectID
+,
+zone
+,
+diskName
+,
+diskType
+,
+snapshotLink
+string
+,
+diskSizeGb
+int64
+,
+)
+error
+{
+// projectID := "your_project_id"
+// zone := "us-west3-b" // should match diskType below
+// diskName := "your_disk_name"
+// diskType := "zones/us-west3-b/diskTypes/pd-ssd"
+// snapshotLink := "projects/your_project_id/global/snapshots/snapshot_name"
+// diskSizeGb := 120
+ctx
+:=
+context
+.
+Background
+()
+disksClient
+,
+err
+:=
+compute
+.
+NewDisksRESTClient
+(
+ctx
+)
+if
+err
+!=
+nil
+{
+return
+fmt
+.
+Errorf
+(
+"NewDisksRESTClient: %w"
+,
+err
+)
+}
+defer
+disksClient
+.
+Close
+()
+req
+:=
+&
+computepb
+.
+InsertDiskRequest
+{
+Project
+:
+projectID
+,
+Zone
+:
+zone
+,
+DiskResource
+:
+&
+computepb
+.
+Disk
+{
+Name
+:
+proto
+.
+String
+(
+diskName
+),
+Zone
+:
+proto
+.
+String
+(
+zone
+),
+Type
+:
+proto
+.
+String
+(
+diskType
+),
+SourceSnapshot
+:
+proto
+.
+String
+(
+snapshotLink
+),
+SizeGb
+:
+proto
+.
+Int64
+(
+diskSizeGb
+),
+},
+}
+op
+,
+err
+:=
+disksClient
+.
+Insert
+(
+ctx
+,
+req
+)
+if
+err
+!=
+nil
+{
+return
+fmt
+.
+Errorf
+(
+"unable to create disk: %w"
+,
+err
+)
+}
+if
+err
+=
+op
+.
+Wait
+(
+ctx
+);
+err
+!=
+nil
+{
+return
+fmt
+.
+Errorf
+(
+"unable to wait for the operation: %w"
+,
+err
+)
+}
+fmt
+.
+Fprintf
+(
+w
+,
+"Disk created\n"
+)
+return
+nil
+}
+Java
+Java
+Before trying this sample, follow the
+Java
+setup instructions in the
+Vertex AI quickstart using
+            client libraries
+.
+        
+      
+      
+  For more information, see the
+Vertex AI
+Java
+API
+    reference documentation
+.
+To authenticate to Vertex AI, set up Application Default Credentials.
+      For more information, see
+Set up authentication for a local development environment
+.
+import
+com.google.cloud.compute.v1.
+Disk
+;
+import
+com.google.cloud.compute.v1.
+DisksClient
+;
+import
+com.google.cloud.compute.v1.
+InsertDiskRequest
+;
+import
+com.google.cloud.compute.v1.
+Operation
+;
+import
+java.io.IOException
+;
+import
+java.util.concurrent.ExecutionException
+;
+import
+java.util.concurrent.TimeUnit
+;
+import
+java.util.concurrent.TimeoutException
+;
+public
+class
+CreateDiskFromSnapshot
+{
+public
+static
+void
+main
+(
+String
+[]
+args
+)
+throws
+IOException
+,
+ExecutionException
+,
+InterruptedException
+,
+TimeoutException
+{
+// TODO(developer): Replace these variables before running the sample.
+// Project ID or project number of the Cloud project you want to use.
+String
+projectId
+=
+"YOUR_PROJECT_ID"
+;
+// Name of the zone in which you want to create the disk.
+String
+zone
+=
+"europe-central2-b"
+;
+// Name of the disk you want to create.
+String
+diskName
+=
+"YOUR_DISK_NAME"
+;
+// The type of disk you want to create. This value uses the following format:
+// "zones/{zone}/diskTypes/(pd-standard|pd-ssd|pd-balanced|pd-extreme)".
+// For example: "zones/us-west3-b/diskTypes/pd-ssd"
+String
+diskType
+=
+String
+.
+format
+(
+"zones/%s/diskTypes/pd-ssd"
+,
+zone
+);
+// Size of the new disk in gigabytes.
+long
+diskSizeGb
+=
+10
+;
+// The full path and name of the snapshot that you want to use as the source for the new disk.
+// This value uses the following format:
+// "projects/{projectName}/global/snapshots/{snapshotName}"
+String
+snapshotLink
+=
+String
+.
+format
+(
+"projects/%s/global/snapshots/%s"
+,
+projectId
+,
+"SNAPSHOT_NAME"
+);
+createDiskFromSnapshot
+(
+projectId
+,
+zone
+,
+diskName
+,
+diskType
+,
+diskSizeGb
+,
+snapshotLink
+);
+}
+// Creates a new disk in a project in given zone, using a snapshot.
+public
+static
+void
+createDiskFromSnapshot
+(
+String
+projectId
+,
+String
+zone
+,
+String
+diskName
+,
+String
+diskType
+,
+long
+diskSizeGb
+,
+String
+snapshotLink
+)
+throws
+IOException
+,
+ExecutionException
+,
+InterruptedException
+,
+TimeoutException
+{
+// Initialize client that will be used to send requests. This client only needs to be created
+// once, and can be reused for multiple requests. After completing all of your requests, call
+// the `disksClient.close()` method on the client to safely
+// clean up any remaining background resources.
+try
+(
+DisksClient
+disksClient
+=
+DisksClient
+.
+create
+())
+{
+// Set the disk properties and the source snapshot.
+Disk
+disk
+=
+Disk
+.
+newBuilder
+()
+.
+setName
+(
+diskName
+)
+.
+setZone
+(
+zone
+)
+.
+setSizeGb
+(
+diskSizeGb
+)
+.
+setType
+(
+diskType
+)
+.
+setSourceSnapshot
+(
+snapshotLink
+)
+.
+build
+();
+// Create the insert disk request.
+InsertDiskRequest
+insertDiskRequest
+=
+InsertDiskRequest
+.
+newBuilder
+()
+.
+setProject
+(
+projectId
+)
+.
+setZone
+(
+zone
+)
+.
+setDiskResource
+(
+disk
+)
+.
+build
+();
+// Wait for the create disk operation to complete.
+Operation
+response
+=
+disksClient
+.
+insertAsync
+(
+insertDiskRequest
+)
+.
+get
+(
+3
+,
+TimeUnit
+.
+MINUTES
+);
+if
+(
+response
+.
+hasError
+())
+{
+System
+.
+out
+.
+println
+(
+"Disk creation failed!"
++
+response
+);
+return
+;
+}
+System
+.
+out
+.
+println
+(
+"Disk created. Operation Status: "
++
+response
+.
+getStatus
+());
+}
+}
+}
+Node.js
+Node.js
+Before trying this sample, follow the
+Node.js
+setup instructions in the
+Vertex AI quickstart using
+            client libraries
+.
+        
+      
+      
+  For more information, see the
+Vertex AI
+Node.js
+API
+    reference documentation
+.
+To authenticate to Vertex AI, set up Application Default Credentials.
+      For more information, see
+Set up authentication for a local development environment
+.
+/**
+* TODO(developer): Uncomment and replace these variables before running the sample.
+*/
+// const projectId = 'YOUR_PROJECT_ID';
+// const zone = 'europe-central2-b';
+// const diskName = 'YOUR_DISK_NAME';
+// const diskType = 'zones/us-west3-b/diskTypes/pd-ssd';
+// const diskSizeGb = 10;
+// const snapshotLink = 'projects/project_name/global/snapshots/snapshot_name';
+const
+compute
+=
+require
+(
+'
+@google-cloud/compute
+'
+);
+async
+function
+createDiskFromSnapshot
+()
+{
+const
+disksClient
+=
+new
+compute
+.
+DisksClient
+();
+const
+[
+response
+]
+=
+await
+disksClient
+.
+insert
+({
+project
+:
+projectId
+,
+zone
+,
+diskResource
+:
+{
+sizeGb
+:
+diskSizeGb
+,
+name
+:
+diskName
+,
+zone
+,
+type
+:
+diskType
+,
+sourceSnapshot
+:
+snapshotLink
+,
+},
+});
+let
+operation
+=
+response
+.
+latestResponse
+;
+const
+operationsClient
+=
+new
+compute
+.
+ZoneOperationsClient
+();
+// Wait for the create disk operation to complete.
+while
+(
+operation
+.
+status
+!==
+'DONE'
+)
+{
+[
+operation
+]
+=
+await
+operationsClient
+.
+wait
+({
+operation
+:
+operation
+.
+name
+,
+project
+:
+projectId
+,
+zone
+:
+operation
+.
+zone
+.
+split
+(
+'/'
+).
+pop
+(),
+});
+}
+console
+.
+log
+(
+'Disk created.'
+);
+}
+createDiskFromSnapshot
+();
+Python
+Python
+To learn how to install or update the Vertex AI SDK for Python, see
+Install the Vertex AI SDK for Python
+.
+      
+        For more information, see the
+Python
+API reference documentation
+.
+from
+__future__
+import
+annotations
+import
+sys
+from
+typing
+import
+Any
+from
+google.api_core.extended_operation
+import
+ExtendedOperation
+from
+google.cloud
+import
+compute_v1
+def
+wait_for_extended_operation
+(
+operation
+:
+ExtendedOperation
+,
+verbose_name
+:
+str
+=
+"operation"
+,
+timeout
+:
+int
+=
+300
+)
+-
+>
+Any
+:
+"""
+Waits for the extended (long-running) operation to complete.
+If the operation is successful, it will return its result.
+If the operation ends with an error, an exception will be raised.
+If there were any warnings during the execution of the operation
+they will be printed to sys.stderr.
+Args:
+operation: a long-running operation you want to wait on.
+verbose_name: (optional) a more verbose name of the operation,
+used only during error and warning reporting.
+timeout: how long (in seconds) to wait for operation to finish.
+If None, wait indefinitely.
+Returns:
+Whatever the operation.result() returns.
+Raises:
+This method will raise the exception received from `operation.exception()`
+or RuntimeError if there is no exception set, but there is an `error_code`
+set for the `operation`.
+In case of an operation taking longer than `timeout` seconds to complete,
+a `concurrent.futures.TimeoutError` will be raised.
+"""
+result
+=
+operation
+.
+result
+(
+timeout
+=
+timeout
+)
+if
+operation
+.
+error_code
+:
+print
+(
+f
+"Error during
+{
+verbose_name
+}
+: [Code:
+{
+operation
+.
+error_code
+}
+]:
+{
+operation
+.
+error_message
+}
+"
+,
+file
+=
+sys
+.
+stderr
+,
+flush
+=
+True
+,
+)
+print
+(
+f
+"Operation ID:
+{
+operation
+.
+name
+}
+"
+,
+file
+=
+sys
+.
+stderr
+,
+flush
+=
+True
+)
+raise
+operation
+.
+exception
+()
+or
+RuntimeError
+(
+operation
+.
+error_message
+)
+if
+operation
+.
+warnings
+:
+print
+(
+f
+"Warnings during
+{
+verbose_name
+}
+:
+\n
+"
+,
+file
+=
+sys
+.
+stderr
+,
+flush
+=
+True
+)
+for
+warning
+in
+operation
+.
+warnings
+:
+print
+(
+f
+" -
+{
+warning
+.
+code
+}
+:
+{
+warning
+.
+message
+}
+"
+,
+file
+=
+sys
+.
+stderr
+,
+flush
+=
+True
+)
+return
+result
+def
+create_disk_from_snapshot
+(
+project_id
+:
+str
+,
+zone
+:
+str
+,
+disk_name
+:
+str
+,
+disk_type
+:
+str
+,
+disk_size_gb
+:
+int
+,
+snapshot_link
+:
+str
+,
+)
+-
+>
+compute_v1
+.
+Disk
+:
+"""
+Creates a new disk in a project in given zone.
+Args:
+project_id: project ID or project number of the Cloud project you want to use.
+zone: name of the zone in which you want to create the disk.
+disk_name: name of the disk you want to create.
+disk_type: the type of disk you want to create. This value uses the following format:
+"zones/{zone}/diskTypes/(pd-standard|pd-ssd|pd-balanced|pd-extreme)".
+For example: "zones/us-west3-b/diskTypes/pd-ssd"
+disk_size_gb: size of the new disk in gigabytes
+snapshot_link: a link to the snapshot you want to use as a source for the new disk.
+This value uses the following format: "projects/{project_name}/global/snapshots/{snapshot_name}"
+Returns:
+An unattached Disk instance.
+"""
+disk_client
+=
+compute_v1
+.
+DisksClient
+()
+disk
+=
+compute_v1
+.
+Disk
+()
+disk
+.
+zone
+=
+zone
+disk
+.
+size_gb
+=
+disk_size_gb
+disk
+.
+source_snapshot
+=
+snapshot_link
+disk
+.
+type_
+=
+disk_type
+disk
+.
+name
+=
+disk_name
+operation
+=
+disk_client
+.
+insert
+(
+project
+=
+project_id
+,
+zone
+=
+zone
+,
+disk_resource
+=
+disk
+)
+wait_for_extended_operation
+(
+operation
+,
+"disk creation"
+)
+return
+disk_client
+.
+get
+(
+project
+=
+project_id
+,
+zone
+=
+zone
+,
+disk
+=
+disk_name
+)
+Mount the disk
+In the terminal, use the
+lsblk
+command to list the disks that are
+attached to your instance and find the disk that you want to mount.
+$
+sudo
+lsblk
+NAME
+MAJ:MIN
+RM
+SIZE
+RO
+TYPE
+MOUNTPOINT
+sda
+8
+:0
+0
+10G
+0
+disk
+└─sda1
+8
+:1
+0
+10G
+0
+part
+/
+sdb
+8
+:16
+0
+250G
+0
+disk
+In this example,
+sdb
+is the device name for the new blank persistent
+disk.
+Use the
+mount tool
+to mount the disk to the instance, and enable the
+discard
+option:
+$
+sudo
+mount
+-o
+discard,defaults
+/dev/
+DEVICE_NAME
+/home/jupyter
+Replace the following:
+DEVICE_NAME
+: the device name of the disk to
+mount.
+Configure read and write permissions on the disk. For this example,
+grant write access to the disk for all users.
+$
+sudo
+chmod
+a+w
+/home/jupyter
+What's next
+Learn how to
+save a notebook to GitHub
+Learn more about
+creating snapshots
+.
+Learn more about
+scheduling snapshots
+.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-28 UTC.
+Products and pricing
+See all products
+Google Cloud pricing
+Google Cloud Marketplace
+Contact sales
+Support
+Google Cloud Community
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Code samples
+Cloud Architecture Center
+Training and Certification
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

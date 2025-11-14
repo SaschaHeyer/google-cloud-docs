@@ -1,0 +1,669 @@
+Manage serving controls  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Manage serving controls
+This page describes how to view, edit, delete, export, and import serving
+controls.
+For general information about serving controls and instructions on how to create
+serving controls, see
+About serving controls
+and
+Create serving controls
+.
+View and edit serving controls
+You can view serving controls for Vertex AI Search for commerce using the console
+and the API.
+View and edit serving controls in the console
+The
+Serving Controls
+tab
+of the Controls page lists all of your serving controls and their associated
+serving configs. Click the
+edit
+Edit control
+icon for a control to change
+its settings and associated serving configs in the
+Edit control
+panel. Click the
+delete
+Delete control
+icon for
+a control to delete it, which also removes it from all serving configs.
+You can also see and edit the controls for a specific serving config on
+the
+Serving Configs
+page
+.
+Click a serving config to see its
+Details
+page, which lists all
+serving controls for that configuration. Click the
+edit
+Edit control
+icon for a control to change
+its settings in the
+Edit control
+panel. Click the
+do_not_disturb_on
+Remove control
+icon to
+dissociate the control from the serving config (this does not delete the
+control).
+It takes a few minutes for newly created or updated controls to be ready to
+serve live traffic. You can test if your changes have been applied on
+the console
+Evaluate
+page
+.
+View serving controls inline
+To see a single serving control inline, use
+Control.get
+.
+For more about this method, see the
+Control.get
+API reference
+.
+curl
+-X
+GET
+\
+-H
+"Authorization: Bearer
+$(
+gcloud
+auth
+application-default
+print-access-token
+)
+"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+'https://retail.googleapis.com/v2beta/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/controls/
+CONTROL_ID
+'
+To list multiple serving controls inline, use
+Controls.list
+.
+Optionally, you can use the parameter
+pageSize
+to set a maximum number of
+results to return. If more results are available, the
+list
+response includes a
+page token. You can pass a page token in the
+pageToken
+parameter of a
+list
+request to retrieve the next page of results.
+To list only the controls associated with a certain serving config, use
+the
+filter
+query parameter to specify the serving config ID.
+For more about this method, see the
+Control.list
+API reference
+.
+curl
+-X
+GET
+\
+-H
+"Authorization: Bearer
+$(
+gcloud
+auth
+application-default
+print-access-token
+)
+"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+'
+https://retail.googleapis.com/v2beta/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/controls?pageSize
+=
+PAGE_SIZE
+&
+pageToken
+=
+PAGE_TOKEN
+&
+filter
+=
+servingConfig
+=
+SERVING_CONFIG_ID
+Patch serving controls inline
+To update fields in a serving control, use
+Controls.patch
+and include an instance of
+Control
+in the request body. Specify the
+fields to update with the
+updateMask
+parameter, or leave it unset to update
+all supported fields.
+For more about this method, see the
+Controls.patch
+API reference
+.
+curl
+-X
+PATCH
+\
+-H
+"Authorization: Bearer
+$(
+gcloud
+auth
+application-default
+print-access-token
+)
+"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+-d
+'{
+"name": "projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/controls/
+CONTROL_ID
+",
+"
+FIELD_NAME_1
+": "
+NEW_FIELD_VALUE_1
+"
+"
+FIELD_NAME_2
+": "
+NEW_FIELD_VALUE_2
+"
+}'
+\
+'https://retail.googleapis.com/v2beta/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/controls/
+CONTROL_ID
+?updateMask=
+FIELD_NAME_1
+,
+FIELD_NAME_2
+'
+Add controls to serving configs inline
+To add a control to a serving config, use
+ServingConfig.addControl
+.
+For more about this method, see the
+ServingConfig.addControl
+API reference
+.
+For an example of this method, see
+Manage serving configs
+.
+Remove controls from serving configs inline
+To remove a control from a serving config, use
+ServingConfig.removeControl
+.
+For more about this method, see the
+ServingConfig.addControl
+API reference
+.
+For an example of this method, see
+Manage serving configs
+.
+Delete a serving control
+You can delete a serving control from the console or inline using the
+Controls.delete
+method.
+Delete a serving control in the console
+Delete a serving control to remove that control from all serving configs
+that are using it.
+Go to the
+Controls
+page in the Search for commerce console.
+Go to the Controls page
+In the table row of the control you plan to remove, click
+delete
+Delete
+.
+In the confirmation window, click
+Delete
+to complete the deletion.
+Delete a serving control inline
+To delete serving controls inline, use
+Controls.delete
+.
+For more about this method, see the
+Controls.delete
+API reference
+.
+curl
+-X
+DELETE
+\
+-H
+"Authorization: Bearer
+$(
+gcloud
+auth
+application-default
+print-access-token
+)
+"
+\
+-H
+"Content-Type: application/json; charset=utf-8"
+\
+'https://retail.googleapis.com/v2beta/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/controls/
+SERVING_CONTROL_ID
+'
+Export serving controls
+Preview
+This feature is
+        
+        subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the
+Service Specific
+        Terms
+.
+        
+        Pre-GA features are available "as is" and might have limited support.
+      
+      For more information, see the
+launch stage descriptions
+.
+You can export your serving controls to a file in a Cloud Storage bucket.
+There are two reasons that you might want to export and import serving controls:
+To move serving controls from one project to another.
+To perform a bulk edit on all or some serving controls. Export the serving
+controls, edit the exported file, and then import the file to change or add
+serving controls.
+You can export and import through the Search for commerce console.
+When you export serving controls, you export all the serving controls in the
+project.
+To export serving controls, do the following:
+Go to the
+Controls
+page in the Search for commerce console.
+Go to the Controls page
+On the
+Serving controls
+tab, click
+Export controls
+.
+In the
+Export Serving Controls
+window, select the Cloud Storage bucket
+to which you want to export the controls file.
+Click
+Export
+.
+The exported controls are saved to a NDJSON file in the selected bucket with
+a name in the following format:
+projects_
+PROJECT_ID
+_
+TIMESTAMP
+_exported_controls.ndjson
+After the export operation completes, you can see the operation status in
+the
+Bulk import, export, delete activities
+list in the
+Export
+activity
+window. Open the
+Export activity
+window by clicking
+Show
+in the message window or by following the instructions in
+See status for a
+specific integration operation
+.
+Import serving controls
+Preview
+This feature is
+        
+        subject to the "Pre-GA Offerings Terms" in the General Service Terms section of the
+Service Specific
+        Terms
+.
+        
+        Pre-GA features are available "as is" and might have limited support.
+      
+      For more information, see the
+launch stage descriptions
+.
+To add serving controls or modify existing ones in bulk, you can make your
+changes in an exported controls file. You can then import them into
+the original project or into a different
+project.
+Things to know about importing serving controls:
+You can't import a serving control file if it contains both
+search and recommendations serving controls.
+When you import serving controls, all the serving controls in the file become
+associated with the serving config that you specify on import. If a
+serving control is already associated with another serving config in
+the project, that association is also maintained.
+To import serving controls, do the following:
+Edit and review an exported serving control file and place the file in a
+Cloud Storage bucket. (To export serving controls, see the preceding task
+Export serving controls
+.)
+Ensure that the file contains only search serving controls or
+only recommendations serving controls. You cannot import a
+file that contains both types.
+Go to the
+Controls
+page in the Search for commerce console.
+Go to the Controls page
+On the
+Serving controls
+tab, click
+Import controls
+.
+In the
+Import Serving Controls
+window:
+Browse and select the
+Cloud Storage bucket and NDJSON file that contains the controls that you
+want to import.
+Select the serving config that you want to associate the imported serving
+controls with.
+Review the Import Preview plan. The controls that will be created are
+displayed on the
+New
+tab and the controls that will be
+modified are displayed on the
+Modified
+tab.
+Click
+Import
+.
+A long-running operation is started to import the new and modified
+controls.
+After the import operation completes, you can see the operation status in the
+Controls
+tab of the
+Activity status
+window. Open the
+Activity
+status
+window by clicking
+Show
+in the message window or by following
+the instructions in
+See status for a specific integration operation
+.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+日本語
+한국어

@@ -1,0 +1,354 @@
+Manage site-wide attribute controls  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Manage site-wide attribute controls
+This page describes how to manage site-wide attribute controls.
+Site-wide controls apply to all search results or all recommendation
+results, depending on what type of site-wide attribute control you apply.
+About site-wide attribute controls
+Side-wide attribute controls enable you to manage settings globally across all
+serving configurations.
+Site-wide attribute controls are available in the Search for commerce
+console for your catalog's product attributes.
+Search uses the following attribute settings:
+Indexable
+: Search can filter and facet using this attribute.
+Dynamic faceting
+: Search can automatically use this
+    attribute as a dynamic facet based on past user behavior such as facet clicks
+    and views. To enable dynamic faceting for an attribute,
+Indexable
+must be set to true for that attribute.
+Searchable
+: This attribute is searchable by search
+    queries, which increases recall for that attribute. This control is applicable
+    only for text attributes.
+Retrievable
+: If set to true, search returns this
+    attribute in responses to search queries. If all attributes have
+    Retrievable set to false, the search results contain only the product name
+    or (for variants) the product name and color information. The REST field RetrievableFields is deprecated for products. Use the retrievable site-wide control instead.
+Recommendations uses the following attribute settings:
+Filterable
+(Public Preview): This attribute can be used in recommendations
+    filter expressions. This control is applicable only for text attributes.
+You can enable or disable side-wide attribute controls for individual
+attributes.
+Dynamic faceting is available as a site-wide attribute control. By default,
+dynamic faceting is enabled for all custom attributes.
+In
+catalog-level configuration mode
+, site-wide attribute controls
+are available for indexable and searchable.
+For details about attribute configurations and what their default and allowed
+settings are, see the topic
+About product attributes
+.
+Modify site-wide attribute controls
+Change a site-wide attribute control on the
+Controls page
+in the
+Search for commerce console.
+Note:
+Setting site-wide attribute controls globally is available in the default
+catalog-level configuration mode
+. Previously, product-level
+configuration was the default mode. If you are still on product-level
+configuration mode and need to switch modes, contact Vertex AI Search for commerce support.
+Go to the
+Controls
+page in the Search for commerce console.
+Go to the Controls page
+Go to the
+Site-wide controls
+tab.
+This tab displays a table of all product attributes you can set site-wide
+attribute controls for.
+Click
+edit
+Modify Controls
+.
+Enable or disable a control.
+True
+: Enable a control for that attribute. This overrides any
+product-level attributes configuration.
+False
+: Disable a control for that attribute. This overrides any
+product-level attribute configuration.
+Note that you can only set dynamic faceting to true for attributes that
+are also set to indexable.
+Click
+Save Controls
+.
+Changes to attribute configuration settings for indexable and searchable take
+effect within 12 hours, or immediately on your next catalog ingestion.
+Dynamic faceting configuration changes take up to two days. You can test if
+your changes have been applied on the
+Evaluate
+page
+, which will
+reflect your changes immediately.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

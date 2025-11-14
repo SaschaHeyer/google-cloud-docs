@@ -1,0 +1,935 @@
+Import autocomplete data for search  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Import autocomplete data for search
+Autocomplete is a feature for predicting the rest of a word a user is typing,
+which can improve the user search experience. It can provide typeahead
+suggestion based on your provided dataset or based on user events you provided.
+Consider importing autocomplete data only if you want to have additional
+controls (Do Not Remove List, Deny List) or if you need to use your own
+autocomplete data. Turning on auto-learning is sufficient for most cases
+where autocomplete is needed. Auto-learning provides a machine
+learning-powered suggestion dataset  based on user search events. See
+Autocomplete
+for how to turn on auto-learning.
+Note:
+From September 2022, you can use
+Cloud console >
+Controls
+>
+Autocomplete Controls
+UI to trigger data import.
+These instructions are for uploading your own autocomplete
+data only. Keep it up to date if you plan to use your autocomplete
+dataset all the time. For getting autocomplete results at query time, refer
+to
+CompletionService.CompleteQuery
+. Autocomplete data is
+used only for search. This data is not used by
+recommendations.
+Before you begin
+Before you can import your autocomplete information, you must have completed
+the instructions in
+Before you begin
+, specifically
+setting up your project
+,
+creating a service account
+, and
+adding the service account to your local environment
+.
+You must have the
+Retail Editor
+IAM role to perform the import.
+Autocomplete import best practices
+When you import autocomplete data, ensure that you implement the following best
+practices:
+Read the BigQuery schema listed in the following
+sections
+and API documentation.
+Do not use placeholder values.
+Include as many fields as possible.
+Keep your own autocomplete dataset up to date if you plan to use own
+uploaded dataset.
+Importing data from another project is disallowed.
+Import autocomplete data
+Import autocomplete data from BigQuery
+Vertex AI Search for commerce supports BigQuery data import for Deny
+List, Do Not Remove List, and Suggestion Terms List. See more details in
+Autocomplete
+.
+To import autocomplete data in the correct format from
+BigQuery, use the
+Vertex AI Search for commerce autocomplete schema
+to
+create a BigQuery table
+with the correct format and
+load the table
+with your autocomplete data. Then, upload your
+data to Vertex AI Search for commerce.
+For more help with BigQuery tables, see
+Introduction to tables
+.
+For help with BigQuery queries, see
+Overview of querying BigQuery data
+.
+BigQuery dataset location
+When you first create your BigQuery dataset for your
+autocomplete BigQuery tables, make sure the dataset
+location is set to the multi-region location
+"US"
+. Not setting it correctly
+will cause your import request to fail later. To learn more about
+BigQuery dataset locations, see
+Dataset locations
+in the BigQuery
+documentation.
+Populate data to BigQuery
+Use the
+Vertex AI Search for commerce autocomplete schema
+to
+upload your autocomplete data to BigQuery.
+BigQuery can use the schema to validate whether JSON-formatted
+data has correct field names and types (such as
+STRING
+,
+INTEGER
+, and
+RECORD
+), but cannot perform validations such as determining:
+If a string field mapped into recognizable enum value.
+If a string field is using the correct format.
+If an integer or float field has value in a valid range.
+If a missing field is a required field.
+To ensure the quality of your data and the end user search experience, make
+sure you refer to the schema and reference documentation for details about
+values and format.
+Set up access to your BigQuery dataset
+To set up access, make sure that your BigQuery dataset is in the
+same project as your Vertex AI Search for commerce service and complete the following
+steps.
+Open the IAM page in the Google Cloud console.
+Open
+the IAM page
+Select your Vertex AI Search for commerce project.
+On the
+IAM & Admin
+page, click
+person_add
+Grant Access
+.
+For
+New principals
+, enter
+cloud-retail-customer-data-access@system.gserviceaccount.com
+and select the
+BigQuery > BigQuery Data Viewer
+role.
+If you do not want to provide the Data Viewer role to the entire
+project, you can add this role directly to the dataset.
+Learn more
+.
+Click
+Save
+.
+Trigger data import to Vertex AI Search for commerce
+Console
+Go to the Controls page
+Go to the
+Autocomplete Controls
+tab.
+In the
+Term Lists
+section, find the type of list you plan to import
+(
+Deny list
+,
+Do Not Remove list
+, or
+Suggested terms list
+) and
+click
+Import
+or
+Replace
+.
+The
+Import
+pane opens.
+Enter the BigQuery path of your data location, or select
+Browse
+to select the location.
+The BigQuery path must be in the same project and its
+schema should be correct. To check this, click
+Browse
+and click the
+table name to view its contents in theBigQuery console.
+In the
+Import
+pane, click
+Import
+.
+The import begins. You can leave the page without disrupting the import.
+cURL
+Create a data file for the input parameters for the import. Your
+input parameter values depend on whether you are importing from
+Cloud Storage or BigQuery.
+Use the
+BigQuerySource
+object to point to your
+BigQuery dataset.
+dataset-id
+: The ID of the BigQuery dataset.
+table-id
+: The ID of the BigQuery table
+holding your data.
+data-schema
+: For the
+dataSchema
+property, use value
+suggestions
+(default),
+allowlist
+,
+denylist
+. Use the
+Vertex AI Search for commerce autocomplete schema
+.
+{
+"inputConfig"
+:{
+"bigQuerySource"
+:
+{
+"datasetId"
+:
+"
+dataset-id
+"
+,
+"tableId"
+:
+"
+table-id
+"
+,
+"dataSchema"
+:
+"
+data-schema
+"
+}
+}
+}
+Import your autocomplete information to Vertex AI Search for commerce by
+making a
+POST
+request to the
+CompletionData:import
+REST method, providing the
+name of the data file (shown as
+input.json
+in the example below).
+curl -X POST \
+-H "Authorization: Bearer $(gcloud auth application-default print-access-token)" \
+-H "Content-Type: application/json; charset=utf-8" -d @./input.json
+"https://retail.googleapis.com/v2alpha/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/completionData:import"
+You can check the status programmatically using the API.
+You should receive a response object that looks something like this:
+{
+"name": "projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog/operations/123456",
+"done": false
+}
+The name field is the ID of the
+operation object
+. To
+request the status of this object, replace the name field with the
+value returned by the import method. When the import is complete, the
+done
+field returns as
+true
+:
+curl
+-H
+"Authorization: Bearer
+$(
+gcloud
+auth
+application-default
+print-access-token
+)
+"
+\
+"https://retail.googleapis.com/v2alpha/projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog/operations/123456"
+When the operation completes, the returned object has a
+done
+value of
+true
+, and includes a Status object similar to the following example:
+{
+"name"
+:
+"projects/
+PROJECT_ID
+/locations/global/catalogs/default_catalog/operations/123456"
+,
+"metadata"
+:
+{
+"@type"
+:
+"type.googleapis.com/google.cloud.retail.v2alpha.ImportMetadata"
+,
+"createTime"
+:
+"2020-01-01T03:33:33.000001Z"
+,
+"updateTime"
+:
+"2020-01-01T03:34:33.000001Z"
+,
+"successCount"
+:
+"2"
+,
+"failureCount"
+:
+"1"
+},
+"done"
+:
+true
+"response"
+:
+{
+"@type"
+:
+"type.googleapis.com/google.cloud.retail.v2alpha.ImportCompletionDataResponse"
+,
+}
+}
+Autocomplete data format
+Your JSON file should look like the following examples. The line breaks are
+for readability; you should provide an entire suggestion on a single line.
+Each suggestion should be on its own line.
+Suggestion minimum required fields:
+{
+  "suggestion": "ABC",
+  "globalScore": "0.5"
+}
+Or:
+{
+  "suggestion": "ABC",
+  "frequency": "100"
+}
+Autocomplete data import duration
+It usually takes about a few minutes to one hour for one import from
+BigQuery to complete.
+When the dataset import is finished, the
+done
+field in the
+operation object
+is marked as true.
+After that, it might take additional 1~2 days for data to be indexed and be used
+in production serving.
+Keep your autocomplete dataset up to date
+If you plan to use your own uploaded dataset, it's a best practice to keep the
+uploaded dataset up-to-date on a regular basis.
+Batch update
+You can use the import method to batch update your autocomplete. You do this
+the same way you do the initial import; follow the steps in
+Importing autocomplete data
+. This will replace the whole imported
+dataset.
+Monitor import health
+Keeping your own dataset up to date is important for getting high-quality
+suggestion results when you use it. You should monitor the import error rates
+and take action if needed.
+Vertex AI Search for commerce autocomplete schema
+When importing autocomplete dataset from BigQuery, use the
+Vertex AI Search for commerce schema below to create
+BigQuery tables with the correct format and load them with
+your autocomplete data.
+Schema for suggestions
+This dataset is used to provide your own autocomplete suggestion phrases with
+your own scores.
+Vertex AI Search for commerce autocomplete suggestions schema JSON
+JSON
+[
+{
+"description"
+:
+"The suggestion text"
+,
+"mode"
+:
+"NULLABLE"
+,
+"name"
+:
+"suggestion"
+,
+"type"
+:
+"STRING"
+},
+{
+"description"
+:
+"Global score of this suggestion. Control how this suggestion would be scored / ranked. Only one of this and frequency should be set."
+,
+"mode"
+:
+"NULLABLE"
+,
+"name"
+:
+"globalScore"
+,
+"type"
+:
+"FLOAT"
+},
+{
+"description"
+:
+"Frequency of this suggestion. Will be used to rank suggestions when score is not available."
+,
+"mode"
+:
+"NULLABLE"
+,
+"name"
+:
+"frequency"
+,
+"type"
+:
+"INTEGER"
+},
+{
+"description"
+:
+"BCP-47 language code of this suggestion."
+,
+"mode"
+:
+"NULLABLE"
+,
+"name"
+:
+"languageCode"
+,
+"type"
+:
+"STRING"
+},
+{
+"description"
+:
+"If two suggestions have the same groupID, they will not be returned together. Instead the one ranked higher will be returned. This can be used to deduplicate semantically identical suggestions."
+,
+"mode"
+:
+"NULLABLE"
+,
+"name"
+:
+"groupID"
+,
+"type"
+:
+"STRING"
+},
+{
+"description"
+:
+"The score of this suggestion within its group"
+,
+"mode"
+:
+"NULLABLE"
+,
+"name"
+:
+"groupScore"
+,
+"type"
+:
+"FLOAT"
+},
+{
+"description"
+:
+"Device type for this suggestion."
+,
+"mode"
+:
+"NULLABLE"
+,
+"name"
+:
+"deviceType"
+,
+"type"
+:
+"STRING"
+},
+{
+"description"
+:
+"Alternative matching phrases for this suggestion."
+,
+"mode"
+:
+"REPEATED"
+,
+"name"
+:
+"alternativePhrases"
+,
+"type"
+:
+"STRING"
+},
+{
+"fields"
+:
+[
+{
+"description"
+:
+"The name of the custom attribute."
+,
+"mode"
+:
+"NULLABLE"
+,
+"name"
+:
+"key"
+,
+"type"
+:
+"STRING"
+},
+{
+"fields"
+:
+[
+{
+"description"
+:
+"The textual values of this custom attribute."
+,
+"mode"
+:
+"REPEATED"
+,
+"name"
+:
+"text"
+,
+"type"
+:
+"STRING"
+},
+{
+"description"
+:
+"The numerical values of this custom attribute."
+,
+"mode"
+:
+"REPEATED"
+,
+"name"
+:
+"numbers"
+,
+"type"
+:
+"FLOAT"
+}
+],
+"mode"
+:
+"NULLABLE"
+,
+"name"
+:
+"value"
+,
+"type"
+:
+"RECORD"
+}
+],
+"description"
+:
+"A custom attribute that is not explicitly modeled, which can be retrieved together with the suggestion at serving time."
+,
+"mode"
+:
+"REPEATED"
+,
+"name"
+:
+"customAttributes"
+,
+"type"
+:
+"RECORD"
+}
+]
+Schema for denylist
+This dataset is used as a denylist to block phrases from being suggested.
+Vertex AI Search for commerce autocomplete denylist schema JSON
+JSON
+[
+{
+"description"
+:
+"The phrase to block from autocomplete suggestions."
+,
+"mode"
+:
+"REQUIRED"
+,
+"name"
+:
+"phrase"
+,
+"type"
+:
+"STRING"
+},
+{
+"description"
+:
+"The operator to apply for this phrase. Choose whether to block the exact phrase, or block any suggestions containing this phrase. Supported value \"EXACT_MATCH\", \"CONTAINS\""
+,
+"mode"
+:
+"REQUIRED"
+,
+"name"
+:
+"operator"
+,
+"type"
+:
+"STRING"
+}
+]
+Schema for allowlist
+This dataset is used for skipping post processes (such as spell correction and
+zero-result filtering) for all the phrases in this allowlist.
+Vertex AI Search for commerce autocomplete allowlist schema JSON
+JSON
+[
+{
+"description"
+:
+"The phrase to be exempted from autocomplete post processing, e.g. spell correction, filtering"
+,
+"mode"
+:
+"REQUIRED"
+,
+"name"
+:
+"phrase"
+,
+"type"
+:
+"STRING"
+},
+{
+"description"
+:
+"The operator to apply for this phrase. Whether to match the exact phrase, or any suggestions contain this phrase. Supported values are \"EXACT_MATCH\", \"CONTAINS\"."
+,
+"mode"
+:
+"REQUIRED"
+,
+"name"
+:
+"operator"
+,
+"type"
+:
+"STRING"
+}
+]
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español
+Español – América Latina
+Français
+Indonesia
+Italiano
+Português
+Português – Brasil
+中文 – 简体
+中文 – 繁體
+日本語
+한국어

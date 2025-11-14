@@ -1,0 +1,716 @@
+Autocomplete for search  |  Vertex AI Search for commerce  |  Google Cloud
+Skip to main content
+Technology areas
+close
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Cross-product tools
+close
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Related sites
+close
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+/
+English
+Deutsch
+Español – América Latina
+Français
+Português – Brasil
+中文 – 简体
+日本語
+한국어
+Console
+Sign in
+Vertex AI Search for commerce
+Guides
+Reference
+Support
+Resources
+Contact Us
+Start free
+Technology areas
+More
+Guides
+Reference
+Support
+Resources
+Cross-product tools
+More
+Related sites
+More
+Console
+Contact Us
+Start free
+Discover
+Product overview
+What is Vertex AI search for commerce?
+Features and capabilities
+Global endpoints
+Guided search
+About facets for search
+Conversational product filtering
+Overview
+User experience guide
+Developer guide
+Conversational Commerce agent
+Overview
+User experience guide
+Developer guide
+Tile navigation
+Get started
+How Vertex AI search for commerce works
+Before you begin
+Initial setup
+Authenticate to Vertex AI search for commerce
+Identity and access management (IAM)
+Implement Vertex AI search for commerce
+Quickstart tutorials
+Interactive tutorials
+Troubleshoot tutorial issues
+Create personalized movie recommendations
+Prepare your data for indexing
+About catalogs and products
+Product attributes
+Attribution tokens
+Entities
+About user events
+Send your search data
+Import historical user events
+Record real-time user events
+Import autocomplete data for search
+Import catalog information
+Build your commerce UI
+Implement user events
+Autocomplete for search
+Search as you type
+Query expansion
+About serving configs
+About serving controls
+Personalization
+Create serving configs
+Create serving controls
+Filter and order results
+Boost results
+Deploy Vertex AI
+Recommendations
+Get recommendations
+Filter recommendations
+Use recommendations in emails
+Search
+Get search results
+Data quality
+Manage search results
+Manage serving configs
+Manage serving controls
+Manage site-wide attribute controls
+Manage catalog information
+Manage user events
+Models
+About recommendation models
+Create recommendation models
+Using a pretrained LLM
+Manage models
+Supported world languages
+Data insights
+Export your data into BigQuery
+Export commerce metrics to BigQuery
+Measure performance
+View analytics
+Get dashboards that show key performance indicators
+Generate sales forecasts from commerce data
+Monitor and troubleshoot
+Set up Cloud Monitoring alerts
+About A/B experiments
+Monitor and analyze A/B experiments
+Monitor and troubleshoot
+Audit logging information
+Govern and maintain
+Update inventory
+Update local inventory
+Data governance for commerce
+AI and ML
+Application development
+Application hosting
+Compute
+Data analytics and pipelines
+Databases
+Distributed, hybrid, and multicloud
+Generative AI
+Industry solutions
+Networking
+Observability and monitoring
+Security
+Storage
+Access and resources management
+Costs and usage management
+Infrastructure as code
+Migration
+SDK, languages, frameworks, and tools
+Google Cloud Home
+Free Trial and Free Tier
+Architecture Center
+Blog
+Contact Sales
+Google Cloud Developer Center
+Google Developer Center
+Google Cloud Marketplace
+Google Cloud Marketplace Documentation
+Google Cloud Skills Boost
+Google Cloud Solution Center
+Google Cloud Support
+Google Cloud Tech Youtube Channel
+Home
+Documentation
+Industry solutions
+Vertex AI Search for commerce
+Guides
+Send feedback
+Autocomplete for search
+This page introduces the autocomplete feature and how to use it.
+Search provides autocomplete for driving search
+box type-ahead suggestions.
+Autocomplete
+is a feature for predicting the rest of a
+query a user is entering, which can improve the user search experience and
+accelerate the shopping process before checkout. It can also improve the search
+response quality and thus create higher revenue by providing well-formatted
+queries.
+Overview
+When an end user begins typing a search term on your site,
+search can provide a list of suggestions that the user may want.
+For example,
+shoes
+and
+shirts
+might be suggested when the user enters
+sh
+.
+Data source
+You can choose one of the following data sources for your suggestion
+predictions:
+A BigQuery dataset that you upload.
+A dataset that is generated from user events and other metadata using machine
+learning.
+Uploaded dataset
+A BigQuery suggestion table you upload as a dataset, which is
+used to suggest queries. For how to upload a dataset, see
+Importing autocomplete data
+.
+Auto-learning dataset
+A machine learning-powered suggestion dataset generated by
+search based on users' search events.
+To enable auto-learning:
+Cloud console
+Go to the Controls page
+Go to the
+Autocomplete Controls
+tab.
+Click
+Edit settings
+.
+Turn on
+Auto learning
+.
+Click
+Save settings
+.
+Auto-learning can take 1-2 days to update.
+cURL
+curl -X PATCH -H "Authorization: Bearer $(gcloud auth application-default print-access-token)" \
+-H "Content-Type: application/json" \
+"https://retail.googleapis.com/v2beta/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog/completionConfig?update_mask.paths=auto_learning"  --data "{auto_learning: true}"
+Auto-learning dataset prerequisite
+Auto-learning generates suggestions from search type
+user events
+(
+eventType = "search"
+). The generation uses the past 180 days of user events. 
+It requires a good quality and quantity of imported user events.
+Auto-learning
+filters out rare suggestions
+, so if the
+search type user event quantity is too small (less than 20,000), many suggestion
+candidates may be filtered out. In this scenario, you may want to first test
+autocomplete function with a more frequent search query.
+Auto-learning dataset release schedule
+The auto-learning dataset is generated daily, then pushed to indexing and
+release. The full cycle takes around two days.
+Auto-learning features
+Search applies machine learning techniques to clean up and
+format queries and suggestion data for
+auto-learning dataset
+only.
+Feature
+Description
+Example
+Remove 0-result searches
+Remove queries that have zero search results.
+For grocery retailer,
+Gucci handbags
+has 0 search results, so it is removed.
+Correct typos
+Correct word spellings that are typos.
+Also clean real-time input queries before matching.
+Milc
+→
+Milk
+Add allowlist queries
+Queries you explicitly allow are added.
+Check
+More information
+section
+Remove blocklist queries
+Queries you explicitly block are removed.
+Check
+More information
+section
+Remove unsafe terms
+Uses Google safe search.
+Remove inappropriate queries.
+Porn, racy, vulgar, or violent content
+Remove very rare terms
+AI system adjusts cutoff depending on query statistics.
+If
+     terms are unusually rare, they're removed.
+74x39x9 inches 2 layer twin air mattress with 120V handheld pump.
+Deduplicate terms
+Based on AI-driven semantic understanding
+For near-identical
+     terms, either term will match, but only the more popular one will be suggested.
+Shoes for women, womens shoes,
+and
+womans shoes
+are deduplicated,
+     so only one will be suggested.
+Get completion suggestions
+Use the
+completeQuery
+API to fetch the suggestions.
+Example:
+cURL
+curl -H "Authorization: Bearer $(gcloud auth application-default print-access-token)" \
+"https://retail.googleapis.com/v2/projects/
+PROJECT_NUMBER
+/locations/global/catalogs/default_catalog:completeQuery?query=sho&dataset=user-data&deviceType=DESKTOP&maxSuggestions=5"
+Autocomplete options and controls
+This section explains what options and controls are available for autocomplete.
+See an overview in the following table and more details.
+Control
+Details
+Location
+Denylist
+Manually removes queries from the suggestion data.
+API Request: CompletionData:import
+.
+   For more information, see
+Import autocomplete data
+.
+Allowlist
+Manually adds queries to the suggestion data.
+API Request: CompletionData:import
+(also see
+Import Autocomplete Data
+)
+Minimum length to trigger autocomplete
+Controls number of characters before autocomplete is triggered.
+Google Cloud console > Controls
+Matching order
+Matching order determines how user query and suggestions are matched.
+Google Cloud console > Controls
+Suggestion count
+This is the number of suggestions that will be returned from autocomplete.
+Google Cloud console > Controls
+or
+API Request: completeQuery.maxSuggestions
+Device type
+When device types are specified, the suggestions are generated
+     based on the popularity of the given device types.
+Not specifying this
+     returns suggestions based on combined popularity from all device types.
+API Request: completeQuery.deviceType
+Suggestion data source
+If you have both auto-generated and uploaded data sources,
+               you can choose which one to use at query time.
+API Request: completeQuery.dataset
+Language
+You can specify which language or languages suggestions are in.
+API Request: completeQuery.languageCodes[]
+Allowlist (do-not-remove list)
+Search does post processing, such as spell correction,
+on autocomplete suggestion data. You can create an allowlist of terms that
+search skips when post processing.
+Allowed terms are never filtered out from suggestions. The allowlist works
+for both
+uploaded datasets
+and
+auto-learning dataset
+.
+Examples: there are some intentionally misspelled brand names,
+such as "froot loops" instead of "fruit" or "foot".
+See detailed upload instruction in
+import completion data
+.
+For data import, you can use
+Google Cloud console >
+Controls
+>
+Autocomplete Controls
+>
+Do Not Remove list
+or use
+CompletionData:import
+in the API.
+Changes take effect in around 2 days.
+Denylist
+The denylist only works for
+auto-learning datasets
+.
+The denylist does not work for
+uploaded datasets
+.
+The terms in a denylist never appear in suggestions.
+To import a denylist, you can use
+Google Cloud console >
+Controls
+>
+Autocomplete Controls
+>
+Deny list
+or use API
+CompletionData:import
+. For
+detailed instructions on how to import a denylist, see
+import completion data
+.
+Changes take effect in around 2 days.
+Minimum length to trigger
+You can set the number of characters required before autocomplete queries
+will return results. The setting can be found on
+Google Cloud console >
+Controls
+>
+Autocomplete Controls
+>
+Minimum length to trigger
+.
+Changes take effect immediately.
+Matching order
+This determines how to match suggestions with user input terms.
+When set to
+Suggestion starts with the term
+, auto-complete matches the user
+input term as an exact prefix to suggestions. For example, the user input "sh"
+matches the suggestions "shoes" and "shirts", but not the suggestion "red shoes".
+When set to
+Suggestion can start from anywhere in the term
+, auto-complete
+tokenizes the user input term into words and matches it to the words in
+suggestions, regardless of word order. For example, the user input term "red
+sh" matches the suggestions "shirts red", "red shoes", and "kid red shoes".
+However, the input term "hoes" is not matched with these suggestions, because
+none of words in the suggestions begin with "hoes".
+The setting can be found on
+Google Cloud console >
+Controls
+>
+Autocomplete Controls
+>
+Matching order
+.
+Changes take effect immediately.
+Suggestion count
+This is the number of suggestions that will be returned from autocomplete
+queries and it cannot exceed 20. The setting can be found on
+Google Cloud console >
+Controls
+>
+Autocomplete Controls
+>
+Suggestion Count
+or can be set in
+completeQuery
+.
+Changes take effect immediately.
+Device type
+Search autocomplete supports different device types, such as
+mobile
+and
+desktop
+. You can upload or get different suggestions based on
+device types. If
+deviceType
+is not specified in
+completeQuery
+, the suggestion will be across all device types.
+For an auto-learning dataset based on search user events, set
+user_agent
+in
+UserEvent.user_info
+to support different device types.
+See
+user agent
+in wiki.
+Advanced features
+This section describes the advanced autocomplete features available with
+search. For example, you can supplement query autocomplete
+suggestions with other suggestions, such as brands and categories.
+These advanced features are available only for auto-learning datasets.
+Suggestion FeatureSet
+We provide an additional FeatureSet for each query suggestion term to allow
+customers to show advanced functions on their websites.
+The FeatureSet appears in the response as a key value map.
+Vertex AI Search for commerce returns up to five popular categories and brands related to
+each query suggestion in the
+completeQuery.completionResults.attributes
+API response. FeatureSet suggestions don't have to match the query strings
+input by the end user.
+You can use the FeatureSet in the response to enrich search suggestions. For example:
+Aggregate and create
+Popular Brands
+and
+Popular Categories
+sections that appear below the search suggestion list.
+Display the most popular brand or category next to search suggestion terms.
+After making changes to the catalog, such as changing categories for products,
+expect to wait two weeks to 30 days until the FeatureSet suggestions reflect the
+product catalog changes. This wait time is because auto-learning trains on the
+past 30 days of search event data.
+Attribute suggestions
+Search provides attribute suggestions that match user input
+strings. Supported attribute suggestions types are brands and categories.
+Attribute suggestions differ from a suggestion FeatureSet. Attribute suggestions
+are lists of suggested product attributes (like brands and categories), similar
+to how query suggestions are lists of suggested queries. Attribute suggestions 
+can be used independently from query suggestions. A suggestion FeatureSet is 
+metadata for a query suggestion, and so is dependent on query suggestions.
+Attribute suggestions can be used to auto-complete brands or categories that
+an end user is typing, in separate sections below the search suggestion list.
+Suggestion facet with product counts (Experimental)
+This is an experimental feature for limited customers. To use it, contact the
+support team.
+When the suggestion facet with product count feature is enabled, the returned
+completeQuery.completionResults
+gives a list of autocomplete suggestions as normal but
+also product counts for each suggestion with the total count and product count by facet (like
+color
+,
+category
+).
+For example, if the search query is "shoe", the returned Autocomplete suggestions might be:
+womens shoes
+mens shoes
+Furthermore, if the facet key of interest is
+color
+, a product count and product
+count by color is also returned with each Autocomplete suggestion:
+womens shoes (32)
+black (10)
+taupe (16)
+white (10)
+mens shoes (43)
+black (10)
+brown (5)
+green (17)
+As a retailer, you don't need to present the product count to the shopper,
+but you might decide to order the list of suggestions based on product count
+instead of the order returned in
+completeQuery.completionResults
+.
+For example, you might want to encourage shoppers to look at green shoes for men by having
+green shoes appear at the top of the suggestion box even though they are not the most popular
+item.
+For example:
+{
+  "completion_results": [{ 
+    "suggestion": "womens shoes"
+    "facets": [ 
+      {
+        "key": "color"
+        "values": [ 
+          {
+            "value": "black"
+            "count": 10
+          }
+          {
+            "value": "taupe"
+            "count": 16
+          }
+          {
+            "value": "white"
+            "count": 10
+          }
+        ]
+      }
+    ]
+    "total_product_count": 32
+  },
+  (...)
+  ],
+}
+The facet count information appears as a list of
+Facets
+in
+completeQuery.completionResults.facets
+for each suggested search query. Each facet has a
+FacetValues
+list that contains the
+product count per facet value. The total product count for each suggested search
+query is returned in
+completeQuery.completionResults.totalProductCount
+.
+To turn on and use suggestion facets with product counts, follow these steps:
+Contact the support team and ask them to turn on the feature,
+Suggestion facet with product counts
+. Specify which
+FacetKeys
+you want product counts for. Only
+textual_fields
+facets are allowed.
+For at least 7 days, make sure that when using the
+search
+API, include the facet key in
+FacetSpecs
+include the facet key in
+search.searchRequest.facetSpecs
+.
+This wait time is because facet information is calculated using the past week of
+search histories data.
+After the feature has been turned on for you, the returned suggestions of the
+completeQuery
+API contain the product counts by facet and by suggestion.
+Suggestion filtered by entity
+Entities allow you to filter autocomplete search suggestions. An entity might be
+a website for a different brand or region. You want autocomplete to best reflect
+the behavior of the users shopping that particular brand or regional website.
+For more information about entities, see
+Entities
+.
+Notice that entity filtering will only apply to
+completion_results
+(relevant to
+UserEvent
+). This filter won't apply to
+attribute_results
+(relevant to
+Product
+). So regardless of the value of
+entity
+, the
+attribute_results
+is the same.
+To include entities in autocomplete suggestions:
+Include the
+entity
+field in your search user events
+(
+eventType = "search"
+). For information, see the complete object example
+for the
+Search
+user event.
+Set the
+entity
+field in your
+CompleteQuery
+API request
+to get suggestions for only that entity.
+The entity string in the user events and the API requests must be an exact
+match. Otherwise, autocomplete returns empty suggestions.
+Make sure the entity (whether in search user events or
+AutoComplete requests) has at most 256 characters. A longer one
+is truncated to 256 characters when the events or the requests are
+processed, risking a mismatch.
+Typically, it takes 30-90 days of user event data before the entity feature
+can return optimal autocomplete suggestions.
+Send feedback
+Except as otherwise noted, the content of this page is licensed under the
+Creative Commons Attribution 4.0 License
+, and code samples are licensed under the
+Apache 2.0 License
+. For details, see the
+Google Developers Site Policies
+. Java is a registered trademark of Oracle and/or its affiliates.
+Last updated 2025-10-24 UTC.
+Why Google
+Choosing Google Cloud
+Trust and security
+Modern Infrastructure Cloud
+Multicloud
+Global infrastructure
+Customers and case studies
+Analyst reports
+Whitepapers
+Products and pricing
+See all products
+See all solutions
+Google Cloud for Startups
+Google Cloud Marketplace
+Google Cloud pricing
+Contact sales
+Support
+Community forums
+Support
+Release Notes
+System status
+Resources
+GitHub
+Getting Started with Google Cloud
+Google Cloud documentation
+Code samples
+Cloud Architecture Center
+Training and Certification
+Developer Center
+Engage
+Blog
+Events
+X (Twitter)
+Google Cloud on YouTube
+Google Cloud Tech on YouTube
+Become a Partner
+Google Cloud Affiliate Program
+Press Corner
+About Google
+Privacy
+Site terms
+Google Cloud terms
+Manage cookies
+Our third decade of climate action: join us
+Sign up for the Google Cloud newsletter
+Subscribe
+English
+Deutsch
+Español – América Latina
+Français
+Português – Brasil
+中文 – 简体
+日本語
+한국어
